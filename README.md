@@ -1,2 +1,2 @@
-# Wypozyczalnia_Samochodowa
+# Wypozyczalnia Samochodowa
 Projekt zespołowy 
