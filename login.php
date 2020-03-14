@@ -14,10 +14,10 @@ if(isset($_SESSION['id'])){
     <title>Document</title>
 </head>
 <body>
-    <form>
-        <input type="text" id="email" placeholder="email"/>
-        <input type="password" id="password" placeholder="Hasło"/>
-        <button type="button">Zaloguj</button>
+    <form class="loginForm">
+        <input type="text" id="login" name="login" placeholder="Login"/>
+        <input type="password" id="haslo" name="haslo" placeholder="Hasło"/>
+        <button id="zaloguj" type="button">Zaloguj</button>
     </form>
 </body>
 </html>
