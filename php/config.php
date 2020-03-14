@@ -8,7 +8,6 @@ $dbPass = 'Kappa123';
 
    try{
       $db = new PDO($server, $dbUser, $dbPass);
-      echo 'Połączenie nawiązane!';
    }catch(PDOException $e){
       echo $e;
       echo 'Połączenie nie mogło zostać utworzone.<br />';

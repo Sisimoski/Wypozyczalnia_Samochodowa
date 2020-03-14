@@ -6,11 +6,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="./js/register.js"></script>
     <title>Document</title>
 </head>
 <body>
     
-    <form action="PHP/userSignUp.php" method="POST">
+    <form class="signupForm" method="POST">
         <b><label>Rejestracja w serwisie Car4Rent</label></b>
         <div class="field">
             <label>Login:</label>
@@ -88,8 +90,9 @@
             <input type="text" name="nip">
         </div>   
         <div>
-        <input type="submit"name="zarejestruj" value="Utwórz konto">
+        <input id="zarejestruj" type="button" name="zarejestruj" value="Utwórz konto">
         </div>
     </form>
+    <div class="alert"></div>
 </body>
 </html>
