@@ -1,8 +1,8 @@
 <?php
 session_start();
-
-if(
-    !isset($_SESSION['']);
+if(isset($_SESSION['id'])){
+    header("Location: ../index.php");
+    }
 )
 
 
@@ -16,6 +16,9 @@ if(
     <title>Document</title>
 </head>
 <body>
-    
+    <form>
+        <input type="text" id="email" placeholder="email"/>
+        <input type="password" id="password" placeholder="Hasło"/>
+    </form>
 </body>
 </html>

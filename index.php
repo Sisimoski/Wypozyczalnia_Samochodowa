@@ -21,7 +21,7 @@ session_start();
                 <li><a href="#">Kontakt</a></li>
             </ul>
         </nav>
-        <a class="cta" href="#"><button>Zaloguj się</button></a>
+        <a class="cta" href="login.php"><button>Zaloguj się</button></a>
         <a class="cta" href="#"><button>Zarejestruj się</button></a>
     </header>
 </body>
