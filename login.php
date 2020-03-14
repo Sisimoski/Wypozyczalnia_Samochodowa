@@ -3,12 +3,10 @@ session_start();
 if(isset($_SESSION['id'])){
     header("Location: ../index.php");
     }
-)
 
 
 ?>
 
-!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -19,6 +17,7 @@ if(isset($_SESSION['id'])){
     <form>
         <input type="text" id="email" placeholder="email"/>
         <input type="password" id="password" placeholder="Hasło"/>
+        <button type="button">Zaloguj</button>
     </form>
 </body>
 </html>
