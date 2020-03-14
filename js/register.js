@@ -1,10 +1,16 @@
 $(document).ready(function() { 
 
 
-    var data = $(".signupForm").serialize();
-    var request;
+    
+    
+    
 
     $("#zarejestruj").click(function() {
+
+        var data = $(".signupForm").serialize();
+        console.log(data);
+        var request;
+
         request = $.ajax({
             url: "./php/userSignup.php",
             data: data,
