@@ -24,5 +24,6 @@ session_start();
         <a class="cta" href="#"><button>Zaloguj się</button></a>
         <a class="cta" href="#"><button>Zarejestruj się</button></a>
     </header>
+    xdxdxd
 </body>
 </html>
