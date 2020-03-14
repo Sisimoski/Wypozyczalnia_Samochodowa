@@ -28,6 +28,14 @@
         </div>
         <b><label>Dane kontaktowe:</label></b>
         <div class="field">
+            <label>Imie</label>
+            <input type="text" name="imie">
+        </div>
+        <div class="field">
+            <label>Nazwisko</label>
+            <input type="text" name="nazwisko">
+        </div>
+        <div class="field">
             <label>Nr komórkowy</label>
             <input type="text" name="nrKom">
         </div>

@@ -1,10 +1,5 @@
 $(document).ready(function() { 
 
-
-    
-    
-    
-
     $("#zarejestruj").click(function() {
 
         var data = $(".signupForm").serialize();
