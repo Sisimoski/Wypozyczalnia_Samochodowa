@@ -26,7 +26,7 @@ session_start();
         <?php
             if(!isset($_SESSION['id'])){
             echo "<a class='cta' href='login.php'><button>Zaloguj się</button></a>";
-            echo "<a class='cta' href='#'><button>Zarejestruj się</button></a>" ;
+            echo "<a class='cta' href='register.php'><button>Zarejestruj się</button></a>" ;
             }
             else{
                 if($_SESSION['rodzaj_klienta'] == 1){

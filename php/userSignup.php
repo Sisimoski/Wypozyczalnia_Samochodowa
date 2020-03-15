@@ -27,7 +27,7 @@
         $sth->execute();
         $result = $sth->fetch(PDO::FETCH_ASSOC);
         if($result){
-            die("Istnieje") ;
+            die("Podany Użytkownik już istnieje") ;
         }
 
         if( isset($_POST['czyFirma']) ) {
@@ -97,6 +97,8 @@
         $sth ->bindValue(':idAdres',$idAdres,PDO::PARAM_INT);
         $sth ->bindValue(':rodzajKlienta',$czyFirma,PDO::PARAM_INT);
         $sth->execute();
+
+        echo "Zarejestrowano Użytkownika";
         
         
 ?>

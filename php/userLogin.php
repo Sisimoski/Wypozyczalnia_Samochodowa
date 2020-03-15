@@ -16,7 +16,7 @@
             $_SESSION['login'] = $result['login'];
             $_SESSION['rodzaj_klienta'] = $result['rodzaj_klienta'];
             $_SESSION['aktywacja'] = $result['aktywacja'];
-            echo "Zalogowano";
+            echo "Zalogowano Użytkownika";
         }
         else{       
                 echo "Podano niepoprawne hasło";
