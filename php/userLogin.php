@@ -4,11 +4,11 @@
     $login = trim($_POST['login']);
     $haslo = trim($_POST['haslo']);
     
+    
     $sth = $db->prepare('SELECT idKlient, login, haslo,rodzaj_klienta,aktywacja FROM Klient WHERE login = :login limit 1');
     $sth -> bindValue(':login',$login,PDO::PARAM_STR);
     $sth -> execute();
     $result = $sth->fetch(PDO::FETCH_ASSOC);
-    
     if($result){
         if( $result["haslo"] == md5($haslo)){
             session_start();

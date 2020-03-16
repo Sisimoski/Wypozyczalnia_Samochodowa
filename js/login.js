@@ -1,3 +1,7 @@
+function przekierowanie(){
+    window.location.replace("../index.php");
+}
+
 $(document).ready(function() { 
 
     $("#zaloguj").click(function() {
@@ -23,7 +27,7 @@ $(document).ready(function() {
                 $(".alert").addClass("alert-success");
                 $(".alert-success").html(response);
                 $(".alert-success").fadeOut(3000);
-                setTimeout(function(){ window.location.replace("../index.php");; }, 1500);
+                setTimeout(przekierowanie(), 1500);  
                 
             }
             else{
@@ -39,4 +43,6 @@ $(document).ready(function() {
             $(".alert-danger").fadeOut(5000);            
         });
     });
+    
 });
+

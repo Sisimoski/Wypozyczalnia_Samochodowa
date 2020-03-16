@@ -1,8 +1,8 @@
 <?php
+    //Usuwanie sesji użytkownika
     session_start();
     session_destroy();
-    header("Location: ../index.php");
-    echo "Wylogowano"
+    echo "Wylogowano";
 
 
 
