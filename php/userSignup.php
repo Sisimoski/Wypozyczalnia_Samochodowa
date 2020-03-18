@@ -26,7 +26,7 @@
         $sth->execute();
         $result = $sth->fetch(PDO::FETCH_ASSOC);
         if($result){
-            die("Istnieje") ;
+            die("Podany Użytkownik już istnieje") ;
         }
 
         if( isset($_POST['czyFirma']) ) {
