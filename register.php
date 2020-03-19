@@ -36,7 +36,7 @@
                     </div>
                     <div class="form-group">
                         <small id="passwordHelpBlock" class="form-text text-muted">
-                            Twoje hasło musi mieć 8-20 znaków, zawierać litery and cyfry, i nie może zawierać spacji, specjalnych znaków lub emoji.
+                            Twoje hasło musi mieć 8-20 znaków, zzawierać litery and cyfry, i nie może zawierać spacji, specjalnych znaków lub emoji.
                         </small>
                     </div>
                     <div class="form-row">
