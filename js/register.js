@@ -69,7 +69,7 @@ $(document).ready(function() {
     $('#nazwisko').blur(function(){
         var input = $(this);  
         var nazwisko = input.val()  
-        var onlyLetters = new RegExp("^[a-zA-Z\s]+$");  
+        var onlyLetters = /^[\s\p{L}]+$/u;
         
         if(onlyLetters.test(nazwisko)) { 
             input.removeClass("invalid").addClass("valid");
@@ -85,7 +85,7 @@ $(document).ready(function() {
     $('#nrKom').blur(function(){
         var input = $(this);  
         var nrKom= input.val()  
-        var onlyNumbers = new RegExp("^[0-9]{9}");  
+        var onlyNumbers =/^\d{9}$/;
         
         if(onlyNumbers.test(nrKom)) { 
             input.removeClass("invalid").addClass("valid");
@@ -101,7 +101,7 @@ $(document).ready(function() {
     $('#nrTel').blur(function(){
         var input = $(this);  
         var nrTel= input.val()  
-        var onlyNumbers = new RegExp("^[0-9]{9}");  
+        var onlyNumbers = /^\d{9}$/;  
         
         if(onlyNumbers.test(nrTel) || nrTel.length==0) { 
             input.removeClass("invalid").addClass("valid");
@@ -117,7 +117,7 @@ $(document).ready(function() {
     $('#fax').blur(function(){
         var input = $(this);  
         var fax= input.val()  
-        var onlyNumbers = new RegExp("^[0-9]{9}");  
+        var onlyNumbers = /^\d{9}$/;  
         
         if(onlyNumbers.test(fax) || fax.length==0) { 
             input.removeClass("invalid").addClass("valid");
@@ -165,7 +165,7 @@ $(document).ready(function() {
     $('#miejscowosc').blur(function(){
         var input = $(this);  
         var miejscowosc = input.val()  
-        var onlyLetters = new RegExp("^[a-zA-Z\s]+$");  
+        var onlyLetters = /^[\s\p{L}]+$/u;
         
         if(onlyLetters.test(miejscowosc)) { 
             input.removeClass("invalid").addClass("valid");
@@ -195,7 +195,7 @@ $(document).ready(function() {
     $('#ulica').blur(function(){
         var input = $(this);  
         var miejscowosc = input.val()  
-        var onlyLetters = new RegExp("^[a-zA-Z\s]+$");  
+        var onlyLetters = /^[\s\p{L}]+$/u;;  
         
         if(onlyLetters.test(miejscowosc)) { 
             input.removeClass("invalid").addClass("valid");
@@ -260,7 +260,7 @@ $(document).ready(function() {
 
         if(nazwaFirmy>0) { 
             input.removeClass("invalid").addClass("valid");
-            input.next('.komunikat').text("Wprowadzono poprawne dane");    
+            input.next('.komunikat').html('&#10004;'); 
         }
         else{
             input.removeClass("valid").addClass("invalid");
@@ -276,7 +276,7 @@ $(document).ready(function() {
         
         if(onlyDigits.test(regon)) { 
             input.removeClass("invalid").addClass("valid");
-            input.next('.komunikat').text("Wprowadzono poprawne dane");    
+            input.next('.komunikat').html('&#10004;'); 
         }
         else{
             input.removeClass("valid").addClass("invalid");
@@ -291,7 +291,7 @@ $(document).ready(function() {
         
         if(onlyDigits.test(nip)) { 
             input.removeClass("invalid").addClass("valid");
-            input.next('.komunikat').text("Wprowadzono poprawne dane");    
+            input.next('.komunikat').html('&#10004;');    
         }
         else{
             input.removeClass("valid").addClass("invalid");
