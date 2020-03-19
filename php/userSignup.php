@@ -113,5 +113,5 @@
         $sth ->bindValue(':rodzajKlienta',$czyFirma,PDO::PARAM_INT);
         $sth->execute();
         
-        
+        echo "Zarejestrowano Użytkownika"
 ?>

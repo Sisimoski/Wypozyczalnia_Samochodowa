@@ -378,25 +378,6 @@ $(document).ready(function() {
 
 
     $("#zarejestruj").click(function() {
-        var login = $('#login');
-        var haslo1 = $('#haslo1');
-        var haslo2 = $('#haslo2');
-        var imie= $('#imie');
-        var nazwisko = $('#nazwisko');
-        var nrKom= $('#nrKom');
-        var nrTel = $('#nrTel');
-        var fax = $('#fax');
-        var email= $('#email');
-        var stronaInterentowa = $('#stronaInternetowa');
-        var miejscowosc = $('#miejscowosc');
-        var kodPocztowy= $('#kodPocztowy');
-        var ulica = $('#ulica');
-        var nr_domu = $('#nr_domu');
-        var nazwaFirmy= $('#nazwaFirmy');
-        var regon = $('#regon');
-        var nip = $('#nip');
-
-
         $(".alert-success").html("");
         $(".alert-error").html("");
         $(".alert").removeClass("alert-success");
@@ -406,12 +387,8 @@ $(document).ready(function() {
 
         var data = $(".signupForm").serialize();
         var request;
-
-        if(login.hasClass('valid') && haslo1.hasClass('valid') && haslo2.hasClass('valid') && 
-        imie.hasClass('valid') && nazwisko.hasClass('valid') && nrKom.hasClass('valid') && nrTel.hasClass('valid') && 
-        fax.hasClass('valid') && email.hasClass('valid') && stronaInterentowa.hasClass('valid') && miejscowosc.hasClass('valid') && 
-        kodPocztowy.hasClass('valid') && ulica.hasClass('valid') && 
-        nr_domu.hasClass('valid') && nazwaFirmy.hasClass('valid') &&  regon.hasClass('valid') && nip.hasClass('valid')){
+        var validated=validate();
+        if(validated==true){
         request = $.ajax({
             url: "./php/userSignup.php",
             data: data,
@@ -446,6 +423,37 @@ $(document).ready(function() {
     }
         
     });
-    
-
 });
+    
+function validate(){
+    var login = $('#login');
+    var haslo1 = $('#haslo1');
+    var haslo2 = $('#haslo2');
+    var imie= $('#imie');
+    var nazwisko = $('#nazwisko');
+    var nrKom= $('#nrKom');
+    var nrTel = $('#nrTel');
+    var fax = $('#fax');
+    var email= $('#email');
+    var stronaInterentowa = $('#stronaInternetowa');
+    var miejscowosc = $('#miejscowosc');
+    var kodPocztowy= $('#kodPocztowy');
+    var ulica = $('#ulica');
+    var nr_domu = $('#nr_domu');
+    var nazwaFirmy= $('#nazwaFirmy');
+    var regon = $('#regon');
+    var nip = $('#nip');
+
+
+    if(login.hasClass('valid') && haslo1.hasClass('valid') && haslo2.hasClass('valid') && 
+        imie.hasClass('valid') && nazwisko.hasClass('valid') && nrKom.hasClass('valid') && nrTel.hasClass('valid') && 
+        fax.hasClass('valid') && email.hasClass('valid') && stronaInterentowa.hasClass('valid') && miejscowosc.hasClass('valid') && 
+        kodPocztowy.hasClass('valid') && ulica.hasClass('valid') && 
+        nr_domu.hasClass('valid') && nazwaFirmy.hasClass('valid') &&  regon.hasClass('valid') && nip.hasClass('valid'))
+    {
+        return true;
+    }
+    else{
+        return false;
+    }
+}
