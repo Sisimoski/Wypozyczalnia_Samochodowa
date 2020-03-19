@@ -2,7 +2,7 @@
     require_once("config.php");
     
     $login = trim($_POST['login']);
-    $haslo = trim($_POST['haslo']);
+    $haslo = trim($_POST['password']);
     
     
     $sth = $db->prepare('SELECT idKlient, login, haslo,rodzaj_klienta,aktywacja FROM Klient WHERE login = :login limit 1');
