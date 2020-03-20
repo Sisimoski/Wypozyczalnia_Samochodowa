@@ -17,7 +17,7 @@
     <div class="row">
         <div class="col-lg-6 p-0">
             <a href="index.php"><img src="images/Car4You-line-logo.png" class="m-5" alt="Car4You Logo" style="width: 200px;"></a>
-            <img src="../images/register-women1-background.jpg" class="img-fluid d-none d-lg-block" alt="women-standing-background">
+            <img src="images/register-women1-background.jpg" class="img-fluid d-none d-lg-block" alt="women-standing-background">
             <!-- <a href="https://www.freepik.com/free-photos-vectors/background">Background vector created by katemangostar - www.freepik.com</a> -->
         </div>
         <div class="col-md p-5 text-light" style="background-color: #BACC60;">
@@ -52,7 +52,7 @@
                     </div>
                     <div class="form-group">
                         <small id="passwordHelpBlock" class="form-text text-muted">
-                            Twoje hasło musi mieć 8-20 znaków, zzawierać litery and cyfry, i nie może zawierać spacji, specjalnych znaków lub emoji.
+                            Twoje hasło musi mieć 8-20 znaków, zawierać litery i cyfry, nie może zawierać spacji, specjalnych znaków lub emoji.
                         </small>
                     </div>
                     <div class="form-row">
