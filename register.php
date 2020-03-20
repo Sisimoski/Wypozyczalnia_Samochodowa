@@ -23,6 +23,10 @@
             <div>
                 <h1>Jesteś nowy? Zarejestruj się już teraz.</h1>
                 <form>
+                <div class="form-group">
+                        <label for="inputUsername1">Nazwa użytkownika</label>
+                        <input type="text" class="form-control" id="inputUsername1" placeholder="Wprowadź nazwę użytkownika">
+                      </div>
                     <div class="form-group">
                         <label for="inputEmail1">Email</label>
                         <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Wprowadź adres e-mail">
