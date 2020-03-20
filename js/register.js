@@ -13,11 +13,12 @@ $(document).ready(function() {
         var login_length = input.val().length;
         if(login_length >= 3 && login_length <= 15){ 
             input.removeClass("invalid").addClass("valid");
-            input.addClass("border border-success");     
+            input.removeClass("border border-danger").addClass("border border-success");    
+            input.next('.komunikat').text("");	           	
         }
         else{   
             input.removeClass("valid").addClass("invalid");
-            input.addClass("border border-danger");
+            input.removeClass("border border-success").addClass("border border-danger");
             input.next('.komunikat').text("Nazwa musi mieć więcej niż 3 i mniej niż 15 znaków!");		
 		}
     });
@@ -29,11 +30,12 @@ $(document).ready(function() {
                
         if( passwordReg.test(login)) {    
             input.removeClass("invalid").addClass("valid"); 
-            input.addClass("border border-success");               
+            input.removeClass("border border-danger").addClass("border border-success");    
+            input.next('.komunikat').text("");	               
         }
         else{   
             input.removeClass("valid").addClass("invalid");
-            input.addClass("border border-danger");
+            input.removeClass("border border-success").addClass("border border-danger");
             input.next('.komunikat').text("Wprowadź kombiancje co najmniej 8 cyfr, małych liter, dużych liter i znaków (takich jak !@#$%^&*)");	
         }
    
@@ -44,11 +46,12 @@ $(document).ready(function() {
         
         if($("#haslo1").val() == $('#haslo2').val()) {
             input.removeClass("invalid").addClass("valid"); 
-            input.addClass("border border-success");   
+            input.removeClass("border border-danger").addClass("border border-success");    
+            input.next('.komunikat').text("");	   
         }
         else{
             input.removeClass("valid").addClass("invalid");
-            input.addClass("border border-danger");
+            input.removeClass("border border-success").addClass("border border-danger");
             input.next('.komunikat').text("Podane hasła nie zgadzają się.");	
         }
   
@@ -60,11 +63,12 @@ $(document).ready(function() {
         
         if(onlyLetters.test(imie)) { 
             input.removeClass("invalid").addClass("valid");
-            input.addClass("border border-success");   
+            input.removeClass("border border-danger").addClass("border border-success");    
+            input.next('.komunikat').text("");	   
         }
         else{
             input.removeClass("valid").addClass("invalid");
-            input.addClass("border border-danger");
+            input.removeClass("border border-success").addClass("border border-danger");
             input.next('.komunikat').text("Użyj kombinacji liter");	
         }
   
@@ -77,11 +81,12 @@ $(document).ready(function() {
         
         if(onlyLetters.test(nazwisko)) { 
             input.removeClass("invalid").addClass("valid"); 
-            input.addClass("border border-success");   
+            input.removeClass("border border-danger").addClass("border border-success");    
+            input.next('.komunikat').text("");	   
         }
         else{
             input.removeClass("valid").addClass("invalid");
-            input.addClass("border border-danger");
+            input.removeClass("border border-success").addClass("border border-danger");
             input.next('.komunikat').text("Użyj kombinacji liter");	
         }
   
@@ -94,11 +99,12 @@ $(document).ready(function() {
         
         if(onlyNumbers.test(nrKom)) { 
             input.removeClass("invalid").addClass("valid");
-            input.addClass("border border-success");   
+            input.removeClass("border border-danger").addClass("border border-success");    
+            input.next('.komunikat').text("");	   
         }
         else{
             input.removeClass("valid").addClass("invalid");
-            input.addClass("border border-danger");
+            input.removeClass("border border-success").addClass("border border-danger");
             input.next('.komunikat').text("Użyj kombinacji 9 liczb");	
         }
   
@@ -111,11 +117,12 @@ $(document).ready(function() {
         
         if(onlyNumbers.test(nrTel) || nrTel.length==0) { 
             input.removeClass("invalid").addClass("valid"); 
-            input.addClass("border border-success");   
+            input.removeClass("border border-danger").addClass("border border-success");    
+            input.next('.komunikat').text("");	   
         }
         else{
             input.removeClass("valid").addClass("invalid");
-            input.addClass("border border-danger");
+            input.removeClass("border border-success").addClass("border border-danger");
             input.next('.komunikat').text("Użyj kombinacji 9 liczb");	
         }
   
@@ -128,11 +135,12 @@ $(document).ready(function() {
         
         if(onlyNumbers.test(fax) || fax.length==0) { 
             input.removeClass("invalid").addClass("valid");
-            input.addClass("border border-success");   
+            input.removeClass("border border-danger").addClass("border border-success");    
+            input.next('.komunikat').text("");	   
         }
         else{
             input.removeClass("valid").addClass("invalid");
-            input.addClass("border border-danger");
+            input.removeClass("border border-success").addClass("border border-danger");
             input.next('.komunikat').text("Użyj kombinacji 9 liczb");	
         }
   
@@ -145,11 +153,12 @@ $(document).ready(function() {
         
         if(emailRegex.test(email)) { 
             input.removeClass("invalid").addClass("valid");
-            input.addClass("border border-success");   
+            input.removeClass("border border-danger").addClass("border border-success");    
+            input.next('.komunikat').text("");	   
         }
         else{
             input.removeClass("valid").addClass("invalid");
-            input.addClass("border border-danger");
+            input.removeClass("border border-success").addClass("border border-danger");
             input.next('.komunikat').text("Podano nieprawidłowy adres mailowy");	
         }
   
@@ -163,11 +172,12 @@ $(document).ready(function() {
         
         if(wwwRegex.test(www) || www==0) { 
             input.removeClass("invalid").addClass("valid"); 
-            input.addClass("border border-success");   
+            input.removeClass("border border-danger").addClass("border border-success");    
+            input.next('.komunikat').text("");	   
         }
         else{
             input.removeClass("valid").addClass("invalid");
-            input.addClass("border border-danger");
+            input.removeClass("border border-success").addClass("border border-danger");
             input.next('.komunikat').text("Podano nieprawidłowy adres strony internetowej");	
         }
     });
@@ -179,11 +189,12 @@ $(document).ready(function() {
         
         if(onlyLetters.test(miejscowosc)) { 
             input.removeClass("invalid").addClass("valid");  
-            input.addClass("border border-success");   
+            input.removeClass("border border-danger").addClass("border border-success");    
+            input.next('.komunikat').text("");	   
         }
         else{
             input.removeClass("valid").addClass("invalid");
-            input.addClass("border border-danger");
+            input.removeClass("border border-success").addClass("border border-danger");
             input.next('.komunikat').text("Użyj kombinacji liter");	
         }  
     });
@@ -195,11 +206,12 @@ $(document).ready(function() {
         
         if(kodPocztowyRegEx.test(kodPocztowy)) { 
             input.removeClass("invalid").addClass("valid"); 
-            input.addClass("border border-success");    
+            input.removeClass("border border-danger").addClass("border border-success");    
+            input.next('.komunikat').text("");	    
         }
         else{
             input.removeClass("valid").addClass("invalid");
-            input.addClass("border border-danger");
+            input.removeClass("border border-success").addClass("border border-danger");
             input.next('.komunikat').text("Użyj kombinacji xx-xxx");	
         }  
     });
@@ -211,11 +223,12 @@ $(document).ready(function() {
         
         if(onlyLetters.test(miejscowosc)) { 
             input.removeClass("invalid").addClass("valid");  
-            input.addClass("border border-success");   
+            input.removeClass("border border-danger").addClass("border border-success");    
+            input.next('.komunikat').text("");	   
         }
         else{
             input.removeClass("valid").addClass("invalid");
-            input.addClass("border border-danger");
+            input.removeClass("border border-success").addClass("border border-danger");
             input.next('.komunikat').text("Użyj kombinacji liter");	
         }  
     });
@@ -227,11 +240,12 @@ $(document).ready(function() {
         
         if(onlyLetters.test(nr_domu)) { 
             input.removeClass("invalid").addClass("valid");
-            input.addClass("border border-success");    
+            input.removeClass("border border-danger").addClass("border border-success");    
+            input.next('.komunikat').text("");	    
         }
         else{
             input.removeClass("valid").addClass("invalid");
-            input.addClass("border border-danger");
+            input.removeClass("border border-success").addClass("border border-danger");
             input.next('.komunikat').text("Niepoprawane dane");	
         }  
     });
@@ -274,11 +288,12 @@ $(document).ready(function() {
 
         if(nazwaFirmy>0) { 
             input.removeClass("invalid").addClass("valid");
-            input.addClass("border border-success");   
+            input.removeClass("border border-danger").addClass("border border-success");    
+            input.next('.komunikat').text("");	   
         }
         else{
             input.removeClass("valid").addClass("invalid");
-            input.addClass("border border-danger");
+            input.removeClass("border border-success").addClass("border border-danger");
             input.next('.komunikat').text("Pole jest puste");	
 
         }
@@ -291,11 +306,12 @@ $(document).ready(function() {
         
         if(onlyDigits.test(regon)) { 
             input.removeClass("invalid").addClass("valid");
-            input.addClass("border border-success");   
+            input.removeClass("border border-danger").addClass("border border-success");    
+            input.next('.komunikat').text("");	   
         }
         else{
             input.removeClass("valid").addClass("invalid");
-            input.addClass("border border-danger");
+            input.removeClass("border border-success").addClass("border border-danger");
             input.next('.komunikat').text("Niepoprawane dane");	
         }  
     });
@@ -307,11 +323,12 @@ $(document).ready(function() {
         
         if(onlyDigits.test(nip)) { 
             input.removeClass("invalid").addClass("valid");
-            input.addClass("border border-success");   
+            input.removeClass("border border-danger").addClass("border border-success");    
+            input.next('.komunikat').text("");	   
         }
         else{
             input.removeClass("valid").addClass("invalid");
-            input.addClass("border border-danger");
+            input.removeClass("border border-success").addClass("border border-danger");
             input.next('.komunikat').text("Niepoprawane dane");	
         }  
     });
@@ -416,27 +433,27 @@ $(document).ready(function() {
             if(response == "Zarejestrowano Użytkownika"){
                 $(".alert").addClass("alert-success");
                 $(".alert-success").html(response);
-                $(".alert-success").fadeOut(3000);
+                $(".alert-success").fadeOut(3000);                
                 $(".alert").text("Pomyślnie zarejestrowano");	
                 setTimeout(function(){ window.location.replace("../index.php");; }, 1500);
                 
             }
             else{
                 $(".alert").addClass("alert-danger");
-                $(".alert-danger").html(response);
-                $(".alert-danger").fadeOut(5000); 
+                $(".alert-danger").html(response);               
             }
         });
 
         request.fail(function(response) {
             $(".alert").addClass("alert-danger");
-            $(".alert-danger").html(response);
-            $(".alert-danger").fadeOut(5000);            
+            $(".alert-danger").html(response);          
         });
     }
     else
     {
-        $(".alert").text("Wprowadź poprawane dane");	
+        $(".alert").addClass("alert-danger");
+        $(".alert-success").fadeOut(3000);
+        $(".alert").text("Wprowadź poprawne dane");	
     }
         
     });

@@ -13,7 +13,11 @@
     <script src="./js/register.js"></script>
 </head>
 <body>
+  
     <div class="container-fluid">
+      <div class="fixed-top justify-content-center d-flex">
+        <div class="alert ml-5 mr-5 mt-3 text-center" style="width:40%"></div>
+      </div>
     <div class="row">
         <div class="col-lg-6 p-0">
             <a href="index.php"><img src="images/Car4You-line-logo.png" class="m-5" alt="Car4You Logo" style="width: 200px;"></a>
@@ -23,62 +27,62 @@
         <div class="col-md p-5 text-light" style="background-color: #BACC60;">
             <div>
                 <h1>Jesteś nowy? Zarejestruj się już teraz.</h1>
-                <form>
+                <form class="signupForm" method="POST">
                     <div class="form-group">
                         <label for="inputEmail1">Login</label>
-                        <input data-toggle="tooltip" data-placement="top" title="Tooltip on top" class="form-control" id="login" placeholder="Wprowadź login">
+                        <input data-toggle="tooltip" data-placement="top" title="Tooltip on top" class="form-control" id="login" placeholder="Wprowadź login" name="login">
                         <div class="komunikat"> </div>
                       </div>
                       <div class="form-group">
                         <label for="inputEmail1">Email</label>
-                        <input type="email" class="form-control" id="email" placeholder="Wprowadź adres e-mail">
+                        <input type="email" class="form-control" id="email" placeholder="Wprowadź adres e-mail" name="email">
                         <div class="komunikat"> </div>
                       </div>
                     <div class="form-row">
                       <div class="form-group col-md-6">
                         <label for="inputPassword1">Hasło</label>
-                        <input type="password" class="form-control" aria-describedby="passwordHelpBlock" id="haslo1" placeholder="Wprowadź hasło">
+                        <input type="password" class="form-control" aria-describedby="passwordHelpBlock" id="haslo1" placeholder="Wprowadź hasło" name="haslo1">
                         <div class="komunikat"> </div>
                       </div>
                       <div class="form-group col-md-6">
                         <label for="inputPassword4">Powtórz hasło</label>
-                        <input type="password" class="form-control" aria-describedby="passwordHelpBlock" id="haslo2">
+                        <input type="password" class="form-control" aria-describedby="passwordHelpBlock" id="haslo2" name="haslo2">
                         <div class="komunikat"> </div>
                       </div>
                     </div>
                     <div class="form-row">
                         <div class="form-group col-md-6">
                             <label for="inputFirstName1">Imię</label>
-                            <input type="text" class="form-control" id="imie" placeholder="Imię">
+                            <input type="text" class="form-control" id="imie" placeholder="Imię" name="imie">
                             <div class="komunikat"> </div>
                         </div>
                         <div class="form-group col-md-6">
                             <label for="inputLastName1">Nazwisko</label>
-                            <input type="text" class="form-control" id="nazwisko" placeholder="Nazwisko">
+                            <input type="text" class="form-control" id="nazwisko" placeholder="Nazwisko" name="nazwisko">
                             <div class="komunikat"> </div>
                         </div>
                     </div>
                     <div class="form-row">
                         <div class="form-group col-md-10">
                         <label for="inputAddress1">Ulica</label>
-                        <input type="text" class="form-control" id="ulica" placeholder="ul. Przykładowa">
+                        <input type="text" class="form-control" id="ulica" placeholder="ul. Przykładowa" name="ulica">
                         <div class="komunikat"> </div>
                         </div>
                         <div class="form-group col-md-2">
                             <label for="inputAddress2">Numer domu</label>
-                            <input type="text" class="form-control" id="nr_domu">
+                            <input type="text" class="form-control" id="nr_domu" name="nr_domu">
                             <div class="komunikat"> </div>
                         </div>
                     </div>
                     <div class="form-row">
                       <div class="form-group col-md-6">
                         <label for="inputCity">Miasto</label>
-                        <input type="text" class="form-control" id="miejscowosc">
+                        <input type="text" class="form-control" id="miejscowosc" name="miejscowosc" >
                         <div class="komunikat"> </div>
                       </div>
                       <div class="form-group col-md-4">
                         <label for="inputState">Województwo</label>
-                        <select id="inputState" class="form-control">
+                        <select id="inputState" class="form-control" name="wojewodztwo">
                           <option value="dolnośląskie">dolnośląskie</option>
                           <option value="kujawsko-pomorskie">kujawsko-pomorskie</option>
                           <option value="lubelskie">lubelskie</option>
@@ -99,72 +103,73 @@
                       </div>
                       <div class="form-group col-md-2">
                         <label for="inputZip">Kod poczt.</label>
-                        <input type="text" class="form-control" id="kodPocztowy">
+                        <input type="text" class="form-control" id="kodPocztowy" name="kodPocztowy" >
                         <div class="komunikat"> </div>
                       </div>
                     </div>
                     <div class="form-row">
                         <div class="form-group col-md-6">
                             <label for="inputPhoneNumber">Numer komórkowy</label>
-                            <input type="tel" class="form-control" id="nrKom" placeholder="123456789">
+                            <input type="tel" class="form-control" id="nrKom" placeholder="123456789" name="nrKom">
                             <div class="komunikat"> </div>
                         </div>
                         <div class="form-group col-md-3">
                             <label for="inputTelNumber">Numer telefonu</label>
-                            <input type="tel" class="form-control" id="nrTel" placeholder="123456789">
+                            <input type="tel" class="form-control" id="nrTel" placeholder="123456789" name="nrTel">
                             <div class="komunikat"> </div>
                         </div>
                         <div class="form-group col-md-3">
                             <label for="inputFax">Fax</label>
-                            <input type="tel" class="form-control" id="fax" placeholder="123456789">
+                            <input type="tel" class="form-control" id="fax" placeholder="123456789" name="fax">
                             <div class="komunikat"> </div>
                         </div>
                     </div>
                     <div class="form-group">
                         <label for="inputWebsite">Strona internetowa</label>
-                        <input type="url" class="form-control" id="stronaInternetowa" placeholder="http://www.mojastrona.pl/">
+                        <input type="url" class="form-control" id="stronaInternetowa" placeholder="http://www.mojastrona.pl/" name="stronaInternetowa">
                         <div class="komunikat"> </div>
                     </div>
                     <div class="form-group">
                         <label for="inputAdditionalInformation">Dodatkowe informacje</label>
-                        <textarea class="form-control" id="dodatkoweInformacje" rows="3"></textarea>
+                        <textarea class="form-control" id="dodatkoweInformacje" rows="3" name="dodatkoweInformacje"></textarea>
                         <div class="komunikat"> </div>
                     </div>
                     <h5><label>Dane firmowe:</label></h5>
                     <div class="form-group">
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="czyFirma">
+                            <input class="form-check-input" type="checkbox"  id="czyFirma">
                             <label class="form-check-label" for="checkCompany">Zaznacz, jeśli jesteś klientem firmowym</label>
                             <div class="komunikat"> </div>
                         </div>
                     </div>
                     <div class="form-group">
                         <label for="inputCompanyName">Nazwa firmy</label>
-                        <input type="text" class="form-control" id="nazwaFirmy" placeholder="Nazwa firmy">
+                        <input type="text" class="form-control" id="nazwaFirmy" placeholder="Nazwa firmy" name="nazwaFirmy">
                         <div class="komunikat"> </div>
                     </div>
                     <div class="form-row">
                         <div class="form-group col-md-6">
                             <label for="inputRegon">Regon</label>
-                            <input type="text" class="form-control" id="regon" disabled="disabled">
+                            <input type="text" class="form-control" id="regon" disabled="disabled" name="regon">
                             <div class="komunikat"> </div>
                         </div>
                         <div class="form-group col-md-6">
                             <label for="inputNIP">NIP</label>
-                            <input type="text" class="form-control" id="nip" disabled="disabled">
+                            <input type="text" class="form-control" id="nip" disabled="disabled" name="nip">
                             <div class="komunikat"> </div>
                         </div>
                     </div>
                     <div class="form-group">
                         <div class="form-check">
-                          <input class="form-check-input" type="checkbox" value="" id="invalidCheck2" required>
+                          <input class="form-check-input" type="checkbox" value="" id="invalidCheck2" required >
                           <label class="form-check-label" for="invalidCheck2">
                             Zgadzam się z regulaminem
                           </label>
                         </div>
                       </div>
-                    <button type="submit" class="btn btn-primary">Zarejestruj się</button>
+                    <input id="zarejestruj" type="button" name="zarejestruj" value="Utwórz konto">
                   </form>
+                 
             </div>
         </div>
     </div>

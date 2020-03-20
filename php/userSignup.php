@@ -43,14 +43,15 @@
             $czyFirma=1;
         }
 
-        $sth = $db->prepare('SELECT login,email FROM Klient INNER JOIN Kontakt_Klient ON Kontakt_Klient.idKontakt=Klient.idKontakt WHERE login = :login OR email = :email limit 1');
+        $sth = $db->prepare('SELECT login FROM Klient INNER JOIN Kontakt_Klient ON Kontakt_Klient.idKontakt=Klient.idKontakt WHERE login = :login OR email = :email limit 1');
         $sth ->bindValue(':login',$login,PDO::PARAM_STR);
         $sth ->bindValue(':email',$email,PDO::PARAM_STR);
         $sth->execute();
         $result = $sth->fetch(PDO::FETCH_ASSOC);
         if($result){
-            die("Podany Użytkownik już istnieje") ;
+            die("Podany login lub e-mail już istnieje") ;
         }
+
 
       //  Dodawanie adresu klienta
         $sth = $db->prepare('INSERT INTO Adres(miejscowosc,wojewodztwo,kod_pocztowy,ulica,nr_domu,dodatkowe_informacje) 
