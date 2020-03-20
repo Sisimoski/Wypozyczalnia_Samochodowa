@@ -29,8 +29,8 @@
                 <h1>Witaj ponownie! Zaloguj się.</h1>
                 <form class="loginForm">
                     <div class="form-group">
-                      <label for="login">Login</label>
-                      <input type="text" name="login" class="form-control" id="login" aria-describedby="loginHelp" placeholder="Login">
+                      <label for="login">Login/Email</label>
+                      <input type="text" name="login" class="form-control" id="login" aria-describedby="loginHelp" placeholder="Login/Email">
                     </div>
                     <div class="form-group">
                       <label for="password">Hasło</label>
