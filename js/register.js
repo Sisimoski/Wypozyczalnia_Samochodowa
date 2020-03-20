@@ -6,25 +6,21 @@ $(document).ready(function() {
     $("#nip").addClass("valid");
     $("#stronaInternnetowa").addClass("valid");
    
-    jQuery.validator.addMethod('username_rule', function (value, element) {
-		if (/^[a-zA-Z0-9_-]+$/.test(value)) {
-			return true;
-		} else {
-			return false;
-		};
+ 
 
-    // $('#login').blur(function(){
-    //     var input = $(this);       
-    //     var login_length = input.val().length;
-    //     if(login_length >= 3 && login_length <= 15){ 
-    //         input.removeClass("invalid").addClass("valid");
-    //         input.next('.komunikat').html('&#10004;');      
-    //     }
-    //     else{   
-    //         input.removeClass("valid").addClass("invalid");
-    //         input.next('.komunikat').text("Nazwa musi mieć więcej niż 3 i mniej niż 15 znaków!");		
-	// 	}
-    // });
+    $('#login').blur(function(){
+        var input = $(this);       
+        var login_length = input.val().length;
+        if(login_length >= 3 && login_length <= 15){ 
+            input.removeClass("invalid").addClass("valid");
+            input.addClass("border border-success");     
+        }
+        else{   
+            input.removeClass("valid").addClass("invalid");
+            input.addClass("border border-danger");
+            input.next('.komunikat').text("Nazwa musi mieć więcej niż 3 i mniej niż 15 znaków!");		
+		}
+    });
 
     $('#haslo1').blur(function(){
         var input = $(this);     
@@ -32,11 +28,12 @@ $(document).ready(function() {
         var passwordReg = new RegExp("^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,})");
                
         if( passwordReg.test(login)) {    
-            input.removeClass("invalid").addClass("valid");
-            input.next('.komunikat').html('&#10004;');                 
+            input.removeClass("invalid").addClass("valid"); 
+            input.addClass("border border-success");               
         }
         else{   
             input.removeClass("valid").addClass("invalid");
+            input.addClass("border border-danger");
             input.next('.komunikat').text("Wprowadź kombiancje co najmniej 8 cyfr, małych liter, dużych liter i znaków (takich jak !@#$%^&*)");	
         }
    
@@ -46,11 +43,12 @@ $(document).ready(function() {
         var input = $(this);     
         
         if($("#haslo1").val() == $('#haslo2').val()) {
-            input.removeClass("invalid").addClass("valid");
-            input.next('.komunikat').html('&#10004;');     
+            input.removeClass("invalid").addClass("valid"); 
+            input.addClass("border border-success");   
         }
         else{
             input.removeClass("valid").addClass("invalid");
+            input.addClass("border border-danger");
             input.next('.komunikat').text("Podane hasła nie zgadzają się.");	
         }
   
@@ -62,10 +60,11 @@ $(document).ready(function() {
         
         if(onlyLetters.test(imie)) { 
             input.removeClass("invalid").addClass("valid");
-            input.next('.komunikat').html('&#10004;');    
+            input.addClass("border border-success");   
         }
         else{
             input.removeClass("valid").addClass("invalid");
+            input.addClass("border border-danger");
             input.next('.komunikat').text("Użyj kombinacji liter");	
         }
   
@@ -77,11 +76,12 @@ $(document).ready(function() {
         var onlyLetters = /^[\s\p{L}]+$/u;
         
         if(onlyLetters.test(nazwisko)) { 
-            input.removeClass("invalid").addClass("valid");
-            input.next('.komunikat').html('&#10004;');     
+            input.removeClass("invalid").addClass("valid"); 
+            input.addClass("border border-success");   
         }
         else{
             input.removeClass("valid").addClass("invalid");
+            input.addClass("border border-danger");
             input.next('.komunikat').text("Użyj kombinacji liter");	
         }
   
@@ -94,10 +94,11 @@ $(document).ready(function() {
         
         if(onlyNumbers.test(nrKom)) { 
             input.removeClass("invalid").addClass("valid");
-            input.next('.komunikat').html('&#10004;');    
+            input.addClass("border border-success");   
         }
         else{
             input.removeClass("valid").addClass("invalid");
+            input.addClass("border border-danger");
             input.next('.komunikat').text("Użyj kombinacji 9 liczb");	
         }
   
@@ -109,11 +110,12 @@ $(document).ready(function() {
         var onlyNumbers = /^\d{9}$/;  
         
         if(onlyNumbers.test(nrTel) || nrTel.length==0) { 
-            input.removeClass("invalid").addClass("valid");
-            input.next('.komunikat').html('&#10004;');     
+            input.removeClass("invalid").addClass("valid"); 
+            input.addClass("border border-success");   
         }
         else{
             input.removeClass("valid").addClass("invalid");
+            input.addClass("border border-danger");
             input.next('.komunikat').text("Użyj kombinacji 9 liczb");	
         }
   
@@ -126,10 +128,11 @@ $(document).ready(function() {
         
         if(onlyNumbers.test(fax) || fax.length==0) { 
             input.removeClass("invalid").addClass("valid");
-            input.next('.komunikat').html('&#10004;');    
+            input.addClass("border border-success");   
         }
         else{
             input.removeClass("valid").addClass("invalid");
+            input.addClass("border border-danger");
             input.next('.komunikat').text("Użyj kombinacji 9 liczb");	
         }
   
@@ -142,10 +145,11 @@ $(document).ready(function() {
         
         if(emailRegex.test(email)) { 
             input.removeClass("invalid").addClass("valid");
-            input.next('.komunikat').html('&#10004;');    
+            input.addClass("border border-success");   
         }
         else{
             input.removeClass("valid").addClass("invalid");
+            input.addClass("border border-danger");
             input.next('.komunikat').text("Podano nieprawidłowy adres mailowy");	
         }
   
@@ -158,11 +162,12 @@ $(document).ready(function() {
             "^(http:\/\/www.|https:\/\/www.|ftp:\/\/www.|www.){1}([0-9A-Za-z]+\.)");
         
         if(wwwRegex.test(www) || www==0) { 
-            input.removeClass("invalid").addClass("valid");
-            input.next('.komunikat').html('&#10004;');     
+            input.removeClass("invalid").addClass("valid"); 
+            input.addClass("border border-success");   
         }
         else{
             input.removeClass("valid").addClass("invalid");
+            input.addClass("border border-danger");
             input.next('.komunikat').text("Podano nieprawidłowy adres strony internetowej");	
         }
     });
@@ -173,11 +178,12 @@ $(document).ready(function() {
         var onlyLetters = /^[\s\p{L}]+$/u;
         
         if(onlyLetters.test(miejscowosc)) { 
-            input.removeClass("invalid").addClass("valid");
-            input.next('.komunikat').html('&#10004;');      
+            input.removeClass("invalid").addClass("valid");  
+            input.addClass("border border-success");   
         }
         else{
             input.removeClass("valid").addClass("invalid");
+            input.addClass("border border-danger");
             input.next('.komunikat').text("Użyj kombinacji liter");	
         }  
     });
@@ -188,11 +194,12 @@ $(document).ready(function() {
         var kodPocztowyRegEx = /\d{2}-\d{3}/;  
         
         if(kodPocztowyRegEx.test(kodPocztowy)) { 
-            input.removeClass("invalid").addClass("valid");
-            input.next('.komunikat').html('&#10004;');      
+            input.removeClass("invalid").addClass("valid"); 
+            input.addClass("border border-success");    
         }
         else{
             input.removeClass("valid").addClass("invalid");
+            input.addClass("border border-danger");
             input.next('.komunikat').text("Użyj kombinacji xx-xxx");	
         }  
     });
@@ -203,11 +210,12 @@ $(document).ready(function() {
         var onlyLetters = /^[\s\p{L}]+$/u;;  
         
         if(onlyLetters.test(miejscowosc)) { 
-            input.removeClass("invalid").addClass("valid");
-            input.next('.komunikat').html('&#10004;');      
+            input.removeClass("invalid").addClass("valid");  
+            input.addClass("border border-success");   
         }
         else{
             input.removeClass("valid").addClass("invalid");
+            input.addClass("border border-danger");
             input.next('.komunikat').text("Użyj kombinacji liter");	
         }  
     });
@@ -219,10 +227,11 @@ $(document).ready(function() {
         
         if(onlyLetters.test(nr_domu)) { 
             input.removeClass("invalid").addClass("valid");
-            input.next('.komunikat').html('&#10004;');     
+            input.addClass("border border-success");    
         }
         else{
             input.removeClass("valid").addClass("invalid");
+            input.addClass("border border-danger");
             input.next('.komunikat').text("Niepoprawane dane");	
         }  
     });
@@ -265,10 +274,11 @@ $(document).ready(function() {
 
         if(nazwaFirmy>0) { 
             input.removeClass("invalid").addClass("valid");
-            input.next('.komunikat').html('&#10004;'); 
+            input.addClass("border border-success");   
         }
         else{
             input.removeClass("valid").addClass("invalid");
+            input.addClass("border border-danger");
             input.next('.komunikat').text("Pole jest puste");	
 
         }
@@ -281,10 +291,11 @@ $(document).ready(function() {
         
         if(onlyDigits.test(regon)) { 
             input.removeClass("invalid").addClass("valid");
-            input.next('.komunikat').html('&#10004;'); 
+            input.addClass("border border-success");   
         }
         else{
             input.removeClass("valid").addClass("invalid");
+            input.addClass("border border-danger");
             input.next('.komunikat').text("Niepoprawane dane");	
         }  
     });
@@ -296,10 +307,11 @@ $(document).ready(function() {
         
         if(onlyDigits.test(nip)) { 
             input.removeClass("invalid").addClass("valid");
-            input.next('.komunikat').html('&#10004;');    
+            input.addClass("border border-success");   
         }
         else{
             input.removeClass("valid").addClass("invalid");
+            input.addClass("border border-danger");
             input.next('.komunikat').text("Niepoprawane dane");	
         }  
     });

@@ -24,66 +24,61 @@
             <div>
                 <h1>Jesteś nowy? Zarejestruj się już teraz.</h1>
                 <form>
-                <div class="form-group">
-                        <label for="inputUsername1">Nazwa użytkownika</label>
-                        <input type="text" class="form-control" id="inputUsername1" placeholder="Wprowadź nazwę użytkownika">
-                      </div>
                     <div class="form-group">
-                        <label for="inputEmail1">Email</label>
-                        <input class="form-control" id="login" placeholder="Wprowadź login">
-                        <span class="komunikat"></span>
+                        <label for="inputEmail1">Login</label>
+                        <input data-toggle="tooltip" data-placement="top" title="Tooltip on top" class="form-control" id="login" placeholder="Wprowadź login">
+                        <div class="komunikat"> </div>
                       </div>
                       <div class="form-group">
-                        <label for="inputEmail1">Login</label>
+                        <label for="inputEmail1">Email</label>
                         <input type="email" class="form-control" id="email" placeholder="Wprowadź adres e-mail">
-                        <span class="komunikat"></span>
+                        <div class="komunikat"> </div>
                       </div>
                     <div class="form-row">
                       <div class="form-group col-md-6">
                         <label for="inputPassword1">Hasło</label>
                         <input type="password" class="form-control" aria-describedby="passwordHelpBlock" id="haslo1" placeholder="Wprowadź hasło">
-                        <span class="komunikat"></span>
+                        <div class="komunikat"> </div>
                       </div>
                       <div class="form-group col-md-6">
                         <label for="inputPassword4">Powtórz hasło</label>
                         <input type="password" class="form-control" aria-describedby="passwordHelpBlock" id="haslo2">
-                        <span class="komunikat"></span>
+                        <div class="komunikat"> </div>
                       </div>
-                    </div>
-                    <div class="form-group">
-                        <small id="passwordHelpBlock" class="form-text text-muted">
-                            Twoje hasło musi mieć 8-20 znaków, zzawierać litery and cyfry, i nie może zawierać spacji, specjalnych znaków lub emoji.
-                        </small>
                     </div>
                     <div class="form-row">
                         <div class="form-group col-md-6">
                             <label for="inputFirstName1">Imię</label>
                             <input type="text" class="form-control" id="imie" placeholder="Imię">
+                            <div class="komunikat"> </div>
                         </div>
                         <div class="form-group col-md-6">
                             <label for="inputLastName1">Nazwisko</label>
                             <input type="text" class="form-control" id="nazwisko" placeholder="Nazwisko">
+                            <div class="komunikat"> </div>
                         </div>
                     </div>
                     <div class="form-row">
                         <div class="form-group col-md-10">
                         <label for="inputAddress1">Ulica</label>
                         <input type="text" class="form-control" id="ulica" placeholder="ul. Przykładowa">
+                        <div class="komunikat"> </div>
                         </div>
                         <div class="form-group col-md-2">
                             <label for="inputAddress2">Numer domu</label>
                             <input type="text" class="form-control" id="nr_domu">
+                            <div class="komunikat"> </div>
                         </div>
                     </div>
                     <div class="form-row">
                       <div class="form-group col-md-6">
                         <label for="inputCity">Miasto</label>
                         <input type="text" class="form-control" id="miejscowosc">
+                        <div class="komunikat"> </div>
                       </div>
                       <div class="form-group col-md-4">
                         <label for="inputState">Województwo</label>
                         <select id="inputState" class="form-control">
-                          <option selected>Wybierz...</option>
                           <option value="dolnośląskie">dolnośląskie</option>
                           <option value="kujawsko-pomorskie">kujawsko-pomorskie</option>
                           <option value="lubelskie">lubelskie</option>
@@ -105,49 +100,59 @@
                       <div class="form-group col-md-2">
                         <label for="inputZip">Kod poczt.</label>
                         <input type="text" class="form-control" id="kodPocztowy">
+                        <div class="komunikat"> </div>
                       </div>
                     </div>
                     <div class="form-row">
                         <div class="form-group col-md-6">
                             <label for="inputPhoneNumber">Numer komórkowy</label>
                             <input type="tel" class="form-control" id="nrKom" placeholder="123456789">
+                            <div class="komunikat"> </div>
                         </div>
                         <div class="form-group col-md-3">
                             <label for="inputTelNumber">Numer telefonu</label>
                             <input type="tel" class="form-control" id="nrTel" placeholder="123456789">
+                            <div class="komunikat"> </div>
                         </div>
                         <div class="form-group col-md-3">
                             <label for="inputFax">Fax</label>
                             <input type="tel" class="form-control" id="fax" placeholder="123456789">
+                            <div class="komunikat"> </div>
                         </div>
                     </div>
                     <div class="form-group">
                         <label for="inputWebsite">Strona internetowa</label>
                         <input type="url" class="form-control" id="stronaInternetowa" placeholder="http://www.mojastrona.pl/">
+                        <div class="komunikat"> </div>
                     </div>
                     <div class="form-group">
                         <label for="inputAdditionalInformation">Dodatkowe informacje</label>
                         <textarea class="form-control" id="dodatkoweInformacje" rows="3"></textarea>
+                        <div class="komunikat"> </div>
                     </div>
                     <h5><label>Dane firmowe:</label></h5>
                     <div class="form-group">
                         <div class="form-check">
                             <input class="form-check-input" type="checkbox" value="" id="czyFirma">
                             <label class="form-check-label" for="checkCompany">Zaznacz, jeśli jesteś klientem firmowym</label>
+                            <div class="komunikat"> </div>
                         </div>
                     </div>
                     <div class="form-group">
                         <label for="inputCompanyName">Nazwa firmy</label>
                         <input type="text" class="form-control" id="nazwaFirmy" placeholder="Nazwa firmy">
+                        <div class="komunikat"> </div>
                     </div>
                     <div class="form-row">
                         <div class="form-group col-md-6">
                             <label for="inputRegon">Regon</label>
                             <input type="text" class="form-control" id="regon" disabled="disabled">
+                            <div class="komunikat"> </div>
                         </div>
                         <div class="form-group col-md-6">
                             <label for="inputNIP">NIP</label>
                             <input type="text" class="form-control" id="nip" disabled="disabled">
+                            <div class="komunikat"> </div>
                         </div>
                     </div>
                     <div class="form-group">
