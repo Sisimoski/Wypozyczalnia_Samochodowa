@@ -1,19 +1,15 @@
-function przekierowanie(){
-    window.location.replace("../index.php");
-}
-
 $(document).ready(function() { 
 
     $("#zaloguj").click(function() {
-
+        event.preventDefault();
         $(".alert-success").html("");
         $(".alert-error").html("");
         $(".alert").removeClass("alert-success");
         $(".alert").removeClass("alert-danger");
         $(".alert").html('');
         $(".alert").fadeIn();
-
         var data = $(".loginForm").serialize();
+        console.log(data);
         var request;
 
         request = $.ajax({
@@ -27,20 +23,20 @@ $(document).ready(function() {
                 $(".alert").addClass("alert-success");
                 $(".alert-success").html(response);
                 $(".alert-success").fadeOut(3000);
-                setTimeout(przekierowanie(), 1500);  
+                setTimeout(function(){ window.location.replace("../index.php"); }, 2000); 
                 
             }
             else{
                 $(".alert").addClass("alert-danger");
                 $(".alert-danger").html(response);
-                $(".alert-danger").fadeOut(5000); 
+                $(".alert-danger").fadeOut(3000); 
             }
         });
 
         request.fail(function(response) {
             $(".alert").addClass("alert-danger");
             $(".alert-danger").html(response);
-            $(".alert-danger").fadeOut(5000);            
+            $(".alert-danger").fadeOut(3000);            
         });
     });
     

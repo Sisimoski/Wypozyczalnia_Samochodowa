@@ -15,7 +15,7 @@ session_start();
 </head>
 <body>
     <header>
-        <img class="logo" src="images/logo.svg" alt="Car4You Logo">
+        <img class="logo" src="../images/Car4You-line-logo.png" alt="Car4You Logo">
         <nav>
             <ul class="nav_links">
                 <li><a href="#">Strona domowa</a></li>
