@@ -17,13 +17,17 @@
     <div class="row">
         <div class="col-lg-6 p-0">
             <a href="index.php"><img src="images/Car4You-line-logo.png" class="m-5" alt="Car4You Logo" style="width: 200px;"></a>
-            <img src="../images/register-women1-background.eps" class="img-fluid d-none d-lg-block" alt="women-standing-background">
+            <img src="../images/register-women1-background.jpg" class="img-fluid d-none d-lg-block" alt="women-standing-background">
             <!-- <a href="https://www.freepik.com/free-photos-vectors/background">Background vector created by katemangostar - www.freepik.com</a> -->
         </div>
         <div class="col-md p-5 text-light" style="background-color: #BACC60;">
             <div>
                 <h1>Jesteś nowy? Zarejestruj się już teraz.</h1>
                 <form>
+                <div class="form-group">
+                        <label for="inputUsername1">Nazwa użytkownika</label>
+                        <input type="text" class="form-control" id="inputUsername1" placeholder="Wprowadź nazwę użytkownika">
+                      </div>
                     <div class="form-group">
                         <label for="inputEmail1">Email</label>
                         <input class="form-control" id="login" placeholder="Wprowadź login">
