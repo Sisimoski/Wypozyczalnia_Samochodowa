@@ -31,12 +31,12 @@
                     <div class="form-group">
                       <label for="login">Login/Email</label>
                       <input type="text" name="login" class="form-control" id="login" aria-describedby="loginHelp" placeholder="Login/Email">
-                      <span id="loginInfo" class="form-text">TEST</span>
+                      <span id="loginInfo" class="form-text font-weight-normal"></span>
                     </div>
                     <div class="form-group">
                       <label for="password">Hasło</label>
                       <input type="password" name="password" class="form-control" id="password" placeholder="Hasło">
-                      <span id="passwordInfo" class="form-text">TEST</span>
+                      <span id="passwordInfo" class="form-text font-weight-normal"></span>
                     </div>
                     <div class="form-group form-check custom-checkbox">
                       <input type="checkbox" name="rememberMe" class="custom-control-input" id="rememberMe">

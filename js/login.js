@@ -1,5 +1,32 @@
 $(document).ready(function() { 
 
+    $('#login').blur(function(){
+        if($('#login').val() == ""){
+            $('#loginInfo').addClass("text-danger");     
+            $('#loginInfo').html("Nie podano login/email.");
+        }
+        else{
+            $("#loginInfo").removeClass("text-danger");
+            $('#loginInfo').html("");
+        }
+
+    });
+
+    $('#password').blur(function(){
+        if($('#password').val() == ""){
+            $('#passwordInfo').addClass("text-danger");
+            $('#passwordInfo').html("Nie podano hasła.");
+        }
+        else{
+            $("#passwordInfo").removeClass("text-danger");
+            $('#passwordInfo').html("");
+        }
+    });
+
+
+
+
+
     $("#zaloguj").click(function() {
         event.preventDefault();
         $(".alert-success").html("");
@@ -41,4 +68,7 @@ $(document).ready(function() {
     });
     
 });
+
+
+
 
