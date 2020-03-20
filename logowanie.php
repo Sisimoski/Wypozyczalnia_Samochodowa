@@ -36,9 +36,9 @@
                       <label for="password">Hasło</label>
                       <input type="password" name="password" class="form-control" id="password" placeholder="Hasło">
                     </div>
-                    <div class="form-group form-check">
-                      <input type="checkbox" name="remember" class="form-check-input" id="rememberMe">
-                      <label class="form-check-label"  for="rememberMe">Zapamiętaj mnie</label>
+                    <div class="form-group form-check custom-checkbox">
+                      <input type="checkbox" name="rememberMe" class="custom-control-input" id="rememberMe">
+                      <label class="custom-control-label"  for="rememberMe">Zapamiętaj mnie</label>
                     </div>
                     <div class="form-row">
                       <div class="form-group col-xs-auto">
