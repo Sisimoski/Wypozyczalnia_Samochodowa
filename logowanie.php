@@ -29,16 +29,18 @@
                 <h1>Witaj ponownie! Zaloguj się.</h1>
                 <form class="loginForm">
                     <div class="form-group">
-                      <label for="login">Login</label>
-                      <input type="text" name="login" class="form-control" id="login" aria-describedby="loginHelp" placeholder="Login">
+                      <label for="login">Login/Email</label>
+                      <input type="text" name="login" class="form-control" id="login" aria-describedby="loginHelp" placeholder="Login/Email">
+                      <span id="loginInfo" class="form-text">TEST</span>
                     </div>
                     <div class="form-group">
                       <label for="password">Hasło</label>
                       <input type="password" name="password" class="form-control" id="password" placeholder="Hasło">
+                      <span id="passwordInfo" class="form-text">TEST</span>
                     </div>
-                    <div class="form-group form-check">
-                      <input type="checkbox" name="remember" class="form-check-input" id="rememberMe">
-                      <label class="form-check-label"  for="rememberMe">Zapamiętaj mnie</label>
+                    <div class="form-group form-check custom-checkbox">
+                      <input type="checkbox" name="rememberMe" class="custom-control-input" id="rememberMe">
+                      <label class="custom-control-label"  for="rememberMe">Zapamiętaj mnie</label>
                     </div>
                     <div class="form-row">
                       <div class="form-group col-xs-auto">
@@ -49,7 +51,7 @@
                       </div>
                     </div>
                     <div class="form-group">
-                      <label>Nie masz jeszcze konta? <a href="../register.php">Zarejestruj się teraz!</a></label>
+                      <label>Nie masz jeszcze konta? <a href="register.php">Zarejestruj się teraz!</a></label>
                     </div>
                   </form>
             </div>

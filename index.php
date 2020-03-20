@@ -25,7 +25,7 @@ session_start();
         </nav>
         <?php
             if(!isset($_SESSION['id'])){
-            echo "<a class='cta' href='login.php'><button>Zaloguj się</button></a>";
+            echo "<a class='cta' href='logowanie.php'><button>Zaloguj się</button></a>";
             echo "<a class='cta' href='register.php'><button>Zarejestruj się</button></a>" ;
             }
             else{
