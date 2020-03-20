@@ -49,7 +49,7 @@
                       </div>
                     </div>
                     <div class="form-group">
-                      <label>Nie masz jeszcze konta? <a href="../register.php">Zarejestruj się teraz!</a></label>
+                      <label>Nie masz jeszcze konta? <a href="register.php">Zarejestruj się teraz!</a></label>
                     </div>
                   </form>
             </div>
