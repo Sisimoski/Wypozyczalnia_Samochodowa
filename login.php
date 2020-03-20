@@ -21,7 +21,7 @@
     <div class="row">
         <div class="col-lg-6 p-0">
             <a href="index.php"><img src="images/Car4You-line-logo.png" class="m-5" alt="Car4You Logo" style="width: 200px;"></a>
-            <img src="images/register-man1-background.jpg" class="img-fluid d-none d-lg-block" alt="man-standing-background">
+            <img src="images/login-man1-background.jpg" class="img-fluid d-none d-lg-block" alt="man-standing-background">
             <!-- <a href="https://www.freepik.com/free-photos-vectors/background">Background vector created by katemangostar - www.freepik.com</a> -->
         </div>
         <div class="col-md p-5 text-light" style="background-color: #8AC2F6;">
