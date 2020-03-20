@@ -6,20 +6,25 @@ $(document).ready(function() {
     $("#nip").addClass("valid");
     $("#stronaInternnetowa").addClass("valid");
    
+    jQuery.validator.addMethod('username_rule', function (value, element) {
+		if (/^[a-zA-Z0-9_-]+$/.test(value)) {
+			return true;
+		} else {
+			return false;
+		};
 
-
-    $('#login').blur(function(){
-        var input = $(this);       
-        var login_length = input.val().length;
-        if(login_length >= 3 && login_length <= 15){ 
-            input.removeClass("invalid").addClass("valid");
-            input.next('.komunikat').html('&#10004;');      
-        }
-        else{   
-            input.removeClass("valid").addClass("invalid");
-            input.next('.komunikat').text("Nazwa musi mieć więcej niż 3 i mniej niż 15 znaków!");		
-		}
-    });
+    // $('#login').blur(function(){
+    //     var input = $(this);       
+    //     var login_length = input.val().length;
+    //     if(login_length >= 3 && login_length <= 15){ 
+    //         input.removeClass("invalid").addClass("valid");
+    //         input.next('.komunikat').html('&#10004;');      
+    //     }
+    //     else{   
+    //         input.removeClass("valid").addClass("invalid");
+    //         input.next('.komunikat').text("Nazwa musi mieć więcej niż 3 i mniej niż 15 znaków!");		
+	// 	}
+    // });
 
     $('#haslo1').blur(function(){
         var input = $(this);     
