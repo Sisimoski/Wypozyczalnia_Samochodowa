@@ -32,7 +32,7 @@ session_start();
                 if($_SESSION['rodzaj_klienta'] == 1){
                     echo "<a class='cta' href='./cpanel/index.php'><button>Panel Klienta</button></a>";
                 }
-                if($_SESSION['rodzaj_klienta'] == 2){
+                if($_SESSION['rodzaj_klienta'] == 3){
                     echo "<a class='cta' href='./apanel/index.php'><button>Panel Administratora</button></a>"; 
                 }
                 echo "<a class='cta'><button id='wyloguj'>Wyloguj</button></a>";
