@@ -40,6 +40,7 @@ $(document).ready(function() {
             $(".alert-error").html("");
             $(".alert").removeClass("alert-success");
             $(".alert").removeClass("alert-danger");
+            $(".alert").removeClass("alert-warning");
             $(".alert").html('');
             $(".alert").fadeIn();
             var data = $(".loginForm").serialize();
@@ -53,20 +54,29 @@ $(document).ready(function() {
             });
 
             request.done(function(response) {
-                if(response == "Zalogowano Użytkownika"){
-                    setTimeout(function(){ window.location.replace("../index.php"); }, 2000); 
-                    
-                }
-                else{
-                    if(response == "Brak Aktywacji"){
+                switch(response){
+                    case "Zalogowano Użytkownika":
+                        $(".alert").addClass("alert-success");
+                        $(".alert-success").html("Zalogowano Użytkownika");
+                        $(".alert").fadeOut(3000); 
+                        setTimeout(function(){ window.location.replace("../index.php"); }, 2000);
+                        break;
+                    case "Brak Aktywacji":
                         $(".alert").addClass("alert-warning");
-                        $(".alert-danger").html("Konto wymaga aktywacji");
-                        $(".alert-danger").fadeOut(3000); 
-                    }
-                    else{
-                        console.log("Nie zalogowano");
-                    }
-                }
+                        $(".alert-warning").html("Konto wymaga aktywacji");
+                        $(".alert").fadeOut(3000);
+                        break;
+                    case "Niepoprawny login":
+                        $(".alert").addClass("alert-danger");
+                        $(".alert-danger").html("Niepoprawny email/login");
+                        $(".alert").fadeOut(3000);
+                        break;
+                    case "Niepoprawne Haslo": 
+                        $(".alert").addClass("alert-danger");
+                        $(".alert-danger").html("Niepoprawne hasło");
+                        $(".alert").fadeOut(3000);
+                        break;
+                }                    
             });
 
             request.fail(function(response) {

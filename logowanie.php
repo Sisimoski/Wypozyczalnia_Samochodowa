@@ -14,8 +14,8 @@
 </head>
 <body>
     <div class="container-fluid">
-      <div class="fixed-top">
-        <div class="alert ml-5 mr-5 mt-2"></div>
+      <div class="fixed-top justify-content-center d-flex">
+      <div class="alert ml-5 mr-5 mt-3 text-center" style="width:40%"></div>
       </div>
       
     <div class="row">

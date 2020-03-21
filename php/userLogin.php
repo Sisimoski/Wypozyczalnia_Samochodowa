@@ -10,36 +10,43 @@
     $sth -> execute();
     $result = $sth->fetch(PDO::FETCH_ASSOC);
     if($result){
-        if( $result["haslo"] == md5($haslo)){
-            session_start();
-            $_SESSION['id'] = $result['idKlient'];
-            $_SESSION['login'] = $result['login'];
-            $_SESSION['rodzaj_klienta'] = $result['rodzaj_klienta'];
-            $_SESSION['aktywacja'] = $result['aktywacja'];
-			
-			if(!empty($_POST["remember"])) {
-                setcookie ("id",$result['idKlient'],time()+ (10 * 365 * 24 * 60 * 60));
-                setcookie ("login",$result['login'],time()+ (10 * 365 * 24 * 60 * 60));
-                setcookie ("rodzaj_klienta",$result['rodzaj_klienta'],time()+ (10 * 365 * 24 * 60 * 60));
-                setcookie ("aktywacja",$result['aktywacja'],time()+ (10 * 365 * 24 * 60 * 60));
-			} else {
-				if(isset($_COOKIE["login"])) {
-                    setcookie ("id","");
-                    setcookie ("login","");
-                    setcookie ("rodzaj_klienta","");
-                    setcookie ("aktywacja","");
-				}
-			}
+        
+            if( $result["haslo"] == md5($haslo)){
+                if($result["aktywacja"] == 1){
+                    session_start();
+                    $_SESSION['id'] = $result['idKlient'];
+                    $_SESSION['login'] = $result['login'];
+                    $_SESSION['rodzaj_klienta'] = $result['rodzaj_klienta'];
+                    $_SESSION['aktywacja'] = $result['aktywacja'];
+                    
+                    if(!empty($_POST["remember"])) {
+                        setcookie ("id",$result['idKlient'],time()+ (10 * 365 * 24 * 60 * 60));
+                        setcookie ("login",$result['login'],time()+ (10 * 365 * 24 * 60 * 60));
+                        setcookie ("rodzaj_klienta",$result['rodzaj_klienta'],time()+ (10 * 365 * 24 * 60 * 60));
+                        setcookie ("aktywacja",$result['aktywacja'],time()+ (10 * 365 * 24 * 60 * 60));
+                    } else {
+                        if(isset($_COOKIE["login"])) {
+                            setcookie ("id","");
+                            setcookie ("login","");
+                            setcookie ("rodzaj_klienta","");
+                            setcookie ("aktywacja","");
+                        }
+                    }
+                echo "Zalogowano Użytkownika";
 
-
-            echo "Zalogowano Użytkownika";
-        }
-        else{       
-                echo "Podano niepoprawne hasło";
-        }
+            }
+            else
+            {
+                echo "Brak Aktywacji";
+            }
+            }else
+            {       
+                echo "Niepoprawne Haslo";
+            }
+       
     }
     else{
-            echo "Podano niepoprawny Login";
+            echo "Niepoprawny login";
         }
 
     }
