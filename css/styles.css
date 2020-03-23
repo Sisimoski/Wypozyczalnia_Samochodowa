@@ -1,8 +1,7 @@
-/* 
-FONT CUSTOM SETTINGS
-*/
-
-p, div {
+/*--------------------------------------------------------------
+# Font settings
+--------------------------------------------------------------*/
+body {
   font-family: 'Lato', sans-serif;
 }
 
@@ -10,14 +9,21 @@ h1, h2, h3, h4, h5, h6 {
   font-family: 'Quicksand', sans-serif;
 }
 
-.komunikat{
+/*--------------------------------------------------------------
+# Alert settings
+--------------------------------------------------------------*/
+.komunikat {
   color: red;
   height: 20px;
   font-family: 'Quicksand', sans-serif;
   font-size: smaller;
   padding-left: 10px;
 }
-.alert{
+
+.alert {
   margin-top: 5px;
 }
 
+/*--------------------------------------------------------------
+# Hero Section
+--------------------------------------------------------------*/
