@@ -12,9 +12,14 @@ session_start();
     <title>Car4You - wypożyczalnia samochodów</title>
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
+    <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        
+    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Lato|Montserrat|Nunito|Quicksand&display=swap" rel="stylesheet">
+
+    <!-- CSS Files -->
     <link rel="stylesheet" type="text/css" href="css/styles.css">
     <link rel="stylesheet" type="text/css" href="css/foot.css">
 
@@ -33,7 +38,7 @@ session_start();
 
 <body>
     <nav class="navbar navbar-expand-lg sticky-top navbar-dark bg-dark" style="box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);">
-        <a class="navbar-brand" href="index.php">
+        <a class="navbar-brand ml-2" href="index.php">
             <img src="images/Car4You-line-logo.png" height="50" alt="car4you logo">
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
@@ -55,10 +60,8 @@ session_start();
                     <a class="nav-link" href="#">Kontakt</a>
                 </li>
             </ul>
-            <div class="btn-group" role="group" aria-label="Login/Register Buttons">
-                <button type="button" class="btn btn-outline-primary mr-sm-2">Zaloguj się</button>
-                <button type="button" class="btn btn-primary my-2 my-sm-0">Zarejestruj się</button>
-            </div>
+            <button type="button" class="btn btn-outline-primary mr-sm-2">Zaloguj się</button>
+            <button type="button" class="btn btn-primary my-2 my-sm-0">Zarejestruj się</button>
         </div>
     </nav>
 
