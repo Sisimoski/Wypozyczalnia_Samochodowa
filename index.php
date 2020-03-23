@@ -37,7 +37,8 @@ session_start();
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg sticky-top navbar-dark bg-dark" style="box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);">
+   <section id="header">
+    <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark">
         <a class="navbar-brand ml-2" href="index.php">
             <img src="images/Car4You-line-logo.png" height="50" alt="car4you logo">
         </a>
@@ -64,22 +65,21 @@ session_start();
             <button type="button" class="btn btn-primary my-2 my-sm-0">Zarejestruj się</button>
         </div>
     </nav>
+   </section>
 
-    
-
-    <div class="container-fluid" style="background-color: #e0f0ff;">
-      <div class="row d-flex align-items-center">
-        <div class="col-lg-6 pt-5 pt-lg-0 order-2 order-lg-1 text-dark">
-          <h1>Car4You</h1>
-          <h2>Oto najlepsza wypożyczalnia w Twojej okolicy.</h2>
-          <a href="#about" class="btn-get-started scrollto">Get Started</a>
+    <section id="hero" class="d-flex align-items-center">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 pt-5 pt-lg-0 order-2 order-lg-1 text-dark">
+                    <h1>Car4You</h1>
+                    <h2>Oto najlepsza wypożyczalnia w Twojej okolicy.</h2>
+                </div>
+                <div class="col-lg-6 order-1 order-lg-1 hero-img">
+                <!-- <img src="images/login-man1-background.jpg" class="img-fluid" alt=""> -->
+                </div>
+            </div>
         </div>
-        <div class="col-lg-6 order-1 order-lg-1 hero-img">
-          <!-- <img src="images/login-man1-background.jpg" class="img-fluid" alt=""> -->
-        </div>
-      </div>
-    </div>
-
+    </section>
 
     <footer id="footer" class="footer-1">
 <div class="main-footer widgets-dark typo-light">
@@ -126,7 +126,7 @@ session_start();
 <div class="widget no-box">
 <h5 class="widget-title">Zaczynajmy<span></span></h5>
 <p>Uzyskaj dostęp do panelu klienta.</p>
-<a class="btn" href="https://www.facebook.com/photo.php?fbid=685853034794823&set=t.100002488671949&type=3" target="_blank">Zarejestruj się</a>
+<a class="btn btn-primary" href="https://www.facebook.com/photo.php?fbid=685853034794823&set=t.100002488671949&type=3" target="_blank">Zarejestruj się</a>
 </div>
 </div>
 
