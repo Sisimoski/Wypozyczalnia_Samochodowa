@@ -42,6 +42,7 @@ $(document).ready(function() {
             $(".alert").removeClass("alert-danger");
             $(".alert").removeClass("alert-warning");
             $(".alert").html('');
+            $(".alert").stop().fadeOut();
             $(".alert").fadeIn();
             var data = $(".loginForm").serialize();
             console.log(data);
