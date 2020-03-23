@@ -11,7 +11,7 @@ session_start();
 
     <title>Car4You - wypożyczalnia samochodów</title>
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    
+
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Lato|Montserrat|Nunito|Quicksand&display=swap" rel="stylesheet">
@@ -32,7 +32,7 @@ session_start();
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg sticky-top navbar-light bg-light">
+    <nav class="navbar navbar-expand-lg sticky-top navbar-dark bg-dark" style="box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);">
         <a class="navbar-brand" href="index.php">
             <img src="images/Car4You-line-logo.png" height="50" alt="car4you logo">
         </a>
@@ -64,15 +64,15 @@ session_start();
 
     
 
-    <div class="container-fluid" style="background-color: #89CFF0;">
+    <div class="container-fluid" style="background-color: #e0f0ff;">
       <div class="row d-flex align-items-center">
-        <div class="col-lg-6 pt-5 pt-lg-0 order-2 order-lg-1 text-light">
+        <div class="col-lg-6 pt-5 pt-lg-0 order-2 order-lg-1 text-dark">
           <h1>Car4You</h1>
           <h2>Oto najlepsza wypożyczalnia w Twojej okolicy.</h2>
           <a href="#about" class="btn-get-started scrollto">Get Started</a>
         </div>
         <div class="col-lg-6 order-1 order-lg-1 hero-img">
-          <img src="images/login-man1-background.jpg" class="img-fluid" alt="">
+          <!-- <img src="images/login-man1-background.jpg" class="img-fluid" alt=""> -->
         </div>
       </div>
     </div>
