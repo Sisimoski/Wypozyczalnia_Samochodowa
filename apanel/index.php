@@ -2,8 +2,14 @@
 
 <?php
     session_start();
-    if(isset($_SESSION["rodzaj_klienta"])){
-        if($_SESSION["rodzaj_klienta"] != 3){
+
+    //STATIC DATA ONLY FOR DEVELOPERS PURPOSE - DELETE BEFORE PUBLISHING 
+    $_SESSION["rodzaj_pracownika"] = 2;
+
+    //END
+
+    if(isset($_SESSION["rodzaj_pracownika"])){
+        if($_SESSION["rodzaj_pracownika"] != 2){
             header("Location: ../index.php");
         }
     }
@@ -20,10 +26,48 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">  
+    <script src="js/index.js"></script>
     <title>Panel Administratora</title>
 </head>
 <body>
     <div class=container-fluid>
+    <form class="rejestracjaPracownika">
+        <input type="text" name="imie" id="imie" placeholder="Imie"/>
+        <input type="text" name="nazwisko" id="nazwisko" placeholder="Nazwisko"/>
+        <input type="text" name="city" id="city" placeholder="Miasto"/>
+        <div class="form-group col-md-4">
+            <label for="inputState">Województwo</label>
+            <select id="inputState" class="form-control" name="wojewodztwo">
+              <option value="dolnośląskie">dolnośląskie</option>
+              <option value="kujawsko-pomorskie">kujawsko-pomorskie</option>
+              <option value="lubelskie">lubelskie</option>
+              <option value="lubuskie">lubuskie</option>
+              <option value="łódzkie">łódzkie</option>
+              <option value="małopolskie">małopolskie</option>
+              <option value="mazowieckie">mazowieckie</option>
+              <option value="opolskie">opolskie</option>
+              <option value="podkarpackie">podkarpackie</option>
+              <option value="podlaskie">podlaskie</option>
+              <option value="pomorskie">pomorskie</option>
+              <option value="śląskie">śląskie</option>
+              <option value="świętokrzyskie">świętokrzyskie</option>
+              <option value="warmińsko-mazurskie">warmińsko-mazurskie</option>
+              <option value="wielkopolskie">wielkopolskie</option>
+              <option value="zachodniopomorskie">zachodniopomorskie</option>
+            </select>
+          </div>
+        <input type="text" name="ulica" id="ulica" placeholder="Ulica"/>
+        <input type="text" name="nr_domu" id="numerDomu" placeholder="Numer Domu"/>
+        <input type="text" name="kod" id="kod" placeholder="Kod Pocztowy"/>
+        <input type="text" name="dodatkowe" id="dodatkowe" placeholder="Dodatkowe Informacje o Pracowniku"/>
+        <input type="text" name="linkedin" id="linkedin" placeholder="Linkedin"/>
+        <input type="text" name="email" id="email" placeholder="email"/>
+        <input type="text" name="email_pracowniczy" id="email_pracowniczy" placeholder="Email Pracowniczy"/>
+        <input type="text" name="telefon" id="telefon" placeholder="telefon"/>
+        <input type="text" name="fax" id="fax" placeholder="Fax"/>
+        <input type="text" name="www" id="www" placeholder="Adres www" />
+        <button type="button" id="zarejestrujPracownika">Zarejestruj</button>
+    </form>
        <!-- 
            
            Jak będziecie robić to polecam
@@ -41,6 +85,9 @@
 
 
         -->
+
+
+
 
 
     </div>  
