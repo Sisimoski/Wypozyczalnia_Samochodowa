@@ -189,7 +189,7 @@
                 <div class="komunikat"> </div>
               </div>
               <div class="form-group col-xs-auto">
-                <button class="btn btn-primary" id="zarejestruj" type="button">Utwórz Konto</button>
+                <button class="btn btn-primary" id="zarejestruj" type="submit">Utwórz Konto</button>
               </div>
             </div>
           </form>

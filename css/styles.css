@@ -36,8 +36,9 @@ h1, h2, h3, h4, h5, h6 {
 #hero {
   width: 100%;
   height: 70vh;
-  background: #aad6ff;
-  /* border-bottom: 2px solid #4a89c5; */
+  /* background: #aad6ff; */
+  background: linear-gradient(233deg, rgba(222, 240, 255, 1) 0%, rgba(173, 217, 255, 1) 75%, rgba(185, 212, 255, 1) 100%);
+  border-bottom: 2px solid #4a89c5;
   margin: 72px 0 0 0;
   box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
   text-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
@@ -48,4 +49,56 @@ h1, h2, h3, h4, h5, h6 {
   font-size: 48px;
   font-weight: 700;
   line-height: 56px;
+}
+
+/*--------------------------------------------------------------
+# Highlights Section
+--------------------------------------------------------------*/
+#highlight {
+  padding: 60px 0;
+}
+
+.highlight-bg {
+  background-color: #29486d;
+}
+
+.highlight-title {
+  text-align: center;
+  padding-bottom: 30px;
+}
+
+.highlight-title h2 {
+  margin-bottom: 15px;
+  text-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
+}
+
+.highlight .icon-box {
+  padding: 30px;
+  position: relative;
+  overflow: hidden;
+  margin: 0 0 40px 0;
+  background: #fff;
+  box-shadow: 0 10px 29px 0 rgba(68, 88, 144, 0.1);
+  border-radius: 15px;
+  text-align: center;
+  text-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
+}
+
+.highlight .icon i {
+  font-size: 48px;
+  line-height: 1;
+  margin-bottom: 15px;
+  color: #4d8eef;
+}
+
+.highlight .title {
+  font-weight: 700;
+  margin-bottom: 15px;
+  font-size: 18px;
+}
+
+.highlight .description {
+  font-size: 15px;
+  line-height: 28px;
+  margin-bottom: 0;
 }
