@@ -16,4 +16,19 @@ $(document).ready(function() {
                        
         });
     });
+
+    $("#zaloguj").click(function() {
+            window.location.replace("../logowanie.php");
+    });
+
+    $("#panelKlienta").click(function() {
+        window.location.replace("../cpanel/index.php");
+    });
+    $("#zarejestruj").click(function() {
+        window.location.replace("../register.php");
+    });
+    $("#panelPracownika").click(function() {
+        window.location.replace("../wpanel/index.php");
+    });
+    
 });

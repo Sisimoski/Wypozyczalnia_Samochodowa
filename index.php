@@ -62,8 +62,26 @@ session_start();
                     <a class="nav-link" href="#">Kontakt</a>
                 </li>
             </ul>
-            <button type="button" class="btn btn-outline-primary mr-sm-2">Zaloguj się</button>
-            <button type="button" class="btn btn-primary my-2 my-sm-0">Zarejestruj się</button>
+            <?php
+            if(!isset($_SESSION['id'])){
+            echo "<button id='zaloguj' type='button' class='btn btn-outline-primary mr-sm-2'>Zaloguj się</button>";
+            echo "<button id='zarejestruj' type='button' class='btn btn-primary my-2 my-sm-0'>Zarejestruj się</button>" ;
+            }
+            else{
+                if(isset($_SESSION['rodzaj_klienta'])){
+                    if($_SESSION['rodzaj_klienta'] == 1 || $_SESSION['rodzaj_klienta'] == 2){
+                        echo "<button id='panelKlienta' type='button' class='btn btn-primary my-2 my-sm-0'>Panel Klienta</button>";
+                    }
+                        
+                }
+                if(isset($_SESSION['rodzaj_pracownika'])){
+                    if($_SESSION['rodzaj_pracownika'] == 1 || $_SESSION['rodzaj_pracownika'] == 2){
+                        echo "<button id='panelPracownika' type='button' class='btn btn-primary my-2 my-sm-0'>Moje Konto</button>"; 
+                    }
+                }
+                echo "<button type='button' id='wyloguj' class='btn btn-primary my-2 my-sm-0'>Wyloguj</button>";
+            }
+        ?>
         </div>
     </nav>
    </section>
@@ -165,26 +183,7 @@ session_start();
 </footer>
 
 
-    <?php
-            if(!isset($_SESSION['id'])){
-            echo "<a class='cta' href='logowanie.php'><button>Zaloguj się</button></a>";
-            echo "<a class='cta' href='register.php'><button>Zarejestruj się</button></a>" ;
-            }
-            else{
-                if(isset($_SESSION['rodzaj_klienta'])){
-                    if($_SESSION['rodzaj_klienta'] == 1 || $_SESSION['rodzaj_klienta'] == 2){
-                        echo "<a class='cta' href='./cpanel/index.php'><button>Panel Klienta</button></a>";
-                    }
-                        
-                }
-                if(isset($_SESSION['rodzaj_pracownika'])){
-                    if($_SESSION['rodzaj_pracownika'] == 1 || $_SESSION['rodzaj_pracownika'] == 2){
-                        echo "<a class='cta' href='./apanel/index.php'><button>Panel Zarządzania</button></a>"; 
-                    }
-                }
-                echo "<a class='cta'><button id='wyloguj'>Wyloguj</button></a>";
-            }
-        ?>
+    
 </body>
 
 </html>
