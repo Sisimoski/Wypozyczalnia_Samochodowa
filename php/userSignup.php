@@ -43,7 +43,7 @@
             $czyFirma=1;
         }
 
-        $sth = $db->prepare('SELECT login FROM Klient INNER JOIN Kontakt_Klient ON Kontakt_Klient.idKontakt=Klient.idKontakt WHERE login = :login OR email = :email limit 1');
+        $sth = $db->prepare('SELECT login, email FROM klienci INNER JOIN kontakty_klienci ON kontakty_klienci.id_kontakt=klienci.id_klient WHERE login = :login OR email = :email limit 1');
         $sth ->bindValue(':login',$login,PDO::PARAM_STR);
         $sth ->bindValue(':email',$email,PDO::PARAM_STR);
         $sth->execute();
@@ -54,7 +54,7 @@
 
 
       //  Dodawanie adresu klienta
-        $sth = $db->prepare('INSERT INTO Adres(miejscowosc,wojewodztwo,kod_pocztowy,ulica,nr_domu,dodatkowe_informacje) 
+        $sth = $db->prepare('INSERT INTO adres(miejscowosc,wojewodztwo,kod_pocztowy,ulica,nr_domu,dodatkowe_informacje) 
         VALUE (:miejscowosc,:wojewodztwo,:kod_pocztowy,:ulica,:nr_domu,:dodatkowe_informacje)');
         $sth ->bindValue(':miejscowosc',$miejscowosc,PDO::PARAM_STR);
         $sth ->bindValue(':wojewodztwo',$wojewodztwo,PDO::PARAM_STR);
@@ -64,7 +64,7 @@
         $sth ->bindValue(':dodatkowe_informacje',$dodatkoweInformacje,PDO::PARAM_STR);
         $sth->execute();
 
-        $sth = $db->prepare('SELECT idAdres FROM Adres WHERE miejscowosc = :miejscowosc AND wojewodztwo = :wojewodztwo AND kod_pocztowy = :kod_pocztowy AND ulica = :ulica AND 
+        $sth = $db->prepare('SELECT id_adres FROM adres WHERE miejscowosc = :miejscowosc AND wojewodztwo = :wojewodztwo AND kod_pocztowy = :kod_pocztowy AND ulica = :ulica AND 
         nr_domu = :nr_domu and dodatkowe_informacje = :dodatkowe_informacje limit 1');
         $sth ->bindValue(':miejscowosc',$miejscowosc,PDO::PARAM_STR);
         $sth ->bindValue(':wojewodztwo',$wojewodztwo,PDO::PARAM_STR);
@@ -74,10 +74,10 @@
         $sth ->bindValue(':dodatkowe_informacje',$dodatkoweInformacje,PDO::PARAM_STR);
         $sth->execute();
         $result = $sth->fetch(PDO::FETCH_ASSOC);
-        $idAdres = $result['idAdres'];
+        $idAdres = $result['id_adres'];
 
         // Dodawanie danych kontaktowych klienta
-        $sth = $db->prepare('INSERT INTO Kontakt_Klient(nr_kom,nr_tel,fax,email,www) 
+        $sth = $db->prepare('INSERT INTO kontakty_klienci(nr_kom,nr_tel,fax,email,www) 
         VALUE (:nrKom,:nrTel,:fax,:email,:www)');
         $sth ->bindValue(':nrKom',$nrKom,PDO::PARAM_STR);
         $sth ->bindValue(':nrTel',$nrTel,PDO::PARAM_STR);
@@ -86,7 +86,7 @@
         $sth ->bindValue(':www',$stronaInternetowa,PDO::PARAM_STR);
         $sth->execute();
 
-        $sth = $db->prepare('SELECT idKontakt FROM Kontakt_Klient WHERE nr_kom = :nr_kom AND nr_tel = :nr_tel AND fax = :fax
+        $sth = $db->prepare('SELECT id_kontakt FROM kontakty_klienci WHERE nr_kom = :nr_kom AND nr_tel = :nr_tel AND fax = :fax
         AND email = :email AND www = :www limit 1');
         $sth ->bindValue(':nr_kom',$nrKom,PDO::PARAM_STR);
         $sth ->bindValue(':nr_tel',$nrTel,PDO::PARAM_STR);
@@ -95,11 +95,11 @@
         $sth ->bindValue(':www',$stronaInternetowa,PDO::PARAM_STR);
         $sth->execute();
         $result = $sth->fetch(PDO::FETCH_ASSOC);
-        $idKontakt = $result['idKontakt'];
+        $idKontakt = $result['id_kontakt'];
            
         
          //Dodawanie klienta
-        $sth = $db->prepare('INSERT INTO Klient(idKontakt,idAdres,login,haslo,nazwa_firmy,REGON,NIP,nazwisko,imie,aktywacja,rodzaj_klienta) 
+        $sth = $db->prepare('INSERT INTO klienci(id_kontakt,id_adres,login,haslo,nazwa_firmy,REGON,NIP,nazwisko,imie,czy_aktywowany,rodzaj_klienta) 
         VALUE (:idKontakt,:idAdres,:login,:haslo1,:nazwa_firmy,:REGON,:NIP,:nazwisko,:imie,:aktywacja,:rodzajKlienta)');
         $sth ->bindValue(':login',$login,PDO::PARAM_STR);
         $sth ->bindValue(':haslo1',$haslo1,PDO::PARAM_STR);
