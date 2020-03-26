@@ -38,7 +38,8 @@ session_start();
 
 <body>
    <section id="header">
-    <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark">
+    <nav class="navbar navbar-expand-lg fixed-top navbar-light bg-light"
+        style="box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);">
         <a class="navbar-brand ml-2" href="index.php">
             <img src="images/Car4You-line-logo.png" height="50" alt="car4you logo">
         </a>
@@ -67,15 +68,16 @@ session_start();
     </nav>
    </section>
 
-    <section id="hero" class="d-flex align-items-center">
+    <section id="hero" class="d-flex align-items-center text-light">
         <div class="container">
-            <div class="row">
-                <div class="col-lg-6 pt-5 pt-lg-0 order-2 order-lg-1 text-dark">
+            <div class="row align-items-center">
+                <div class="col-lg-6 pt-5 pt-lg-0 order-2 order-lg-1">
                     <h1>Car4You</h1>
                     <h2>Oto najlepsza wypożyczalnia w Twojej okolicy.</h2>
                 </div>
-                <div class="col-lg-6 order-1 order-lg-1 hero-img">
-                <!-- <img src="images/login-man1-background.jpg" class="img-fluid" alt=""> -->
+                <div class="col-lg-6 order-1 order-lg-1">
+                <!-- Dodać cień do obrazka -->
+                <img src="images/home-hero-background.png" class="img-fluid" alt="home-hero-background">
                 </div>
             </div>
         </div>
