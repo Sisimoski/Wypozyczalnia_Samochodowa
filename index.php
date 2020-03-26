@@ -206,7 +206,7 @@ session_start();
                         <div class="widget no-box">
                             <h5 class="widget-title">Kontakt<span></span></h5>
 
-                            <p><a href="mailto:info@domain.com" title="glorythemes">KewinUmyjDupe@michałCWELbula.com</a>
+                            <p><a href="mailto:info@domain.com" title="glorythemes">example@xyz.com</a>
                             </p>
                             <p><a title="glorythemes">Tel. +48 0700 888 111</a></p>
 
