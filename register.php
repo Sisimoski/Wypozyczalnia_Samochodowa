@@ -150,7 +150,7 @@
                     </div>
                     <div class="form-group">
                         <label for="inputCompanyName">Nazwa firmy</label>
-                        <input type="text" class="form-control" id="nazwaFirmy" placeholder="Nazwa firmy" name="nazwaFirmy">
+                        <input type="text" class="form-control" id="nazwaFirmy" placeholder="Nazwa firmy"  disabled="disabled" name="nazwaFirmy">
                         <div class="komunikat"> </div>
                     </div>
                     <div class="form-row">

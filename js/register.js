@@ -256,21 +256,19 @@ $(document).ready(function() {
         var nip = $("#nip");
         
         if(this.checked==true) {         
+            nazwaFirmy.removeClass("valid border border-success border border-danger").addClass("invalid");
+            regon.removeClass("valid border border-success border border-danger").addClass("invalid");
+            nip.removeClass("valid border border-success border border-danger").addClass("invalid");
+
             nazwaFirmy.prop('disabled', false);
             regon.prop('disabled', false);
             nip.prop('disabled', false);
-            nazwaFirmy.removeClass("valid").addClass("invalid");
-            regon.removeClass("valid").addClass("invalid");
-            nip.removeClass("valid").addClass("invalid");
-        }   
-        else {         
-            nazwaFirmy.prop('disabled', true);
-            regon.prop('disabled', true);
-            nip.prop('disabled', true);
 
-            nazwaFirmy.removeClass("valid").addClass("valid");
-            regon.removeClass("valid").addClass("valid");
-            nip.removeClass("valid").addClass("valid");
+        }   
+        else {              
+            nazwaFirmy.removeClass("invalid border border-success border border-danger").addClass("valid");
+            regon.removeClass("invalid border border-success border border-danger").addClass("valid ");
+            nip.removeClass("invalid border border-success border border-danger").addClass("valid ");
 
             nazwaFirmy.val("");
             regon.val("");
@@ -279,6 +277,10 @@ $(document).ready(function() {
             nazwaFirmy.next(".komunikat").text("");
             regon.next(".komunikat").text("");
             nip.next(".komunikat").text("");
+
+            nazwaFirmy.prop('disabled', true);
+            regon.prop('disabled', true);
+            nip.prop('disabled', true);
         }                   
     });
 
