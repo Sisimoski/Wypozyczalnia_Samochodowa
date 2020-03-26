@@ -77,6 +77,11 @@ $(document).ready(function() {
                         $(".alert-danger").html("Niepoprawne hasło");
                         $(".alert").fadeOut(3000);
                         break;
+                    default:
+                        $(".alert").addClass("alert-danger");
+                        $(".alert-danger").html(response);
+                        $(".alert").fadeOut(3000);
+                        break;
                 }                    
             });
 
