@@ -111,7 +111,7 @@ session_start();
     <section id="highlight" class="highlight highlight-bg">
         <div class="container">
             <div class="highlight-title text-light">
-                <h2>Zobacz, dlaczego ludzie nas wybierają</h2>
+                <h2>Zobacz, dlaczego klienci nas wybierają</h2>
             </div>
             <div class="row">
                 <div class="col-md-6 col-lg-3 d-flex align-items-stretch">
