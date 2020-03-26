@@ -56,6 +56,7 @@ h1, h2, h3, h4, h5, h6 {
 --------------------------------------------------------------*/
 #highlight {
   padding: 60px 0;
+  border-bottom: 2px solid #4a89c5;
 }
 
 .highlight-bg {
@@ -101,4 +102,68 @@ h1, h2, h3, h4, h5, h6 {
   font-size: 15px;
   line-height: 28px;
   margin-bottom: 0;
+}
+/*--------------------------------------------------------------
+# Car Section
+--------------------------------------------------------------*/
+#car-catalog {
+  padding: 60px 0;
+  border-bottom: 2px solid #4a89c5;
+}
+
+.car-catalog-bg {
+  background-color: #dbeeff;
+}
+
+.car-catalog-title {
+  text-align: center;
+}
+
+.car-catalog-title h2 {
+  margin-bottom: 15px;
+  text-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
+}
+
+.car-catalog-title p {
+  padding-bottom: 15px;
+  margin-bottom: 15px;
+  text-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
+}
+
+.car-catalog .icon-box {
+  padding: 30px;
+  position: relative;
+  overflow: hidden;
+  margin: 0 0 40px 0;
+  
+ 
+  border-radius: 15px;
+  text-align: center;
+  text-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
+}
+
+.car-catalog .icon{
+  height: 75px;
+  width: 250px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 50px;
+}
+/*--------------------------------------------------------------
+# Map Section
+--------------------------------------------------------------*/
+.map-container {
+  overflow: hidden;
+  padding-bottom: 25%;
+  position: relative;
+  border-bottom: 2px solid #4a89c5;
+}
+
+.map-container iframe {
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  position: absolute;
 }

@@ -6,10 +6,9 @@ session_start();
 <html lang="pl">
 
 <head>
+    <title>Car4You - wypożyczalnia samochodów</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Car4You - wypożyczalnia samochodów</title>
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
     <!-- Bootstrap CSS -->
@@ -92,6 +91,7 @@ session_start();
     </section>
 
     <!-- Sekcja Hero -->
+    <!-- Spierdolona responsywność -->
     <section id="hero" class="d-flex align-items-center text-light">
         <div class="container">
             <div class="row align-items-center">
@@ -101,7 +101,7 @@ session_start();
                 </div>
                 <div class="col-lg-6 order-1 order-lg-1">
                     <!-- Dodać cień do obrazka -->
-                    <img src="images/home-hero-background.png" class="img-fluid" alt="home-hero-background">
+                    <img src="images/home-hero-background.png" class="img-fluid" alt="homepage-hero-background">
                 </div>
             </div>
         </div>
@@ -118,8 +118,8 @@ session_start();
                     <div class="icon-box">
                         <div class="icon"><i class='bx bx-car bx-tada'></i></div>
                         <h3 class="title">Lorem Ipsum</h4>
-                        <p class="description">Voluptatum deleniti atque corrupti quos dolores et quas molestias
-                            excepturi sint occaecati cupiditate</p>
+                            <p class="description">Voluptatum deleniti atque corrupti quos dolores et quas molestias
+                                excepturi sint occaecati cupiditate</p>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-3 d-flex align-items-stretch">
@@ -146,9 +146,50 @@ session_start();
                                 excepturi sint occaecati cupiditate</p>
                     </div>
                 </div>
+            </div>
+    </section>
+    <section id="car-catalog" class="car-catalog car-catalog-bg text-dark">
+        <div class="container">
+            <div class="car-catalog-title">
+                <h2>Wybierz samochód</h2>
+                <p>Z ponad wielu dostępnych w naszym katalogu.</p>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <div class="icon-box">
+                        <div class="icon"><img src="images/porsche-911.png" class="img-fluid" alt="Porsche 911"></div>
+                        <h3 class="title">Porsche 911</h4>
+                            <p class="description">Voluptatum deleniti atque corrupti quos dolores et quas molestias
+                                excepturi sint occaecati cupiditate</p>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="icon-box">
+                        <div class="icon"><img src="images/Ford-Fusion-Mondeo-2013.png" class="img-fluid" alt="Ford Mondeo"></div>
+                        <h3 class="title">Ford Mondeo</h4>
+                            <p class="description">Voluptatum deleniti atque corrupti quos dolores et quas molestias
+                                excepturi sint occaecati cupiditate</p>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="icon-box">
+                        <div class="icon"><img src="images/bmw-3-series.png" class="img-fluid"
+                                alt="Ford Mondeo"></div>
+                        <h3 class="title">BMW Serii 3</h4>
+                            <p class="description">Voluptatum deleniti atque corrupti quos dolores et quas molestias
+                                excepturi sint occaecati cupiditate</p>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
-
+    <section id="map">
+        <div class="map-container">
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d80902.88709892464!2d17.836246159044936!3d50.678829943229296!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47105306456db34b%3A0x25c66487400c346e!2sOpole!5e0!3m2!1spl!2spl!4v1585259764522!5m2!1spl!2spl"
+                frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+        </div>
+    </section>
     <!-- To jest jakiś syf -->
     <footer id="footer" class="footer-1">
         <div class="main-footer widgets-dark typo-light">
