@@ -18,7 +18,8 @@ $(document).ready(function() {
     });
 
     $("#zaloguj").click(function() {
-            window.location.replace("../logowanie.php");
+            window.location.replace("../logowanie.php"); /* Nie powinno być "logowanie.php"? 
+            Bo jak masz w htdocs osobny folder ze stroną (np. htdocs/Car4You/), to wtedy ta linijka z ../logowanie.php wraca aż do root'a i próbuje otworzyć logowanie.php w samym htdocs, zamiast w rzeczywistym folderze ze stroną. Taka tylko uwaga, jak uważacie ~ Marcin */
     });
 
     $("#panelKlienta").click(function() {
