@@ -156,7 +156,7 @@ h1, h2, h3, h4, h5, h6 {
 --------------------------------------------------------------*/
 .map-container {
   overflow: hidden;
-  padding-bottom: 25%;
+  padding-bottom: 25em;
   position: relative;
   border-bottom: 2px solid #4a89c5;
 }

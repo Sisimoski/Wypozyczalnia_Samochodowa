@@ -181,6 +181,11 @@ session_start();
                     </div>
                 </div>
             </div>
+            <div class="row">
+                <div class="col text-center">
+                    <button type='button' class='btn btn-primary mr-sm-2'>Zobacz wszystko</button>
+                </div>
+            </div>
         </div>
     </section>
     <section id="map">
