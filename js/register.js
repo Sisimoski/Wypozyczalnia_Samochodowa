@@ -442,13 +442,15 @@ $(document).ready(function() {
             }
             else{
                 $(".alert").addClass("alert-danger");
-                $(".alert-danger").html(response);               
+                $(".alert-success").fadeOut(3000);     
+                $(".alert-danger").html(response);            
             }
         });
 
         request.fail(function(response) {
             $(".alert").addClass("alert-danger");
-            $(".alert-danger").html(response);          
+            $(".alert-success").fadeOut(3000);   
+            $(".alert-danger").html(response);    
         });
     }
     else
