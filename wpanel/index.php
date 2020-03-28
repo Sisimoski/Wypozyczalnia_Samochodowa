@@ -9,6 +9,6 @@
     <title>Document</title>
 </head>
 <body>
-    Admin Panel
+    Work Panel
 </body>
 </html>
