@@ -50,6 +50,8 @@
               <option value="zachodniopomorskie">zachodniopomorskie</option>
             </select>
           </div>
+        <input type="text" name="login" id="login" placeholder="Login"/>
+        <input type="password" name="haslo" id="haslo" placeholder="Haslo"/>
         <input type="text" name="ulica" id="ulica" placeholder="Ulica"/>
         <input type="text" name="nr_domu" id="numerDomu" placeholder="Numer Domu"/>
         <input type="text" name="kod" id="kod" placeholder="Kod Pocztowy"/>
@@ -57,7 +59,8 @@
         <input type="text" name="linkedin" id="linkedin" placeholder="Linkedin"/>
         <input type="text" name="email" id="email" placeholder="email"/>
         <input type="text" name="email_pracowniczy" id="email_pracowniczy" placeholder="Email Pracowniczy"/>
-        <input type="text" name="telefon" id="telefon" placeholder="telefon"/>
+        <input type="text" name="telefon" id="telefon" placeholder="Numer Telefonu"/>
+        <input type="text" name="komorka" id="komorka" placeholder="Numer Komórkowy"/>
         <input type="text" name="fax" id="fax" placeholder="Fax"/>
         <input type="text" name="www" id="www" placeholder="Adres www" />
         <button type="button" id="zarejestrujPracownika">Zarejestruj</button>

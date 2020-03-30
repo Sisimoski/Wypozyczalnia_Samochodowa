@@ -2,8 +2,6 @@
 
     require_once $_SERVER['DOCUMENT_ROOT'] . '/php/config.php';
 
-
-
     $imie = $_POST["imie"];
     $nazwisko = $_POST["nazwisko"];
     $miasto = $_POST["city"];
@@ -18,6 +16,11 @@
     $nr_domu = $_POST["nr_domu"];
     $email_pracowniczy = $_POST["email_pracowniczy"];
     $www = $_POST["www"];
+    $login = $_POST["login"];
+    $password = $_POST["haslo"];
+    $email = $_POST["email"];
+    $komorka = $_POST["komorka"];
+
 
 
     $sth = $db->prepare('INSERT INTO Adres(miejscowosc,wojewodztwo,kod_pocztowy,ulica,nr_domu,dodatkowe_informacje)
@@ -37,11 +40,11 @@
 
         // Dodawanie danych kontaktowych pracownika
         // Do poprawienia baza danych
-        $sth = $db->prepare('INSERT INTO Kontakty_pracownicy(linkedin,email_pracowniczy,nr_kom,nr_tel,fax,email,www) 
+        $sth = $db->prepare('INSERT INTO kontakty_pracownicy(linkedin,email_pracowniczy,nr_kom,nr_tel,fax,email,www) 
         VALUE (:linked,:email_pracowniczy,:nr_kom,:nr_tel,:fax,:email,:www)');
         $sth ->bindValue(':linked',$linkedin,PDO::PARAM_STR);
         $sth ->bindValue(':email_pracowniczy',$email_pracowniczy,PDO::PARAM_STR);
-        $sth ->bindValue(':nr_kom',$telefon,PDO::PARAM_STR);
+        $sth ->bindValue(':nr_kom',$komorka,PDO::PARAM_STR);
         $sth ->bindValue(':nr_tel',$telefon,PDO::PARAM_STR);
         $sth ->bindValue(':fax',$fax,PDO::PARAM_STR);
         $sth ->bindValue(':email',$email,PDO::PARAM_STR);
@@ -50,7 +53,8 @@
             $sth ->bindValue(':www',$www,PDO::PARAM_STR);
         }
         else{
-            $sth ->bindValue(':www',NULL,PDO::PARAM_STR);
+            $www = null;
+            $sth ->bindValue(':www',$www,PDO::PARAM_NULL);
 
         }
         $sth->execute();
