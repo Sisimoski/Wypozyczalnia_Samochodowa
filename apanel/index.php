@@ -63,7 +63,7 @@
         <input type="text" name="komorka" id="komorka" placeholder="Numer Komórkowy"/>
         <input type="text" name="fax" id="fax" placeholder="Fax"/>
         <input type="text" name="www" id="www" placeholder="Adres www" />
-        <button type="button" id="zarejestrujPracownika">Zarejestruj</button>
+        
         <div class="form-group col-md-4">
             <label for="inputState">Rodzaj Konta</label>
             <select id="inputState" class="form-control" name="rodzajPracownika">
@@ -71,6 +71,7 @@
               <option value="2">Administrator</option>
             </select>
           </div>
+          <button type="button" id="zarejestrujPracownika">Zarejestruj</button>
     </form>
        <!-- 
            
