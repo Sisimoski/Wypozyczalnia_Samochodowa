@@ -65,8 +65,8 @@
         <input type="text" name="www" id="www" placeholder="Adres www" />
         
         <div class="form-group col-md-4">
-            <label for="inputState">Rodzaj Konta</label>
-            <select id="inputState" class="form-control" name="rodzajPracownika">
+            <label for="inputRole">Rodzaj Konta</label>
+            <select id="inputRole" class="form-control" name="rodzajPracownika">
               <option value="1">Pracownik</option>
               <option value="2">Administrator</option>
             </select>
