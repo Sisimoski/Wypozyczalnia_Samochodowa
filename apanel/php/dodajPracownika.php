@@ -17,7 +17,7 @@
     $email_pracowniczy = $_POST["email_pracowniczy"];
     $www = $_POST["www"];
     $login = $_POST["login"];
-    $password = $_POST["haslo"];
+    $password = md5($_POST["haslo"]);
     $email = $_POST["email"];
     $komorka = $_POST["komorka"];
     $rodzaj_pracownika = $_POST["rodzajPracownika"];
