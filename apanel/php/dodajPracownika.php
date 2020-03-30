@@ -20,6 +20,7 @@
     $password = $_POST["haslo"];
     $email = $_POST["email"];
     $komorka = $_POST["komorka"];
+    $rodzaj_pracownika = $_POST["rodzajPracownika"];
 
 
 
@@ -34,7 +35,6 @@
         $sth->execute();
 
         $idAdres = $db->lastInsertID();
-        echo $idAdres;
 
        
 
@@ -49,7 +49,6 @@
         $sth ->bindValue(':fax',$fax,PDO::PARAM_STR);
         $sth ->bindValue(':email',$email,PDO::PARAM_STR);
         if(!empty($www)){
-            echo 'test';
             $sth ->bindValue(':www',$www,PDO::PARAM_STR);
         }
         else{
@@ -60,35 +59,23 @@
         $sth->execute();
 
         $idKontakt = $db->lastInsertID();
-        echo $idKontakt;
-
-        // $sth = $db->prepare('SELECT idKontakt FROM Kontakt_Klient WHERE nr_kom = :nr_kom AND nr_tel = :nr_tel AND fax = :fax
-        // AND email = :email AND www = :www limit 1');
-        // $sth ->bindValue(':nr_kom',$nrKom,PDO::PARAM_STR);
-        // $sth ->bindValue(':nr_tel',$nrTel,PDO::PARAM_STR);
-        // $sth ->bindValue(':fax',$fax,PDO::PARAM_STR);
-        // $sth ->bindValue(':email',$email,PDO::PARAM_STR);
-        // $sth ->bindValue(':www',$stronaInternetowa,PDO::PARAM_STR);
-        // $sth->execute();
-        // $result = $sth->fetch(PDO::FETCH_ASSOC);
-        // $idKontakt = $result['idKontakt'];
+        $data = date('Y-m-d');
+        $sth = $db->prepare('INSERT INTO pracownicy(id_adres,id_kontakt,login,haslo,imie,nazwisko,rodzaj_pracownika,data_zatrudnienia,czy_aktywowany) VALUES
+        (:adres,:kontakt,:login,:haslo,:imie,:nazwisko,:rodzaj,:data,:aktywacja)');
+        $sth ->bindValue(':adres',$idAdres,PDO::PARAM_INT);
+        $sth ->bindValue(':kontakt',$idKontakt,PDO::PARAM_INT);
+        $sth ->bindValue(':login',$login,PDO::PARAM_STR);
+        $sth ->bindValue(':haslo',$password,PDO::PARAM_STR);
+        $sth ->bindValue(':imie',$imie,PDO::PARAM_STR);
+        $sth ->bindValue(':nazwisko',$nazwisko,PDO::PARAM_STR);
+        $sth ->bindValue(':rodzaj',$rodzaj_pracownika,PDO::PARAM_STR);
+        $sth ->bindValue(':data',$data,PDO::PARAM_STR);
+        $sth ->bindValue(':aktywacja',1,PDO::PARAM_INT);
+        $sth->execute();
+    
            
         
-        //  //Dodawanie klienta
-        // $sth = $db->prepare('INSERT INTO Klient(idKontakt,idAdres,login,haslo,nazwa_firmy,REGON,NIP,nazwisko,imie,aktywacja,rodzaj_klienta) 
-        // VALUE (:idKontakt,:idAdres,:login,:haslo1,:nazwa_firmy,:REGON,:NIP,:nazwisko,:imie,:aktywacja,:rodzajKlienta)');
-        // $sth ->bindValue(':login',$login,PDO::PARAM_STR);
-        // $sth ->bindValue(':haslo1',$haslo1,PDO::PARAM_STR);
-        // $sth ->bindValue(':nazwa_firmy',$nazwaFirmy,PDO::PARAM_STR);
-        // $sth ->bindValue(':REGON',$regon,PDO::PARAM_STR);
-        // $sth ->bindValue(':NIP',$nip,PDO::PARAM_STR);
-        // $sth ->bindValue(':nazwisko',$nazwisko,PDO::PARAM_STR);
-        // $sth ->bindValue(':imie',$imie,PDO::PARAM_STR);
-        // $sth ->bindValue(':aktywacja',0,PDO::PARAM_INT);
-        // $sth ->bindValue(':idKontakt',$idKontakt,PDO::PARAM_INT);
-        // $sth ->bindValue(':idAdres',$idAdres,PDO::PARAM_INT);
-        // $sth ->bindValue(':rodzajKlienta',$czyFirma,PDO::PARAM_INT);
-        // $sth->execute();
+        echo 'Dodano Pracownika';
 
 
 
