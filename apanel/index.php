@@ -2,12 +2,6 @@
 
 <?php
     session_start();
-
-    //STATIC DATA ONLY FOR DEVELOPERS PURPOSE - DELETE BEFORE PUBLISHING 
-    $_SESSION["rodzaj_pracownika"] = 2;
-
-    //END
-
     if(isset($_SESSION["rodzaj_pracownika"])){
         if($_SESSION["rodzaj_pracownika"] != 2){
             header("Location: ../index.php");
