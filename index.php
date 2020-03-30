@@ -77,10 +77,8 @@ session_start();
                     }
                         
                 }
-                if(isset($_SESSION['rodzaj_pracownika'])){
-                    if($_SESSION['rodzaj_pracownika'] == 1){
+                if(isset($_SESSION['rodzaj_pracownika'])){                   
                         echo "<button id='panelPracownika' type='submit' class='btn btn-primary my-2 my-sm-0'>Panel Pracownika</button>"; 
-                    }
                     if($_SESSION['rodzaj_pracownika'] == 2){
                         echo "<button id='panelAdministratora' type='submit' class='btn btn-primary my-2 my-sm-0'>Panel Administratora</button>";
                     }
