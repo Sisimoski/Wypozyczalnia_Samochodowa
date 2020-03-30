@@ -23,14 +23,14 @@
 
 
 
-    $sth = $db->prepare('INSERT INTO Adres(miejscowosc,wojewodztwo,kod_pocztowy,ulica,nr_domu,dodatkowe_informacje)
-        VALUE (:miejscowosc,:wojewodztwo,:kod_pocztowy,:ulica,:nr_domu,:dodatkowe_informacje)');
+    $sth = $db->prepare('INSERT INTO adres(miejscowosc,wojewodztwo,kod_pocztowy,ulica,nr_domu,dodatkowe_informacje)
+        VALUE (:miejscowosc,:wojewodztwo,:kod_pocztowy,:ulica,:nr_domu,:dodatkoweinformacje)');
         $sth ->bindValue(':miejscowosc',$miasto,PDO::PARAM_STR);
         $sth ->bindValue(':wojewodztwo',$wojewodztwo,PDO::PARAM_STR);
         $sth ->bindValue(':kod_pocztowy',$kod_pocztowy,PDO::PARAM_STR);
         $sth ->bindValue(':ulica',$ulica,PDO::PARAM_STR);
         $sth ->bindValue(':nr_domu',$nr_domu,PDO::PARAM_STR);
-        $sth ->bindValue(':dodatkowe_informacje',$dodatkowe,PDO::PARAM_STR);
+        $sth ->bindValue(':dodatkoweinformacje',$dodatkowe,PDO::PARAM_STR);
         $sth->execute();
 
         $idAdres = $db->lastInsertID();
