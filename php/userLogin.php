@@ -8,7 +8,7 @@
     }
 
     if((!empty($login) || !empty($haslo)) == true){
-        $sth = $db->prepare('SELECT id_pracownik,login,haslo,rodzaj_pracownika,czy_aktywowany,email FROM pracownicy INNER JOIN kontakty_pracownicy ON kontakty_pracownicy.id_kontakt=pracownicy.id_pracownik WHERE login = :login OR email = :email limit 1');
+        $sth = $db->prepare('SELECT id_pracownik,login,haslo,rodzaj_pracownika,czy_aktywowany,email FROM pracownicy INNER JOIN kontakty_pracownicy ON kontakty_pracownicy.id_kontakt=pracownicy.id_kontakt WHERE login = :login OR email = :email limit 1');
         $sth -> bindValue(':login',$login,PDO::PARAM_STR);
         $sth -> bindValue(':email',$login,PDO::PARAM_STR);
         $sth -> execute();

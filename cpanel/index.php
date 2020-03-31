@@ -54,7 +54,7 @@ session_start();
             <div class="komunikat"> </div>
         </div>
         <div>
-            <label for="newPswd">Nowe hasło</label>
+            <label for="newPswd"></label>
             <input id="newPswd" name="newPswd" >
             <div class="komunikat"> </div>
         </div>

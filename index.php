@@ -77,9 +77,10 @@ session_start();
                     }
                         
                 }
-                if(isset($_SESSION['rodzaj_pracownika'])){
-                    if($_SESSION['rodzaj_pracownika'] == 1 || $_SESSION['rodzaj_pracownika'] == 2){
-                        echo "<button id='panelPracownika' type='submit' class='btn btn-primary my-2 my-sm-0'>Moje Konto</button>"; 
+                if(isset($_SESSION['rodzaj_pracownika'])){                   
+                        echo "<button id='panelPracownika' type='submit' class='btn btn-primary my-2 my-sm-0'>Panel Pracownika</button>"; 
+                    if($_SESSION['rodzaj_pracownika'] == 2){
+                        echo "<button id='panelAdministratora' type='submit' class='btn btn-primary my-2 my-sm-0'>Panel Administratora</button>";
                     }
                 }
                 echo "<button type='button' id='wyloguj' class='btn btn-primary my-2 my-sm-0'>Wyloguj</button>";
@@ -117,8 +118,7 @@ session_start();
                     <div class="icon-box">
                         <div class="icon"><i class='bx bx-car bx-tada'></i></div>
                         <h3 class="title">Lorem Ipsum</h4>
-                            <p class="description">Voluptatum deleniti atque corrupti quos dolores et quas molestias
-                                excepturi sint occaecati cupiditate</p>
+                            <p class="description">Testowanie</p>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-3 d-flex align-items-stretch">

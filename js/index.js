@@ -31,5 +31,9 @@ $(document).ready(function() {
     $("#panelPracownika").click(function() {
         window.location.replace("../wpanel/index.php");
     });
+
+    $("#panelAdministratora").click(function() {
+        window.location.replace("../apanel/index.php");
+    });
     
 });
