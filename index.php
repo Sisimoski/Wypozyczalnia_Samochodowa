@@ -197,16 +197,21 @@ session_start();
     <section id="footer">
         <div class="container-fluid">
             <div class="row">
-                <div class="col">
+                <div class="col text-center">
+                <h3 class="title">Newsletter</h4>
+                <input type="email" class="form-control" placeholder="Enter your email">
+                <button class="btn" type="submit">Zapisz się!</button>
+                </div>
+                <div class="col text-center">
+                <h3 class="title">Przydatne linki</h4>
 
                 </div>
-                <div class="col">
+                <div class="col text-center">
+                <h3 class="title">Nasza społeczność</h4>
 
                 </div>
-                <div class="col">
-
-                </div>
-                <div class="col">
+                <div class="col text-center">
+                <h3 class="title">Car4you</h4>
 
                 </div>
             </div>
