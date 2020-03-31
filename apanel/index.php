@@ -25,7 +25,54 @@
 </head>
 <body>
     <div class=container-fluid>
-    <form class="rejestracjaPracownika">
+
+<!-- 
+           
+           Jak będziecie robić to polecam
+           
+        Menu góra :
+        https://getbootstrap.com/docs/4.4/components/navbar/
+        https://getbootstrap.com/docs/4.4/components/navs/
+        
+
+        Dobre jako side menu Fajnie by to wyglądało:
+        https://getbootstrap.com/docs/4.4/components/collapse/
+
+
+        Tagi każdej zakładki : 
+        https://getbootstrap.com/docs/4.4/components/breadcrumb/
+
+
+        -->
+
+    <!-- Statusy Pojazdów -->
+        <form class="statusPojazdowDane">
+            <input class="form-control" type="date" id="dataOd" name="dataOd" placeholder="Data Wynajmu Od"/>
+            <input class="form-control" type="date" id="dataDo" name="dataDo" placeholder="Data Wynajmu Do" />
+            <button type="button" id="zaladujStatus" class="btn btn-primary">Status Pojadów</button>
+        </form> 
+        <div class="statusContent">
+            <table class="table">
+                <thead>
+                  <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Imie</th>
+                    <th scope="col">Nazwisko</th>
+                    <th scope="col">Pojazd</th>
+                    <th scope="col">Status Przyjecia</th>
+                    <th scope="col">Status Płatności</th>
+                    <th scope="col">Status Realizacji</th>
+                  </tr>
+                </thead>
+                <tbody id="tabelaStatus">
+                </tbody>
+              </table>
+              <div id="alert"></div>
+
+        </div>
+    
+    <!-- DODAWANIE PRACOWNIKA
+         <form class="rejestracjaPracownika">
         <input type="text" name="imie" id="imie" placeholder="Imie"/>
         <input type="text" name="nazwisko" id="nazwisko" placeholder="Nazwisko"/>
         <input type="text" name="city" id="city" placeholder="Miasto"/>
@@ -72,25 +119,8 @@
             </select>
           </div>
           <button type="button" id="zarejestrujPracownika">Zarejestruj</button>
-    </form>
-       <!-- 
-           
-           Jak będziecie robić to polecam
-           
-        Menu góra :
-        https://getbootstrap.com/docs/4.4/components/navbar/
-        https://getbootstrap.com/docs/4.4/components/navs/
-        
-
-        Dobre jako side menu:
-        https://getbootstrap.com/docs/4.4/components/collapse/
-
-        Tagi każdej zakładki : 
-        https://getbootstrap.com/docs/4.4/components/breadcrumb/
-
-
-        -->
-
+    </form> -->
+       
 
 
 
