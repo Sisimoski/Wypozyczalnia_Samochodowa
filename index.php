@@ -195,45 +195,35 @@ session_start();
         </div>
     </section>
     <footer id="footer">
-        <div class="container-fluid">
+        <div class="container">
             <div class="row">
 
-                <div class="col-lg-3 col-md-6 footer-contact" data-aos="fade-up" data-aos-delay="100">
-                    <h3>Ninestars</h3>
+                <div class="col-lg-3 col-md-6 footer-newsletter">
+                    <h4>Pozostań w kontakcie</h4>
                     <p>
-                        A108 Adam Street <br>
-                        New York, NY 535022<br>
-                        United States <br><br>
-                        <strong>Phone:</strong> +1 5589 55488 55<br>
-                        <strong>Email:</strong> info@example.com<br>
+                        Nie przegap żadnych informacji i zapisz się do naszego newslettera.
                     </p>
+                    <form>
+                        <div class="form-group">
+                            <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
+                        </div>
+                            <button type="submit" class="btn btn-primary">Subskrybuj</button>
+                    </form>
                 </div>
 
-                <div class="col-lg-3 col-md-6 footer-links" data-aos="fade-up" data-aos-delay="200">
-                    <h4>Useful Links</h4>
+                <div class="col-lg-3 col-md-6 footer-links">
+                    <h4>Przydatne linki</h4>
                     <ul>
-                        <li><i class="bx bx-chevron-right"></i> <a href="#">Home</a></li>
-                        <li><i class="bx bx-chevron-right"></i> <a href="#">About us</a></li>
-                        <li><i class="bx bx-chevron-right"></i> <a href="#">Services</a></li>
-                        <li><i class="bx bx-chevron-right"></i> <a href="#">Terms of service</a></li>
-                        <li><i class="bx bx-chevron-right"></i> <a href="#">Privacy policy</a></li>
+                        <li><i class="bx bx-chevron-right"></i> <a href="#">Strona główna</a></li>
+                        <li><i class="bx bx-chevron-right"></i> <a href="#">Oferty</a></li>
+                        <li><i class="bx bx-chevron-right"></i> <a href="#">O nas</a></li>
+                        <li><i class="bx bx-chevron-right"></i> <a href="#">Kontakt</a></li>
                     </ul>
                 </div>
 
-                <div class="col-lg-3 col-md-6 footer-links" data-aos="fade-up" data-aos-delay="300">
-                    <h4>Our Services</h4>
-                    <ul>
-                        <li><i class="bx bx-chevron-right"></i> <a href="#">Web Design</a></li>
-                        <li><i class="bx bx-chevron-right"></i> <a href="#">Web Development</a></li>
-                        <li><i class="bx bx-chevron-right"></i> <a href="#">Product Management</a></li>
-                        <li><i class="bx bx-chevron-right"></i> <a href="#">Marketing</a></li>
-                        <li><i class="bx bx-chevron-right"></i> <a href="#">Graphic Design</a></li>
-                    </ul>
-                </div>
-
-                <div class="col-lg-3 col-md-6 footer-links" data-aos="fade-up" data-aos-delay="400">
-                    <h4>Our Social Networks</h4>
-                    <p>Cras fermentum odio eu feugiat lide par naso tierra videa magna derita valies</p>
+                <div class="col-lg-3 col-md-6 footer-links">
+                    <h4>Dołącz do sieci</h4>
+                    <p>Stwórz z nami najwspanialszą społeczność!</p>
                     <div class="social-links mt-3">
                         <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
                         <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
@@ -242,6 +232,17 @@ session_start();
                         <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
                     </div>
                 </div>
+                <div class="col-lg-3 col-md-6 footer-links">
+                    <h4>Kontakt</h4>
+                    <p>
+                        ul. Prószkowska niewiemjaka <br>
+                        Opole, 11-111<br>
+                        Polska <br><br>
+                        <strong>Telefon:</strong> +48 123 456 789<br>
+                        <strong>Email:</strong> car4you@poczta.pl<br>
+                    </p>
+                </div>
+
 
             </div>
         </div>
@@ -250,7 +251,7 @@ session_start();
             <div class="container">
                 <div class="row">
                     <div class="col-md-12 text-center">
-                        <p>Copyright Car4You © 2020. All rights reserved.</p>
+                        <p>Car4You © 2020. Wszystkie prawa zastrzeżone.</p>
                     </div>
                 </div>
             </div>
