@@ -36,7 +36,7 @@
             $nip="";
         }
 
-        if( isset($_POST['czyFirma']) ) {
+        if(isset($_POST['czyFirma'])) {
             $czyFirma=2;
         }
         else{

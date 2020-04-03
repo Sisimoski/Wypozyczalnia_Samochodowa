@@ -166,7 +166,7 @@
             <h5><label>Dane firmowe:</label></h5>
             <div class="form-group">
               <div class="form-check">
-                <input class="form-check-input" type="checkbox" id="czyFirma">
+                <input class="form-check-input" type="checkbox" id="czyFirma" name="czyFirma">
                 <label class="form-check-label" for="checkCompany">Zaznacz, jeśli jesteś klientem firmowym</label>
                 <div class="komunikat"> </div>
               </div>

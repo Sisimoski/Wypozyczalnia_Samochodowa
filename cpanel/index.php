@@ -46,27 +46,122 @@ session_start();
             <button class="btn btn-primary" id="changePassword" name="changePassword" type="button">Zmień hasło</button>
         </div>
     </form>
-    <!-- <span>Dodawannie samochodu</span>
-    <form class="addNewCarForm mt-3" method="POST">
+
+    <span>Dane osobowe</span>
+
+    <form class="ChangePersonalDataForm mt-3" method="POST">
+    <span>Zmiana danych osobowych</span>
         <div>
-            <label for="oldPswd">VIN</label>
-            <input id="vin" name="vin">
+            <label for="imie">Imie</label>
+            <input id="imie" name="imie" >
             <div class="komunikat"> </div>
         </div>
         <div>
-            <label for="newPswd"></label>
-            <input id="newPswd" name="newPswd" >
+            <label for="nazwisko">Nazwisko</label>
+            <input id="nazwisko" name="nazwisko" >
             <div class="komunikat"> </div>
         </div>
         <div>
-            <label for="newPswd1">Powtórz nowe hasło</label>
-            <input id="newPswd1" name="renewPswd1" >
+            <label for="ulica">Ulica</label>
+            <input id="ulica" name="ulica" >
+            <div class="komunikat"> </div>
+        </div>
+        <div>
+            <label for="nr_domu">Nr domu</label>
+            <input id="nr_domu" name="nr_domu" >
+            <div class="komunikat"> </div>
+        </div>
+        <label for="wojewodztwo">Województwo</label>
+                <select id="wojewodztwo" class="form-control" name="wojewodztwo">
+                  <option value="dolnośląskie">dolnośląskie</option>
+                  <option value="kujawsko-pomorskie">kujawsko-pomorskie</option>
+                  <option value="lubelskie">lubelskie</option>
+                  <option value="lubuskie">lubuskie</option>
+                  <option value="łódzkie">łódzkie</option>
+                  <option value="małopolskie">małopolskie</option>
+                  <option value="mazowieckie">mazowieckie</option>
+                  <option value="opolskie">opolskie</option>
+                  <option value="podkarpackie">podkarpackie</option>
+                  <option value="podlaskie">podlaskie</option>
+                  <option value="pomorskie">pomorskie</option>
+                  <option value="śląskie">śląskie</option>
+                  <option value="świętokrzyskie">świętokrzyskie</option>
+                  <option value="warmińsko-mazurskie">warmińsko-mazurskie</option>
+                  <option value="wielkopolskie">wielkopolskie</option>
+                  <option value="zachodniopomorskie">zachodniopomorskie</option>
+                </select>
+        <div>
+            <label for="kod_pocztowy">Kod pocztowy</label>
+            <input id="kod_pocztowy" name="kod_pocztowy" >
+            <div class="komunikat"> </div>
+        </div>
+        <div>
+            <label for="miejscowosc">Miejscowosc</label>
+            <input id="miejscowosc" name="miejscowosc" >
+            <div class="komunikat"> </div>
+        </div>
+        <div>
+            <label for="nr_kom">Nr kom.</label>
+            <input id="nr_kom" name="nr_kom" >
+            <div class="komunikat"> </div>
+        </div>
+        <div>
+            <label for="nr_tel">Nr tel.</label>
+            <input id="nr_tel" name="nr_tel" >
+            <div class="komunikat"> </div>
+        </div>
+        <div>
+            <label for="fax">Fax</label>
+            <input id="fax" name="fax" >
+            <div class="komunikat"> </div>
+        </div>
+        <div>
+            <label for="dodatkowe_informacje">Dodatkowe informacje</label>
+            <input id="dodatkowe_informacje" name="dodatkowe_informacje" >
+            <div class="komunikat"> </div>
+        </div>
+        <div>
+            <label for="www">Strona internetowa</label>
+            <input id="www" name="www" >
+            <div class="komunikat"> </div>
+        </div>
+        <div>
+            <label for="nazwa_firmy" id="nazwa_firmy_label">Nazwa firmy</label>
+            <input id="nazwa_firmy" name="nazwa_firmy" >
+            <div class="komunikat"> </div>
+        </div>
+        <div>
+            <label for="regon" id="regon_label">Regon</label>
+            <input id="regon" name="regon" >
+            <div class="komunikat"> </div>
+        </div>
+        <div>
+            <label for="nip" id="nip_label">Nip</label>
+            <input id="nip" name="nip" >
             <div class="komunikat"> </div>
         </div>
         <div>
             <div class="komunikat"> </div>
-            <button class="btn btn-primary" id="addCar" name="changePassword" type="button">Zmień hasło</button>
+            <button class="btn btn-primary" id="changePersonalData" name="changePersonalData" type="button">Zatwierdź dane</button>
         </div>
-    </form> -->
+    </form> 
+    <span>Zmiana maila</span>
+    <form class="changeMailForm" method="POST">
+        <div>
+            <label for="oldMail">Aktualny adres mailowy</label>
+            <input id="oldMail" name="oldMail"  placeholder="Wprowadź dotychczasowe hasło">
+            <div class="komunikat"> </div>
+        </div>
+        <div>
+            <label for="newMail">Nowy adres mailowy</label>
+            <input id="newMail" name="newMail"placeholder="Wprowadź nowe hasło">
+            <div class="komunikat"> </div>
+        </div>
+
+        <div>
+            <div class="komunikat"> </div>
+            <button class="btn btn-primary" id="changeMail" name="changePassword" type="button">Zatwierdź zmianę</button>
+        </div>
+    </form>
 
 </body>
