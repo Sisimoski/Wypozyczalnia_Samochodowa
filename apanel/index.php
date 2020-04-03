@@ -71,7 +71,7 @@
 
         </div>
     
-    <!-- DODAWANIE PRACOWNIKA
+    DODAWANIE PRACOWNIKA
          <form class="rejestracjaPracownika">
         <input type="text" name="imie" id="imie" placeholder="Imie"/>
         <input type="text" name="nazwisko" id="nazwisko" placeholder="Nazwisko"/>
@@ -119,7 +119,7 @@
             </select>
           </div>
           <button type="button" id="zarejestrujPracownika">Zarejestruj</button>
-    </form> -->
+    </form>
        
 
 
