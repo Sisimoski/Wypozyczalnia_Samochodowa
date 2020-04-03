@@ -56,7 +56,7 @@ session_start();
                         <a class="nav-link" href="#">Strona główna<span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Oferty</a>
+                        <a class="nav-link" href="oferty.php">Oferty</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="aboutus.php">O nas</a>

@@ -96,147 +96,53 @@ session_start();
         <div class="container">
             <div class="row justify-content-between align-items-center">
                 <div class="col-lg-12 pt-5 pt-lg-0 order-2 order-lg-1">
-                    <h1>O nas</h1>
-                    <h2>Dowiedz się, dlaczego klienci nas tak uwielbiają.</h2>
+                    <h1>Oferty</h1>
+                    <h2>Wybierz samochód z dostępnej oferty.</h2>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Sekcja O nas -->
-    <section id="about" class="about">
+    <section id="car-catalog" class="car-catalog car-catalog-bg text-dark">
         <div class="container">
-            <div class="row justify-content-between text-dark">
-                <div class="col-lg-5 d-flex align-items-center justify-content-center about-img">
-                    <img src="images/login-man1-background.png" class="img-fluid" alt="">
+            <div class="car-catalog-title">
+                <h2>Wybierz samochód</h2>
+                <p>Z ponad wielu dostępnych w naszym katalogu.</p>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <div class="icon-box">
+                        <div class="icon"><img src="images/porsche-911.png" class="img-fluid" alt="Porsche 911"></div>
+                        <h3 class="title">Porsche 911</h4>
+                            <p class="description">Voluptatum deleniti atque corrupti quos dolores et quas molestias
+                                excepturi sint occaecati cupiditate</p>
+                    </div>
                 </div>
-                <div class="col-lg-6 pt-5 pt-lg-0">
-                    <h3>Wypożycz, wynajmij</h3>
-                    <p>
-                        Opcja wypożyczenia samochodu ma wiele zalet, które usprawnią życie codziennie.
-                    </p>
-                    <div class="row">
-                        <div class="col-md-6">
-                            <i class='bx bxs-car-crash'></i>
-                            <h4>Ullamco laboris nisi</h4>
-                            <p>Samochód często jest potrzebny w najmniej spodziewanym momencie - stłuczka, wypadek lub
-                                odmówienie posłuszeństwa od strony samochodu - wtedy możliwe jest wypożyczenie go w
-                                naszej wypożyczalni.</p>
-                        </div>
-                        <div class="col-md-6">
-                            <i class='bx bxs-car-garage'></i>
-                            <h4>Ullamco laboris nisi</h4>
-                            <p>Ponadto wypożyczenie pozwoli na wypróbowanie innego modelu samochodu oraz zapewni szybkie
-                                przemieszczanie się do punktu docelowego, będąc niezależnym od środków masowego
-                                transportu.</p>
-                        </div>
+                <div class="col">
+                    <div class="icon-box">
+                        <div class="icon"><img src="images/Ford-Fusion-Mondeo-2013.png" class="img-fluid"
+                                alt="Ford Mondeo"></div>
+                        <h3 class="title">Ford Mondeo</h4>
+                            <p class="description">Voluptatum deleniti atque corrupti quos dolores et quas molestias
+                                excepturi sint occaecati cupiditate</p>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="icon-box">
+                        <div class="icon"><img src="images/bmw-3-series.png" class="img-fluid" alt="Ford Mondeo"></div>
+                        <h3 class="title">BMW Serii 3</h4>
+                            <p class="description">Voluptatum deleniti atque corrupti quos dolores et quas molestias
+                                excepturi sint occaecati cupiditate</p>
                     </div>
                 </div>
             </div>
-
+            <div class="row">
+                <div class="col text-center">
+                    <button type='button' class='btn btn-primary mr-sm-2'>Zobacz wszystko</button>
+                </div>
+            </div>
         </div>
     </section>
-
-    <section id="about" class="about">
-        <div class="container">
-            <div class="row justify-content-between text-dark">
-                <div class="col-lg-6 pt-5 pt-lg-0">
-                    <h3>Główne zalety Car4You</h3>
-                    <p>
-                        Car4You to jedna z pierwszych w Polsce wypożyczalni samochodów, w której Użytkownik ma możliwość
-                        wypożyczenia samochodu dla siebie (jak dzieje się w standardowych wypożyczalniach), ale również
-                        wypożyczenia komuś swojego samochodu.
-                    </p>
-                    <div class="row justify-content-between highlightus">
-                        <div class="col d-flex align-items-stretch">
-                            <div class="icon-box">
-                                <div class="icon"><i class='bx bx-shape-triangle'></i></div>
-                                <h4 class="title">Elastyczność</h4>
-                                <p class="description">Czyli możliwość zadecydowania zarówno o okresie wynajmu
-                                    samochodu, ale
-                                    także o jego marcie bądź klasie.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-5 d-flex align-items-center justify-content-center about-img">
-                    <img src="images/register-women1-background.png" class="img-fluid" alt="">
-                </div>
-                <div class="col-lg-5 d-flex align-items-center justify-content-center about-img">
-                    <img src="images/register-women1-background.png" class="img-fluid" alt="">
-                </div>
-                <div class="col-lg-6 pt-5 pt-lg-0">
-                    <div class="row justify-content-between highlightus">
-                        <div class="col d-flex align-items-stretch">
-                            <div class="icon-box">
-                                <div class="icon"><i class='bx bxs-navigation'></i></div>
-                                <h4 class="title">Wygoda</h4>
-                                <p class="description">Czyli szybkie i niezależne przemieszczanie się z miejsca na
-                                    miejsce
-                                    bez
-                                    konieczności korzystania z komunikacji miejskiej czy taxówek.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6 pt-5 pt-lg-0">
-                    <div class="row justify-content-between highlightus">
-                        <div class="col d-flex align-items-stretch">
-                            <div class="icon-box">
-                                <div class="icon"><i class='bx bxs-map-alt'></i></div>
-                                <h4 class="title">Mobilność</h4>
-                                <p class="description">Czyli swobodne poruszanie się samochodem przy oszczędności czasu
-                                    i
-                                    pieniędzy (co związane jest z koniecznością użycia innych środków transportu), a
-                                    wybrany
-                                    samochód jest dopasowany do Klienta</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-5 d-flex align-items-center justify-content-center about-img">
-                    <img src="images/register-women1-background.png" class="img-fluid" alt="">
-                </div>
-            </div>
-    </section>
-    
-    <!-- Sekcja Highlight
-    <section id="highlightus" class="highlightus highlightus-bg">
-        <div class="container">
-            <div class="highlight-title text-light">
-                <h2>Główne zalety Car4You to:</h2>
-                <p>Opcja wypożyczenia samochodu ma wiele zalet, które usprawnią życie codziennie.</p>
-            </div>
-            <div class="row justify-content-between">
-                <div class="col-md-6 col-lg-4 d-flex align-items-stretch">
-                    <div class="icon-box">
-                        <div class="icon"><i class='bx bx-car bx-tada'></i></div>
-                        <h3 class="title">Elastyczność</h4>
-                            <p class="description">Czyli możliwość zadecydowania zarówno o okresie wynajmu samochodu,
-                                ale
-                                także o jego marcie bądź klasie.</p>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-4 d-flex align-items-stretch">
-                    <div class="icon-box">
-                        <div class="icon"><i class='bx bx-building-house bx-tada'></i></div>
-                        <h3 class="title">Wygoda</h4>
-                            <p class="description">Czyli szybkie i niezależne przemieszczanie się z miejsca na miejsce
-                                bez
-                                konieczności korzystania z komunikacji miejskiej czy taxówek.</p>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-4 d-flex align-items-stretch">
-                    <div class="icon-box">
-                        <div class="icon"><i class='bx bx-navigation bx-tada'></i></div>
-                        <h3 class="title">Mobilność</h4>
-                            <p class="description">Czyli swobodne poruszanie się samochodem przy oszczędności czasu i
-                                pieniędzy (co związane jest z koniecznością użycia innych środków transportu), a wybrany
-                                samochód jest dopasowany do Klienta</p>
-                    </div>
-                </div>
-            </div>
-    </section> -->
 
     <footer id="footer" class="footer bg-light">
         <div class="container">
