@@ -56,7 +56,7 @@ session_start();
                         <a class="nav-link" href="#">Strona główna<span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Oferty</a>
+                        <a class="nav-link" href="oferty.php">Oferty</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="aboutus.php">O nas</a>
@@ -197,7 +197,7 @@ session_start();
     </section>
     <footer id="footer" class="footer bg-light">
         <div class="container">
-            <div class="row">
+            <div class="row justify-content-between">
 
                 <div class="col-lg-3 col-md-6 footer-newsletter">
                     <h4>Pozostań w kontakcie</h4>
