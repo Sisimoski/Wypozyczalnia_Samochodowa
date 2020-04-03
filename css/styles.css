@@ -210,12 +210,13 @@ h1, h2, h3, h4, h5, h6 {
 --------------------------------------------------------------*/
 #herous {
   width: 100%;
-  padding: 20px 0;
+  padding: 50px 0;
   background: linear-gradient(255deg, rgba(147, 211, 255, 1) 0%, rgba(90, 166, 231, 1) 75%, rgba(75, 137, 194, 1) 100%);
   border-bottom: 2px solid #4a89c5;
   margin: 72px 0 0 0;
   box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
   text-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
+  text-align: center;
 }
 
 #herous h1 {
@@ -227,7 +228,6 @@ h1, h2, h3, h4, h5, h6 {
 
 #about {
   padding: 60px 0;
-  border-bottom: 2px solid #4a89c5;
   background-color: #d3eaff;
 }
 
@@ -253,6 +253,58 @@ h1, h2, h3, h4, h5, h6 {
   color: #5a6570;
 }
 
+.about img {
+  padding-bottom: 20px;
+}
+
+#highlightus {
+  padding: 60px 0;
+  border-bottom: 2px solid #4a89c5;
+}
+
+.highlightus-bg {
+  background-color: #93d3ff;
+}
+
+.highlightus-title {
+  text-align: center;
+  padding-bottom: 45px;
+}
+
+.highlightus-title h2 {
+  text-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
+}
+
+.highlightus .icon-box {
+  padding: 30px;
+  position: relative;
+  overflow: hidden;
+  margin: 0 0 40px 0;
+  background: #fff;
+  box-shadow: 0 10px 29px 0 rgba(68, 88, 144, 0.1);
+  border-radius: 15px;
+  text-align: center;
+  text-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
+}
+
+.highlightus .icon i {
+  font-size: 48px;
+  line-height: 1;
+  margin-bottom: 15px;
+  color: #4d8eef;
+}
+
+.highlightus .title {
+  font-weight: 700;
+  margin-bottom: 15px;
+  font-size: 18px;
+}
+
+.highlightus .description {
+  font-size: 15px;
+  line-height: 28px;
+  margin-bottom: 0;
+}
 /*--------------------------------------------------------------
 # Footer
 --------------------------------------------------------------*/
