@@ -65,11 +65,10 @@ h1, h2, h3, h4, h5, h6 {
 
 .highlight-title {
   text-align: center;
-  padding-bottom: 30px;
+  padding-bottom: 45px;
 }
 
 .highlight-title h2 {
-  margin-bottom: 15px;
   text-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
 }
 
@@ -170,27 +169,104 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /*--------------------------------------------------------------
+# About Us Section
+--------------------------------------------------------------*/
+#herous {
+  width: 100%;
+  padding: 20px 0;
+  background: linear-gradient(255deg, rgba(147, 211, 255, 1) 0%, rgba(90, 166, 231, 1) 75%, rgba(75, 137, 194, 1) 100%);
+  border-bottom: 2px solid #4a89c5;
+  margin: 72px 0 0 0;
+  box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
+  text-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
+}
+
+#herous h1 {
+  margin: 0 0 10px 0;
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 56px;
+}
+
+#about {
+  padding: 60px 0;
+  border-bottom: 2px solid #4a89c5;
+  background-color: #d3eaff;
+}
+
+.about h3 {
+  font-weight: 700;
+  font-size: 34px;
+}
+
+.about h4 {
+  font-size: 20px;
+  font-weight: 700;
+  margin-top: 5px;
+}
+
+.about i {
+  font-size: 48px;
+  margin-top: 15px;
+  color: #2b77eb;
+}
+
+.about p {
+  font-size: 15px;
+  color: #5a6570;
+}
+
+/*--------------------------------------------------------------
 # Footer
 --------------------------------------------------------------*/
 #footer {
   background: #fff;
-  padding: 60px 0;
+  padding: 40px 0;
   font-size: 14px;
   background: #fef8f5;
 }
 
+#footer h4 {
+  font-size: 20px;
+}
+
 #footer .footer-newsletter{
-  margin-bottom: 30px;
+  margin-bottom: 20px
 }
 
 #footer .footer-newsletter h4 {
-  font-size: 16px;
+  font-size: 20px;
 }
 
 #footer .footer-links{
+  margin-bottom: 20px;
+}
 
+#footer .footer-links ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+#footer .footer-links ul i {
+  
+  font-size: 18px;
+  line-height: 1;
+}
+
+#footer .footer-links ul li {
+  padding: 5px 0;
+  display: flex;
+  align-items: center;
 }
 
 #footer .footer-social{
+  margin-bottom: 10px
+}
 
+#footer .footer-social a{
+  font-size: 30px;
+  display: inline-flex;
+  margin: 4px 4px;
+  text-align: center;
 }

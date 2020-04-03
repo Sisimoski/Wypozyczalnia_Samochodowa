@@ -53,7 +53,7 @@ session_start();
             <div class="collapse navbar-collapse flex-grow-1" id="navbarSupportedContent">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item active">
-                        <a class="nav-link" href="#">Strona główna<span class="sr-only">(current)</span></a>
+                        <a class="nav-link" href="index.php">Strona główna<span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">Oferty</a>
@@ -91,15 +91,15 @@ session_start();
     </section>
 
     <!-- Sekcja Hero -->
-    <!-- Spierdolona responsywność -->
-    <section id="hero" class="d-flex align-items-center text-light">
+    <!-- Naprawiona responsywność -->
+    <section id="herous" class="text-light">
         <div class="container">
-            <div class="row align-items-center">
+            <div class="row justify-content-between align-items-center">
                 <div class="col-lg-6 pt-5 pt-lg-0 order-2 order-lg-1">
-                    <h1>Car4You</h1>
-                    <h2>Oto najlepsza wypożyczalnia w Twojej okolicy.</h2>
+                    <h1>O nas</h1>
+                    <h2>Dowiedz się, dlaczego klienci nas tak uwielbiają.</h2>
                 </div>
-                <div class="col-lg-6 order-1 order-lg-1">
+                <div class="col-lg-6 d-flex align-items-center justify-content-center order-1 order-lg-1">
                     <!-- Dodać cień do obrazka -->
                     <img src="images/home-hero-background.png" class="img-fluid" alt="homepage-hero-background">
                 </div>
@@ -107,94 +107,79 @@ session_start();
         </div>
     </section>
 
-    <!-- Sekcja Highlight -->
-    <section id="highlight" class="highlight highlight-bg">
+    <!-- Sekcja O nas -->
+    <section id="about" class="about">
         <div class="container">
-            <div class="highlight-title text-light">
-                <h2>Zobacz, dlaczego klienci nas wybierają</h2>
-            </div>
-            <div class="row">
-                <div class="col-md-6 col-lg-3 d-flex align-items-stretch">
-                    <div class="icon-box">
-                        <div class="icon"><i class='bx bx-car bx-tada'></i></div>
-                        <h3 class="title">Lorem Ipsum</h4>
-                            <p class="description">Voluptatum deleniti atque corrupti quos dolores et quas molestias
-                                excepturi sint occaecati cupiditate</p>
-                    </div>
+
+            <div class="row justify-content-between text-dark">
+                <div class="col-lg-5 d-flex align-items-center justify-content-center about-img">
+                    <img src="images/login-man1-background.png" class="img-fluid" alt="">
                 </div>
-                <div class="col-md-6 col-lg-3 d-flex align-items-stretch">
-                    <div class="icon-box">
-                        <div class="icon"><i class='bx bx-building-house bx-tada'></i></div>
-                        <h3 class="title">Lorem Ipsum</h4>
-                            <p class="description">Voluptatum deleniti atque corrupti quos dolores et quas molestias
-                                excepturi sint occaecati cupiditate</p>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-3 d-flex align-items-stretch">
-                    <div class="icon-box">
-                        <div class="icon"><i class='bx bx-navigation bx-tada'></i></div>
-                        <h3 class="title">Lorem Ipsum</h4>
-                            <p class="description">Voluptatum deleniti atque corrupti quos dolores et quas molestias
-                                excepturi sint occaecati cupiditate</p>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-3 d-flex align-items-stretch">
-                    <div class="icon-box">
-                        <div class="icon"><i class='bx bx-user-check bx-tada'></i></div>
-                        <h3 class="title">Lorem Ipsum</h4>
-                            <p class="description">Voluptatum deleniti atque corrupti quos dolores et quas molestias
-                                excepturi sint occaecati cupiditate</p>
+                <div class="col-lg-6 pt-5 pt-lg-0">
+                    <h3>Wypożycz, wynajmij</h3>
+                    <p>
+                        Car4You to jedna z pierwszych w Polsce wypożyczalni samochodów, w której Użytkownik ma możliwość
+                        wypożyczenia samochodu dla siebie (jak dzieje się w standardowych wypożyczalniach), ale również
+                        wypożyczenia komuś swojego samochodu.
+                    </p>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <i class='bx bx-car'></i>
+                            <h4>Ullamco laboris nisi</h4>
+                            <p>Samochód często jest potrzebny w najmniej spodziewanym momencie - stłuczka, wypadek lub
+                                odmówienie posłuszeństwa od strony samochodu - wtedy możliwe jest wypożyczenie go w
+                                naszej wypożyczalni.</p>
+                        </div>
+                        <div class="col-md-6">
+                            <i class='bx bx-id-card'></i>
+                            <h4>Ullamco laboris nisi</h4>
+                            <p>Ponadto wypożyczenie pozwoli na wypróbowanie innego modelu samochodu oraz zapewni szybkie
+                                przemieszczanie się do punktu docelowego, będąc niezależnym od środków masowego
+                                transportu.</p>
+                        </div>
                     </div>
                 </div>
             </div>
+
+        </div>
     </section>
-    <section id="car-catalog" class="car-catalog car-catalog-bg text-dark">
-        <div class="container">
-            <div class="car-catalog-title">
-                <h2>Wybierz samochód</h2>
-                <p>Z ponad wielu dostępnych w naszym katalogu.</p>
-            </div>
-            <div class="row">
-                <div class="col">
-                    <div class="icon-box">
-                        <div class="icon"><img src="images/porsche-911.png" class="img-fluid" alt="Porsche 911"></div>
-                        <h3 class="title">Porsche 911</h4>
-                            <p class="description">Voluptatum deleniti atque corrupti quos dolores et quas molestias
-                                excepturi sint occaecati cupiditate</p>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="icon-box">
-                        <div class="icon"><img src="images/Ford-Fusion-Mondeo-2013.png" class="img-fluid" alt="Ford Mondeo"></div>
-                        <h3 class="title">Ford Mondeo</h4>
-                            <p class="description">Voluptatum deleniti atque corrupti quos dolores et quas molestias
-                                excepturi sint occaecati cupiditate</p>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="icon-box">
-                        <div class="icon"><img src="images/bmw-3-series.png" class="img-fluid"
-                                alt="Ford Mondeo"></div>
-                        <h3 class="title">BMW Serii 3</h4>
-                            <p class="description">Voluptatum deleniti atque corrupti quos dolores et quas molestias
-                                excepturi sint occaecati cupiditate</p>
-                    </div>
+    
+<!-- Sekcja Highlight -->
+<section id="highlight" class="highlight highlight-bg">
+    <div class="container">
+        <div class="highlight-title text-light">
+            <h2>Główne zalety Car4You to:</h2>
+            <p>Opcja wypożyczenia samochodu ma wiele zalet, które usprawnią życie codziennie.</p>
+        </div>
+        <div class="row justify-content-between">
+            <div class="col-md-6 col-lg-4 d-flex align-items-stretch">
+                <div class="icon-box">
+                    <div class="icon"><i class='bx bx-car bx-tada'></i></div>
+                    <h3 class="title">Elastyczność</h4>
+                        <p class="description">Czyli możliwość zadecydowania zarówno o okresie wynajmu samochodu, ale
+                            także o jego marcie bądź klasie.</p>
                 </div>
             </div>
-            <div class="row">
-                <div class="col text-center">
-                    <button type='button' class='btn btn-primary mr-sm-2'>Zobacz wszystko</button>
+            <div class="col-md-6 col-lg-4 d-flex align-items-stretch">
+                <div class="icon-box">
+                    <div class="icon"><i class='bx bx-building-house bx-tada'></i></div>
+                    <h3 class="title">Wygoda</h4>
+                        <p class="description">Czyli szybkie i niezależne przemieszczanie się z miejsca na miejsce bez
+                            konieczności korzystania z komunikacji miejskiej czy taxówek.</p>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4 d-flex align-items-stretch">
+                <div class="icon-box">
+                    <div class="icon"><i class='bx bx-navigation bx-tada'></i></div>
+                    <h3 class="title">Mobilność</h4>
+                        <p class="description">Czyli swobodne poruszanie się samochodem przy oszczędności czasu i
+                            pieniędzy (co związane jest z koniecznością użycia innych środków transportu), a wybrany
+                            samochód jest dopasowany do Klienta</p>
                 </div>
             </div>
         </div>
-    </section>
-    <section id="map">
-        <div class="map-container">
-            <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d80902.88709892464!2d17.836246159044936!3d50.678829943229296!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47105306456db34b%3A0x25c66487400c346e!2sOpole!5e0!3m2!1spl!2spl!4v1585259764522!5m2!1spl!2spl"
-                frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
-        </div>
-    </section>
+</section>
+
     <footer id="footer" class="footer bg-light">
         <div class="container">
             <div class="row">
@@ -208,7 +193,7 @@ session_start();
                         <div class="form-group">
                             <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
                         </div>
-                            <button type="submit" class="btn btn-primary">Subskrybuj</button>
+                        <button type="submit" class="btn btn-primary">Subskrybuj</button>
                     </form>
                 </div>
 
@@ -248,16 +233,16 @@ session_start();
             </div>
         </div>
     </footer>
-        <div class="footer-copyright">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12 text-center">
-                        <p>Car4You © 2020. Wszystkie prawa zastrzeżone.</p>
-                    </div>
+    <div class="footer-copyright">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <p>Car4You © 2020. Wszystkie prawa zastrzeżone.</p>
                 </div>
             </div>
         </div>
-    
+    </div>
+
 
 </body>
 
