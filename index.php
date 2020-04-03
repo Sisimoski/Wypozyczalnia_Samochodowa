@@ -59,11 +59,7 @@ session_start();
                         <a class="nav-link" href="#">Oferty</a>
                     </li>
                     <li class="nav-item">
-<<<<<<< HEAD
                         <a class="nav-link" href="aboutus.php">O nas</a>
-=======
-                        <a class="nav-link" href="Onas.php">O nas</a>
->>>>>>> 4bd5bc2875a750683a649ec507653ea1d33dae33
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">Kontakt</a>
