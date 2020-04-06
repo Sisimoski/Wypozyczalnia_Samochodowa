@@ -118,7 +118,7 @@
         $mail = $email;
         require_once $_SERVER['DOCUMENT_ROOT'] . '/PHPMailer/config.php';
         
-        $activation = 'http://car4you.net.pl/logowanie.php?aktywacja='.sha1($haslo1);
+        $activation = 'http://car4you.net.pl/logowanie.php?aktywacja='.$haslo1;
         $message = '
         <table width="100%" border="0" cellspacing="0" cellpadding="0">
             <tr>
