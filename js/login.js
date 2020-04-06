@@ -36,8 +36,6 @@ $(document).ready(function() {
         var loginBool = !$('#login').val();
         var passwordBool = !$('#password').val();
         if((loginBool || passwordBool) == false){
-            $(".alert-success").html("");
-            $(".alert-error").html("");
             $(".alert").removeClass("alert-success");
             $(".alert").removeClass("alert-danger");
             $(".alert").removeClass("alert-warning");
@@ -59,7 +57,6 @@ $(document).ready(function() {
                     case "Zalogowano Użytkownika":
                         $(".alert").addClass("alert-success");
                         $(".alert-success").html("Zalogowano Użytkownika");
-                        $(".alert").fadeOut(3000); 
                         setTimeout(function(){ window.location.replace("../index.php"); }, 2000);
                         break;
                     case "Brak Aktywacji":

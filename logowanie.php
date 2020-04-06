@@ -40,7 +40,7 @@
       <div class="alert ml-5 mr-5 mt-3 text-center" style="width:40%"></div>
     </div>
 
-    <div class="row">
+    <div class="row" style="height: 100%;">
       <div class="col-lg-6 p-0">
         <a href="index.php"><img src="images/Car4You-line-logo.png" class="m-5" alt="Car4You Logo"
             style="width: 200px;"></a>
