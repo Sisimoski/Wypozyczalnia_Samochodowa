@@ -97,10 +97,10 @@
         $result = $sth->fetch(PDO::FETCH_ASSOC);
         $idKontakt = $result['id_kontakt'];
            
-        
+        $kodAktywacji = uniqid();
          //Dodawanie klienta
-        $sth = $db->prepare('INSERT INTO klienci(id_kontakt,id_adres,login,haslo,nazwa_firmy,REGON,NIP,nazwisko,imie,czy_aktywowany,rodzaj_klienta) 
-        VALUE (:idKontakt,:idAdres,:login,:haslo1,:nazwa_firmy,:REGON,:NIP,:nazwisko,:imie,:aktywacja,:rodzajKlienta)');
+        $sth = $db->prepare('INSERT INTO klienci(id_kontakt,id_adres,login,haslo,nazwa_firmy,REGON,NIP,nazwisko,imie,czy_aktywowany,kod_aktywacyjny,rodzaj_klienta) 
+        VALUE (:idKontakt,:idAdres,:login,:haslo1,:nazwa_firmy,:REGON,:NIP,:nazwisko,:imie,:aktywacja,:kodAktywacji,:rodzajKlienta)');
         $sth ->bindValue(':login',$login,PDO::PARAM_STR);
         $sth ->bindValue(':haslo1',$haslo1,PDO::PARAM_STR);
         $sth ->bindValue(':nazwa_firmy',$nazwaFirmy,PDO::PARAM_STR);
@@ -109,6 +109,7 @@
         $sth ->bindValue(':nazwisko',$nazwisko,PDO::PARAM_STR);
         $sth ->bindValue(':imie',$imie,PDO::PARAM_STR);
         $sth ->bindValue(':aktywacja',0,PDO::PARAM_INT);
+        $sth ->bindValue(':kodAktywacji',$kodAktywacji,PDO::PARAM_STR);
         $sth ->bindValue(':idKontakt',$idKontakt,PDO::PARAM_INT);
         $sth ->bindValue(':idAdres',$idAdres,PDO::PARAM_INT);
         $sth ->bindValue(':rodzajKlienta',$czyFirma,PDO::PARAM_INT);
@@ -118,7 +119,7 @@
         $mail = $email;
         require_once $_SERVER['DOCUMENT_ROOT'] . '/PHPMailer/config.php';
         
-        $activation = 'http://car4you.net.pl/logowanie.php?aktywacja='.$haslo1;
+        $activation = 'http://car4you.net.pl/logowanie.php?aktywacja='.$kodAktywacji;
         $message = '
         <table width="100%" border="0" cellspacing="0" cellpadding="0">
             <tr>

@@ -82,6 +82,15 @@
       </div>
     </div>
   </div>
+  <?php
+  if(isset($_GET["aktywacja"])){
+      if(!empty($_GET["aktywacja"])){
+        echo "<script> AktywacjaKonta('".$_GET["aktywacja"]."');</script>";
+      }
+    }
+
+    ?>
+
 </body>
 
 </html>

@@ -95,4 +95,35 @@ $(document).ready(function() {
 
 
 
+function AktywacjaKonta(kodAktywacyjny){
+
+    $(".alert").removeClass("alert-success");
+    $(".alert").removeClass("alert-danger");
+    $(".alert").removeClass("alert-warning");
+    $(".alert").html('');
+    $(".alert").fadeIn();
+
+    request = $.ajax({
+        url: "./php/aktywacja.php",
+        data: {aktywacja: kodAktywacyjny},
+        type: "POST"
+    });
+
+    request.done(function(response) {
+        console.log(response);
+        $(".alert").addClass("alert-success");
+        $(".alert-success").html(response);
+        $(".alert-success").fadeOut(3000);            
+    });
+
+
+    request.fail(function(response) {
+        $(".alert").addClass("alert-danger");
+        $(".alert-danger").html(response);
+        $(".alert-danger").fadeOut(3000);            
+    });
+
+};
+
+
 
