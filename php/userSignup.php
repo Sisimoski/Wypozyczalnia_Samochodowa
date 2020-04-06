@@ -114,5 +114,63 @@
         $sth ->bindValue(':rodzajKlienta',$czyFirma,PDO::PARAM_INT);
         $sth->execute();
         
-        echo "Zarejestrowano Użytkownika"
+
+        $mail = $email;
+        require_once $_SERVER['DOCUMENT_ROOT'] . '/PHPMailer/config.php';
+        
+        $activation = 'http://car4you.net.pl?activation='.$haslo1;
+        $message = '
+        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+            <tr>
+                <td align="center">
+                    <img style="width:50%; height:auto;" src="http://car4you.net.pl/images/Car4You-line-logo.png"/>
+                </td>
+            </tr>
+            <tr>
+                <td align="center">
+                    <h1>Witaj '.$login.'</h1>
+                </td>
+            </tr>
+            <tr>
+                <td align="center">
+                    <h2>Dziękujemy za dokonanie rejestracji w serwisie car4you.net.pl.</h2>
+                </td>
+            </tr>
+            <tr>
+                <td align="center">
+                <h2>Już tylko jedno kliknięcie dzieli Cię od możliwości wypożyczania oraz wynajmowania samochodów z naszej firmy.</h2>
+                </td>
+            </tr>
+            <tr>
+                <td align="center">
+                <h2>Aby aktywować konto i móc zalogować się do swojego profilu, prosimy o kliknięcie w poniższy link aktywacyjny:</h2>
+                </td>
+            </tr>
+            <tr>
+                <td align="center">
+                    <a href="'.$activation.'">'.$activation.'</a></br>
+                </td>    
+            </tr>
+        </table>
+        </br>     
+        Pozdrawiamy</br>
+        Zespół car4you.net.pl
+        ';
+        try{
+            
+            $email->addAddress($mail, $imie.' '.$nazwisko);   
+            // Content
+            $email->isHTML(true);                        
+            $email->Subject = 'Car4You - Aktywacja Konta';
+            $email->Body    = $message;
+            $email->AltBody = 'Test';
+            $email->AddEmbeddedImage($_SERVER['DOCUMENT_ROOT'] . '/images/Car4You-line-logo.png', 'logo');
+            $email->send();
+            echo "Zarejestrowano Użytkownika";
+        }catch (Exception $e){
+            echo "Wiadomość nie mogła zostać wysłana: {$email->ErrorInfo}";
+        }
+
+
+        
 ?>

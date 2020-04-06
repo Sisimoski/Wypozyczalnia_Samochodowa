@@ -15,7 +15,6 @@ require 'src\SMTP.php';
 
 $email = new PHPMailer(TRUE);
 /* ... */
-try {
     $email->setLanguage('pl', 'language');
     $email->CharSet = "UTF-8";
     //Server settings
@@ -30,7 +29,7 @@ try {
 
     //Recipients
     $email->setFrom('car4youcompany@gmail.com', 'Car4You');   
-    $email->addReplyTo('car4youcompany@gmail.com', 'Information');
+    $email->addReplyTo('car4youcompany@gmail.com', 'Support');
 
     // $email->addAddress('krystian.brzoza@outlook.com', 'Krystian Brzoza');     // Add a recipient   
 
@@ -42,6 +41,3 @@ try {
 
     // $email->send();
     // echo 'Wiadomość Wysłana';
-} catch (Exception $e) {
-    echo "Wiadomość nie mogła zostać wysłana: {$email->ErrorInfo}";
-}

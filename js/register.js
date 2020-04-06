@@ -436,7 +436,7 @@ $(document).ready(function() {
                 $(".alert").addClass("alert-success");
                 $(".alert-success").html(response);
                 $(".alert-success").fadeOut(3000);                
-                $(".alert").text("Pomyślnie zarejestrowano");	
+                $(".alert").text("Pomyślnie Zarejestrowano - Wiadomość aktywacyjna została wysłana na twój adres email");	
                 setTimeout(function(){ window.location.replace("../index.php");; }, 1500);
                 
             }
