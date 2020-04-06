@@ -1,8 +1,7 @@
 <?php
     session_start();
-    if(isset($_POST["aktywacja"])){
-        if(!empty($_POST["aktywacja"])){
-            echo "Aktywacja dla konta: ".$_POST["aktywacja"];
+    if(isset($_GET["aktywacja"])){
+        if(!empty($_GET["aktywacja"])){
         }
     }
 ?>
