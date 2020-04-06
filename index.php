@@ -1,5 +1,10 @@
 <?php
-session_start();
+    session_start();
+    if(isset($_POST["aktywacja"])){
+        if(!empty($_POST["aktywacja"])){
+            echo "Aktywacja dla konta: ".$_POST["aktywacja"];
+        }
+    }
 ?>
 
 <!DOCTYPE html>
