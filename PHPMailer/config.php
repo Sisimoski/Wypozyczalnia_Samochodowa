@@ -5,13 +5,13 @@ use PHPMailer\PHPMailer\Exception;
 use PHPMailer\PHPMailer\SMTP;
 
 /* Exception class. */
-require 'src\Exception.php';
+require $_SERVER['DOCUMENT_ROOT'] . 'PHPMailer\src\Exception.php';
 
 /* The main PHPMailer class. */
-require 'src\PHPMailer.php';
+require $_SERVER['DOCUMENT_ROOT'] . 'PHPMailer\src\PHPMailer.php';
 
 /* SMTP class, needed if you want to use SMTP. */
-require 'src\SMTP.php';
+require $_SERVER['DOCUMENT_ROOT'] . 'PHPMailer\src\SMTP.php';
 
 $email = new PHPMailer(TRUE);
 /* ... */
