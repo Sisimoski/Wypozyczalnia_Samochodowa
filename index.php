@@ -1,9 +1,5 @@
 <?php
     session_start();
-    if(isset($_GET["aktywacja"])){
-        if(!empty($_GET["aktywacja"])){
-        }
-    }
 ?>
 
 <!DOCTYPE html>
