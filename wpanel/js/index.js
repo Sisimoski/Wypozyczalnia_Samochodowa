@@ -1,5 +1,9 @@
 $(document).ready(function() { 
 
+    $("#testowyButton").click(function(){
+       var value = this.value;
+    });
+
     $("#zarejestrujPracownika").click(function() {
         var request;
         var data = $(".rejestracjaPracownika").serialize();
@@ -57,3 +61,34 @@ $(document).ready(function() {
         })
     })
 });
+
+
+
+function zaladujPracownikow(){
+
+    request = $.ajax({
+        url: "php/ladowaniePracownikow.php",
+    })
+
+    request.done(function(response){
+        try{
+            var obj = JSON.parse(response);
+            for(i=0;i<obj.length;i++){
+                if(obj[i]["czy_aktywowany"] == 0){
+                    var status = "Nie Aktywowany";
+                }
+                else {
+                    var status = "Aktywowany"
+                }            
+                $("#tabelaPracownicy").append(" <tr><th scope='row'>"+(i+1)+"</th><td>"+obj[i][1]+"</td><td>"+obj[i][2]+"</td><td>"+obj[i][3]+"</td><td>"+obj[i][4]+"</td><td>"+status+"</td><td><button type='button' id='edytujDane' value="+obj[i]["id_pracownik"]+">Edytuj Dane</button ><button type='button' id='usunPracownika' value="+obj[i]["id_pracownik"]+">Usuń Pracownika</button> </td></tr>");
+            }
+        }
+        catch{
+
+        }
+    });
+
+    request.fail(function(response){
+        console.log("Error" + response);
+    });
+}
