@@ -44,6 +44,29 @@
 
         -->
 
+<!-- Modal -->
+<div class="modal fade" id="usunKontoModal" tabindex="-1" role="dialog" aria-labelledby="usunKontoLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="usunKontoLabel">Usuwanie Konta</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        Po kliknięciu przycisku "Usuń Konto" wszystkie dane użytkownika zostną usunięte.
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Zamknij</button>
+        <button type="button" id="usunKontoButton" value="" class="btn btn-danger">Usuń Konto</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
       Statusy Pojazdów - Pracownik
         <form class="statusPojazdowDane">
             <input class="form-control" type="date" id="dataOd" name="dataOd" placeholder="Data Wynajmu Od"/>
@@ -124,7 +147,7 @@
 
 
     Tabela pracowników ich edycja oraz usuwanie.
-    <script> zaladujPracownikow();</script>
+    
     <div class="tabelaPracownicyHead">
             <table class="table">
                 <thead>
@@ -143,12 +166,8 @@
                 </tbody>
               </table>
               <div id="alert"></div>
-        </div>
-       
-
-
-
-
+        </div> 
     </div>  
+  <script> zaladujPracownikow();</script>
 </body>
 </html>

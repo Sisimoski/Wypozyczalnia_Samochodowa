@@ -58,9 +58,48 @@ $(document).ready(function() {
         })
         request.fail(function(response){
             console.log("Error" + response);
+        });
+    });
+
+
+    $('#usunKontoButton').click(function(){
+        var value = $('#usunKontoButton').val();
+        var data = {id:value}
+        request =$.ajax({
+            url: "php/usunPracownika.php",
+            data: data,
+            type: "POST"
+        });
+
+        request.done(function(response){
+            console.log(response);
+            $("#tabelaPracownicy tr").remove();
+            zaladujPracownikow();
+            $('#usunKontoModal').modal('hide');
+        });
+
+        request.fail(function(response){
+            console.log(response);
         })
-    })
+    });
+
+
 });
+
+
+
+
+
+
+
+
+
+
+function usunKontoButtonClick(self){
+    self = $(self);
+    $('#usunKontoButton').attr("value",self.val());
+}
+
 
 
 
@@ -80,7 +119,7 @@ function zaladujPracownikow(){
                 else {
                     var status = "Aktywowany"
                 }            
-                $("#tabelaPracownicy").append(" <tr><th scope='row'>"+(i+1)+"</th><td>"+obj[i][1]+"</td><td>"+obj[i][2]+"</td><td>"+obj[i][3]+"</td><td>"+obj[i][4]+"</td><td>"+status+"</td><td><button type='button' id='edytujDane' value="+obj[i]["id_pracownik"]+">Edytuj Dane</button ><button type='button' id='usunPracownika' value="+obj[i]["id_pracownik"]+">Usuń Pracownika</button> </td></tr>");
+                $("#tabelaPracownicy").append(" <tr><th scope='row'>"+(i+1)+"</th><td>"+obj[i][1]+"</td><td>"+obj[i][2]+"</td><td>"+obj[i][3]+"</td><td>"+obj[i][4]+"</td><td>"+status+"</td><td><button type='button' class='btn btn-warning' id='edytujDane' value="+obj[i]["id_pracownik"]+">Edytuj Dane</button ><button type='button' class='usunKontoButtonValue btn btn-danger' value='"+obj[i]["id_pracownik"]+"' data-toggle='modal' data-target='#usunKontoModal' onclick='usunKontoButtonClick(this)'>Usuń Pracownika</button> </td></tr>");
             }
         }
         catch{
