@@ -1,4 +1,10 @@
-<!-- Index file for Client pannel -->
+<!-- Index file for Client pannel 
+W divach "komunikat" musi być miejsce na wyświetlanie tekstu do walidacji jak w rejestracji.
+W spanach są umieszczone nazwy zakładek do menu z lewej strony.
+Opis samochodu fajnie żeby miał większe okno.
+Przy VIN i NR tablicy można by było zrobić dymek z informacja dalczego o to pytamy(dla bezpeiczensta,ubezpeiczenai itd.)
+Przejście do edycji samochodu ma być w statusie nie róbcie go w menu(tylko front niego).
+-->
 <?php
 session_start();
 
@@ -20,11 +26,12 @@ session_start();
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
     <script src="./js/changeData.js"></script>
+    <script src="./js/carManagement.js"></script>
     </head>
 <body>
 
 <div class="alert ml-5 mr-5 mt-3 text-center" style="width:40%"></div>
-<span>Zmianna hasła</span>
+<span><b>Zmiana hasła</b></span>
     <form class="changePasswordForm" method="POST">
         <div>
             <label for="oldPswd">Stare hasło</label>
@@ -43,17 +50,15 @@ session_start();
         </div>
         <div>
             <div class="komunikat"> </div>
-            <button class="btn btn-primary" id="changePassword" name="changePassword" type="button">Zmień hasło</button>
+            <button class="btn btn-primary" id="changePassword" name="changePassword" type="button">Zatwierdź zmianę</button>
         </div>
     </form>
-
-    <span>Dane osobowe</span>
-
+    <span><b>Zmiana danych osobowych</b></span>
     <form class="ChangePersonalDataForm mt-3" method="POST">
-    <span>Zmiana danych osobowych</span>
+
         <div>
             <label for="imie">Imie</label>
-            <input id="imie" name="imie" >
+            <input id="imie" name="imie">
             <div class="komunikat"> </div>
         </div>
         <div>
@@ -145,8 +150,9 @@ session_start();
             <button class="btn btn-primary" id="changePersonalData" name="changePersonalData" type="button">Zatwierdź dane</button>
         </div>
     </form> 
-    <span>Zmiana maila</span>
+
     <form class="changeMailForm" method="POST">
+    <span><b>Zmiana maila</b></span>
         <div>
             <label for="oldMail">Aktualny adres mailowy</label>
             <input id="oldMail" name="oldMail"  placeholder="Wprowadź dotychczasowe hasło">
@@ -163,5 +169,120 @@ session_start();
             <button class="btn btn-primary" id="changeMail" name="changePassword" type="button">Zatwierdź zmianę</button>
         </div>
     </form>
+    <form class="addCarForm mt-3" method="POST">
+    <span><b>Dodawanie samochodu</b></span>
+        <div>
+            <label for="producent">Producennt</label>
+            <input id="producent" name="producent"  placeholder="np. Audi">
+            <div class="komunikat"> </div>
+        </div>
+        <div>
+            <label for="model">Model</label>
+            <input id="model" name="model"placeholder="np. RS5">
+            <div class="komunikat"> </div>
+        </div>
+        <div>
+            <label for="rok_produkcji">Rok produkcji</label>
+            <input id="rok_produkcji" type="number" min="1960" max="2020" step="1" name="rok_produkcji "placeholder="np. 1995" >
+            <div class="komunikat"> </div>
+        </div>
+        <div>
+            <label for="kolor">Kolor</label>
+            <input id="kolor" type="input" name="kolor "placeholder="czerwony" >
+            <div class="komunikat"> </div>
+        </div>
+        <div>
+            <label for="opis">Opis</label>
+            <input id="opis" type="input" name="opis" placeholder="czerwony" >
+            <div class="komunikat"> </div>
+        </div>
+        <div>
+            <label for="cena">Cena wypożyczenia na jeden dzień</label>
+            <input id="cena" type="input" name="cena" placeholder="np. 200zł" >
+            <div class="komunikat"> </div>
+        </div>
+        <div>
+            <label for="">VIN</label>
+            <input id="vin" type="input" name="vin" >
+            <div class="komunikat"> </div>
+        </div>
+        <div>
+            <label for="">Nr tablicy rejestracyjnej</label>
+            <input id="nr_tablicy" type="input" name="nr_tablicy" placeholder="OK 99999" >
+            <div class="komunikat"> </div>
+        </div>
+        <div>
+            <label for="zdjecie">Dodaj zdjęcie</label>
+            <input id="zdjecie" type="file" name="zdjecie">
+            <div class="komunikat"> </div>
+        </div>
+        <div>
+            <div class="komunikat"> </div>
+            <button class="btn btn-primary" id="addCar" name="addCar" type="button">Dodaj samochód</button>
+        </div>
+        </form>
+        <!-- edycja samochodu -->
+        <form class="editCarForm mt-3" method="POST">
+        <span><b>Edycja samochodu</b></span>
+        <div>
+            <label for="producentEdit">Producent</label>
+            <input id="producentEdit" name="producentEdit"  placeholder="np. Audi">
+            <div class="komunikat"> </div>
+        </div>
+        <div>
+            <label for="modelEdit">Model</label>
+            <input id="modelEdit" name="modelEdit" placeholder="np. RS5">
+            <div class="komunikat"> </div>
+        </div>
+        <div>
+            <label for="rok_produkcjiEdit">Rok produkcji</label>
+            <input id="rok_produkcjiEdit" type="number" min="1960" max="2020" step="1" name="rok_produkcjiEdit"placeholder="np. 1995" >
+            <div class="komunikat"> </div>
+        </div>
+        <div>
+            <label for="kolorEdit">Kolor</label>
+            <input id="kolorEdit" type="input" name="kolorEdit"placeholder="czerwony" >
+            <div class="komunikat"> </div>
+        </div>
+        <div>
+            <label for="opisEdit">Opis</label>
+            <input id="opisEdit" type="input" name="opisEdit" placeholder="czerwony" >
+            <div class="komunikat"> </div>
+        </div>
+        <div>
+            <label for="cenaEdit">Cena wypożyczenia na jeden dzień</label>
+            <input id="cenaEdit" type="input" name="cenaEdit" placeholder="np. 200zł" >
+            <div class="komunikat"> </div>
+        </div>
+
+        <div>
+            <label for="zdjecieEdit">Zmień zdjęcie</label>
+            <input id="zdjecieEdit" type="file" name="zdjecieEdit">
+            <div class="komunikat"> </div>
+        </div>
+        <div>
+            <div class="komunikat"> </div>
+            <button class="btn btn-primary" id="changeMail" name="changePassword" type="button">Zatwierdź zmianę</button>
+        </div>
+    </form>
+    <label><b>Status samochodów</b></label>
+    <div class="tabelaPracownicyHead">
+            <table class="table">
+                <thead>
+                  <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Nazwa</th>
+                    <th scope="col">Nr wypożyczenia</th>
+                    <th scope="col">Status</th>
+                    <th scope="col">Funkcje</th>
+                  </tr>
+                </thead>
+                <tbody id="tabelaPracownicy">
+                  
+                </tbody>
+              </table>
+              <div id="alert"></div>
+        </div>
+
 
 </body>

@@ -56,39 +56,39 @@ $(document).ready(function() {
  
 
 
-    // $('#haslo1').blur(function(){
-    //     var input = $(this);     
-    //     var login = input.val()       
-    //     var passwordReg = new RegExp("^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,})");
+    $('#newPswd').blur(function(){
+        var input = $(this);     
+        var login = input.val()       
+        var passwordReg = new RegExp("^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,})");
                
-    //     if( passwordReg.test(login)) {    
-    //         input.removeClass("invalid").addClass("valid"); 
-    //         input.removeClass("border border-danger").addClass("border border-success");    
-    //         input.next('.komunikat').text("");	               
-    //     }
-    //     else{   
-    //         input.removeClass("valid").addClass("invalid");
-    //         input.removeClass("border border-success").addClass("border border-danger");
-    //         input.next('.komunikat').text("Wprowadź kombiancje co najmniej 8 cyfr, małych liter, dużych liter i znaków (takich jak !@#$%^&*)");	
-    //     }
+        if( passwordReg.test(login)) {    
+            input.removeClass("invalid").addClass("valid"); 
+            input.removeClass("border border-danger").addClass("border border-success");    
+            input.next('.komunikat').text("");	               
+        }
+        else{   
+            input.removeClass("valid").addClass("invalid");
+            input.removeClass("border border-success").addClass("border border-danger");
+            input.next('.komunikat').text("Wprowadź kombiancje co najmniej 8 cyfr, małych liter, dużych liter i znaków (takich jak !@#$%^&*)");	
+        }
    
-    // });
+    });
 
-    // $('#haslo2').blur(function(){
-    //     var input = $(this);     
+    $('#newPswd1').blur(function(){
+        var input = $(this);     
         
-    //     if($("#haslo1").val() == $('#haslo2').val()) {
-    //         input.removeClass("invalid").addClass("valid"); 
-    //         input.removeClass("border border-danger").addClass("border border-success");    
-    //         input.next('.komunikat').text("");	   
-    //     }
-    //     else{
-    //         input.removeClass("valid").addClass("invalid");
-    //         input.removeClass("border border-success").addClass("border border-danger");
-    //         input.next('.komunikat').text("Podane hasła nie zgadzają się.");	
-    //     }
+        if($("#newPswd").val() == $('#newPswd1').val()) {
+            input.removeClass("invalid").addClass("valid"); 
+            input.removeClass("border border-danger").addClass("border border-success");    
+            input.next('.komunikat').text("");	   
+        }
+        else{
+            input.removeClass("valid").addClass("invalid");
+            input.removeClass("border border-success").addClass("border border-danger");
+            input.next('.komunikat').text("Podane hasła nie zgadzają się.");	
+        }
   
-    // });
+    });
     $('#imie').blur(function(){
         var input = $(this);  
         var imie = input.val()  
