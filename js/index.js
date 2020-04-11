@@ -1,4 +1,5 @@
 $(document).ready(function() { 
+    
 
     $("#wyloguj").click(function() {
         var request;
@@ -36,4 +37,14 @@ $(document).ready(function() {
         window.location.replace("../apanel/index.php");
     });
     
+    $('.next').click(function(e){
+        e.preventDefault();
+         $('.carousel').carousel('next');return false; 
+    });
+
+    $('.prev').click(function(e){
+        e.preventDefault();
+         $('.carousel').carousel('prev');return false; 
+    });
 });
+

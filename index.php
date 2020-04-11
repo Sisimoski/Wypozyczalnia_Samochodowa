@@ -30,11 +30,12 @@
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
         integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
     </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
         integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
     </script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="./js/index.js"></script>
+    <script src="https://kit.fontawesome.com/f75b93997c.js" crossorigin="anonymous"></script>
+    
 </head>
 
 <body>
@@ -148,46 +149,116 @@
                 </div>
             </div>
     </section>
+
+    <!-- Sekcja Karuzela -->
+
     <section id="car-catalog" class="car-catalog car-catalog-bg text-dark">
         <div class="container">
             <div class="car-catalog-title">
                 <h2>Wybierz samochód</h2>
                 <p>Z ponad wielu dostępnych w naszym katalogu.</p>
             </div>
-            <div class="row">
-                <div class="col">
-                    <div class="icon-box">
-                        <div class="icon"><img src="images/porsche-911.png" class="img-fluid" alt="Porsche 911"></div>
-                        <h3 class="title">Porsche 911</h4>
-                            <p class="description">Voluptatum deleniti atque corrupti quos dolores et quas molestias
-                                excepturi sint occaecati cupiditate</p>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="icon-box">
-                        <div class="icon"><img src="images/Ford-Fusion-Mondeo-2013.png" class="img-fluid" alt="Ford Mondeo"></div>
-                        <h3 class="title">Ford Mondeo</h4>
-                            <p class="description">Voluptatum deleniti atque corrupti quos dolores et quas molestias
-                                excepturi sint occaecati cupiditate</p>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="icon-box">
-                        <div class="icon"><img src="images/bmw-3-series.png" class="img-fluid"
-                                alt="Ford Mondeo"></div>
-                        <h3 class="title">BMW Serii 3</h4>
-                            <p class="description">Voluptatum deleniti atque corrupti quos dolores et quas molestias
-                                excepturi sint occaecati cupiditate</p>
+                <section class="carousel slide" data-ride="carousel" id="carsCarousel">
+                    <div class="container pt-0 mt-2">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <div class="card-deck">
+                                    <div class="card">
+                                        <div class="card-img-top p-4 card-img-top-250">
+                                            <img class="img-fluid" src="images/porsche-911.png" alt="Porsche 911">
+                                        </div>
+                                        <div class="card-body pt-2">
+                                            <h6 class="small text-wide p-b-2">Voluptatum deleniti atque corrupti quos dolores et quas molestias
+                                                excepturi sint occaecati cupiditate</h6>
+                                            <h2>
+                                                <a href="">Porsche 911</a>
+                                            </h2>
+                                        </div>
+                                    </div>
+                                    <div class="card">
+                                        <div class="card-img-top p-4 card-img-top-250">
+                                            <img class="img-fluid" src="images/Ford-Fusion-Mondeo-2013.png" alt="Ford Mondeo">
+                                        </div>
+                                        <div class="card-body pt-2">
+                                            <h6 class="small text-wide p-b-2">Voluptatum deleniti atque corrupti quos dolores et quas molestias
+                                                excepturi sint occaecati cupiditate</h6>
+                                            <h2>
+                                                <a href="">Ford Mondeo</a>
+                                            </h2>
+                                        </div>
+                                    </div>
+                                    <div class="card">
+                                        <div class="card-img-top p-4 card-img-top-250">
+                                            <img class="img-fluid" src="images/bmw-3-series.png" alt="BMW Serii 3">
+                                        </div>
+                                        <div class="card-body pt-2">
+                                            <h6 class="small text-wide p-b-2">Voluptatum deleniti atque corrupti quos dolores et quas molestias
+                                                excepturi sint occaecati cupiditate</h6>
+                                            <h2>
+                                                <a href="">BMW Serii 3</a>
+                                            </h2>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                            <div class="card-deck">
+                                    <div class="card">
+                                        <div class="card-img-top p-4 card-img-top-250">
+                                            <img class="img-fluid" src="images/porsche-911.png" alt="Porsche 911">
+                                        </div>
+                                        <div class="card-body pt-2">
+                                            <h6 class="small text-wide p-b-2">Voluptatum deleniti atque corrupti quos dolores et quas molestias
+                                                excepturi sint occaecati cupiditate</h6>
+                                            <h2>
+                                                <a href="">Porsche 911</a>
+                                            </h2>
+                                        </div>
+                                    </div>
+                                    <div class="card">
+                                        <div class="card-img-top p-4 card-img-top-250">
+                                            <img class="img-fluid" src="images/Ford-Fusion-Mondeo-2013.png" alt="Ford Mondeo">
+                                        </div>
+                                        <div class="card-body pt-2">
+                                            <h6 class="small text-wide p-b-2">Voluptatum deleniti atque corrupti quos dolores et quas molestias
+                                                excepturi sint occaecati cupiditate</h6>
+                                            <h2>
+                                                <a href="">Ford Mondeo</a>
+                                            </h2>
+                                        </div>
+                                    </div>
+                                    <div class="card">
+                                        <div class="card-img-top p-4 card-img-top-250">
+                                            <img class="img-fluid" src="images/bmw-3-series.png" alt="BMW Serii 3">
+                                        </div>
+                                        <div class="card-body pt-2">
+                                            <h6 class="small text-wide p-b-2">Voluptatum deleniti atque corrupti quos dolores et quas molestias
+                                                excepturi sint occaecati cupiditate</h6>
+                                            <h2>
+                                                <a href="">BMW Serii 3</a>
+                                            </h2>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>  
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-12 text-md-center lead">
+                                <a class="btn btn-secondary-outline prev" href="" title="go back"><i class="fa fa-lg fa-chevron-left"></i></a>
+                                <a class="btn btn-secondary-outline next" href="" title="more"><i class="fa fa-lg fa-chevron-right"></i></a>
+                            </div>
+                        </div>
+                    </div>      
+                </section>
+                <div class="row pt-3">
+                    <div class="col text-center">
+                        <button type='button' class='btn btn-primary mr-sm-2'>Zobacz wszystko</button>
                     </div>
                 </div>
             </div>
-            <div class="row">
-                <div class="col text-center">
-                    <button type='button' class='btn btn-primary mr-sm-2'>Zobacz wszystko</button>
-                </div>
-            </div>
-        </div>
-    </section>
+        </section>
     <section id="map">
         <div class="map-container">
             <iframe
@@ -243,8 +314,6 @@
                         <strong>Email:</strong> Car4YouCompany@gmail.com<br>
                     </p>
                 </div>
-
-
             </div>
         </div>
     </footer>
@@ -256,9 +325,8 @@
                     </div>
                 </div>
             </div>
-        </div>
-    
-
+        </div>  
+        <script src="./js/index.js"></script>
 </body>
 
 </html>
