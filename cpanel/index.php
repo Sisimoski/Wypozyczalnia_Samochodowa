@@ -30,8 +30,8 @@ session_start();
     </head>
 <body>
 
-<div class="alert ml-5 mr-5 mt-3 text-center" style="width:40%"></div>
-<span><b>Zmiana hasła</b></span>
+ <div class="alert ml-5 mr-5 mt-3 text-center" style="width:40%"></div>
+<!--<span><b>Zmiana hasła</b></span>
     <form class="changePasswordForm" method="POST">
         <div>
             <label for="oldPswd">Stare hasło</label>
@@ -168,11 +168,13 @@ session_start();
             <div class="komunikat"> </div>
             <button class="btn btn-primary" id="changeMail" name="changePassword" type="button">Zatwierdź zmianę</button>
         </div>
-    </form>
-    <form class="addCarForm mt-3" method="POST">
+    </form> -->
+        <!-- ddoawanie samochodu -->
+    <form class="addCarForm mt-3" id="addCarForm" method="POST" enctype="multipart/form-data">>
+    
     <span><b>Dodawanie samochodu</b></span>
         <div>
-            <label for="producent">Producennt</label>
+            <label for="producent">Producent</label>
             <input id="producent" name="producent"  placeholder="np. Audi">
             <div class="komunikat"> </div>
         </div>
@@ -183,12 +185,12 @@ session_start();
         </div>
         <div>
             <label for="rok_produkcji">Rok produkcji</label>
-            <input id="rok_produkcji" type="number" min="1960" max="2020" step="1" name="rok_produkcji "placeholder="np. 1995" >
+            <input id="rok_produkcji" type="number" min="1960" max="2020" step="1" name="rok_produkcji"placeholder="np. 1995" >
             <div class="komunikat"> </div>
         </div>
         <div>
             <label for="kolor">Kolor</label>
-            <input id="kolor" type="input" name="kolor "placeholder="czerwony" >
+            <input id="kolor" type="input" name="kolor"placeholder="czerwony" >
             <div class="komunikat"> </div>
         </div>
         <div>
@@ -217,8 +219,7 @@ session_start();
             <div class="komunikat"> </div>
         </div>
         <div>
-            <div class="komunikat"> </div>
-            <button class="btn btn-primary" id="addCar" name="addCar" type="button">Dodaj samochód</button>
+            <button class="btn btn-primary"  type="submit">Dodaj samochód</button>
         </div>
         </form>
         <!-- edycja samochodu -->
@@ -262,27 +263,30 @@ session_start();
         </div>
         <div>
             <div class="komunikat"> </div>
-            <button class="btn btn-primary" id="changeMail" name="changePassword" type="button">Zatwierdź zmianę</button>
+            <button class="btn btn-primary" id="editCar" name="editCar" type="button">Zatwierdź zmianę</button>
         </div>
     </form>
     <label><b>Status samochodów</b></label>
-    <div class="tabelaPracownicyHead">
+
+
+        <div class="LoadCarTableHead">
             <table class="table">
                 <thead>
-                  <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">Nazwa</th>
-                    <th scope="col">Nr wypożyczenia</th>
-                    <th scope="col">Status</th>
-                    <th scope="col">Funkcje</th>
-                  </tr>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Nazwa</th>
+                        <th scope="col">Nr tablicy</th>
+                        <th scope="col">Status</th>
+                        <th scope="col">Funkcje</th>
+                    </tr>
                 </thead>
-                <tbody id="tabelaPracownicy">
-                  
+                <tbody id="LoadCarTable">
+
                 </tbody>
-              </table>
-              <div id="alert"></div>
+            </table>
+            <div id="alert"></div>
         </div>
+    </div>
 
 
 </body>
