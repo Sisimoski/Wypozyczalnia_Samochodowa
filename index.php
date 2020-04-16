@@ -92,10 +92,10 @@
     </section>
 
     <!-- Sekcja Hero -->
-    <!-- Spierdolona responsywność -->
-    <section id="hero" class="d-flex align-items-center text-light">
+    <!-- Naprawiona responsywność -->
+    <section id="hero" class="text-light">
         <div class="container">
-            <div class="row align-items-center">
+            <div class="row justify-content-between align-items-center">
                 <div class="col-lg-6 pt-5 pt-lg-0 order-2 order-lg-1">
                     <h1>Car4You</h1>
                     <h2>Oto najlepsza wypożyczalnia w Twojej okolicy.</h2>
