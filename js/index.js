@@ -1,5 +1,4 @@
-$(document).ready(function() { 
-    
+$(document).ready(function() {    
 
     $("#wyloguj").click(function() {
         var request;
@@ -26,9 +25,11 @@ $(document).ready(function() {
     $("#panelKlienta").click(function() {
         window.location.replace("../cpanel/index.php");
     });
+
     $("#zarejestruj").click(function() {
         window.location.replace("../register.php");
     });
+
     $("#panelPracownika").click(function() {
         window.location.replace("../wpanel/index.php");
     });
@@ -46,5 +47,45 @@ $(document).ready(function() {
         e.preventDefault();
          $('.carousel').carousel('prev');return false; 
     });
+
+    $('#subscribeNewsletterButton').click(function(){
+        if(emailVerify()){
+            var data = $('.newsletterForm').serialize();
+            request = $.ajax({
+                url: "./php/userNewsletter.php",
+                data: data,
+                type: "POST"
+            });
+
+            request.done(function (response) {
+                console.log(response);
+            });
+
+            request.fail(function (response) {
+                console.log("Error: ", response);
+
+            });
+        }
+        else{
+            console.log("Nie poprawny adres email!");
+        }
+    });
 });
+
+
+function emailVerify(){
+    var email = $('#newsletterEmail').val();
+    var emailRegex = /^\b[A-Z0-9._%-]+@[A-Z0-9.-]+\.[A-Z]{2,4}\b$/i
+
+    if(emailRegex.test(email)) { 
+        return true;
+    }
+    else{
+        return false;
+    }
+
+    
+}
+
+
 

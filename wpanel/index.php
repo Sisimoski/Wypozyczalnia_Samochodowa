@@ -269,6 +269,17 @@
             </table>
             <div id="alert"></div>
         </div>
+        <div>
+            SYSTEM WYSYŁANIA WIADOMOŚCI NEWSLETTEREM
+            <form class="newsletterSending">
+                <div class="form-group">
+                    <textarea class="form-control" name="message" id="newsletterMessage" rows="7" placeholder="Wiadomość" ></textarea>
+                </div>
+                <div class="form-group">
+                    <button class="btn btn-primary" id="newsletterButton">Wyślij Wiadomości</button>
+                </div>
+            </form>
+        </div>
     </div>
     <script>
     zaladujPracownikow();

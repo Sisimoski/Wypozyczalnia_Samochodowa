@@ -1,9 +1,5 @@
 $(document).ready(function () {
 
-    $("#testowyButton").click(function () {
-        var value = this.value;
-    });
-
     $("#zarejestrujPracownika").click(function () {
         var request;
         var data = $(".rejestracjaPracownika").serialize();
@@ -61,7 +57,6 @@ $(document).ready(function () {
         });
     });
 
-
     $('#usunKontoButton').click(function () {
         var value = $('#usunKontoButton').val();
         var data = { id: value }
@@ -80,12 +75,35 @@ $(document).ready(function () {
 
         request.fail(function (response) {
             console.log(response);
-        })
+        });
     });
 
+    $('#newsletterButton').click(function(e){
+        var message = $('#newsletterMessage').val();
+        if(message != ""){
+            
+            request = $.ajax({
+                url: "php/newsletterWysylanie.php",
+                data: {message : message},
+                type: "POST"
+            });
+
+            request.done(function (response) {
+                console.log(response);
+            });
+
+            request.fail(function (response) {
+                console.log("Error: "+response);
+            });
+        }
+        else{
+            console.log("ERROR ŻE NIE NAPISANO ŻADNEJ WIADOMOŚCI - BĘDZIE TAKIE INFO");
+        }
+
+        e.preventDefault();
+    });
 
 });
-
 
 
 function usunKontoButtonClick(self) {
@@ -111,10 +129,6 @@ function editKontoButtonClick(self){
     })
 
 }
-
-
-
-
 
 function zaladujPracownikow() {
 
