@@ -35,7 +35,7 @@
     if (move_uploaded_file($_FILES['zdjecie']['tmp_name'], $uploadfile)) {
    } 
    else {
-    echo "Coś poszło nie tak z dodanym plikiem";
+    die ("Coś poszło nie tak z dodanym plikiem");
    }
     $cena_brutto =((23/ 100) * $cena)+$cena;
    //Uzupelnianei tabeli specyfikacja samochodu

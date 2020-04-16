@@ -31,6 +31,28 @@ session_start();
 <body>
 
  <div class="alert ml-5 mr-5 mt-3 text-center" style="width:40%"></div>
+
+ <div class="modal fade" id="deleteCarModal" tabindex="-1" role="dialog" aria-labelledby="deleteCarLabe;"
+            aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="deleteCarLabel">Usuwanie Konta</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                       Czy napewno chcesz usunąć samochód?
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Wracam</button>
+                        <button type="button" id="deleteCarButton" name="deleteCarButton" value="" class="btn btn-danger">Usuwam</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
 <!--<span><b>Zmiana hasła</b></span>
     <form class="changePasswordForm" method="POST">
         <div>
