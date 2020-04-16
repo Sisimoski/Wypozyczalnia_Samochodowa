@@ -25,7 +25,9 @@ $(document).ready(function() {
             if(response == "Pomyślnie dodano samochód"){
                 $(".alert").addClass("alert-success");
                 $(".alert-success").html(response);
-                $(".alert-success").fadeOut(3000);                            
+                $(".alert-success").fadeOut(3000);     
+                $("#LoadCarTable tr").remove();
+                zaladujSamochody();                       
             }
             else{
                 $(".alert").addClass("alert-danger");
@@ -50,11 +52,15 @@ $(document).ready(function() {
             url: "./php/loadCars.php",
         })
         
-        request.done(function (response) {          
+        request.done(function (response) {         
+
+                if(response!=""){
                 var obj = JSON.parse(response);
+            
                 for (i = 0; i < obj.length; i++) {     
                     if(obj[i][2]==3){
                         obj[i][2]="Niezatwierdzony";
+    
                     }   
                     else if(obj[i][2]==2){
                         obj[i][2]="Wypożyczony";
@@ -63,8 +69,8 @@ $(document).ready(function() {
                         obj[i][2]="Niewypożyczony";
                     }
                     $("#LoadCarTable").append(" <tr><th scope='row'>" + (i + 1) + "</th><td>" + obj[i][0] + "</td><td>" + obj[i][1] + "</td><td>" + obj[i][2]  + "</td><td><button type='button' class='btn btn-success' id='editCar' data-toggle='modal' data-target='#' onclick='editCarButtonClick(this)' value=" + obj[i]["id_pracownik"] + ">Edytuj Dane</button ><button type='button' class='deleteCarButtonValue btn btn-danger' value='" + obj[i]["vin"] + "' data-toggle='modal' data-target='#deleteCarModal' onclick='deleteCarButtonClick(this) '>Usuń Samochód</button> </td></tr>");
+                    }
                 }
-            
           
         });
     
@@ -85,7 +91,6 @@ $(document).ready(function() {
         });
 
         request.done(function (response) {
-            console.log(response);
             $("#LoadCarTable tr").remove();
             zaladujSamochody();
         });
