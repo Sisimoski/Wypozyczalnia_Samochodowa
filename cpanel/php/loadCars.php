@@ -9,11 +9,18 @@
          WHERE id_klient = :id_klient');
          $sth ->bindValue(':id_klient',$idSession,PDO::PARAM_STR);
          $sth->execute();
- 
+         
+
         if
          ($sth ->rowCount() != 0){
             $response = $sth->fetchAll();
             $data = json_encode($response);
             echo $data;
-        }              
+        }
+        
+    
+
+      
+        
+        
 ?>

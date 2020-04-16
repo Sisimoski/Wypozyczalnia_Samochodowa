@@ -411,7 +411,49 @@ else
     $(".alert").text("Wprowadź poprawne dane");	
 }
     
+    });
+
+//Zmiana maila
+$("#changeMail").click(function() {
+    $(".alert-success").html("");
+    $(".alert-error").html("");
+    $(".alert").removeClass("alert-success");
+    $(".alert").removeClass("alert-danger");
+    $(".alert").html('');
+    $(".alert").fadeIn();
+
+    var data = $(".changeMailForm").serialize();
+    var request;
+
+    request = $.ajax({
+        url: "./php/userChangeMail.php",
+        data: data,
+        type: "POST"
+    });
+
+    request.done(function(response) {
+        if(response == "Pomyślnie wysłano maila"){
+            $(".alert").addClass("alert-success");
+            $(".alert-success").html(response);
+            $(".alert-success").fadeOut(3000);                
+
+        }
+        else{
+            $(".alert").addClass("alert-danger");
+            $(".alert-success").fadeOut(3000);     
+            $(".alert-danger").html(response);            
+        }
+    });
+
+    request.fail(function(response) {
+        $(".alert").addClass("alert-danger");
+        $(".alert-success").fadeOut(3000);   
+        $(".alert-danger").html(response);    
+    });
+
+    
 });
+
 });
 
 });

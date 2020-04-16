@@ -110,7 +110,7 @@ session_start();
             </div>
         </div>
 
-<!--<span><b>Zmiana hasła</b></span>
+<span><b>Zmiana hasła</b></span>
     <form class="changePasswordForm" method="POST">
         <div>
             <label for="oldPswd">Stare hasło</label>
@@ -234,21 +234,21 @@ session_start();
     <span><b>Zmiana maila</b></span>
         <div>
             <label for="oldMail">Aktualny adres mailowy</label>
-            <input id="oldMail" name="oldMail"  placeholder="Wprowadź dotychczasowe hasło">
+            <input id="oldMail" name="oldMail"  placeholder="Wprowadź aktualny mail">
             <div class="komunikat"> </div>
         </div>
         <div>
             <label for="newMail">Nowy adres mailowy</label>
-            <input id="newMail" name="newMail"placeholder="Wprowadź nowe hasło">
+            <input id="newMail" name="newMail"placeholder="Wprowadź nowy mail">
             <div class="komunikat"> </div>
         </div>
 
         <div>
             <div class="komunikat"> </div>
-            <button class="btn btn-primary" id="changeMail" name="changePassword" type="button">Zatwierdź zmianę</button>
+            <button class="btn btn-primary" id="changeMail" name="changeMail" type="button">Zatwierdź zmianę</button>
         </div>
-    </form> -->
-        <!-- ddoawanie samochodu -->
+    </form>
+
     <form class="addCarForm mt-3" id="addCarForm" method="POST" enctype="multipart/form-data">>
    
     <span><b>Dodawanie samochodu</b></span>
