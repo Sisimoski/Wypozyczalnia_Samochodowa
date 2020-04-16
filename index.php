@@ -275,11 +275,11 @@
                     <p>
                         Nie przegap żadnych informacji i zapisz się do naszego newslettera.
                     </p>
-                    <form>
+                    <form class="newsletterForm">
                         <div class="form-group">
-                            <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
+                            <input type="email" name="email" class="form-control" id="newsletterEmail" placeholder="Email">
                         </div>
-                            <button type="submit" class="btn btn-primary">Subskrybuj</button>
+                            <button type="button" id="subscribeNewsletterButton" class="btn btn-primary">Subskrybuj</button>
                     </form>
                 </div>
 
