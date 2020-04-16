@@ -27,10 +27,6 @@ $(document).ready(function() {
         }
     });
 
-
-
-
-
     $("#zaloguj").click(function() {
         event.preventDefault();
         var loginBool = !$('#login').val();
