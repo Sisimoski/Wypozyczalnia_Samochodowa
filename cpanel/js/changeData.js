@@ -454,6 +454,11 @@ $("#changeMail").click(function() {
     
 });
 
+$("#goMainPage").click(function() {
+
+    window.location.href = "http://car4you.net.pl";
+    });
+
 });
 
 });
@@ -484,3 +489,5 @@ function validate(){
         return false;
     }
 }
+
+

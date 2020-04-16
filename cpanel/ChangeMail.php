@@ -4,6 +4,9 @@ session_start();
     if(!isset($_SESSION['id'])){
     header("Location: ../index.php");
     }
+    $hash=$_GET["hash"];
+    include "php/userChangeMailPart2.php";
+  
 
 ?>
 
@@ -18,11 +21,11 @@ session_start();
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+    <script src="./js/changeData.js"></script>
     </head>
 <body>
 
- Pomylsnie zmienio adres email.
- <button class="btn btn-primary" id="changeMail" name="changeMail" type="button">Wróć na stronę główną</button>
+ <button class="btn btn-primary" id="goMainPage" name="goMainPage" type="button">Wróć na stronę główną</button>
 
 
 </body>
