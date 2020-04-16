@@ -68,7 +68,7 @@ $(document).ready(function() {
                     else {
                         obj[i][2]="Niewypożyczony";
                     }
-                    $("#LoadCarTable").append(" <tr><th scope='row'>" + (i + 1) + "</th><td>" + obj[i][0] + "</td><td>" + obj[i][1] + "</td><td>" + obj[i][2]  + "</td><td><button type='button' class='btn btn-success' id='editCar' data-toggle='modal' data-target='#' onclick='editCarButtonClick(this)' value=" + obj[i]["id_pracownik"] + ">Edytuj Dane</button ><button type='button' class='deleteCarButtonValue btn btn-danger' value='" + obj[i]["vin"] + "' data-toggle='modal' data-target='#deleteCarModal' onclick='deleteCarButtonClick(this) '>Usuń Samochód</button> </td></tr>");
+                    $("#LoadCarTable").append(" <tr><th scope='row'>" + (i + 1) + "</th><td>" + obj[i][0] + "</td><td>" + obj[i][1] + "</td><td>" + obj[i][2]  + "</td><td><button type='button' class='editCarButtonValue btn btn-success' value='" + obj[i]["vin"] + "' data-toggle='modal' data-target='#editCarModal' onclick='editCarButtonClick(this) '>Edytuj</button><button type='button' class='deleteCarButtonValue btn btn-danger' value='" + obj[i]["vin"] + "' data-toggle='modal' data-target='#deleteCarModal' onclick='deleteCarButtonClick(this) '>Usuń Samochód</button> </td></tr>");
                     }
                 }
           
@@ -93,6 +93,30 @@ $(document).ready(function() {
         request.done(function (response) {
             $("#LoadCarTable tr").remove();
             zaladujSamochody();
+            $('#deleteCarModal').modal('hide');
+        });
+
+        request.fail(function (response) {
+            console.log(response);
+        })
+    });    
+// edytowanie samochodu
+    $('#editCarButton').click(function () {
+        var value = $('#editCarButton').val();
+      //  var data = { vin: value }
+        var data = $(".editCarForm").serialize()+'&vin='+value;
+
+        request = $.ajax({
+            url: "./php/editCar.php",
+            data: data,
+            type: "POST"
+        });
+
+        request.done(function (response) {
+            console.log(response);
+            $("#LoadCarTable tr").remove();
+            zaladujSamochody();
+            $('#editCarModal').modal('hide');
         });
 
         request.fail(function (response) {
@@ -107,4 +131,39 @@ $(document).ready(function() {
 function deleteCarButtonClick(self) {
     self = $(self);
     $('#deleteCarButton').attr("value", self.val());
+}
+
+function editCarButtonClick(self) {
+    self = $(self);
+    $('#editCarButton').attr("value", self.val());
+
+    var value = $('#editCarButton').val();
+
+     var data = { vin: value }
+
+
+
+    request = $.ajax({
+        url: "./php/loadEditCarInfo.php",
+        data: data,
+        type: "POST"
+    });
+
+    request.done(function (response) {
+        if(response!=""){
+            var obj = JSON.parse(response);
+        }          
+       $("#producentEdit").val(obj[0][0]);
+       $("#modelEdit").val(obj[0][1]);
+       $("#rok_produkcjiEdit").val(obj[0][2]);
+       $("#kolorEdit").val(obj[0][3]);
+       $("#opisEdit").val(obj[0][4]);
+       $("#cenaEdit").val(obj[0][5]);
+    });
+
+    request.fail(function (response) {
+        console.log(response);
+    })
+
+    
 }

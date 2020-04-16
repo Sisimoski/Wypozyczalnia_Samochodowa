@@ -14,6 +14,15 @@
     $numer_tablicy_rejestracyjnej=($_POST['nr_tablicy']);
     $fileExist = true;
 
+    $sth = $db->prepare('SELECT vin FROM samochod WHERE :vin=vin OR numer_tablicy_rejestracyjnej=:numer_tablicy_rejestracyjnej limit 1');
+    $sth ->bindValue(':numer_tablicy_rejestracyjnej',$numer_tablicy_rejestracyjnej,PDO::PARAM_STR);
+    $sth ->bindValue(':vin',$vin,PDO::PARAM_STR);
+    $sth->execute();
+    $result = $sth->fetch(PDO::FETCH_ASSOC);
+    if($result){
+      die("Podany VIN lub numer rejestracji znajduje się już w systemie");
+    }
+
 
  //Dodawanie zdjecia
     while($fileExist==true){

@@ -9,20 +9,11 @@
          WHERE id_klient = :id_klient');
          $sth ->bindValue(':id_klient',$idSession,PDO::PARAM_STR);
          $sth->execute();
-
-         if
+ 
+        if
          ($sth ->rowCount() != 0){
             $response = $sth->fetchAll();
             $data = json_encode($response);
             echo $data;
-        }
-        else{
-           // $data = array[{"producent":"brak","0":"brak","numer_tablicy_rejestracyjnej":"brak","1":"brak","czy_posiadany":"brak","2":"brak","vin":"brak","3":"brak"}];
-         //  $data = json_encode($response);
-         
-        }
-
-      
-        
-        
+        }              
 ?>
