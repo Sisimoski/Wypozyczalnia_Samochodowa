@@ -126,19 +126,19 @@ session_start();
                     <h1 class="h2">Zmiana hasła</h1>
                 </div>
                 <form class="changePasswordForm" method="POST">
-                    <div>
+                    <div class="form-group">
                         <label for="oldPswd">Stare hasło</label>
-                        <input id="oldPswd" name="oldPswd" type="password" placeholder="Wprowadź dotychczasowe hasło">
+                        <input id="oldPswd" class="form-control" name="oldPswd" type="password" placeholder="Wprowadź dotychczasowe hasło">
                         <div class="komunikat"> </div>
                     </div>
-                    <div>
+                    <div class="form-group">
                         <label for="newPswd">Nowe hasło</label>
-                        <input id="newPswd" name="newPswd" type="password" placeholder="Wprowadź nowe hasło">
+                        <input id="newPswd" class="form-control" name="newPswd" type="password" placeholder="Wprowadź nowe hasło">
                         <div class="komunikat"> </div>
                     </div>
-                    <div>
+                    <div class="form-group">
                         <label for="newPswd1">Powtórz nowe hasło</label>
-                        <input id="newPswd1" name="renewPswd1" type="password"
+                        <input id="newPswd1" class="form-control" name="renewPswd1" type="password"
                             placeholder="Wprowadź ponownie nowe hasło">
                         <div class="komunikat"> </div>
                     </div>
