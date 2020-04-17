@@ -114,49 +114,58 @@ session_start();
                                 <i class="fas fa-car-side"></i>Status samochodów</a>
                         </li>
                     </ul>
+                </div>
             </nav>
-            <div class="col-md-9 ml-sm-auto col-lg-10 px-4">
+            <div class="col-md-9 ml-sm-auto col-lg-10 p-0">
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item"><a href="index.php">Panel klienta</a></li>
                         <li class="breadcrumb-item active" aria-current="page">Dodawanie samochodów</li>
                     </ol>
                 </nav>
-                <div
-                    class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+                <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom px-4">
                     <h1 class="h2">Dodawanie samochodów</h1>
                 </div>
-                <form class="addCarForm mt-3" id="addCarForm" method="POST" enctype="multipart/form-data">
-                    <div class="form-group">
-                        <label for="producent">Producent</label>
-                        <input id="producent" class="form-control" name="producent" placeholder="np. Audi">
-                        <div class="komunikat"> </div>
+                <form class="addCarForm mt-3 px-4" id="addCarForm" method="POST" enctype="multipart/form-data">
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="producent">Producent</label>
+                            <input id="producent" class="form-control" name="producent" placeholder="np. Audi">
+                            <div class="komunikat"> </div>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="model">Model</label>
+                            <input id="model" class="form-control" name="model" placeholder="np. RS5">
+                            <div class="komunikat"> </div>
+                        </div>
                     </div>
-                    <div class="form-group">
-                        <label for="model">Model</label>
-                        <input id="model" class="form-control" name="model" placeholder="np. RS5">
-                        <div class="komunikat"> </div>
-                    </div>
-                    <div class="form-group">
-                        <label for="rok_produkcji">Rok produkcji</label>
-                        <input id="rok_produkcji" class="form-control" type="number" min="1960" max="2020" step="1"
-                            name="rok_produkcji" placeholder="np. 1995">
-                        <div class="komunikat"> </div>
-                    </div>
-                    <div class="form-group">
-                        <label for="kolor">Kolor</label>
-                        <input id="kolor" class="form-control" type="input" name="kolor" placeholder="czerwony">
-                        <div class="komunikat"> </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-10">
+                            <label for="kolor">Kolor</label>
+                            <input id="kolor" class="form-control" type="input" name="kolor" placeholder="np. Czerwony">
+                            <div class="komunikat"> </div>
+                        </div>
+                        <div class="form-group col-md-2">
+                            <label for="rok_produkcji">Rok produkcji</label>
+                            <input id="rok_produkcji" class="form-control" type="number" min="1960" max="2020" step="1"
+                                name="rok_produkcji" placeholder="np. 1995">
+                            <div class="komunikat"> </div>
+                        </div>
                     </div>
                     <div class="form-group">
                         <label for="opis">Opis</label>
-                        <textarea class="form-control" rows="3" id="opis" type="input" name="opis" placeholder="czerwony"></textarea>
+                        <textarea class="form-control" rows="4" id="opis" type="input" name="opis"
+                            placeholder="Wprowadź opis samochodu"></textarea>
                         <div class="komunikat"> </div>
                     </div>
                     <div class="form-group">
                         <label for="cena">Cena wypożyczenia(zł/24h)</label>
                         <input id="cena" class="form-control" type="input" name="cena" placeholder="np. 200">
                         <div class="komunikat"> </div>
+                    </div>
+                    <div class="alert alert-warning" role="alert">
+                        Ze względów bezpieczeństwa oraz kwestii ubezpieczeń – prosimy o dodanie numeru VIN oraz numeru
+                        tablicy rejestracyjnej.
                     </div>
                     <div class="form-group">
                         <label for="">VIN</label>
@@ -170,11 +179,12 @@ session_start();
                         <div class="komunikat"> </div>
                     </div>
                     <div class="form-group">
-                    <div class="custom-file">
-                        <label class="custom-file-label" for="zdjecie">Dodaj zdjęcie</label>
-                        <input id="zdjecie" class="custom-file-input" type="file" name="zdjecie">
-                        <div class="komunikat"> </div>
-                    </div>
+                        <label for="zdjecie">Dodaj zdjęcie</label>
+                        <div class="custom-file">
+                            <label class="custom-file-label" for="zdjecie">Wybierz plik:</label>
+                            <input id="zdjecie" class="custom-file-input" type="file" name="zdjecie">
+                            <div class="komunikat"> </div>
+                        </div>
                     </div>
                     <div>
                         <button class="btn btn-primary" type="submit">Dodaj samochód</button>
