@@ -122,6 +122,7 @@ session_start();
                         </li>
                     </ul>
                 </div>
+                </nav>
             <div class="col-md-9 ml-sm-auto col-lg-10 px-0">
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb">
