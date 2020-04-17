@@ -48,14 +48,14 @@ session_start();
             </button>
             <div class="collapse navbar-collapse flex-grow-1" id="navbarSupportedContent">
                 <ul class="navbar-nav ml-auto">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="#">Strona główna<span class="sr-only">(current)</span></a>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.php">Strona główna<span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="oferty.php">Oferty</a>
+                        <a class="nav-link" href="../oferty.php">Oferty</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="aboutus.php">O nas</a>
+                        <a class="nav-link" href="../aboutus.php">O nas</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">Kontakt</a>
@@ -94,28 +94,34 @@ session_start();
                 <div class="sidebar-sticky">
                     <ul class="nav flex-column">
                         <li class="nav-item">
-                            <a class="nav-link active" href="zmianahasla.php">
+                            <a class="nav-link" href="zmianahasla.php">
                                 <i class="fas fa-key"></i>
-                                Zmiana hasła
+                                <span data-feather="home"></span>
+                                Zmiana hasła <span class="sr-only">(current)</span>
                             </a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="zmianadanychosobowych.php">
-                                <i class="fas fa-users-cog"></i>Zmiana danych osobowych</a>
+                                <i class="fas fa-users-cog"></i>
+                                <span data-feather=""></span>Zmiana danych osobowych</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="zmianamaila.php">
-                                <i class="fas fa-envelope"></i>Zmiana maila</a>
+                                <i class="fas fa-envelope"></i>
+                                <span data-feather=""></span>Zmiana maila</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="dodawaniesamochodow.php">
-                                <i class="fas fa-car"></i>Dodawanie samochodów</a>
+                                <i class="fas fa-car"></i>
+                                <span data-feather=""></span>Dodawanie samochodów</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="statussamochodow.php">
-                                <i class="fas fa-car-side"></i>Status samochodów</a>
+                            <a class="nav-link active" href="statussamochodow.php">
+                                <i class="fas fa-car-side"></i>
+                                <span data-feather=""></span>Status samochodów</a>
                         </li>
                     </ul>
+                </div>
             </nav>
             <div class="col-md-9 ml-sm-auto col-lg-10 px-0">
                 <nav aria-label="breadcrumb">
