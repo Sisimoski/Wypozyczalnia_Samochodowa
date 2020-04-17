@@ -126,12 +126,12 @@ session_start();
                     <h1 class="h2">Zmiana maila</h1>
                 </div>
                 <form class="changeMailForm" method="POST">
-                    <div>
+                    <div class="form-group">
                         <label for="oldMail">Aktualny adres mailowy</label>
                         <input id="oldMail" name="oldMail" placeholder="Wprowadź aktualny mail">
                         <div class="komunikat"> </div>
                     </div>
-                    <div>
+                    <div class="form-group">
                         <label for="newMail">Nowy adres mailowy</label>
                         <input id="newMail" name="newMail" placeholder="Wprowadź nowy mail">
                         <div class="komunikat"> </div>

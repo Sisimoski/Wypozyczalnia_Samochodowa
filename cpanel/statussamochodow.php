@@ -187,38 +187,38 @@ session_start();
                 <div class="modal-footer">
                     <form class="editCarForm mt-3" method="POST">
                         <span><b>Edycja samochodu</b></span>
-                        <div>
+                        <div class="form-group">
                             <label for="producentEdit">Producent</label>
-                            <input id="producentEdit" name="producentEdit" placeholder="np. Audi">
+                            <input id="producentEdit" class="form-control" name="producentEdit" placeholder="np. Audi">
                             <div class="komunikat"> </div>
                         </div>
-                        <div>
+                        <div class="form-group">
                             <label for="modelEdit">Model</label>
-                            <input id="modelEdit" name="modelEdit" placeholder="np. RS5">
+                            <input id="modelEdit" class="form-control" name="modelEdit" placeholder="np. RS5">
                             <div class="komunikat"> </div>
                         </div>
-                        <div>
+                        <div class="form-group">
                             <label for="rok_produkcjiEdit">Rok produkcji</label>
-                            <input id="rok_produkcjiEdit" type="number" min="1960" max="2020" step="1"
+                            <input id="rok_produkcjiEdit"class="form-control"  type="number" min="1960" max="2020" step="1"
                                 name="rok_produkcjiEdit" placeholder="np. 1995">
                             <div class="komunikat"> </div>
                         </div>
-                        <div>
+                        <div class="form-group">
                             <label for="kolorEdit">Kolor</label>
-                            <input id="kolorEdit" type="input" name="kolorEdit" placeholder="czerwony">
+                            <input id="kolorEdit"  class="form-control" type="input" name="kolorEdit" placeholder="czerwony">
                             <div class="komunikat"> </div>
                         </div>
-                        <div>
+                        <div class="form-group">
                             <label for="opisEdit">Opis</label>
-                            <input id="opisEdit" type="input" name="opisEdit" placeholder="czerwony">
+                            <input id="opisEdit" class="form-control"  type="input" name="opisEdit" placeholder="czerwony">
                             <div class="komunikat"> </div>
                         </div>
-                        <div>
+                        <div class="form-group">
                             <label for="cenaEdit">Cena wypożyczenia (zł/24h)</label>
-                            <input id="cenaEdit" type="input" name="cenaEdit" placeholder="np. 200zł">
+                            <input id="cenaEdit"  class="form-control" type="input" name="cenaEdit" placeholder="np. 200zł">
                             <div class="komunikat"> </div>
                         </div>
-                        <div>
+                        <div class="form-group">
                             <div class="komunikat"> </div>
                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Wracam</button>
                             <button type="button" id="editCarButton" name="editCarButton" value=""

@@ -127,24 +127,24 @@ session_start();
                 </div>
                 <form class="ChangePersonalDataForm mt-3" method="POST">
 
-                    <div>
+                    <div class="form-group">
                         <label for="imie">Imie</label>
-                        <input id="imie" name="imie">
+                        <input id="imie"class="form-control" name="imie">
                         <div class="komunikat"> </div>
                     </div>
-                    <div>
+                    <div class="form-group">
                         <label for="nazwisko">Nazwisko</label>
-                        <input id="nazwisko" name="nazwisko">
+                        <input id="nazwisko"class="form-control" name="nazwisko">
                         <div class="komunikat"> </div>
                     </div>
-                    <div>
+                    <div class="form-group">
                         <label for="ulica">Ulica</label>
-                        <input id="ulica" name="ulica">
+                        <input id="ulica"class="form-control" name="ulica">
                         <div class="komunikat"> </div>
                     </div>
-                    <div>
+                    <div class="form-group">
                         <label for="nr_domu">Nr domu</label>
-                        <input id="nr_domu" name="nr_domu">
+                        <input id="nr_domu" class="form-control"name="nr_domu">
                         <div class="komunikat"> </div>
                     </div>
                     <label for="wojewodztwo">Województwo</label>
@@ -166,54 +166,54 @@ session_start();
                         <option value="wielkopolskie">wielkopolskie</option>
                         <option value="zachodniopomorskie">zachodniopomorskie</option>
                     </select>
-                    <div>
+                    <div class="form-group">
                         <label for="kod_pocztowy">Kod pocztowy</label>
-                        <input id="kod_pocztowy" name="kod_pocztowy">
+                        <input id="kod_pocztowy"class="form-control" name="kod_pocztowy">
                         <div class="komunikat"> </div>
                     </div>
-                    <div>
+                    <div class="form-group">
                         <label for="miejscowosc">Miejscowosc</label>
-                        <input id="miejscowosc" name="miejscowosc">
+                        <input id="miejscowosc"class="form-control" name="miejscowosc">
                         <div class="komunikat"> </div>
                     </div>
-                    <div>
+                    <div class="form-group">
                         <label for="nr_kom">Nr kom.</label>
-                        <input id="nr_kom" name="nr_kom">
+                        <input id="nr_kom" class="form-control" name="nr_kom">
                         <div class="komunikat"> </div>
                     </div>
-                    <div>
+                    <div class="form-group">
                         <label for="nr_tel">Nr tel.</label>
-                        <input id="nr_tel" name="nr_tel">
+                        <input id="nr_tel" class="form-control" name="nr_tel">
                         <div class="komunikat"> </div>
                     </div>
-                    <div>
+                    <div class="form-group">
                         <label for="fax">Fax</label>
-                        <input id="fax" name="fax">
+                        <input id="fax" class="form-control" name="fax">
                         <div class="komunikat"> </div>
                     </div>
-                    <div>
+                    <div class="form-group">
                         <label for="dodatkowe_informacje">Dodatkowe informacje</label>
-                        <input id="dodatkowe_informacje" name="dodatkowe_informacje">
+                        <input id="dodatkowe_informacje" class="form-control" name="dodatkowe_informacje">
                         <div class="komunikat"> </div>
                     </div>
-                    <div>
+                    <div class="form-group">
                         <label for="www">Strona internetowa</label>
-                        <input id="www" name="www">
+                        <input id="www" class="form-control" name="www">
                         <div class="komunikat"> </div>
                     </div>
-                    <div>
+                    <div class="form-group">
                         <label for="nazwa_firmy" id="nazwa_firmy_label">Nazwa firmy</label>
-                        <input id="nazwa_firmy" name="nazwa_firmy">
+                        <input id="nazwa_firmy"  class="form-control"name="nazwa_firmy">
                         <div class="komunikat"> </div>
                     </div>
-                    <div>
+                    <div class="form-group">
                         <label for="regon" id="regon_label">Regon</label>
-                        <input id="regon" name="regon">
+                        <input id="regon" class="form-control" name="regon">
                         <div class="komunikat"> </div>
                     </div>
-                    <div>
+                    <div class="form-group">
                         <label for="nip" id="nip_label">Nip</label>
-                        <input id="nip" name="nip">
+                        <input id="nip" class="form-control" name="nip">
                         <div class="komunikat"> </div>
                     </div>
                     <div>
