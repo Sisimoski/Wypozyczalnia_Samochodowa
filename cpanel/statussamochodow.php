@@ -190,7 +190,7 @@ session_start();
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-                <div class="modal-footer">
+                <div class="modal-footer" style="justify-content: flex-start;">
                     <form class="editCarForm mt-3" method="POST">
                         <div class="form-group">
                             <label for="producentEdit">Producent</label>
