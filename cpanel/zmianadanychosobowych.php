@@ -14,6 +14,9 @@ session_start();
     <title>Car4You - Zmiana danych osobowych</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" type="text/css" href="../css/logowanie.css">
+
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
@@ -33,7 +36,7 @@ session_start();
 <body>
     <!-- Nagłówek Navbar -->
     <section id="header">
-        <nav class="navbar navbar-expand-lg sticky-top navbar-light bg-light"
+        <nav class="navbar navbar-expand-lg fixed-top navbar-light bg-light"
             style="box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);">
             <a class="navbar-brand ml-2" href="index.php">
                 <img src="../images/Car4You-line-logo.png" height="50" alt="car4you logo">
@@ -86,7 +89,7 @@ session_start();
         <div class="fixed-top justify-content-center d-flex">
             <div class="alert ml-5 mr-5 mt-3 text-center" style="width:40%"></div>
         </div>
-        <div class="row">
+        <div class="row" style="height: 100%;">
             <nav class="col-md-2 d-none d-md-block bg-light sidebar">
                 <div class="sidebar-sticky">
                     <ul class="nav flex-column">
@@ -114,7 +117,7 @@ session_start();
                         </li>
                     </ul>
             </nav>
-            <div class="col-md-9 ml-sm-auto col-lg-10 px-4">
+            <div class="col-md-9 ml-sm-auto col-lg-10 px-0">
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item"><a href="index.php">Panel klienta</a></li>
@@ -122,78 +125,87 @@ session_start();
                     </ol>
                 </nav>
                 <div
-                    class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+                    class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom px-4">
                     <h1 class="h2">Zmiana danych osobowych</h1>
                 </div>
-                <form class="ChangePersonalDataForm mt-3" method="POST">
-
-                    <div class="form-group">
-                        <label for="imie">Imie</label>
-                        <input id="imie"class="form-control" name="imie">
-                        <div class="komunikat"> </div>
+                <form class="ChangePersonalDataForm mt-3 px-4" method="POST">
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="imie">Imie</label>
+                            <input id="imie" class="form-control" name="imie">
+                            <div class="komunikat"> </div>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="nazwisko">Nazwisko</label>
+                            <input id="nazwisko" class="form-control" name="nazwisko">
+                            <div class="komunikat"> </div>
+                        </div>
                     </div>
-                    <div class="form-group">
-                        <label for="nazwisko">Nazwisko</label>
-                        <input id="nazwisko"class="form-control" name="nazwisko">
-                        <div class="komunikat"> </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-10">
+                            <label for="ulica">Ulica</label>
+                            <input id="ulica" class="form-control" name="ulica">
+                            <div class="komunikat"> </div>
+                        </div>
+                        <div class="form-group col-md-2">
+                            <label for="nr_domu">Nr domu</label>
+                            <input id="nr_domu" class="form-control" name="nr_domu">
+                            <div class="komunikat"> </div>
+                        </div>
                     </div>
-                    <div class="form-group">
-                        <label for="ulica">Ulica</label>
-                        <input id="ulica"class="form-control" name="ulica">
-                        <div class="komunikat"> </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="miejscowosc">Miejsowość</label>
+                            <input id="miejscowosc" class="form-control" name="miejscowosc">
+                            <div class="komunikat"> </div>
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label for="wojewodztwo">Województwo</label>
+                            <select id="wojewodztwo" class="form-control" name="wojewodztwo">
+                                <option value="dolnośląskie">dolnośląskie</option>
+                                <option value="kujawsko-pomorskie">kujawsko-pomorskie</option>
+                                <option value="lubelskie">lubelskie</option>
+                                <option value="lubuskie">lubuskie</option>
+                                <option value="łódzkie">łódzkie</option>
+                                <option value="małopolskie">małopolskie</option>
+                                <option value="mazowieckie">mazowieckie</option>
+                                <option value="opolskie">opolskie</option>
+                                <option value="podkarpackie">podkarpackie</option>
+                                <option value="podlaskie">podlaskie</option>
+                                <option value="pomorskie">pomorskie</option>
+                                <option value="śląskie">śląskie</option>
+                                <option value="świętokrzyskie">świętokrzyskie</option>
+                                <option value="warmińsko-mazurskie">warmińsko-mazurskie</option>
+                                <option value="wielkopolskie">wielkopolskie</option>
+                                <option value="zachodniopomorskie">zachodniopomorskie</option>
+                            </select>
+                        </div>
+                        <div class="form-group col-md-2">
+                            <label for="kod_pocztowy">Kod pocztowy</label>
+                            <input id="kod_pocztowy" class="form-control" name="kod_pocztowy">
+                            <div class="komunikat"> </div>
+                        </div>
                     </div>
-                    <div class="form-group">
-                        <label for="nr_domu">Nr domu</label>
-                        <input id="nr_domu" class="form-control"name="nr_domu">
-                        <div class="komunikat"> </div>
-                    </div>
-                    <label for="wojewodztwo">Województwo</label>
-                    <select id="wojewodztwo" class="form-control" name="wojewodztwo">
-                        <option value="dolnośląskie">dolnośląskie</option>
-                        <option value="kujawsko-pomorskie">kujawsko-pomorskie</option>
-                        <option value="lubelskie">lubelskie</option>
-                        <option value="lubuskie">lubuskie</option>
-                        <option value="łódzkie">łódzkie</option>
-                        <option value="małopolskie">małopolskie</option>
-                        <option value="mazowieckie">mazowieckie</option>
-                        <option value="opolskie">opolskie</option>
-                        <option value="podkarpackie">podkarpackie</option>
-                        <option value="podlaskie">podlaskie</option>
-                        <option value="pomorskie">pomorskie</option>
-                        <option value="śląskie">śląskie</option>
-                        <option value="świętokrzyskie">świętokrzyskie</option>
-                        <option value="warmińsko-mazurskie">warmińsko-mazurskie</option>
-                        <option value="wielkopolskie">wielkopolskie</option>
-                        <option value="zachodniopomorskie">zachodniopomorskie</option>
-                    </select>
-                    <div class="form-group">
-                        <label for="kod_pocztowy">Kod pocztowy</label>
-                        <input id="kod_pocztowy"class="form-control" name="kod_pocztowy">
-                        <div class="komunikat"> </div>
-                    </div>
-                    <div class="form-group">
-                        <label for="miejscowosc">Miejscowosc</label>
-                        <input id="miejscowosc"class="form-control" name="miejscowosc">
-                        <div class="komunikat"> </div>
-                    </div>
-                    <div class="form-group">
-                        <label for="nr_kom">Nr kom.</label>
-                        <input id="nr_kom" class="form-control" name="nr_kom">
-                        <div class="komunikat"> </div>
-                    </div>
-                    <div class="form-group">
-                        <label for="nr_tel">Nr tel.</label>
-                        <input id="nr_tel" class="form-control" name="nr_tel">
-                        <div class="komunikat"> </div>
-                    </div>
-                    <div class="form-group">
-                        <label for="fax">Fax</label>
-                        <input id="fax" class="form-control" name="fax">
-                        <div class="komunikat"> </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="nr_kom">Nr kom.</label>
+                            <input id="nr_kom" class="form-control" name="nr_kom">
+                            <div class="komunikat"> </div>
+                        </div>
+                        <div class="form-group col-md-3">
+                            <label for="nr_tel">Nr tel.</label>
+                            <input id="nr_tel" class="form-control" name="nr_tel">
+                            <div class="komunikat"> </div>
+                        </div>
+                        <div class="form-group col-md-3">
+                            <label for="fax">Fax</label>
+                            <input id="fax" class="form-control" name="fax">
+                            <div class="komunikat"> </div>
+                        </div>
                     </div>
                     <div class="form-group">
                         <label for="dodatkowe_informacje">Dodatkowe informacje</label>
-                        <input id="dodatkowe_informacje" class="form-control" name="dodatkowe_informacje">
+                        <textarea id="dodatkowe_informacje" class="form-control" rows="4" name="dodatkowe_informacje"></textarea>
                         <div class="komunikat"> </div>
                     </div>
                     <div class="form-group">
@@ -201,20 +213,23 @@ session_start();
                         <input id="www" class="form-control" name="www">
                         <div class="komunikat"> </div>
                     </div>
+                    <h5><label>Dane firmowe:</label></h5>
                     <div class="form-group">
                         <label for="nazwa_firmy" id="nazwa_firmy_label">Nazwa firmy</label>
-                        <input id="nazwa_firmy"  class="form-control"name="nazwa_firmy">
+                        <input id="nazwa_firmy" class="form-control" name="nazwa_firmy">
                         <div class="komunikat"> </div>
                     </div>
-                    <div class="form-group">
-                        <label for="regon" id="regon_label">Regon</label>
-                        <input id="regon" class="form-control" name="regon">
-                        <div class="komunikat"> </div>
-                    </div>
-                    <div class="form-group">
-                        <label for="nip" id="nip_label">Nip</label>
-                        <input id="nip" class="form-control" name="nip">
-                        <div class="komunikat"> </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="regon" id="regon_label">Regon</label>
+                            <input id="regon" class="form-control" name="regon">
+                            <div class="komunikat"> </div>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="nip" id="nip_label">Nip</label>
+                            <input id="nip" class="form-control" name="nip">
+                            <div class="komunikat"> </div>
+                        </div>
                     </div>
                     <div>
                         <div class="komunikat"> </div>

@@ -14,6 +14,9 @@ session_start();
     <title>Car4You - Dodawanie samochodów</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" type="text/css" href="../css/logowanie.css">
+
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
@@ -34,7 +37,7 @@ session_start();
 <body>
     <!-- Nagłówek Navbar -->
     <section id="header">
-        <nav class="navbar navbar-expand-lg sticky-top navbar-light bg-light"
+        <nav class="navbar navbar-expand-lg fixed-top navbar-light bg-light"
             style="box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);">
             <a class="navbar-brand ml-2" href="index.php">
                 <img src="../images/Car4You-line-logo.png" height="50" alt="car4you logo">
@@ -87,7 +90,7 @@ session_start();
         <div class="fixed-top justify-content-center d-flex">
             <div class="alert ml-5 mr-5 mt-3 text-center" style="width:40%"></div>
         </div>
-        <div class="row">
+        <div class="row" style="height: 100%;">
             <nav class="col-md-2 d-none d-md-block bg-light sidebar">
                 <div class="sidebar-sticky">
                     <ul class="nav flex-column">
@@ -123,7 +126,8 @@ session_start();
                         <li class="breadcrumb-item active" aria-current="page">Dodawanie samochodów</li>
                     </ol>
                 </nav>
-                <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom px-4">
+                <div
+                    class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom px-4">
                     <h1 class="h2">Dodawanie samochodów</h1>
                 </div>
                 <form class="addCarForm mt-3 px-4" id="addCarForm" method="POST" enctype="multipart/form-data">
