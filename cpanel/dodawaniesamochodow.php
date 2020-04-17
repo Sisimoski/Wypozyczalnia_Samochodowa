@@ -26,6 +26,7 @@ session_start();
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
         integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous">
     </script>
+    <script src="https://cdn.jsdelivr.net/npm/bs-custom-file-input/dist/bs-custom-file-input.js"></script>
     <script src="./js/changeData.js"></script>
     <script src="./js/carManagement.js"></script>
 </head>
@@ -126,51 +127,54 @@ session_start();
                     <h1 class="h2">Dodawanie samochodów</h1>
                 </div>
                 <form class="addCarForm mt-3" id="addCarForm" method="POST" enctype="multipart/form-data">
-                    <div>
+                    <div class="form-group">
                         <label for="producent">Producent</label>
-                        <input id="producent" name="producent" placeholder="np. Audi">
+                        <input id="producent" class="form-control" name="producent" placeholder="np. Audi">
                         <div class="komunikat"> </div>
                     </div>
-                    <div>
+                    <div class="form-group">
                         <label for="model">Model</label>
-                        <input id="model" name="model" placeholder="np. RS5">
+                        <input id="model" class="form-control" name="model" placeholder="np. RS5">
                         <div class="komunikat"> </div>
                     </div>
-                    <div>
+                    <div class="form-group">
                         <label for="rok_produkcji">Rok produkcji</label>
-                        <input id="rok_produkcji" type="number" min="1960" max="2020" step="1" name="rok_produkcji"
-                            placeholder="np. 1995">
+                        <input id="rok_produkcji" class="form-control" type="number" min="1960" max="2020" step="1"
+                            name="rok_produkcji" placeholder="np. 1995">
                         <div class="komunikat"> </div>
                     </div>
-                    <div>
+                    <div class="form-group">
                         <label for="kolor">Kolor</label>
-                        <input id="kolor" type="input" name="kolor" placeholder="czerwony">
+                        <input id="kolor" class="form-control" type="input" name="kolor" placeholder="czerwony">
                         <div class="komunikat"> </div>
                     </div>
-                    <div>
+                    <div class="form-group">
                         <label for="opis">Opis</label>
-                        <input id="opis" type="input" name="opis" placeholder="czerwony">
+                        <textarea class="form-control" rows="3" id="opis" type="input" name="opis" placeholder="czerwony"></textarea>
                         <div class="komunikat"> </div>
                     </div>
-                    <div>
+                    <div class="form-group">
                         <label for="cena">Cena wypożyczenia(zł/24h)</label>
-                        <input id="cena" type="input" name="cena" placeholder="np. 200">
+                        <input id="cena" class="form-control" type="input" name="cena" placeholder="np. 200">
                         <div class="komunikat"> </div>
                     </div>
-                    <div>
+                    <div class="form-group">
                         <label for="">VIN</label>
-                        <input id="vin" type="input" name="vin">
+                        <input id="vin" class="form-control" type="input" name="vin">
                         <div class="komunikat"> </div>
                     </div>
-                    <div>
+                    <div class="form-group">
                         <label for="">Nr tablicy rejestracyjnej</label>
-                        <input id="nr_tablicy" type="input" name="nr_tablicy" placeholder="OK 99999">
+                        <input id="nr_tablicy" class="form-control" type="input" name="nr_tablicy"
+                            placeholder="OK 99999">
                         <div class="komunikat"> </div>
                     </div>
-                    <div>
-                        <label for="zdjecie">Dodaj zdjęcie</label>
-                        <input id="zdjecie" type="file" name="zdjecie">
+                    <div class="form-group">
+                    <div class="custom-file">
+                        <label class="custom-file-label" for="zdjecie">Dodaj zdjęcie</label>
+                        <input id="zdjecie" class="custom-file-input" type="file" name="zdjecie">
                         <div class="komunikat"> </div>
+                    </div>
                     </div>
                     <div>
                         <button class="btn btn-primary" type="submit">Dodaj samochód</button>
