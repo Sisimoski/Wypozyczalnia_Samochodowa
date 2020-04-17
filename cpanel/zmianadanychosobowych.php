@@ -1,10 +1,3 @@
-<!-- Index file for Client pannel 
-W divach "komunikat" musi być miejsce na wyświetlanie tekstu do walidacji jak w rejestracji.
-W spanach są umieszczone nazwy zakładek do menu z lewej strony.
-Opis samochodu fajnie żeby miał większe okno.
-Przy VIN i NR tablicy można by było zrobić dymek z informacja dalczego o to pytamy(dla bezpeiczensta,ubezpeiczenai itd.)
-Przejście do edycji samochodu ma być w statusie nie róbcie go w menu(tylko front niego).
--->
 <?php
 session_start();
 
@@ -18,7 +11,7 @@ session_start();
 <html lang="pl">
 
 <head>
-    <title>Car4You - Panel klienta</title>
+    <title>Car4You - Zmiana danych osobowych</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
@@ -124,13 +117,111 @@ session_start();
             <div class="col-md-9 ml-sm-auto col-lg-10 px-4">
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb">
-                        <li class="breadcrumb-item active"><a href="#">Panel klienta</a></li>
+                        <li class="breadcrumb-item"><a href="index.php">Panel klienta</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Zmiana danych osobowych</li>
                     </ol>
                 </nav>
                 <div
                     class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-                    <h1 class="h2">Panel klienta</h1>
+                    <h1 class="h2">Zmiana danych osobowych</h1>
                 </div>
+                <form class="ChangePersonalDataForm mt-3" method="POST">
+
+                    <div>
+                        <label for="imie">Imie</label>
+                        <input id="imie" name="imie">
+                        <div class="komunikat"> </div>
+                    </div>
+                    <div>
+                        <label for="nazwisko">Nazwisko</label>
+                        <input id="nazwisko" name="nazwisko">
+                        <div class="komunikat"> </div>
+                    </div>
+                    <div>
+                        <label for="ulica">Ulica</label>
+                        <input id="ulica" name="ulica">
+                        <div class="komunikat"> </div>
+                    </div>
+                    <div>
+                        <label for="nr_domu">Nr domu</label>
+                        <input id="nr_domu" name="nr_domu">
+                        <div class="komunikat"> </div>
+                    </div>
+                    <label for="wojewodztwo">Województwo</label>
+                    <select id="wojewodztwo" class="form-control" name="wojewodztwo">
+                        <option value="dolnośląskie">dolnośląskie</option>
+                        <option value="kujawsko-pomorskie">kujawsko-pomorskie</option>
+                        <option value="lubelskie">lubelskie</option>
+                        <option value="lubuskie">lubuskie</option>
+                        <option value="łódzkie">łódzkie</option>
+                        <option value="małopolskie">małopolskie</option>
+                        <option value="mazowieckie">mazowieckie</option>
+                        <option value="opolskie">opolskie</option>
+                        <option value="podkarpackie">podkarpackie</option>
+                        <option value="podlaskie">podlaskie</option>
+                        <option value="pomorskie">pomorskie</option>
+                        <option value="śląskie">śląskie</option>
+                        <option value="świętokrzyskie">świętokrzyskie</option>
+                        <option value="warmińsko-mazurskie">warmińsko-mazurskie</option>
+                        <option value="wielkopolskie">wielkopolskie</option>
+                        <option value="zachodniopomorskie">zachodniopomorskie</option>
+                    </select>
+                    <div>
+                        <label for="kod_pocztowy">Kod pocztowy</label>
+                        <input id="kod_pocztowy" name="kod_pocztowy">
+                        <div class="komunikat"> </div>
+                    </div>
+                    <div>
+                        <label for="miejscowosc">Miejscowosc</label>
+                        <input id="miejscowosc" name="miejscowosc">
+                        <div class="komunikat"> </div>
+                    </div>
+                    <div>
+                        <label for="nr_kom">Nr kom.</label>
+                        <input id="nr_kom" name="nr_kom">
+                        <div class="komunikat"> </div>
+                    </div>
+                    <div>
+                        <label for="nr_tel">Nr tel.</label>
+                        <input id="nr_tel" name="nr_tel">
+                        <div class="komunikat"> </div>
+                    </div>
+                    <div>
+                        <label for="fax">Fax</label>
+                        <input id="fax" name="fax">
+                        <div class="komunikat"> </div>
+                    </div>
+                    <div>
+                        <label for="dodatkowe_informacje">Dodatkowe informacje</label>
+                        <input id="dodatkowe_informacje" name="dodatkowe_informacje">
+                        <div class="komunikat"> </div>
+                    </div>
+                    <div>
+                        <label for="www">Strona internetowa</label>
+                        <input id="www" name="www">
+                        <div class="komunikat"> </div>
+                    </div>
+                    <div>
+                        <label for="nazwa_firmy" id="nazwa_firmy_label">Nazwa firmy</label>
+                        <input id="nazwa_firmy" name="nazwa_firmy">
+                        <div class="komunikat"> </div>
+                    </div>
+                    <div>
+                        <label for="regon" id="regon_label">Regon</label>
+                        <input id="regon" name="regon">
+                        <div class="komunikat"> </div>
+                    </div>
+                    <div>
+                        <label for="nip" id="nip_label">Nip</label>
+                        <input id="nip" name="nip">
+                        <div class="komunikat"> </div>
+                    </div>
+                    <div>
+                        <div class="komunikat"> </div>
+                        <button class="btn btn-primary" id="changePersonalData" name="changePersonalData"
+                            type="button">Zatwierdź dane</button>
+                    </div>
+                </form>
 
             </div>
         </div>
@@ -218,6 +309,7 @@ session_start();
             </div>
         </div>
     </div>
+
 
 
 </body>

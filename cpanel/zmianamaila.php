@@ -1,10 +1,3 @@
-<!-- Index file for Client pannel 
-W divach "komunikat" musi być miejsce na wyświetlanie tekstu do walidacji jak w rejestracji.
-W spanach są umieszczone nazwy zakładek do menu z lewej strony.
-Opis samochodu fajnie żeby miał większe okno.
-Przy VIN i NR tablicy można by było zrobić dymek z informacja dalczego o to pytamy(dla bezpeiczensta,ubezpeiczenai itd.)
-Przejście do edycji samochodu ma być w statusie nie róbcie go w menu(tylko front niego).
--->
 <?php
 session_start();
 
@@ -18,7 +11,7 @@ session_start();
 <html lang="pl">
 
 <head>
-    <title>Car4You - Panel klienta</title>
+    <title>Car4You - Zmiana maila</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
@@ -124,13 +117,32 @@ session_start();
             <div class="col-md-9 ml-sm-auto col-lg-10 px-4">
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb">
-                        <li class="breadcrumb-item active"><a href="#">Panel klienta</a></li>
+                        <li class="breadcrumb-item"><a href="index.php">Panel klienta</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Zmiana maila</li>
                     </ol>
                 </nav>
                 <div
                     class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-                    <h1 class="h2">Panel klienta</h1>
+                    <h1 class="h2">Zmiana maila</h1>
                 </div>
+                <form class="changeMailForm" method="POST">
+                    <div>
+                        <label for="oldMail">Aktualny adres mailowy</label>
+                        <input id="oldMail" name="oldMail" placeholder="Wprowadź aktualny mail">
+                        <div class="komunikat"> </div>
+                    </div>
+                    <div>
+                        <label for="newMail">Nowy adres mailowy</label>
+                        <input id="newMail" name="newMail" placeholder="Wprowadź nowy mail">
+                        <div class="komunikat"> </div>
+                    </div>
+
+                    <div>
+                        <div class="komunikat"> </div>
+                        <button class="btn btn-primary" id="changeMail" name="changeMail" type="button">Zatwierdź
+                            zmianę</button>
+                    </div>
+                </form>
 
             </div>
         </div>
@@ -218,6 +230,7 @@ session_start();
             </div>
         </div>
     </div>
+
 
 
 </body>

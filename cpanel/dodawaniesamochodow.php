@@ -1,10 +1,3 @@
-<!-- Index file for Client pannel 
-W divach "komunikat" musi być miejsce na wyświetlanie tekstu do walidacji jak w rejestracji.
-W spanach są umieszczone nazwy zakładek do menu z lewej strony.
-Opis samochodu fajnie żeby miał większe okno.
-Przy VIN i NR tablicy można by było zrobić dymek z informacja dalczego o to pytamy(dla bezpeiczensta,ubezpeiczenai itd.)
-Przejście do edycji samochodu ma być w statusie nie róbcie go w menu(tylko front niego).
--->
 <?php
 session_start();
 
@@ -18,7 +11,7 @@ session_start();
 <html lang="pl">
 
 <head>
-    <title>Car4You - Panel klienta</title>
+    <title>Car4You - Dodawanie samochodów</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
@@ -124,13 +117,65 @@ session_start();
             <div class="col-md-9 ml-sm-auto col-lg-10 px-4">
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb">
-                        <li class="breadcrumb-item active"><a href="#">Panel klienta</a></li>
+                        <li class="breadcrumb-item"><a href="index.php">Panel klienta</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Dodawanie samochodów</li>
                     </ol>
                 </nav>
                 <div
                     class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-                    <h1 class="h2">Panel klienta</h1>
+                    <h1 class="h2">Dodawanie samochodów</h1>
                 </div>
+                <form class="addCarForm mt-3" id="addCarForm" method="POST" enctype="multipart/form-data">
+                    <div>
+                        <label for="producent">Producent</label>
+                        <input id="producent" name="producent" placeholder="np. Audi">
+                        <div class="komunikat"> </div>
+                    </div>
+                    <div>
+                        <label for="model">Model</label>
+                        <input id="model" name="model" placeholder="np. RS5">
+                        <div class="komunikat"> </div>
+                    </div>
+                    <div>
+                        <label for="rok_produkcji">Rok produkcji</label>
+                        <input id="rok_produkcji" type="number" min="1960" max="2020" step="1" name="rok_produkcji"
+                            placeholder="np. 1995">
+                        <div class="komunikat"> </div>
+                    </div>
+                    <div>
+                        <label for="kolor">Kolor</label>
+                        <input id="kolor" type="input" name="kolor" placeholder="czerwony">
+                        <div class="komunikat"> </div>
+                    </div>
+                    <div>
+                        <label for="opis">Opis</label>
+                        <input id="opis" type="input" name="opis" placeholder="czerwony">
+                        <div class="komunikat"> </div>
+                    </div>
+                    <div>
+                        <label for="cena">Cena wypożyczenia(zł/24h)</label>
+                        <input id="cena" type="input" name="cena" placeholder="np. 200">
+                        <div class="komunikat"> </div>
+                    </div>
+                    <div>
+                        <label for="">VIN</label>
+                        <input id="vin" type="input" name="vin">
+                        <div class="komunikat"> </div>
+                    </div>
+                    <div>
+                        <label for="">Nr tablicy rejestracyjnej</label>
+                        <input id="nr_tablicy" type="input" name="nr_tablicy" placeholder="OK 99999">
+                        <div class="komunikat"> </div>
+                    </div>
+                    <div>
+                        <label for="zdjecie">Dodaj zdjęcie</label>
+                        <input id="zdjecie" type="file" name="zdjecie">
+                        <div class="komunikat"> </div>
+                    </div>
+                    <div>
+                        <button class="btn btn-primary" type="submit">Dodaj samochód</button>
+                    </div>
+                </form>
 
             </div>
         </div>
@@ -218,6 +263,7 @@ session_start();
             </div>
         </div>
     </div>
+
 
 
 </body>
