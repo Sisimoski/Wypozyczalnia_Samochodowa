@@ -29,14 +29,6 @@ $(document).ready(function() {
     $("#zarejestruj").click(function() {
         window.location.replace("../register.php");
     });
-
-    $("#panelPracownika").click(function() {
-        window.location.replace("../wpanel/index.php");
-    });
-
-    $("#panelAdministratora").click(function() {
-        window.location.replace("../apanel/index.php");
-    });
     
     $('.next').click(function(e){
         e.preventDefault();
@@ -71,7 +63,6 @@ $(document).ready(function() {
         }
     });
 });
-
 
 function emailVerify(){
     var email = $('#newsletterEmail').val();
