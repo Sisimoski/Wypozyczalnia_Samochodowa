@@ -1,10 +1,3 @@
-<!-- Index file for Client pannel 
-W divach "komunikat" musi być miejsce na wyświetlanie tekstu do walidacji jak w rejestracji.
-W spanach są umieszczone nazwy zakładek do menu z lewej strony.
-Opis samochodu fajnie żeby miał większe okno.
-Przy VIN i NR tablicy można by było zrobić dymek z informacja dalczego o to pytamy(dla bezpeiczensta,ubezpeiczenai itd.)
-Przejście do edycji samochodu ma być w statusie nie róbcie go w menu(tylko front niego).
--->
 <?php
 session_start();
 
@@ -22,7 +15,8 @@ session_start();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" type="text/css" href="css/dashboardstyles.css">
+    <!-- Zmienić link do pliku jak nie działa -->
+    <link rel="stylesheet" type="text/css" href="../css/dashboardstyles.css">
 
     <!-- Deafult Bootstrap theme -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
@@ -44,9 +38,10 @@ session_start();
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
         integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous">
     </script>
-    <script src="./js/index.js"></script>
-    <script src="./js/changeData.js"></script>
-    <script src="./js/carManagement.js"></script>
+     <!-- Zmienić link do pliku jak nie działa -->
+    <script src="../js/index.js"></script>
+    <script src="js/employeeModules.js"></script>
+    <!-- Skrypty do modułów -->
 </head>
 
 <body>
@@ -55,7 +50,7 @@ session_start();
         <nav class="navbar navbar-expand-lg fixed-top navbar-light bg-light"
             style="box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);">
             <a class="navbar-brand ml-2" href="index.php">
-                <img src="../images/Car4You-line-logo.png" height="50" alt="car4you logo">
+                <img src="/images/Car4You-line-logo.png" height="50" alt="car4you logo">
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -100,8 +95,9 @@ session_start();
     <div class="container-fluid">
         <div class="fixed-top justify-content-center d-none">
             <div class="alert ml-5 mr-5 mt-3 text-center" style="width:40%"></div>
-        </div>
+        </div>    
         <div class="row">
+            <!-- Sidebar -->
             <nav class="col-md-2 d-none d-md-block bg-light sidebar position-fixed">
                 <div class="sidebar-sticky">
 
@@ -150,8 +146,8 @@ session_start();
                                             class="list-group-item list-group-item-action list-group-item-primary">Panel Pracownika</a>
                                     </div>
                                     <div class="collapse" id="employeePanel">
-                                    <a href="employeeModules/employeeCars.php" class="list-group-item list-group-item-action">Pojazdy</a>
-                                    <a href="employeeModules/employeeNewsletter.php" class="list-group-item list-group-item-action">Newsletter</a>
+                                    <a href="employeeCars.php" class="list-group-item list-group-item-action">Pojazdy</a>
+                                    <a href="employeeNewsletter.php" class="list-group-item list-group-item-action">Newsletter</a>
                                     
                                     
                                     
@@ -159,7 +155,7 @@ session_start();
 
                             if($_SESSION['rodzaj_pracownika'] == 2){
                                 echo'
-                                        <a href="employeeModules/employees.php" class="list-group-item list-group-item-action">Pracownicy</a>
+                                        <a href="employees.php" class="list-group-item list-group-item-action">Pracownicy</a>
                                         
                                 ';
                             }
@@ -168,6 +164,7 @@ session_start();
 
                     ?>
             </nav>
+            <!-- Breadcrumb -->
             <div class="col-md-9 ml-sm-auto col-lg-10">
                 <div class="row" style="z-index:1030">          
                         <nav class="position-fixed breadcrumbStyleFixed"  aria-label="breadcrumb" style="width:100%">
@@ -176,90 +173,32 @@ session_start();
                             </ol>
                         </nav>       
                 </div>
-                <div class="row px-4 mb-2" style="margin-top: 60px">
-                    <div class="col">
-                        <input class="form-control form-control-sm w-100" type="text" placeholder="Szukaj"
-                            aria-label="Search">
-                    </div>
+            <!-- CONTENT for webiste -->
+                <div class="row justify-content-center" style="margin-top:50px">  
+                <form class="statusPojazdowDane">
+                    <input class="form-control" type="date" id="dataOd" name="dataOd" placeholder="Data Wynajmu Od" />
+                    <input class="form-control" type="date" id="dataDo" name="dataDo" placeholder="Data Wynajmu Do" />
+                    <button type="button" id="zaladujStatus" class="btn btn-primary">Status Pojadów</button>
+                </form>
+                <div class="statusContent">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">Imie</th>
+                                <th scope="col">Nazwisko</th>
+                                <th scope="col">Pojazd</th>
+                                <th scope="col">Status Przyjecia</th>
+                                <th scope="col">Status Płatności</th>
+                                <th scope="col">Status Realizacji</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tabelaStatus">
+                        </tbody>
+                    </table>
                 </div>
-                <div class="row px-4">
-                    <div class="col">
-                        <div
-                            class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom px-2">
-                            <h1>Panel klienta</h1>
-                        </div>
-                        <div class="card border-primary">
-                            <div class="card-header">
-                                Powiadomienie
-                            </div>
-                            <div class="card-body text-primary">
-                                <h5 class="card-title">Special title treatment</h5>
-                                <p class="card-text">With supporting text below as a natural lead-in to additional
-                                    content.</p>
-                                <a href="#" class="btn btn-primary">Go somewhere</a>
-                            </div>
-                            <div class="card-footer text-muted">
-                                2 days ago
-                            </div>
-                        </div>
-                        <div class="pt-2 pb-2 mb-3 border-bottom"></div>
-                        <div class="row">
-                            <div class="col-sm-3">
-                                <div class="card">
-                                    <img src="#" class="card-img-top" alt="Punkty klienta pic">
-                                    <div class="card-body">
-                                        <h5 class="card-title">Twoje punkty</h5>
-                                        <p class="card-text">SPEECH 100</p>
-                                        <a href="#" class="btn btn-primary">Sprawdź</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-sm-3">
-                                <div class="card">
-                                    <img src="#" class="card-img-top" alt="Punkty klienta pic">
-                                    <div class="card-body">
-                                        <h5 class="card-title">Twoje samochody</h5>
-                                        <p class="card-text">SAMOCHODY 100</p>
-                                        <a href="#" class="btn btn-primary">Sprawdź</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-sm-3">
-                                <div class="card">
-                                    <img src="#" class="card-img-top" alt="Punkty klienta pic">
-                                    <div class="card-body">
-                                        <h5 class="card-title">Twoje placeholder</h5>
-                                        <p class="card-text">Ilość: 100</p>
-                                        <a href="#" class="btn btn-primary">Sprawdź</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-sm-3">
-                                <div class="card">
-                                    <img src="#" class="card-img-top" alt="Punkty klienta pic">
-                                    <div class="card-body">
-                                        <h5 class="card-title">Twoje placeholder</h5>
-                                        <p class="card-text">Ilość: 100</p>
-                                        <a href="#" class="btn btn-primary">Sprawdź</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row my-4">
-                            <div class="col-sm-6">
-                                <div class="card">
-                                    <div class="card-body">
-                                        <h5 class="card-title">Special title treatment</h5>
-                                        <p class="card-text">With supporting text below as a natural lead-in to
-                                            additional
-                                            content.</p>
-                                        <a href="#" class="btn btn-primary">Go somewhere</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+
+                </div>     
             </div>
         </div>
     </div>
@@ -267,3 +206,8 @@ session_start();
 </body>
 
 </html>
+
+
+ 
+ <!-- Statusy Pojazdów - Pracownik -->
+ 
