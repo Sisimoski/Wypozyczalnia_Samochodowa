@@ -107,55 +107,26 @@ session_start();
         <div class="row">
             <nav class="col-md-2 d-none d-md-block bg-light sidebar position-fixed">
                 <div class="sidebar-sticky">
-                    <ul class="nav flex-column">
-                        <li class="nav-item">
-                            <a class="nav-link" data-toggle="collapse" href="#componentsExamples">
-                                <i class="nc-icon nc-app"></i>
-                                <p>
-                                    Collapse Menu
-                                    <b class="caret"></b>
-                                </p>
-                            </a>
-                            <div class="collapse " id="componentsExamples">
-                                <ul class="nav">
-                                    <li class="nav-item ">
-                                        <a class="nav-link" href="./components/buttons.html">
-                                            <span class="sidebar-normal">Menu Default 1</span>
-                                        </a>
-                                    </li>
-                                    <li class="nav-item ">
-                                        <a class="nav-link" href="./components/grid.html">
-                                            <span class="sidebar-normal">Menu Default 2</span>
-                                        </a>
-                                    </li>
-                                    <li class="nav-item ">
-                                        <a class="nav-link" href="./components/panels.html">
-                                            <span class="sidebar-normal">Menu Default 3</span>
-                                        </a>
-                                    </li>
-                                    <li class="nav-item ">
-                                        <a class="nav-link" href="./components/sweet-alert.html">
-                                            <span class="sidebar-normal">Menu Default 4</span>
-                                        </a>
-                                    </li>
-                                    <li class="nav-item ">
-                                        <a class="nav-link" href="./components/notifications.html">
-                                            <span class="sidebar-normal">Menu Default 5</span>
-                                        </a>
-                                    </li>
-                                    <li class="nav-item ">
-                                        <a class="nav-link" href="./components/icons.html">
-                                            <span class="sidebar-normal">Menu Default 6</span>
-                                        </a>
-                                    </li>
-                                    <li class="nav-item ">
-                                        <a class="nav-link" href="./components/typography.html">
-                                            <span class="sidebar-normal">Menu Default 7</span>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </li>
+                    <ul class="list-group">
+                        <div>
+                            <a data-toggle="collapse" href="#mojprofil"
+                                class="list-group-item list-group-item-action list-group-item-primary">Mój profil</a>
+                        </div>
+                        <div class="collapse" id="mojprofil">
+                            <a href="zmianadanychosobowych.php" class="list-group-item list-group-item-action">Zmiana danych osobowych</a>
+                            <a href="zmianahasla.php" class="list-group-item list-group-item-action">Zmiana hasła</a>
+                            <a href="zmianamaila.php" class="list-group-item list-group-item-action">Zmiana maila</a>
+                        </div>
+                    </ul>
+                    <ul class="list-group">
+                        <div>
+                            <a data-toggle="collapse" href="#samochody"
+                                class="list-group-item list-group-item-action list-group-item-primary">Samochody</a>
+                        </div>
+                        <div class="collapse" id="samochody">
+                            <a href="dodawaniesamochodow.php" class="list-group-item list-group-item-action">Dodaj samochód</a>
+                            <a href="statussamochodow.php" class="list-group-item list-group-item-action">Status samochodów</a>
+                        </div>
                     </ul>
             </nav>
             <div class="col-md-9 ml-sm-auto col-lg-10">
