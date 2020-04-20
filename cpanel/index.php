@@ -153,6 +153,35 @@ session_start();
                                 samochodów</a>
                         </div>
                     </ul>
+                    <?php
+                        if(isset($_SESSION['rodzaj_pracownika'])){
+                            
+
+                            // Puste pole w echo na moduły pracownika
+                            echo '
+                                <ul class="list-group">
+                                    <div>
+                                        <a data-toggle="collapse" href="#employeePanel"
+                                            class="list-group-item list-group-item-action list-group-item-primary">Panel Pracownika</a>
+                                    </div>
+                                    <div class="collapse" id="employeePanel">
+                                    <a href="employeeModules/employeeCars.php" class="list-group-item list-group-item-action">Pojazdy</a>
+                                    <a href="employeeModules/employeeNewsletter.php" class="list-group-item list-group-item-action">Newsletter</a>
+                                    
+                                    
+                                    
+                                    ';
+
+                            if($_SESSION['rodzaj_pracownika'] == 2){
+                                echo'
+                                        <a href="employeeModules/employees.php" class="list-group-item list-group-item-action">Pracownicy</a>
+                                        
+                                ';
+                            }
+                            echo '</div></ul>';
+                        }
+
+                    ?>
             </nav>
             <!-- Main Dashboard -->
             <div class="col-lg-10 ml-sm-auto col-lg-10">

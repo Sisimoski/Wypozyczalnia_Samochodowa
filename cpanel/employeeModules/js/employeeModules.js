@@ -1,29 +1,34 @@
 $(document).ready(function () {
+    $('#newsletterButton').click(function(e){
+        var message = $('#newsletterMessage').val();
+        if(message != ""){
+            
+            request = $.ajax({
+                url: "php/newsletterWysylanie.php",
+                data: {message : message},
+                type: "POST"
+            });
 
-    $("#zarejestrujPracownika").click(function () {
-        var request;
-        var data = $(".rejestracjaPracownika").serialize();
-        request = $.ajax({
-            url: "./php/dodajPracownika.php",
-            data: data,
-            type: "POST"
-        });
+            request.done(function (response) {
+                console.log(response);
+            });
 
-        request.done(function (response) {
-            console.log(response);
-        });
+            request.fail(function (response) {
+                console.log("Error: "+response);
+            });
+        }
+        else{
+            console.log("ERROR ŻE NIE NAPISANO ŻADNEJ WIADOMOŚCI - BĘDZIE TAKIE INFO");
+        }
 
-        request.fail(function (response) {
-            console.log("Error: ", response);
-
-        });
+        e.preventDefault();
     });
 
     $("#zaladujStatus").click(function () {
         $("#alert").html("");
         var data = $(".statusPojazdowDane").serialize();
         request = $.ajax({
-            url: "./php/zaladujStatus.php",
+            url: "php/zaladujStatus.php",
             data: data,
             type: "POST"
         })
@@ -78,32 +83,28 @@ $(document).ready(function () {
         });
     });
 
-    $('#newsletterButton').click(function(e){
-        var message = $('#newsletterMessage').val();
-        if(message != ""){
-            
-            request = $.ajax({
-                url: "php/newsletterWysylanie.php",
-                data: {message : message},
-                type: "POST"
-            });
+    // Do napisania front modal
+    $("#zarejestrujPracownika").click(function () {
+        var request;
+        var data = $(".rejestracjaPracownika").serialize();
+        request = $.ajax({
+            url: "./php/dodajPracownika.php",
+            data: data,
+            type: "POST"
+        });
 
-            request.done(function (response) {
-                console.log(response);
-            });
+        request.done(function (response) {
+            console.log(response);
+        });
 
-            request.fail(function (response) {
-                console.log("Error: "+response);
-            });
-        }
-        else{
-            console.log("ERROR ŻE NIE NAPISANO ŻADNEJ WIADOMOŚCI - BĘDZIE TAKIE INFO");
-        }
+        request.fail(function (response) {
+            console.log("Error: ", response);
 
-        e.preventDefault();
+        });
     });
 
 });
+
 
 
 function usunKontoButtonClick(self) {
@@ -131,7 +132,7 @@ function editKontoButtonClick(self){
 }
 
 function zaladujPracownikow() {
-
+    console.log("działa");
     request = $.ajax({
         url: "php/ladowaniePracownikow.php",
     })
@@ -149,8 +150,8 @@ function zaladujPracownikow() {
                 $("#tabelaPracownicy").append(" <tr><th scope='row'>" + (i + 1) + "</th><td>" + obj[i][1] + "</td><td>" + obj[i][2] + "</td><td>" + obj[i][3] + "</td><td>" + obj[i][4] + "</td><td>" + status + "</td><td><button type='button' class='btn btn-warning' id='edytujDaneButtonValue' data-toggle='modal' data-target='#edytujKontoModal' onclick='editKontoButtonClick(this)' value=" + obj[i]["id_pracownik"] + ">Edytuj Dane</button ><button type='button' class='usunKontoButtonValue btn btn-danger' value='" + obj[i]["id_pracownik"] + "' data-toggle='modal' data-target='#usunKontoModal' onclick='usunKontoButtonClick(this)'>Usuń Pracownika</button> </td></tr>");
             }
         }
-        catch{
-
+        catch(error){
+            console.log(error);
         }
     });
 
