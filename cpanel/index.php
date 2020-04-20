@@ -70,10 +70,10 @@ session_start();
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse flex-grow-1" id="navbarSupportedContent">
-                <!-- <input class="form-control form-control-sm w-100 mx-4" type="text" placeholder="Szukaj" aria-label="Search"> -->
                 <ul class="navbar-nav ml-auto">
+                    <input class="form-control form-control" type="text" placeholder="Szukaj" aria-label="Search">
                     <li class="nav-item text-nowrap">
-                        <a class="nav-link" href="../index.php">Strona główna<span class="sr-only">(current)</span></a>
+                        
                     </li>
                 </ul>
                 <?php
@@ -182,6 +182,7 @@ session_start();
                         }
 
                     ?>
+                    <a class="nav-link text-secondary" href="../index.php">Strona główna<span class="sr-only">(current)</span></a>
             </nav>
             <!-- Main Dashboard -->
             <div class="col-lg-10 ml-sm-auto col-lg-10">
@@ -192,12 +193,12 @@ session_start();
                         </ol>
                     </nav>
                 </div>
-                <div class="row px-4 mb-2">
+                <!-- <div class="row px-4 mb-2">
                     <div class="col">
                         <input class="form-control form-control-sm w-100" type="text" placeholder="Szukaj"
                             aria-label="Search">
                     </div>
-                </div>
+                </div> -->
                 <div class="row px-4">
                     <div class="col">
                         <div
