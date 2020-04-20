@@ -1,6 +1,7 @@
 $(document).ready(function(){
 
     $("#wyloguj").click(function() {
+        localStorage.clear();
         var request;
         request = $.ajax({
             url:  "../php/logout.php",
