@@ -79,10 +79,7 @@
                         
                 }
                 if(isset($_SESSION['rodzaj_pracownika'])){                   
-                        echo "<button id='panelPracownika' type='submit' class='btn btn-primary'>Panel Pracownika</button>"; 
-                    if($_SESSION['rodzaj_pracownika'] == 2){
-                        echo "<button id='panelAdministratora' type='submit' class='btn btn-primary ml-2'>Panel Administratora</button>";
-                    }
+                        echo "<button id='panelKlienta' type='submit' class='btn btn-primary'>Panel Pracownika</button>"; 
                 }
                 echo "<button type='button' id='wyloguj' class='btn btn-outline-primary ml-2'>Wyloguj</button>";
             }
@@ -118,33 +115,29 @@
                 <div class="col-md-6 col-lg-3 d-flex align-items-stretch">
                     <div class="icon-box">
                         <div class="icon"><i class='bx bx-car bx-tada'></i></div>
-                        <h3 class="title">Lorem Ipsum</h4>
-                            <p class="description">Voluptatum deleniti atque corrupti quos dolores et quas molestias
-                                excepturi sint occaecati cupiditate</p>
+                        <h3 class="title">Innowacyjny pomysł</h4>
+                            <p class="description">Pierwsza wypożyczalnia w Polsce, która umożliwia zarówno wypożyczenie, jak i wynajem samochodu.</p>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-3 d-flex align-items-stretch">
                     <div class="icon-box">
                         <div class="icon"><i class='bx bx-building-house bx-tada'></i></div>
-                        <h3 class="title">Lorem Ipsum</h4>
-                            <p class="description">Voluptatum deleniti atque corrupti quos dolores et quas molestias
-                                excepturi sint occaecati cupiditate</p>
+                        <h3 class="title">Konkurencyjna cena</h4>
+                            <p class="description">Ceny są porównywalne z innymi okolicznymi wypożyczalniami. Dodatkowo Ty sam możesz zarobić, wynajmując komuś swój własny samochód.</p>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-3 d-flex align-items-stretch">
                     <div class="icon-box">
                         <div class="icon"><i class='bx bx-navigation bx-tada'></i></div>
-                        <h3 class="title">Lorem Ipsum</h4>
-                            <p class="description">Voluptatum deleniti atque corrupti quos dolores et quas molestias
-                                excepturi sint occaecati cupiditate</p>
+                        <h3 class="title">Wygoda</h4>
+                            <p class="description">Wybór samochodu zależy od Ciebie. Możesz wybrać samochód bez wychodzenia z domu. To samo dotyczy rejestracji swojego samochodu w systemie.</p>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-3 d-flex align-items-stretch">
                     <div class="icon-box">
                         <div class="icon"><i class='bx bx-user-check bx-tada'></i></div>
-                        <h3 class="title">Lorem Ipsum</h4>
-                            <p class="description">Voluptatum deleniti atque corrupti quos dolores et quas molestias
-                                excepturi sint occaecati cupiditate</p>
+                        <h3 class="title">Rabaty</h4>
+                            <p class="description">Dzięki Karcie Lojalnościowej zdobywasz punkty, które pozwalają na zniżki okresowe, ale też na zniżki stałe. Jedyne co musisz zrobić, to zacząć wypożyczać/wynajmować!</p>
                     </div>
                 </div>
             </div>
