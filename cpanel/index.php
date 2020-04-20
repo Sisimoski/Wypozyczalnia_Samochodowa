@@ -104,8 +104,8 @@ session_start();
         <div class="fixed-top justify-content-center d-none">
             <div class="alert ml-5 mr-5 mt-3 text-center" style="width:40%"></div>
         </div>
-        <div class="row" style="height: 100%;">
-            <nav class="col-md-2 d-none d-md-block bg-light sidebar">
+        <div class="row">
+            <nav class="col-md-2 d-none d-md-block bg-light sidebar position-fixed">
                 <div class="sidebar-sticky">
                     <ul class="nav flex-column">
                         <li class="nav-item">
