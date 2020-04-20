@@ -74,7 +74,7 @@
             else{
                 if(isset($_SESSION['rodzaj_klienta'])){
                     if($_SESSION['rodzaj_klienta'] == 1 || $_SESSION['rodzaj_klienta'] == 2){
-                        echo "<button id='panelKlienta' href='./cpanel/zmianahasla.php' type='submit' class='btn btn-primary'>Panel Klienta</button>";
+                        echo "<button id='panelKlienta' href='./cpanel/index.php' type='submit' class='btn btn-primary'>Panel Klienta</button>";
                     }
                         
                 }
