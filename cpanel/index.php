@@ -44,6 +44,7 @@ session_start();
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
         integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous">
     </script>
+    <script src="./js/index.js"></script>
     <script src="./js/changeData.js"></script>
     <script src="./js/carManagement.js"></script>
 </head>
@@ -100,7 +101,7 @@ session_start();
         </nav>
     </section>
     <div class="container-fluid">
-        <div class="fixed-top justify-content-center d-flex">
+        <div class="fixed-top justify-content-center d-none">
             <div class="alert ml-5 mr-5 mt-3 text-center" style="width:40%"></div>
         </div>
         <div class="row" style="height: 100%;">
