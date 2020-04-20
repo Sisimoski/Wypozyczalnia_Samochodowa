@@ -118,14 +118,14 @@ session_start();
                     <div class="row">
                         <div class="col-md-6">
                             <i class='bx bxs-car-crash'></i>
-                            <h4>Ullamco laboris nisi</h4>
+                            <h4>Wypożycz,<br> gdy go potrzebujesz</h4>
                             <p>Samochód często jest potrzebny w najmniej spodziewanym momencie - stłuczka, wypadek lub
                                 odmówienie posłuszeństwa od strony samochodu - wtedy możliwe jest wypożyczenie go w
                                 naszej wypożyczalni.</p>
                         </div>
                         <div class="col-md-6">
                             <i class='bx bxs-car-garage'></i>
-                            <h4>Ullamco laboris nisi</h4>
+                            <h4>Wynajmij,<br> gdy nie jest Ci potrzebny</h4>
                             <p>Ponadto wypożyczenie pozwoli na wypróbowanie innego modelu samochodu oraz zapewni szybkie
                                 przemieszczanie się do punktu docelowego, będąc niezależnym od środków masowego
                                 transportu.</p>
