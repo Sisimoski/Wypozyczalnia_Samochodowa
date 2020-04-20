@@ -15,7 +15,7 @@ session_start();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" type="text/css" href="../css/logowanie.css">
+    <link rel="stylesheet" type="text/css" href="../css/dashboardstyles.css">
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
@@ -94,6 +94,61 @@ session_start();
                 <div class="sidebar-sticky">
                     <ul class="nav flex-column">
                         <li class="nav-item">
+                            <a class="nav-link" data-toggle="collapse" href="#componentsExamples">
+                                <i class="nc-icon nc-app"></i>
+                                <p>
+                                    Components
+                                    <b class="caret"></b>
+                                </p>
+                            </a>
+                            <div class="collapse " id="componentsExamples">
+                                <ul class="nav">
+                                    <li class="nav-item ">
+                                        <a class="nav-link" href="./components/buttons.html">
+                                            <span class="sidebar-mini">B</span>
+                                            <span class="sidebar-normal">Buttons</span>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item ">
+                                        <a class="nav-link" href="./components/grid.html">
+                                            <span class="sidebar-mini">GS</span>
+                                            <span class="sidebar-normal">Grid System</span>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item ">
+                                        <a class="nav-link" href="./components/panels.html">
+                                            <span class="sidebar-mini">P</span>
+                                            <span class="sidebar-normal">Panels</span>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item ">
+                                        <a class="nav-link" href="./components/sweet-alert.html">
+                                            <span class="sidebar-mini">SA</span>
+                                            <span class="sidebar-normal">Sweet Alert</span>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item ">
+                                        <a class="nav-link" href="./components/notifications.html">
+                                            <span class="sidebar-mini">N</span>
+                                            <span class="sidebar-normal">Notifications</span>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item ">
+                                        <a class="nav-link" href="./components/icons.html">
+                                            <span class="sidebar-mini">I</span>
+                                            <span class="sidebar-normal">Icons</span>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item ">
+                                        <a class="nav-link" href="./components/typography.html">
+                                            <span class="sidebar-mini">T</span>
+                                            <span class="sidebar-normal">Typography</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="nav-item">
                             <a class="nav-link" href="zmianahasla.php">
                                 <i class="fas fa-key"></i>
                                 <span data-feather="home"></span>
@@ -122,7 +177,7 @@ session_start();
                         </li>
                     </ul>
                 </div>
-                </nav>
+            </nav>
             <div class="col-md-9 ml-sm-auto col-lg-10 px-0">
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb">
@@ -211,7 +266,8 @@ session_start();
                     </div>
                     <div class="form-group">
                         <label for="dodatkowe_informacje">Dodatkowe informacje</label>
-                        <textarea id="dodatkowe_informacje" class="form-control" rows="4" name="dodatkowe_informacje"></textarea>
+                        <textarea id="dodatkowe_informacje" class="form-control" rows="4"
+                            name="dodatkowe_informacje"></textarea>
                         <div class="komunikat"> </div>
                     </div>
                     <div class="form-group">
@@ -247,92 +303,5 @@ session_start();
             </div>
         </div>
     </div>
-
-
-    <!-- ///////////////////////////////////////////////////////////////////////////////////////////////// -->
-    <div class="modal fade" id="deleteCarModal" tabindex="-1" role="dialog" aria-labelledby="deleteCarLabe;"
-        aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="deleteCarLabel">Usuwanie Konta</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    Czy napewno chcesz usunąć samochód?
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Wracam</button>
-                    <button type="button" id="deleteCarButton" name="deleteCarButton" value=""
-                        class="btn btn-danger">Usuwam</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="modal fade" id="editCarModal" tabindex="-1" role="dialog" aria-labelledby="editCarLabe;"
-        aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="editCarLabel">Usuwanie Konta</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    Edycja samochodu
-                </div>
-                <div class="modal-footer">
-                    <form class="editCarForm mt-3" method="POST">
-                        <span><b>Edycja samochodu</b></span>
-                        <div>
-                            <label for="producentEdit">Producent</label>
-                            <input id="producentEdit" name="producentEdit" placeholder="np. Audi">
-                            <div class="komunikat"> </div>
-                        </div>
-                        <div>
-                            <label for="modelEdit">Model</label>
-                            <input id="modelEdit" name="modelEdit" placeholder="np. RS5">
-                            <div class="komunikat"> </div>
-                        </div>
-                        <div>
-                            <label for="rok_produkcjiEdit">Rok produkcji</label>
-                            <input id="rok_produkcjiEdit" type="number" min="1960" max="2020" step="1"
-                                name="rok_produkcjiEdit" placeholder="np. 1995">
-                            <div class="komunikat"> </div>
-                        </div>
-                        <div>
-                            <label for="kolorEdit">Kolor</label>
-                            <input id="kolorEdit" type="input" name="kolorEdit" placeholder="czerwony">
-                            <div class="komunikat"> </div>
-                        </div>
-                        <div>
-                            <label for="opisEdit">Opis</label>
-                            <input id="opisEdit" type="input" name="opisEdit" placeholder="czerwony">
-                            <div class="komunikat"> </div>
-                        </div>
-                        <div>
-                            <label for="cenaEdit">Cena wypożyczenia (zł/24h)</label>
-                            <input id="cenaEdit" type="input" name="cenaEdit" placeholder="np. 200zł">
-                            <div class="komunikat"> </div>
-                        </div>
-                        <div>
-                            <div class="komunikat"> </div>
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Wracam</button>
-                            <button type="button" id="editCarButton" name="editCarButton" value=""
-                                class="btn btn-success">Zatwierdź zmianę</button>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-
-
-
 </body>
-
 </html>
