@@ -3,6 +3,10 @@
     padding-bottom: 75px;
 }
 
+.navbar {
+    box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
+}
+
 .sidebar {
     z-index: 3;
     /* Behind the navbar */

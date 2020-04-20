@@ -11,17 +11,34 @@ session_start();
 <html lang="pl">
 
 <head>
-    <title>Car4You - Zmiana hasła</title>
+    <title>Zmiana hasła</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" type="text/css" href="../css/logowanie.css">
+    <!-- CSS Files -->
+    <link rel="stylesheet" type="text/css" href="css/dashboardstyles.css">
 
+    <!-- Deafult Bootstrap theme -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <!-- Flatly Bootstrap theme -->
+    <!-- <link href="https://stackpath.bootstrapcdn.com/bootswatch/4.4.1/flatly/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-yrfSO0DBjS56u5M+SjWTyAHujrkiYVtRYh2dtB3yLQtUz3bodOeialO59u5lUCFF" crossorigin="anonymous"> -->
+    <!-- Darkly Bootstrap theme -->
+    <!-- <link href="https://stackpath.bootstrapcdn.com/bootswatch/4.4.1/darkly/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-rCA2D+D9QXuP2TomtQwd+uP50EHjpafN+wruul0sXZzX/Da7Txn4tB9aLMZV4DZm" crossorigin="anonymous"> -->
+
+    <!-- Boxicons -->
+    <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
+
+    <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
         integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+
+    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Lato|Montserrat|Nunito|Quicksand&display=swap" rel="stylesheet">
+
+    <!-- Script Sources -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
         integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous">
@@ -29,6 +46,7 @@ session_start();
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
         integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous">
     </script>
+    <script src="./js/index.js"></script>
     <script src="./js/changeData.js"></script>
     <script src="./js/carManagement.js"></script>
 </head>
@@ -36,29 +54,19 @@ session_start();
 <body>
     <!-- Nagłówek Navbar -->
     <section id="header">
-        <nav class="navbar navbar-expand-lg fixed-top navbar-light bg-light"
-            style="box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);">
+        <nav class="navbar navbar-expand-md fixed-top navbar-light bg-light">
             <a class="navbar-brand ml-2" href="index.php">
                 <img src="../images/Car4You-line-logo.png" height="50" alt="car4you logo">
-                <!-- <a href="https://www.freepik.com/free-photos-vectors/background">Background vector created by katemangostar - www.freepik.com</a> -->
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse flex-grow-1" id="navbarSupportedContent">
+                <!-- <input class="form-control form-control-sm w-100 mx-4" type="text" placeholder="Szukaj" aria-label="Search"> -->
                 <ul class="navbar-nav ml-auto">
-                    <li class="nav-item">
+                    <li class="nav-item text-nowrap">
                         <a class="nav-link" href="../index.php">Strona główna<span class="sr-only">(current)</span></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="../oferty.php">Oferty</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="../aboutus.php">O nas</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Kontakt</a>
                     </li>
                 </ul>
                 <?php
@@ -69,185 +77,112 @@ session_start();
             else{
                 if(isset($_SESSION['rodzaj_klienta'])){
                     if($_SESSION['rodzaj_klienta'] == 1 || $_SESSION['rodzaj_klienta'] == 2){
-                        echo "<button id='panelKlienta' href='./cpanel/index.php' type='submit' class='btn btn-primary'>Panel Klienta</button>";
+                        
                     }
                         
                 }
                 if(isset($_SESSION['rodzaj_pracownika'])){                   
                         echo "<button id='panelPracownika' type='submit' class='btn btn-primary'>Panel Pracownika</button>"; 
-                    if($_SESSION['rodzaj_pracownika'] == 2){
-                        echo "<button id='panelAdministratora' type='submit' class='btn btn-primary ml-2'>Panel Administratora</button>";
-                    }
                 }
-                echo "<button type='button' id='wyloguj' class='btn btn-outline-primary ml-2'>Wyloguj</button>";
+                echo "<button type='button' id='wyloguj' class='btn btn-outline-danger ml-2'>Wyloguj</button>";
             }
         ?>
             </div>
         </nav>
     </section>
     <div class="container-fluid">
-        <div class="fixed-top justify-content-center d-flex">
+        <div class="fixed-top justify-content-center d-none">
             <div class="alert ml-5 mr-5 mt-3 text-center" style="width:40%"></div>
         </div>
         <div class="row" style="height: 100%;">
-            <nav class="col-md-2 d-none d-md-block bg-light sidebar">
+            <nav class="col-md-2 d-none d-lg-block bg-light sidebar position-fixed">
                 <div class="sidebar-sticky">
-                    <ul class="nav flex-column">
-                        <li class="nav-item">
-                            <a class="nav-link active" href="zmianahasla.php">
-                                <i class="fas fa-key"></i>
-                                <span data-feather="home"></span>
-                                Zmiana hasła <span class="sr-only">(current)</span>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="zmianadanychosobowych.php">
-                                <i class="fas fa-users-cog"></i>
-                                <span data-feather=""></span>Zmiana danych osobowych</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="zmianamaila.php">
-                                <i class="fas fa-envelope"></i>
-                                <span data-feather=""></span>Zmiana maila</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="dodawaniesamochodow.php">
-                                <i class="fas fa-car"></i>
-                                <span data-feather=""></span>Dodawanie samochodów</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="statussamochodow.php">
-                                <i class="fas fa-car-side"></i>
-                                <span data-feather=""></span>Status samochodów</a>
-                        </li>
+                    <ul class="list-group mb-2">
+                        <a href="index.php" class="list-group-item list-group-item-action list-group-item-info">
+                            <i class='bx bxs-id-card'></i>
+                            Panel klienta
+                        </a>
                     </ul>
-                </div>
+                    <ul class="list-group mb-2">
+                        <div>
+                            <a data-toggle="collapse" href="#mojprofil"
+                                class="list-group-item list-group-item-action list-group-item-primary">
+                                <i class='bx bxs-user-detail'></i>
+                                Mój profil
+                            </a>
+                        </div>
+                        <div class="collapse" id="mojprofil">
+                            <a href="zmianadanychosobowych.php"
+                                class="list-group-item list-group-item-action">Zmiana
+                                danych osobowych</a>
+                            <a href="zmianahasla.php" class="list-group-item list-group-item-action active">Zmiana hasła</a>
+                            <a href="zmianamaila.php" class="list-group-item list-group-item-action">Zmiana maila</a>
+                        </div>
+                    </ul>
+                    <ul class="list-group mb-2">
+                        <div>
+                            <a data-toggle="collapse" href="#samochody"
+                                class="list-group-item list-group-item-action list-group-item-primary">
+                                <i class='bx bxs-car'></i>
+                                Samochody
+                            </a>
+                        </div>
+                        <div class="collapse" id="samochody">
+                            <a href="dodawaniesamochodow.php" class="list-group-item list-group-item-action">Dodaj
+                                samochód</a>
+                            <a href="statussamochodow.php" class="list-group-item list-group-item-action">Status
+                                samochodów</a>
+                        </div>
+                    </ul>
             </nav>
-            <div class="col-md-9 ml-sm-auto col-lg-10 px-0">
-                <nav aria-label="breadcrumb">
-                    <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="index.php">Panel klienta</a></li>
-                        <li class="breadcrumb-item active" aria-current="page">Zmiana hasła</li>
-                    </ol>
-                </nav>
-                <div
-                    class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom px-4">
-                    <h1 class="h2">Zmiana hasła</h1>
+            <!-- Main Dashboard -->
+            <div class="col-lg-10 ml-sm-auto col-lg-10">
+                <div class="row" style="z-index:2; margin-bottom: 80px;">
+                    <nav class="position-fixed breadcrumbStyleFixed" aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="index.php">Panel klienta</a></li>
+                            <li class="breadcrumb-item active">Mój profil</li>
+                            <li class="breadcrumb-item active" aria-current="page">Zmiana hasła</li>
+                        </ol>
+                    </nav>
                 </div>
-                <form class="changePasswordForm px-4" method="POST">
-                    <div class="form-group">
-                        <label for="oldPswd">Stare hasło</label>
-                        <input id="oldPswd" class="form-control" name="oldPswd" type="password" placeholder="Wprowadź dotychczasowe hasło">
-                        <div class="komunikat"> </div>
+                <div class="row px-4">
+                    <div class="col">
+                        <div
+                            class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom px-2">
+                            <h1>Zmiana hasła</h1>
+                        </div>
+                        <form class="changePasswordForm" method="POST">
+                            <div class="form-group">
+                                <label for="oldPswd">Stare hasło</label>
+                                <input id="oldPswd" class="form-control" name="oldPswd" type="password"
+                                    placeholder="Wprowadź dotychczasowe hasło">
+                                <div class="komunikat"> </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="newPswd">Nowe hasło</label>
+                                <input id="newPswd" class="form-control" name="newPswd" type="password"
+                                    placeholder="Wprowadź nowe hasło">
+                                <div class="komunikat"> </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="newPswd1">Powtórz nowe hasło</label>
+                                <input id="newPswd1" class="form-control" name="renewPswd1" type="password"
+                                    placeholder="Wprowadź ponownie nowe hasło">
+                                <div class="komunikat"> </div>
+                            </div>
+                            <div>
+                                <div class="komunikat"> </div>
+                                <button class="btn btn-primary" id="changePassword" name="changePassword"
+                                    type="button">Zatwierdź
+                                    zmianę</button>
+                            </div>
+                        </form>
                     </div>
-                    <div class="form-group">
-                        <label for="newPswd">Nowe hasło</label>
-                        <input id="newPswd" class="form-control" name="newPswd" type="password" placeholder="Wprowadź nowe hasło">
-                        <div class="komunikat"> </div>
-                    </div>
-                    <div class="form-group">
-                        <label for="newPswd1">Powtórz nowe hasło</label>
-                        <input id="newPswd1" class="form-control" name="renewPswd1" type="password"
-                            placeholder="Wprowadź ponownie nowe hasło">
-                        <div class="komunikat"> </div>
-                    </div>
-                    <div>
-                        <div class="komunikat"> </div>
-                        <button class="btn btn-primary" id="changePassword" name="changePassword"
-                            type="button">Zatwierdź
-                            zmianę</button>
-                    </div>
-                </form>
-
-            </div>
-        </div>
-    </div>
-
-
-    <!-- ///////////////////////////////////////////////////////////////////////////////////////////////// -->
-    <div class="modal fade" id="deleteCarModal" tabindex="-1" role="dialog" aria-labelledby="deleteCarLabe;"
-        aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="deleteCarLabel">Usuwanie Konta</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    Czy napewno chcesz usunąć samochód?
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Wracam</button>
-                    <button type="button" id="deleteCarButton" name="deleteCarButton" value=""
-                        class="btn btn-danger">Usuwam</button>
                 </div>
             </div>
         </div>
     </div>
-
-    <div class="modal fade" id="editCarModal" tabindex="-1" role="dialog" aria-labelledby="editCarLabe;"
-        aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="editCarLabel">Usuwanie Konta</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    Edycja samochodu
-                </div>
-                <div class="modal-footer">
-                    <form class="editCarForm mt-3" method="POST">
-                        <span><b>Edycja samochodu</b></span>
-                        <div>
-                            <label for="producentEdit">Producent</label>
-                            <input id="producentEdit" name="producentEdit" placeholder="np. Audi">
-                            <div class="komunikat"> </div>
-                        </div>
-                        <div>
-                            <label for="modelEdit">Model</label>
-                            <input id="modelEdit" name="modelEdit" placeholder="np. RS5">
-                            <div class="komunikat"> </div>
-                        </div>
-                        <div>
-                            <label for="rok_produkcjiEdit">Rok produkcji</label>
-                            <input id="rok_produkcjiEdit" type="number" min="1960" max="2020" step="1"
-                                name="rok_produkcjiEdit" placeholder="np. 1995">
-                            <div class="komunikat"> </div>
-                        </div>
-                        <div>
-                            <label for="kolorEdit">Kolor</label>
-                            <input id="kolorEdit" type="input" name="kolorEdit" placeholder="czerwony">
-                            <div class="komunikat"> </div>
-                        </div>
-                        <div>
-                            <label for="opisEdit">Opis</label>
-                            <input id="opisEdit" type="input" name="opisEdit" placeholder="czerwony">
-                            <div class="komunikat"> </div>
-                        </div>
-                        <div>
-                            <label for="cenaEdit">Cena wypożyczenia (zł/24h)</label>
-                            <input id="cenaEdit" type="input" name="cenaEdit" placeholder="np. 200zł">
-                            <div class="komunikat"> </div>
-                        </div>
-                        <div>
-                            <div class="komunikat"> </div>
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Wracam</button>
-                            <button type="button" id="editCarButton" name="editCarButton" value=""
-                                class="btn btn-success">Zatwierdź zmianę</button>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-
-
-
 </body>
 
 </html>

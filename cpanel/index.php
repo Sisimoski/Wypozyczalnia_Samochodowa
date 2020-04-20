@@ -61,8 +61,7 @@ session_start();
 <body>
     <!-- Nagłówek Navbar -->
     <section id="header">
-        <nav class="navbar navbar-expand-lg fixed-top navbar-light bg-light"
-            style="box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);">
+        <nav class="navbar navbar-expand-md fixed-top navbar-light bg-light">
             <a class="navbar-brand ml-2" href="index.php">
                 <img src="../images/Car4You-line-logo.png" height="50" alt="car4you logo">
             </a>
@@ -71,18 +70,10 @@ session_start();
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse flex-grow-1" id="navbarSupportedContent">
+                <!-- <input class="form-control form-control-sm w-100 mx-4" type="text" placeholder="Szukaj" aria-label="Search"> -->
                 <ul class="navbar-nav ml-auto">
-                    <li class="nav-item">
+                    <li class="nav-item text-nowrap">
                         <a class="nav-link" href="../index.php">Strona główna<span class="sr-only">(current)</span></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="../oferty.php">Oferty</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="../aboutus.php">O nas</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Kontakt</a>
                     </li>
                 </ul>
                 <?php
@@ -93,14 +84,14 @@ session_start();
             else{
                 if(isset($_SESSION['rodzaj_klienta'])){
                     if($_SESSION['rodzaj_klienta'] == 1 || $_SESSION['rodzaj_klienta'] == 2){
-                        echo "<button id='panelKlienta' href='./cpanel/index.php' type='submit' class='btn btn-primary'>Panel Klienta</button>";
+                        
                     }
                         
                 }
                 if(isset($_SESSION['rodzaj_pracownika'])){                   
                         echo "<button id='panelPracownika' type='submit' class='btn btn-primary'>Panel Pracownika</button>"; 
                 }
-                echo "<button type='button' id='wyloguj' class='btn btn-outline-primary ml-2'>Wyloguj</button>";
+                echo "<button type='button' id='wyloguj' class='btn btn-outline-danger ml-2'>Wyloguj</button>";
             }
         ?>
             </div>
@@ -111,11 +102,12 @@ session_start();
             <div class="alert ml-5 mr-5 mt-3 text-center" style="width:40%"></div>
         </div>
         <div class="row">
-            <nav class="col-md-2 d-none d-md-block bg-light sidebar position-fixed">
+            <nav class="col-md-2 d-none d-lg-block bg-light sidebar position-fixed">
                 <div class="sidebar-sticky">
 
                     <!-- Default collapse  -->
-                    <ul class="list-group mb-2">
+                    <!-- d-none, żeby się nie świeciło na stronie, ale z tego możecie korzystać -->
+                    <ul class="list-group mb-2 d-none">
                         <div>
                             <a data-toggle="collapse" href="#default"
                                 class="list-group-item list-group-item-action list-group-item-dark">Default</a>
@@ -127,10 +119,16 @@ session_start();
                     </ul>
                     <!-- End of default collapse -->
                     <ul class="list-group mb-2">
+                        <a href="index.php" class="list-group-item list-group-item-action list-group-item-info">
+                            <i class='bx bxs-id-card'></i>
+                            Panel klienta
+                        </a>
+                    </ul>
+                    <ul class="list-group mb-2">
                         <div>
                             <a data-toggle="collapse" href="#mojprofil"
                                 class="list-group-item list-group-item-action list-group-item-primary">
-                                <i class='bx bxs-id-card'></i>
+                                <i class='bx bxs-user-detail'></i>
                                 Mój profil
                             </a>
                         </div>
@@ -157,7 +155,7 @@ session_start();
                     </ul>
             </nav>
             <!-- Main Dashboard -->
-            <div class="col-md-10 ml-sm-auto col-lg-10">
+            <div class="col-lg-10 ml-sm-auto col-lg-10">
                 <div class="row" style="z-index:2; margin-bottom: 80px;">
                     <nav class="position-fixed breadcrumbStyleFixed" aria-label="breadcrumb">
                         <ol class="breadcrumb">
