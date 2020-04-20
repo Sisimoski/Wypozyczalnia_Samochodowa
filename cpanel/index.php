@@ -158,15 +158,13 @@ session_start();
                         </li>
                     </ul>
             </nav>
-            <div class="col-md-9 ml-sm-auto col-lg-10 px-0">
-                <div class="row">
-                    <div class="col">
-                        <nav aria-label="breadcrumb">
+            <div class="col-md-9 ml-sm-auto col-lg-10">
+                <div class="row breadcrumbStyleFixed">          
+                        <nav class="position-fixed"  aria-label="breadcrumb" style="width:100%">
                             <ol class="breadcrumb">
                                 <li class="breadcrumb-item active"><a href="index.php">Panel klienta</a></li>
                             </ol>
-                        </nav>
-                    </div>
+                        </nav>       
                 </div>
                 <div class="row px-4 mb-2">
                     <div class="col">
