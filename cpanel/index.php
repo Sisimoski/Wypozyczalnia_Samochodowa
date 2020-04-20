@@ -107,6 +107,19 @@ session_start();
         <div class="row">
             <nav class="col-md-2 d-none d-md-block bg-light sidebar position-fixed">
                 <div class="sidebar-sticky">
+
+                    <!-- Default collapse  -->
+                    <ul class="list-group">
+                        <div>
+                            <a data-toggle="collapse" href="#default"
+                                class="list-group-item list-group-item-action list-group-item-dark">Default</a>
+                        </div>
+                        <div class="collapse" id="default">
+                            <a href="#" class="list-group-item list-group-item-action">Default menu 1</a>
+                            <a href="#" class="list-group-item list-group-item-action">Default menu 2</a>
+                        </div>
+                    </ul>
+                    <!-- End of default collapse -->
                     <ul class="list-group">
                         <div>
                             <a data-toggle="collapse" href="#mojprofil"
