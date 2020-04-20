@@ -18,10 +18,11 @@ session_start();
 <html lang="pl">
 
 <head>
-    <title>Car4You - Panel klienta</title>
+    <title>Dashboard</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <!-- CSS Files -->
     <link rel="stylesheet" type="text/css" href="css/dashboardstyles.css">
 
     <!-- Deafult Bootstrap theme -->
@@ -34,9 +35,17 @@ session_start();
     <!-- <link href="https://stackpath.bootstrapcdn.com/bootswatch/4.4.1/darkly/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-rCA2D+D9QXuP2TomtQwd+uP50EHjpafN+wruul0sXZzX/Da7Txn4tB9aLMZV4DZm" crossorigin="anonymous"> -->
 
+    <!-- Boxicons -->
+    <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
+
+    <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
         integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+
+    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Lato|Montserrat|Nunito|Quicksand&display=swap" rel="stylesheet">
+
+    <!-- Script Sources -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
         integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous">
@@ -106,7 +115,7 @@ session_start();
                 <div class="sidebar-sticky">
 
                     <!-- Default collapse  -->
-                    <ul class="list-group">
+                    <ul class="list-group mb-2">
                         <div>
                             <a data-toggle="collapse" href="#default"
                                 class="list-group-item list-group-item-action list-group-item-dark">Default</a>
@@ -117,25 +126,33 @@ session_start();
                         </div>
                     </ul>
                     <!-- End of default collapse -->
-                    <ul class="list-group">
+                    <ul class="list-group mb-2">
                         <div>
                             <a data-toggle="collapse" href="#mojprofil"
-                                class="list-group-item list-group-item-action list-group-item-primary">Mój profil</a>
+                                class="list-group-item list-group-item-action list-group-item-primary">
+                                <i class='bx bxs-id-card'></i>
+                                Mój profil
+                            </a>
                         </div>
                         <div class="collapse" id="mojprofil">
-                            <a href="zmianadanychosobowych.php" class="list-group-item list-group-item-action">Zmiana danych osobowych</a>
+                            <a href="zmianadanychosobowych.php" class="list-group-item list-group-item-action">Zmiana
+                                danych osobowych</a>
                             <a href="zmianahasla.php" class="list-group-item list-group-item-action">Zmiana hasła</a>
                             <a href="zmianamaila.php" class="list-group-item list-group-item-action">Zmiana maila</a>
                         </div>
                     </ul>
-                    <ul class="list-group">
+                    <ul class="list-group mb-2">
                         <div>
-                            <a data-toggle="collapse" href="#samochody"
-                                class="list-group-item list-group-item-action list-group-item-primary">Samochody</a>
+                            <a data-toggle="collapse" href="#samochody" class="list-group-item list-group-item-action list-group-item-primary">
+                                <i class='bx bxs-car'></i>
+                                Samochody
+                            </a>
                         </div>
                         <div class="collapse" id="samochody">
-                            <a href="dodawaniesamochodow.php" class="list-group-item list-group-item-action">Dodaj samochód</a>
-                            <a href="statussamochodow.php" class="list-group-item list-group-item-action">Status samochodów</a>
+                            <a href="dodawaniesamochodow.php" class="list-group-item list-group-item-action">Dodaj
+                                samochód</a>
+                            <a href="statussamochodow.php" class="list-group-item list-group-item-action">Status
+                                samochodów</a>
                         </div>
                     </ul>
                     <?php
@@ -168,15 +185,16 @@ session_start();
 
                     ?>
             </nav>
-            <div class="col-md-9 ml-sm-auto col-lg-10">
-                <div class="row" style="z-index:1030">          
-                        <nav class="position-fixed breadcrumbStyleFixed"  aria-label="breadcrumb" style="width:100%">
-                            <ol class="breadcrumb">
-                                <li class="breadcrumb-item active"><a href="index.php">Panel klienta</a></li>
-                            </ol>
-                        </nav>       
+            <!-- Main Dashboard -->
+            <div class="col-md-10 ml-sm-auto col-lg-10">
+                <div class="row" style="z-index:2; margin-bottom: 80px;">
+                    <nav class="position-fixed breadcrumbStyleFixed" aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item active"><a href="index.php">Panel klienta</a></li>
+                        </ol>
+                    </nav>
                 </div>
-                <div class="row px-4 mb-2" style="margin-top: 60px">
+                <div class="row px-4 mb-2">
                     <div class="col">
                         <input class="form-control form-control-sm w-100" type="text" placeholder="Szukaj"
                             aria-label="Search">
@@ -190,13 +208,13 @@ session_start();
                         </div>
                         <div class="card border-primary">
                             <div class="card-header">
-                                Powiadomienie
+                                Sprawdź to!
                             </div>
-                            <div class="card-body text-primary">
-                                <h5 class="card-title">Special title treatment</h5>
-                                <p class="card-text">With supporting text below as a natural lead-in to additional
-                                    content.</p>
-                                <a href="#" class="btn btn-primary">Go somewhere</a>
+                            <div class="card-body">
+                                <h5 class="card-title">Odbierz nagrodę</h5>
+                                <p class="card-text">Dzięki Twojemu wkładowi w rozwój wypożyczalni, możesz już teraz
+                                    odebrać nagrodę za lojalność.</p>
+                                <a href="#" class="btn btn-primary">Odbierz nagrodę</a>
                             </div>
                             <div class="card-footer text-muted">
                                 2 days ago
