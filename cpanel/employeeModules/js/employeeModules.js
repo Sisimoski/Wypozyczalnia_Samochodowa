@@ -132,7 +132,6 @@ function editKontoButtonClick(self){
 }
 
 function zaladujPracownikow() {
-    console.log("działa");
     request = $.ajax({
         url: "php/ladowaniePracownikow.php",
     })
