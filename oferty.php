@@ -93,7 +93,7 @@ session_start();
     <section id="herous" class="text-light">
         <div class="container">
             <div class="row justify-content-between align-items-center">
-                <div class="col-lg-12 pt-5 pt-lg-0 order-2 order-lg-1">
+                <div class="col-lg-12 pt-lg-0 order-2 order-lg-1">
                     <h1>Oferty</h1>
                     <h2>Wybierz samochód z dostępnej oferty.</h2>
                 </div>
