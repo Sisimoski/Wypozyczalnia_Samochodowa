@@ -136,8 +136,8 @@ session_start();
         </div>
         
         <div class="container">
-            <div class="row justify-content-between text-dark d-flex">
-                <div class="col pt-5 pt-lg-0">
+            <div class="row my-3 my-md-5 justify-content-between text-dark d-flex">
+                <div class="col">
                     <div class="row">
                         <div class="col-md-6">
                             <h3>Główne zalety Car4You</h3>
@@ -148,28 +148,28 @@ session_start();
                             </p>
                         </div>
                     </div>
-                    <div class="row justify-content-between highlightus">
+                    <div class="row highlightus justify-content-between">
                         <div class="col-12 col-md-6 d-flex align-items-stretch order-1 order-md-1">
                             <div class="icon-box">
-                                <div class="icon"><i class='bx bx-shape-triangle'></i></div>
+                                <div class="icon my-auto"><i class='bx bx-shape-triangle'></i></div>
                                 <h4 class="title">Elastyczność</h4>
                                 <p class="description">Czyli możliwość zadecydowania zarówno o okresie wynajmu
                                     samochodu, ale
                                     także o jego marcie bądź klasie.</p>
                             </div>
                         </div>
-                        <div class="col-12 col-md-6 d-flex align-items-center justify-content-center about-img order-2 order-md-2">
+                        <div class="col-12 col-md-6 mt-3 mt-md-0 d-flex align-items-center justify-content-center about-img order-2 order-md-2">
                             <img src="images/bg/bez tła 4.png" class="img-fluid" alt="">
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="row justify-content-between">
-                <div class="col pt-5 pt-lg-0">
-                    <div class="row justify-content-between highlightus">
+            <div class="row my-3 my-md-5 justify-content-between">
+                <div class="col">
+                    <div class="row highlightus justify-content-between">
                         <div class="col-12 col-md-6 d-flex align-items-stretch order-3 order-md-4">
                             <div class="icon-box">
-                                <div class="icon"><i class='bx bxs-navigation'></i></div>
+                                <div class="icon my-auto"><i class='bx bxs-navigation'></i></div>
                                 <h4 class="title">Wygoda</h4>
                                 <p class="description">Czyli szybkie i niezależne przemieszczanie się z miejsca na
                                     miejsce
@@ -177,18 +177,18 @@ session_start();
                                     konieczności korzystania z komunikacji miejskiej czy taxówek.</p>
                             </div>
                         </div>
-                        <div class="col-12 col-md-6 d-flex align-items-center justify-content-center about-img order-4 order-md-3">
+                        <div class="col-12 col-md-6 mt-3 mt-md-0 d-flex align-items-center justify-content-center about-img order-4 order-md-3">
                             <img src="images/bg/obraz11.png" class="img-fluid" alt="">
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="row justify-content-between">
-                <div class="col pt-5 pt-lg-0">
-                    <div class="row justify-content-between highlightus">
+            <div class="row mt-3 mt-md-5 justify-content-between">
+                <div class="col">
+                    <div class="row highlightus justify-content-between">
                         <div class="col-12 col-md-6 d-flex align-items-stretch order-5 order-md-5">
                             <div class="icon-box">
-                                <div class="icon"><i class='bx bxs-map-alt'></i></div>
+                                <div class="icon my-auto"><i class='bx bxs-map-alt'></i></div>
                                 <h4 class="title">Mobilność</h4>
                                 <p class="description">Czyli swobodne poruszanie się samochodem przy oszczędności czasu
                                     i
@@ -197,7 +197,7 @@ session_start();
                                     samochód jest dopasowany do Klienta</p>
                             </div>
                         </div>
-                        <div class="col-12 col-md-6 d-flex align-items-center justify-content-center about-img order-6 order-md-6">
+                        <div class="col-12 col-md-6 mt-3 mt-md-0 d-flex align-items-center justify-content-center about-img order-6 order-md-6">
                             <img src="images/bg/obraz5-removebg-preview.png" class="img-fluid" alt="">
                         </div>
                     </div>
