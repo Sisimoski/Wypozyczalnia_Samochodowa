@@ -8,7 +8,7 @@
     }
 
     if((!empty($login) || !empty($haslo)) == true){
-        $sth = $db->prepare('SELECT id_pracownik,login,haslo,rodzaj_pracownika,czy_aktywowany,email FROM pracownicy INNER JOIN kontakty_pracownicy ON kontakty_pracownicy.id_kontakt=pracownicy.id_kontakt WHERE login = :login OR email = :email limit 1');
+        $sth = $db->prepare('SELECT id_pracownik,imie,nazwisko,login,haslo,rodzaj_pracownika,czy_aktywowany,email FROM pracownicy INNER JOIN kontakty_pracownicy ON kontakty_pracownicy.id_kontakt=pracownicy.id_kontakt WHERE login = :login OR email = :email limit 1');
         $sth -> bindValue(':login',$login,PDO::PARAM_STR);
         $sth -> bindValue(':email',$login,PDO::PARAM_STR);
         $sth -> execute();
@@ -17,10 +17,12 @@
             $id = $result["id_pracownik"];
             $resultLogin = $result['login'];
             $resultHaslo = $result["haslo"];
+            $resultImie = $result["imie"];
+            $resultNazwisko = $result["nazwisko"];
             $rodzajPracownika = $result["rodzaj_pracownika"];
             $czyAktywowany = $result["czy_aktywowany"];
         }else{
-            $sth = $db->prepare('SELECT id_klient,login,haslo,rodzaj_klienta,czy_aktywowany,email FROM klienci INNER JOIN kontakty_klienci ON kontakty_klienci.id_kontakt=klienci.id_klient WHERE login = :login OR email = :email limit 1');
+            $sth = $db->prepare('SELECT id_klient,imie,nazwisko,login,haslo,rodzaj_klienta,czy_aktywowany,email FROM klienci INNER JOIN kontakty_klienci ON kontakty_klienci.id_kontakt=klienci.id_klient WHERE login = :login OR email = :email limit 1');
             $sth -> bindValue(':login',$login,PDO::PARAM_STR);
             $sth -> bindValue(':email',$login,PDO::PARAM_STR);
             $sth -> execute();
@@ -29,8 +31,11 @@
                 $id = $result["id_klient"];
                 $resultLogin = $result['login'];
                 $resultHaslo = $result["haslo"];
+                $resultImie = $result["imie"];
+                $resultNazwisko = $result["nazwisko"];
                 $rodzajKlienta = $result["rodzaj_klienta"];
                 $czyAktywowany = $result["czy_aktywowany"];
+
                 }
             else{
                 echo "Niepoprawny login/email";
@@ -43,6 +48,8 @@
                     session_start();
                     $_SESSION['id'] = $id;
                     $_SESSION['login'] = $resultLogin;
+                    $_SESSION['imie'] = $resultImie;
+                    $_SESSION["nazwisko"] = $resultNazwisko;
                     if(isset($rodzajKlienta))
                         $_SESSION['rodzaj_klienta'] = $rodzajKlienta;
                     if(isset($rodzajPracownika))

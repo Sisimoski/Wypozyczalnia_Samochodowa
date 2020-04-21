@@ -203,7 +203,11 @@ session_start();
                     <div class="col">
                         <div
                             class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom px-2">
-                            <h1>Panel klienta</h1>
+                            <h1>
+                                <?php
+                                    echo 'Witaj, '.$_SESSION["imie"]. ' '.$_SESSION["nazwisko"];
+                                ?>
+                            </h1>
                         </div>
                         <div class="card border-primary">
                             <div class="card-header">
