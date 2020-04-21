@@ -105,6 +105,141 @@ session_start();
 
     <section id="car-catalog" class="car-catalog car-catalog-bg text-dark">
         <div class="container">
+            <div class="row">
+                <div class="col mb-4">
+
+                    <a class="btn btn-primary" data-toggle="collapse" href="#filtruj">
+                        Filtruj
+                    </a>
+
+                    <div class="collapse" id="filtruj">
+                        <div class="card">
+                            <div class="card-header">
+                                <ul class="nav nav-tabs card-header-tabs" id="carFilterCard" role="tablist">
+                                    <li class="nav-item">
+                                        <a class="nav-link active" href="#nav-basic" id="tab-basic" data-toggle="tab">Podstawowe dane</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#nav-specs" id="tab-specs"
+                                            data-toggle="tab">Specyfikacje</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="card-body">
+                                <div class="tab-content" id="tabContent">
+                                    <div class="tab-pane fade show active" id="nav-basic" role="tabpanel">
+                                        <form>
+                                            <div class="form-group">
+                                                <label for="producentFilter">Producent:</label>
+                                                <select class="form-control" id="producentFilter">
+                                                    <option>Volkswagen</option>
+                                                    <option>Ford</option>
+                                                </select>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="modelFilter">Model:</label>
+                                                <select class="form-control" id="modelFilter">
+                                                    <option>Mondeo</option>
+                                                    <option>Golf</option>
+                                                </select>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="productionYearFilter">Rok produkcji od:</label>
+                                                <select class="form-control" id="productionYearFilter">
+                                                    <option>2020</option>
+                                                    <option>2019</option>
+                                                </select>
+                                            </div>
+                                        </form>
+                                    </div>
+                                    <div class="tab-pane fade" id="nav-specs" role="tabpanel">
+                                        <form>
+                                            <div class="form-group">
+                                                <label for="#">Ocena klientów:</label>
+                                                <select class="form-control" id="#">
+                                                    <option>1</option>
+                                                    <option>2</option>
+                                                </select>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="#">Segment:</label>
+                                                <select class="form-control" id="#">
+                                                    <option>1</option>
+                                                    <option>2</option>
+                                                </select>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="#">Typ silnika:</label>
+                                                <select class="form-control" id="#">
+                                                    <option>1</option>
+                                                    <option>2</option>
+                                                </select>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="#">Moc:</label>
+                                                <select class="form-control" id="#">
+                                                    <option>1</option>
+                                                    <option>2</option>
+                                                </select>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="#">Pojemność silnika:</label>
+                                                <select class="form-control" id="#">
+                                                    <option>1</option>
+                                                    <option>2</option>
+                                                </select>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="#">Średnie spalanie:</label>
+                                                <select class="form-control" id="#">
+                                                    <option>1</option>
+                                                    <option>2</option>
+                                                </select>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="#">Skrzynia biegów:</label>
+                                                <select class="form-control" id="#">
+                                                    <option>1</option>
+                                                    <option>2</option>
+                                                </select>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="#">Ilość miejsc:</label>
+                                                <select class="form-control" id="#">
+                                                    <option>1</option>
+                                                    <option>2</option>
+                                                </select>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="#">Pojemność bagażnika:</label>
+                                                <select class="form-control" id="#">
+                                                    <option>1</option>
+                                                    <option>2</option>
+                                                </select>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="#">Zasięg na pełnym baku:</label>
+                                                <select class="form-control" id="#">
+                                                    <option>1</option>
+                                                    <option>2</option>
+                                                </select>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="#">Średni koszt wynajmu:</label>
+                                                <select class="form-control" id="#">
+                                                    <option>1</option>
+                                                    <option>2</option>
+                                                </select>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
             <div class="row row-cols-1 row-cols-md-3 row-cols-lg-4 justify-content-center">
                 <div class="col mb-4">
                     <div class="card bg-light text-center h-100">
