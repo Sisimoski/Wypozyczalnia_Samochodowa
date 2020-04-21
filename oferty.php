@@ -40,7 +40,7 @@ session_start();
 <body>
     <!-- Nagłówek Navbar -->
     <section id="header">
-        <nav class="navbar navbar-expand-lg fixed-top navbar-light bg-light"
+        <nav class="navbar navbar-expand-md fixed-top navbar-light bg-light"
             style="box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);">
             <a class="navbar-brand ml-2" href="index.php">
                 <img src="images/Car4You-line-logo.png" height="50" alt="car4you logo">
