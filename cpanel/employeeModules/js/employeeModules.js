@@ -82,7 +82,6 @@ $(document).ready(function () {
             console.log(response);
         });
     });
-
     // Do napisania front modal
     $("#zarejestrujPracownika").click(function () {
         var request;
@@ -103,6 +102,30 @@ $(document).ready(function () {
         });
     });
 
+    $("#edytujKontoButton").click(function(){
+        var value = $('#edytujKontoButton').val();
+        var data = $('.pracownikEditForm').serialize() + "&id="+value;
+
+        request = $.ajax({
+            url: "php/edytujPracownika.php",
+            data: data,
+            type: "POST"
+        });
+
+        request.done(function (response) {
+            console.log(response);
+            $("#tabelaPracownicy tr").remove();
+            zaladujPracownikow();
+            $('#usunKontoModal').modal('hide');
+
+            //Dodać alert że zmieniono dane
+        });
+
+        request.fail(function (response) {
+            console.log(response);
+        });
+    });
+
 });
 
 
@@ -114,6 +137,7 @@ function usunKontoButtonClick(self) {
 
 function editKontoButtonClick(self){
     self = $(self);
+    $('#edytujKontoButton').attr("value", self.val());
 
     request = $.ajax({
         url: "php/zaladujDanePracownika.php",
@@ -122,7 +146,44 @@ function editKontoButtonClick(self){
     });
 
     request.done(function(response){
-        console.log(response);
+        if(response.match("Wystąpił błąd")){
+            console.log(response);
+        }
+        else{
+            var obj = JSON.parse(response);
+
+            
+            
+            $("#imieEdit").val(obj[0]["imie"]);
+            $("#nazwiskoEdit").val(obj[0]["nazwisko"]);
+            $("#emailEdit").val(obj[0]["email"]);
+            $("#email_pracowniczyEdit").val(obj[0]["email_pracowniczy"]);
+            $("#cityEdit").val(obj[0]["miejscowosc"]);
+            $("#inputStateEdit").val(obj[0]["wojewodztwo"]);
+            $("#ulicaEdit").val(obj[0]["ulica"]);
+            $("#numerDomuEdit").val(obj[0]["nr_domu"]);
+            $("#kodEdit").val(obj[0]["kod_pocztowy"]);
+            $("#telefonEdit").val(obj[0]["nr_tel"]);
+            $("#komorkaEdit").val(obj[0]["nr_kom"]);
+            $("#linkedinEdit").val(obj[0]["linkedin"]);
+            $("#dodatkowe_informacjeEdit").val(obj[0]["dodatkowe_informacje"]);
+            $("#inputRoleEdit").val(obj[0]["rodzaj_pracownika"]);
+            $("#inputActivationEdit").val(obj[0]["czy_aktywowany"]);
+
+            var data_zatrudnienia = new Date(obj[0]["data_zatrudnienia"]).toISOString().split('T')[0];
+            $("#dataZatrudnieniaEdit").val(data_zatrudnienia);
+
+            
+            if(obj[0]["data_zwolnienia"] != null){
+                var data_zwolnienia = new Date(obj[0]["data_zwolnienia"]).toISOString().split('T')[0];
+                $("#dataZwolnieniaEdit").val(data_zwolnienia);
+            }
+            else{
+                $("#dataZwolnieniaEdit").val('');
+
+            }
+            
+        }
     });
 
     request.fail(function(response){

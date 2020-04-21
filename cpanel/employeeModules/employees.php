@@ -146,6 +146,12 @@ session_start();
                                 <input type="text" name="nazwisko" id="nazwiskoEdit" placeholder="Nazwisko" />
                             </div>
                             <div class="form-group">
+                                <input type="text" name="email" id="emailEdit" placeholder="Email" />
+                            </div>
+                            <div class="form-group">
+                                <input type="text" name="email_pracowniczy" id="email_pracowniczyEdit" placeholder="Email Pracowniczy" />
+                            </div>
+                            <div class="form-group">
                                 <input type="text" name="city" id="cityEdit" placeholder="Miasto" />
                             </div>
                             <div class="form-group col-md-4">
@@ -185,10 +191,13 @@ session_start();
                                 <input type="text" name="komorka" id="komorkaEdit" placeholder="Numer Komórkowy" />
                             </div>
                             <div class="form-group">
-                                <input type="text" name="fax" id="faxEdit" placeholder="Fax" />
+                                <input type="text" name="linkedin" id="linkedinEdit" placeholder="LinkedIn" />
                             </div>
                             <div class="form-group">
-                                <input type="text" name="www" id="wwwEdit" placeholder="Adres www" />
+                                <input type="text" name="dodatkowe_informacje" id="dodatkowe_informacjeEdit" placeholder="Dodatkowe Informacje" />
+                            </div>
+                            <div class="form-group">
+                                <input type="date" name="data_zatrudnienia" id="dataZatrudnieniaEdit" placeholder="Data Zatrudnienia"/>
                             </div>
                             <div class="form-group">
                                 <input type="date" name="data_zwolnienia" id="dataZwolnieniaEdit" placeholder="Data Zwolnienia"/>
