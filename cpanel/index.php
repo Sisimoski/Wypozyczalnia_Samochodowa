@@ -104,85 +104,11 @@ session_start();
         <div class="row">
             <nav class="col-md-2 d-none d-lg-block bg-light sidebar position-fixed">
                 <div class="sidebar-sticky">
-
-                    <!-- Default collapse  -->
-                    <!-- d-none, żeby się nie świeciło na stronie, ale z tego możecie korzystać -->
-                    <ul class="list-group mb-2 d-none">
-                        <div>
-                            <a data-toggle="collapse" href="#default"
-                                class="list-group-item list-group-item-action list-group-item-dark">Default</a>
-                        </div>
-                        <div class="collapse" id="default">
-                            <a href="#" class="list-group-item list-group-item-action">Default menu 1</a>
-                            <a href="#" class="list-group-item list-group-item-action">Default menu 2</a>
-                        </div>
-                    </ul>
-                    <!-- End of default collapse -->
-                    <ul class="list-group mb-2">
-                        <a href="index.php" class="list-group-item list-group-item-action list-group-item-info">
-                            <i class='bx bxs-id-card'></i>
-                            Panel klienta
-                        </a>
-                    </ul>
-                    <ul class="list-group mb-2">
-                        <div>
-                            <a data-toggle="collapse" href="#mojprofil"
-                                class="list-group-item list-group-item-action list-group-item-primary">
-                                <i class='bx bxs-user-detail'></i>
-                                Mój profil
-                            </a>
-                        </div>
-                        <div class="collapse" id="mojprofil">
-                            <a href="zmianadanychosobowych.php" class="list-group-item list-group-item-action">Zmiana
-                                danych osobowych</a>
-                            <a href="zmianahasla.php" class="list-group-item list-group-item-action">Zmiana hasła</a>
-                            <a href="zmianamaila.php" class="list-group-item list-group-item-action">Zmiana maila</a>
-                        </div>
-                    </ul>
-                    <ul class="list-group mb-2">
-                        <div>
-                            <a data-toggle="collapse" href="#samochody" class="list-group-item list-group-item-action list-group-item-primary">
-                                <i class='bx bxs-car'></i>
-                                Samochody
-                            </a>
-                        </div>
-                        <div class="collapse" id="samochody">
-                            <a href="dodawaniesamochodow.php" class="list-group-item list-group-item-action">Dodaj
-                                samochód</a>
-                            <a href="statussamochodow.php" class="list-group-item list-group-item-action">Status
-                                samochodów</a>
-                        </div>
-                    </ul>
                     <?php
-                        if(isset($_SESSION['rodzaj_pracownika'])){
-                            
-
-                            // Puste pole w echo na moduły pracownika
-                            echo '
-                                <ul class="list-group">
-                                    <div>
-                                        <a data-toggle="collapse" href="#employeePanel"
-                                            class="list-group-item list-group-item-action list-group-item-primary">Panel Pracownika</a>
-                                    </div>
-                                    <div class="collapse" id="employeePanel">
-                                    <a href="employeeModules/employeeCars.php" class="list-group-item list-group-item-action">Pojazdy</a>
-                                    <a href="employeeModules/employeeNewsletter.php" class="list-group-item list-group-item-action">Newsletter</a>
-                                    
-                                    
-                                    
-                                    ';
-
-                            if($_SESSION['rodzaj_pracownika'] == 2){
-                                echo'
-                                        <a href="employeeModules/employees.php" class="list-group-item list-group-item-action">Pracownicy</a>
-                                        
-                                ';
-                            }
-                            echo '</div></ul>';
-                        }
-
+                        include("sidebarContent.php");
                     ?>
-                    <a class="nav-link text-secondary" href="../index.php">Strona główna<span class="sr-only">(current)</span></a>
+                   
+                </div>
             </nav>
             <!-- Main Dashboard -->
             <div class="col-lg-10 ml-sm-auto col-lg-10">

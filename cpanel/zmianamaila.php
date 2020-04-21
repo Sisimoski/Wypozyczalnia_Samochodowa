@@ -97,43 +97,10 @@ session_start();
         <div class="row" style="height: 100%;">
             <nav class="col-md-2 d-none d-lg-block bg-light sidebar position-fixed">
                 <div class="sidebar-sticky">
-                    <ul class="list-group mb-2">
-                        <a href="index.php" class="list-group-item list-group-item-action list-group-item-info">
-                            <i class='bx bxs-id-card'></i>
-                            Panel klienta
-                        </a>
-                    </ul>
-                    <ul class="list-group mb-2">
-                        <div>
-                            <a data-toggle="collapse" href="#mojprofil"
-                                class="list-group-item list-group-item-action list-group-item-primary">
-                                <i class='bx bxs-user-detail'></i>
-                                Mój profil
-                            </a>
-                        </div>
-                        <div class="collapse" id="mojprofil">
-                            <a href="zmianadanychosobowych.php" class="list-group-item list-group-item-action">Zmiana
-                                danych osobowych</a>
-                            <a href="zmianahasla.php" class="list-group-item list-group-item-action ">Zmiana
-                                hasła</a>
-                            <a href="zmianamaila.php" class="list-group-item list-group-item-action active">Zmiana maila</a>
-                        </div>
-                    </ul>
-                    <ul class="list-group mb-2">
-                        <div>
-                            <a data-toggle="collapse" href="#samochody"
-                                class="list-group-item list-group-item-action list-group-item-primary">
-                                <i class='bx bxs-car'></i>
-                                Samochody
-                            </a>
-                        </div>
-                        <div class="collapse" id="samochody">
-                            <a href="dodawaniesamochodow.php" class="list-group-item list-group-item-action">Dodaj
-                                samochód</a>
-                            <a href="statussamochodow.php" class="list-group-item list-group-item-action">Status
-                                samochodów</a>
-                        </div>
-                    </ul>
+                    <?php
+                            include("sidebarContent.php");
+                        ?>
+                </div>
             </nav>
             <div class="col-lg-10 ml-sm-auto col-lg-10">
                 <div class="row" style="z-index:2; margin-bottom: 80px;">
