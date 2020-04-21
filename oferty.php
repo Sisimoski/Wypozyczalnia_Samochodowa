@@ -52,10 +52,10 @@ session_start();
             </button>
             <div class="collapse navbar-collapse flex-grow-1" id="navbarSupportedContent">
                 <ul class="navbar-nav ml-auto">
-                    <li class="nav-item active">
+                    <li class="nav-item">
                         <a class="nav-link" href="index.php">Strona główna<span class="sr-only">(current)</span></a>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item active">
                         <a class="nav-link" href="oferty.php">Oferty</a>
                     </li>
                     <li class="nav-item">
@@ -105,11 +105,129 @@ session_start();
 
     <section id="car-catalog" class="car-catalog car-catalog-bg text-dark">
         <div class="container">
-            <div class="car-catalog-title">
-                <h2>Wybierz samochód</h2>
-                <p>Z ponad wielu dostępnych w naszym katalogu.</p>
+            <div class="row row-cols-1 row-cols-md-3 row-cols-lg-4 justify-content-center">
+                <div class="col mb-4">
+                    <div class="card bg-light text-center h-100">
+                        <img src="images/samochody/Ford_mondeo.png" class="card-img-top" alt="Ford Mondeo">
+                        <div class="card-body">
+                            <h5 class="card-title">Ford</h5>
+                            <h6 class="card-subtitle mb-2 text-muted">Mondeo</h6>
+                            
+                            <a href="#" class="btn btn-primary">Wypożycz</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col mb-4">
+                    <div class="card bg-light text-center h-100">
+                        <img src="images/samochody/hyundai i10.png" class="card-img-top" alt="Hyundai i10">
+                        <div class="card-body">
+                            <h5 class="card-title">Hyundai</h5>
+                            <h6 class="card-subtitle mb-2 text-muted">i10</h6>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
+                                of the card's content.</p>
+                            <a href="#" class="btn btn-primary">Wypożycz</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col mb-4">
+                    <div class="card bg-light text-center h-100 justify-content-between">
+                        <img src="images/samochody/mercedes_cw205.png" class="card-img-top" alt="mercedes_cw205">
+                        <div class="card-body">
+                            <h5 class="card-title">Mercedes</h5>
+                            <h6 class="card-subtitle mb-2 text-muted">CW205</h6>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
+                                of the card's content.</p>
+                            <a href="#" class="btn btn-primary">Wypożycz</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col mb-4">
+                    <div class="card bg-light text-center h-100">
+                        <img src="images/samochody/renault-trafic.png" class="card-img-top" alt="renault-trafic">
+                        <div class="card-body">
+                            <h5 class="card-title">Renault</h5>
+                            <h6 class="card-subtitle mb-2 text-muted">Trafic</h6>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
+                                of the card's content.</p>
+                            <a href="#" class="btn btn-primary">Wypożycz</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col mb-4">
+                    <div class="card bg-light text-center h-100">
+                        <img src="images/samochody/Seat_ibiza.png" class="card-img-top" alt="Seat_ibiza">
+                        <div class="card-body">
+                            <h5 class="card-title">Seat</h5>
+                            <h6 class="card-subtitle mb-2 text-muted">Ibiza</h6>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
+                                of the card's content.</p>
+                            <a href="#" class="btn btn-primary">Wypożycz</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col mb-4">
+                    <div class="card bg-light text-center h-100">
+                        <img src="images/samochody/Skoda_fabia.png" class="card-img-top" alt="Skoda_fabia">
+                        <div class="card-body">
+                            <h5 class="card-title">Skoda</h5>
+                            <h6 class="card-subtitle mb-2 text-muted">Fabia</h6>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
+                                of the card's content.</p>
+                            <a href="#" class="btn btn-primary">Wypożycz</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col mb-4">
+                    <div class="card bg-light text-center h-100">
+                        <img src="images/samochody/skoda_superb.png" class="card-img-top" alt="Skoda Superb">
+                        <div class="card-body">
+                            <h5 class="card-title">Skoda</h5>
+                            <h6 class="card-subtitle mb-2 text-muted">Superb</h6>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
+                                of the card's content.</p>
+                            <a href="#" class="btn btn-primary">Wypożycz</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col mb-4">
+                    <div class="card bg-light text-center h-100">
+                        <img src="images/samochody/vw golf.png" class="card-img-top" alt="VW Golf">
+                        <div class="card-body">
+                            <h5 class="card-title">Volkswagen</h5>
+                            <h6 class="card-subtitle mb-2 text-muted">Golf</h6>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
+                                of the card's content.</p>
+                            <a href="#" class="btn btn-primary">Wypożycz</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col mb-4">
+                    <div class="card bg-light text-center h-100">
+                        <img src="images/samochody/vw_arteon.jpg" class="card-img-top" alt="VW Arteon">
+                        <div class="card-body">
+                            <h5 class="card-title">Volkswagen</h5>
+                            <h6 class="card-subtitle mb-2 text-muted">Arteon</h6>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
+                                of the card's content.</p>
+                            <a href="#" class="btn btn-primary">Wypożycz</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col mb-4">
+                    <div class="card bg-light text-center h-100">
+                        <img src="images/samochody/vw_passat.png" class="card-img-top" alt="VW Passat">
+                        <div class="card-body">
+                            <h5 class="card-title">Volkswagen</h5>
+                            <h6 class="card-subtitle mb-2 text-muted">Passat</h6>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
+                                of the card's content.</p>
+                            <a href="#" class="btn btn-primary">Wypożycz</a>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="row">
+
+            <!-- <div class="row">
                 <div class="col">
                     <div class="icon-box">
                         <div class="icon"><img src="images/porsche-911.png" class="img-fluid" alt="Porsche 911"></div>
@@ -141,7 +259,7 @@ session_start();
                     <button type='button' class='btn btn-primary mr-sm-2'>Zobacz wszystko</button>
                 </div>
             </div>
-        </div>
+        </div> -->
     </section>
 
     <footer id="footer" class="footer bg-light">

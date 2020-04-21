@@ -89,7 +89,6 @@
     </section>
 
     <!-- Sekcja Hero -->
-    <!-- Naprawiona responsywność -->
     <section id="hero" class="text-light">
         <div class="container">
             <div class="row justify-content-between align-items-center">
@@ -112,30 +111,30 @@
                 <h2>Zobacz, dlaczego klienci nas wybierają</h2>
             </div>
             <div class="row">
-                <div class="col-md-6 col-lg-3 d-flex align-items-stretch">
+                <div class="col-md-6 col-lg-6 col-xl-3 d-flex align-items-stretch">
                     <div class="icon-box">
-                        <div class="icon"><i class='bx bx-car bx-tada'></i></div>
+                        <div class="icon"><i class='bx bx-car'></i></div>
                         <h3 class="title">Innowacyjny pomysł</h4>
                             <p class="description">Pierwsza wypożyczalnia w Polsce, która umożliwia zarówno wypożyczenie, jak i wynajem samochodu.</p>
                     </div>
                 </div>
-                <div class="col-md-6 col-lg-3 d-flex align-items-stretch">
+                <div class="col-md-6 col-lg-6 col-xl-3 d-flex align-items-stretch">
                     <div class="icon-box">
-                        <div class="icon"><i class='bx bx-building-house bx-tada'></i></div>
+                        <div class="icon"><i class='bx bx-building-house'></i></div>
                         <h3 class="title">Konkurencyjna cena</h4>
                             <p class="description">Ceny są porównywalne z innymi okolicznymi wypożyczalniami. Dodatkowo Ty sam możesz zarobić, wynajmując komuś swój własny samochód.</p>
                     </div>
                 </div>
-                <div class="col-md-6 col-lg-3 d-flex align-items-stretch">
+                <div class="col-md-6 col-lg-6 col-xl-3 d-flex align-items-stretch">
                     <div class="icon-box">
-                        <div class="icon"><i class='bx bx-navigation bx-tada'></i></div>
+                        <div class="icon"><i class='bx bx-navigation'></i></div>
                         <h3 class="title">Wygoda</h4>
                             <p class="description">Wybór samochodu zależy od Ciebie. Możesz wybrać samochód bez wychodzenia z domu. To samo dotyczy rejestracji swojego samochodu w systemie.</p>
                     </div>
                 </div>
-                <div class="col-md-6 col-lg-3 d-flex align-items-stretch">
+                <div class="col-md-6 col-lg-6 col-xl-3 d-flex align-items-stretch">
                     <div class="icon-box">
-                        <div class="icon"><i class='bx bx-user-check bx-tada'></i></div>
+                        <div class="icon"><i class='bx bx-user-check'></i></div>
                         <h3 class="title">Rabaty</h4>
                             <p class="description">Dzięki Karcie Lojalnościowej zdobywasz punkty, które pozwalają na zniżki okresowe, ale też na zniżki stałe. Jedyne co musisz zrobić, to zacząć wypożyczać/wynajmować!</p>
                     </div>
