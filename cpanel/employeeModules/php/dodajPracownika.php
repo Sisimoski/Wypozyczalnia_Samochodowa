@@ -3,7 +3,7 @@
     require_once $_SERVER['DOCUMENT_ROOT'] . '/php/config.php';
 
     $login = $_POST["login"];
-    $haslo = $_POST["haslo"];
+    $haslo = md5($_POST["haslo"]);
     $imie = $_POST["imie"];
     $nazwisko = $_POST["nazwisko"];
     $email = $_POST["email"];
