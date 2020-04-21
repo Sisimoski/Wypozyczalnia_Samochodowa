@@ -6,7 +6,7 @@ session_start();
 <html lang="pl">
 
 <head>
-    <title>Car4You - wypożyczalnia samochodów</title>
+    <title>Oferty</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -44,7 +44,6 @@ session_start();
             style="box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);">
             <a class="navbar-brand ml-2" href="index.php">
                 <img src="images/Car4You-line-logo.png" height="50" alt="car4you logo">
-                <!-- <a href="https://www.freepik.com/free-photos-vectors/background">Background vector created by katemangostar - www.freepik.com</a> -->
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -91,7 +90,6 @@ session_start();
     </section>
 
     <!-- Sekcja Hero -->
-    <!-- Naprawiona responsywność -->
     <section id="herous" class="text-light">
         <div class="container">
             <div class="row justify-content-between align-items-center">
@@ -106,12 +104,17 @@ session_start();
     <section id="car-catalog" class="car-catalog car-catalog-bg text-dark">
         <div class="container">
             <div class="row">
-                <div class="col mb-4">
+                <div class="col-12 mb-4">
+                    <!-- Filter Button -->
+                    <div class="row text-right">
+                        <div class="col">
+                            <a class="btn btn-primary mb-2" data-toggle="collapse" href="#filtruj">
+                                Filtruj
+                            </a>
+                        </div>
+                    </div>
 
-                    <a class="btn btn-primary" data-toggle="collapse" href="#filtruj">
-                        Filtruj
-                    </a>
-
+                    <!-- Filter Panel -->
                     <div class="collapse" id="filtruj">
                         <div class="card">
                             <div class="card-header">
@@ -240,6 +243,8 @@ session_start();
 
                 </div>
             </div>
+
+            <!-- Oferty Cards -->
             <div class="row row-cols-1 row-cols-md-3 row-cols-lg-4 justify-content-center">
                 <div class="col mb-4">
                     <div class="card bg-light text-center h-100">
