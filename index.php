@@ -98,7 +98,7 @@
                 </div>
                 <div class="col-lg-6 order-1 order-lg-1">
                     <!-- Dodać cień do obrazka -->
-                    <img src="images/home-hero-background.png" class="img-fluid" alt="homepage-hero-background">
+                    <img src="images/bg/home-hero-background.png" class="img-fluid" alt="homepage-hero-background">
                 </div>
             </div>
         </div>
