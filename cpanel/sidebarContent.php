@@ -11,12 +11,14 @@
                         </div>
                     </ul>
                     <!-- End of default collapse -->
+                    <!-- PANEL KLIENTA -->
                     <ul class="list-group mb-2">
                         <a href="/cpanel/index.php" class="list-group-item list-group-item-action list-group-item-info">
                             <i class='bx bxs-id-card'></i>
                             Panel klienta
                         </a>
                     </ul>
+
                     <ul class="list-group mb-2">
                         <div>
                             <a data-toggle="collapse" href="#mojprofil"
@@ -32,6 +34,7 @@
                             <a href="/cpanel/zmianamaila.php" class="list-group-item list-group-item-action">Zmiana maila</a>
                         </div>
                     </ul>
+                        <!-- SAMOCHODY KLIENTA -->
                     <ul class="list-group mb-2">
                         <div>
                             <a data-toggle="collapse" href="#samochody" class="list-group-item list-group-item-action list-group-item-primary">
@@ -46,11 +49,10 @@
                                 samochodów</a>
                         </div>
                     </ul>
+
+                        <!-- MODUŁY PRACOWNIKA -->
                     <?php
                         if(isset($_SESSION['rodzaj_pracownika'])){
-                            
-
-                            // Puste pole w echo na moduły pracownika
                             echo '
                                 <ul class="list-group">
                                     <div>
@@ -76,6 +78,7 @@
                                     
                                     ';
 
+                        // MODUŁY ADMINA
                             if($_SESSION['rodzaj_pracownika'] == 2){
                                 echo'
                                         <a href="/cpanel/employeeModules/employees.php" class="list-group-item list-group-item-action">Pracownicy</a>
@@ -86,4 +89,6 @@
                         }
 
                     ?>
+
+                    <!-- ODSYŁACZE DO STRONY GŁÓWNEJ -->
                     <a class="nav-link text-secondary" href="/index.php">Strona główna<span class="sr-only">(current)</span></a>

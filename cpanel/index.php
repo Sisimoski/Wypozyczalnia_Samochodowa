@@ -61,41 +61,9 @@ session_start();
 <body>
     <!-- Nagłówek Navbar -->
     <section id="header">
-        <nav class="navbar navbar-expand-md fixed-top navbar-light bg-light">
-            <a class="navbar-brand ml-2" href="index.php">
-                <img src="../images/Car4You-line-logo.png" height="50" alt="car4you logo">
-            </a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse flex-grow-1" id="navbarSupportedContent">
-                <ul class="navbar-nav ml-auto">
-                    <input class="form-control form-control" type="text" placeholder="Szukaj" aria-label="Search">
-                    <li class="nav-item text-nowrap">
-                        
-                    </li>
-                </ul>
-                <?php
-            if(!isset($_SESSION['id'])){
-            echo "<button id='zaloguj' type='submit' class='btn btn-outline-primary mr-sm-2'>Zaloguj się</button>";
-            echo "<button id='zarejestruj' type='submit' class='btn btn-primary my-2 my-sm-0'>Zarejestruj się</button>" ;
-            }
-            else{
-                if(isset($_SESSION['rodzaj_klienta'])){
-                    if($_SESSION['rodzaj_klienta'] == 1 || $_SESSION['rodzaj_klienta'] == 2){
-                        
-                    }
-                        
-                }
-                if(isset($_SESSION['rodzaj_pracownika'])){                   
-                        echo "<button id='panelPracownika' type='submit' class='btn btn-primary'>Panel Pracownika</button>"; 
-                }
-                echo "<button type='button' id='wyloguj' class='btn btn-outline-danger ml-2'>Wyloguj</button>";
-            }
+        <?php
+            include("headerContent.php");
         ?>
-            </div>
-        </nav>
     </section>
     <div class="container-fluid">
         <div class="fixed-top justify-content-center d-none">
@@ -104,6 +72,8 @@ session_start();
         <div class="row">
             <nav class="col-md-2 d-none d-lg-block bg-light sidebar position-fixed">
                 <div class="sidebar-sticky">
+
+                  <!-- Sidebar -->
                     <?php
                         include("sidebarContent.php");
                     ?>

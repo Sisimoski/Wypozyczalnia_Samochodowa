@@ -30,6 +30,7 @@ session_start();
         integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous">
     </script>
     <script src="https://cdn.jsdelivr.net/npm/bs-custom-file-input/dist/bs-custom-file-input.js"></script>
+    <script src="/cpanel/js/logout.js"></script>
     <script src="./js/changeData.js"></script>
     <script src="./js/carManagement.js"></script>
 </head>
@@ -37,54 +38,9 @@ session_start();
 <body>
     <!-- Nagłówek Navbar -->
     <section id="header">
-        <nav class="navbar navbar-expand-lg fixed-top navbar-light bg-light"
-            style="box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);">
-            <a class="navbar-brand ml-2" href="../index.php">
-                <img src="../images/Car4You-line-logo.png" height="50" alt="car4you logo">
-                <!-- <a href="https://www.freepik.com/free-photos-vectors/background">Background vector created by katemangostar - www.freepik.com</a> -->
-            </a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse flex-grow-1" id="navbarSupportedContent">
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="../index.php">Strona główna<span class="sr-only">(current)</span></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="../oferty.php">Oferty</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="../aboutus.php">O nas</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Kontakt</a>
-                    </li>
-                </ul>
-                <?php
-            if(!isset($_SESSION['id'])){
-            echo "<button id='zaloguj' type='submit' class='btn btn-outline-primary mr-sm-2'>Zaloguj się</button>";
-            echo "<button id='zarejestruj' type='submit' class='btn btn-primary my-2 my-sm-0'>Zarejestruj się</button>" ;
-            }
-            else{
-                if(isset($_SESSION['rodzaj_klienta'])){
-                    if($_SESSION['rodzaj_klienta'] == 1 || $_SESSION['rodzaj_klienta'] == 2){
-                        echo "<button id='panelKlienta' href='./cpanel/index.php' type='submit' class='btn btn-primary'>Panel Klienta</button>";
-                    }
-                        
-                }
-                if(isset($_SESSION['rodzaj_pracownika'])){                   
-                        echo "<button id='panelPracownika' type='submit' class='btn btn-primary'>Panel Pracownika</button>"; 
-                    if($_SESSION['rodzaj_pracownika'] == 2){
-                        echo "<button id='panelAdministratora' type='submit' class='btn btn-primary ml-2'>Panel Administratora</button>";
-                    }
-                }
-                echo "<button type='button' id='wyloguj' class='btn btn-outline-primary ml-2'>Wyloguj</button>";
-            }
+        <?php
+            include("headerContent.php");
         ?>
-            </div>
-        </nav>
     </section>
     <div class="container-fluid">
         <div class="fixed-top justify-content-center d-flex">
