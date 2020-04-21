@@ -66,8 +66,8 @@ session_start();
                 </ul>
                 <?php
             if(!isset($_SESSION['id'])){
-            echo "<button id='zaloguj' type='submit' class='btn btn-outline-primary mr-sm-2'>Zaloguj się</button>";
-            echo "<button id='zarejestruj' type='submit' class='btn btn-primary my-2 my-sm-0'>Zarejestruj się</button>" ;
+            echo "<button id='zaloguj' type='submit' class='btn btn-outline-primary'>Zaloguj się</button>";
+            echo "<button id='zarejestruj' type='submit' class='btn btn-primary ml-2'>Zarejestruj się</button>" ;
             }
             else{
                 if(isset($_SESSION['rodzaj_klienta'])){
@@ -154,6 +154,7 @@ session_start();
                                                     <option>2019</option>
                                                 </select>
                                             </div>
+                                            <button type="submit" class="btn btn-primary">Zastosuj</button>
                                         </form>
                                     </div>
                                     <div class="tab-pane fade" id="nav-specs" role="tabpanel">
@@ -240,6 +241,7 @@ session_start();
                                                     <option>2</option>
                                                 </select>
                                             </div>
+                                            <button type="submit" class="btn btn-primary">Zastosuj</button>
                                         </form>
                                     </div>
                                 </div>

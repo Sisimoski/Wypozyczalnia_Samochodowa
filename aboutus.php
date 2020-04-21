@@ -67,8 +67,8 @@ session_start();
                 </ul>
                 <?php
             if(!isset($_SESSION['id'])){
-            echo "<button id='zaloguj' type='submit' class='btn btn-outline-primary mr-sm-2'>Zaloguj się</button>";
-            echo "<button id='zarejestruj' type='submit' class='btn btn-primary my-2 my-sm-0'>Zarejestruj się</button>" ;
+            echo "<button id='zaloguj' type='submit' class='btn btn-outline-primary'>Zaloguj się</button>";
+            echo "<button id='zarejestruj' type='submit' class='btn btn-primary ml-2'>Zarejestruj się</button>" ;
             }
             else{
                 if(isset($_SESSION['rodzaj_klienta'])){
