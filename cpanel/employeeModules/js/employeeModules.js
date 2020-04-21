@@ -24,44 +24,6 @@ $(document).ready(function () {
         e.preventDefault();
     });
 
-    $("#zaladujStatus").click(function () {
-        $("#alert").html("");
-        var data = $(".statusPojazdowDane").serialize();
-        request = $.ajax({
-            url: "php/zaladujStatus.php",
-            data: data,
-            type: "POST"
-        })
-
-        request.done(function (response) {
-            if (response == "Brak pojazdow") {
-                $("#alert").html("Brak pojazdów w podanym zakresie czasu");
-            }
-            else {
-                var obj = JSON.parse(response);
-
-                for (i = 0; i < obj.length; i++) {
-                    if (obj[i][4] == "0")
-                        var status = "Nie Przyjęty";
-                    else
-                        var status = "Przyjęty";
-                    if (obj[i][5] == "0")
-                        var platnosc = "Nieopłacone";
-                    else
-                        var platnosc = "Opłacone";
-                    if (obj[i][6] == "0")
-                        var realizacja = "Nie zrealizowane";
-                    else
-                        var realizacja = "Zrealizowane";
-                    $("#tabelaStatus").append(" <tr><th scope='row'>" + i + "</th><td>" + obj[i][0] + "</td><td>" + obj[i][1] + "</td><td>" + obj[i][2] + " " + obj[i][3] + "</td><td>" + status + "</td><td>" + platnosc + "</td><td>" + realizacja + "</td></tr>");
-                }
-            }
-        })
-        request.fail(function (response) {
-            console.log("Error" + response);
-        });
-    });
-
     $('#usunKontoButton').click(function () {
         var value = $('#usunKontoButton').val();
         var data = { id: value }
@@ -82,19 +44,21 @@ $(document).ready(function () {
             console.log(response);
         });
     });
-
     // Do napisania front modal
-    $("#zarejestrujPracownika").click(function () {
+    $("#dodajKontoButton").click(function () {
         var request;
-        var data = $(".rejestracjaPracownika").serialize();
+        var data = $(".pracownikAddForm").serialize();
         request = $.ajax({
-            url: "./php/dodajPracownika.php",
+            url: "php/dodajPracownika.php",
             data: data,
             type: "POST"
         });
 
         request.done(function (response) {
             console.log(response);
+            $("#tabelaPracownicy tr").remove();
+            zaladujPracownikow();
+            $('#dodajKontoModal').modal('hide');
         });
 
         request.fail(function (response) {
@@ -102,6 +66,40 @@ $(document).ready(function () {
 
         });
     });
+
+    $("#edytujKontoButton").click(function(){
+        var value = $('#edytujKontoButton').val();
+        var data = $('.pracownikEditForm').serialize() + "&id="+value;
+
+        request = $.ajax({
+            url: "php/edytujPracownika.php",
+            data: data,
+            type: "POST"
+        });
+
+        request.done(function (response) {
+            console.log(response);
+            $("#tabelaPracownicy tr").remove();
+            zaladujPracownikow();
+            $('#edytujKontoModal').modal('hide');
+
+            //Dodać alert że zmieniono dane
+        });
+
+        request.fail(function (response) {
+            console.log(response);
+        });
+    });
+
+    $('#dataOd').on('input', function() {  
+        zaladujStatus();
+    });
+
+    $('#dataDo').on('input', function() {
+        zaladujStatus();
+    });
+
+    zaladujStatus();
 
 });
 
@@ -114,6 +112,7 @@ function usunKontoButtonClick(self) {
 
 function editKontoButtonClick(self){
     self = $(self);
+    $('#edytujKontoButton').attr("value", self.val());
 
     request = $.ajax({
         url: "php/zaladujDanePracownika.php",
@@ -122,7 +121,44 @@ function editKontoButtonClick(self){
     });
 
     request.done(function(response){
-        console.log(response);
+        if(response.match("Wystąpił błąd")){
+            console.log(response);
+        }
+        else{
+            var obj = JSON.parse(response);
+
+            
+            
+            $("#imieEdit").val(obj[0]["imie"]);
+            $("#nazwiskoEdit").val(obj[0]["nazwisko"]);
+            $("#emailEdit").val(obj[0]["email"]);
+            $("#email_pracowniczyEdit").val(obj[0]["email_pracowniczy"]);
+            $("#cityEdit").val(obj[0]["miejscowosc"]);
+            $("#inputStateEdit").val(obj[0]["wojewodztwo"]);
+            $("#ulicaEdit").val(obj[0]["ulica"]);
+            $("#numerDomuEdit").val(obj[0]["nr_domu"]);
+            $("#kodEdit").val(obj[0]["kod_pocztowy"]);
+            $("#telefonEdit").val(obj[0]["nr_tel"]);
+            $("#komorkaEdit").val(obj[0]["nr_kom"]);
+            $("#linkedinEdit").val(obj[0]["linkedin"]);
+            $("#dodatkowe_informacjeEdit").val(obj[0]["dodatkowe_informacje"]);
+            $("#inputRoleEdit").val(obj[0]["rodzaj_pracownika"]);
+            $("#inputActivationEdit").val(obj[0]["czy_aktywowany"]);
+
+            var data_zatrudnienia = new Date(obj[0]["data_zatrudnienia"]).toISOString().split('T')[0];
+            $("#dataZatrudnieniaEdit").val(data_zatrudnienia);
+
+            
+            if(obj[0]["data_zwolnienia"] != null){
+                var data_zwolnienia = new Date(obj[0]["data_zwolnienia"]).toISOString().split('T')[0];
+                $("#dataZwolnieniaEdit").val(data_zwolnienia);
+            }
+            else{
+                $("#dataZwolnieniaEdit").val('');
+
+            }
+            
+        }
     });
 
     request.fail(function(response){
@@ -158,3 +194,41 @@ function zaladujPracownikow() {
         console.log("Error" + response);
     });
 }
+
+function zaladujStatus() {
+    $("#alert").html("");
+    var data = $(".statusPojazdowDane").serialize();
+    request = $.ajax({
+        url: "php/zaladujStatus.php",
+        data: data,
+        type: "POST"
+    })
+
+    request.done(function (response) {
+        if (response == "Brak pojazdow") {
+            $("#alert").html("Brak pojazdów w podanym zakresie czasu");
+        }
+        else {
+            var obj = JSON.parse(response);
+
+            for (i = 0; i < obj.length; i++) {
+                if (obj[i][4] == "0")
+                    var status = "Nie Przyjęty";
+                else
+                    var status = "Przyjęty";
+                if (obj[i][5] == "0")
+                    var platnosc = "Nieopłacone";
+                else
+                    var platnosc = "Opłacone";
+                if (obj[i][6] == "0")
+                    var realizacja = "Nie zrealizowane";
+                else
+                    var realizacja = "Zrealizowane";
+                $("#tabelaStatus").append(" <tr><th scope='row'>" + i + "</th><td>" + obj[i][0] + "</td><td>" + obj[i][1] + "</td><td>" + obj[i][2] + " " + obj[i][3] + "</td><td>" + status + "</td><td>" + platnosc + "</td><td>" + realizacja + "</td></tr>");
+            }
+        }
+    })
+    request.fail(function (response) {
+        console.log("Error" + response);
+    });
+};
