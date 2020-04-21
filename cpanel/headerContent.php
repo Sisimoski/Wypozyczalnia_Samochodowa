@@ -1,5 +1,5 @@
 <nav class="navbar navbar-expand-md fixed-top navbar-light bg-light">
-    <a class="navbar-brand ml-2" href="index.php">
+    <a class="navbar-brand ml-2" href="/cpanel/index.php">
         <img src="/images/Car4You-line-logo.png" height="50" alt="car4you logo">
     </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
