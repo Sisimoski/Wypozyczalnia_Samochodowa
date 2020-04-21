@@ -83,17 +83,20 @@ $(document).ready(function () {
         });
     });
     // Do napisania front modal
-    $("#zarejestrujPracownika").click(function () {
+    $("#dodajKontoButton").click(function () {
         var request;
-        var data = $(".rejestracjaPracownika").serialize();
+        var data = $(".pracownikAddForm").serialize();
         request = $.ajax({
-            url: "./php/dodajPracownika.php",
+            url: "php/dodajPracownika.php",
             data: data,
             type: "POST"
         });
 
         request.done(function (response) {
             console.log(response);
+            $("#tabelaPracownicy tr").remove();
+            zaladujPracownikow();
+            $('#dodajKontoModal').modal('hide');
         });
 
         request.fail(function (response) {
@@ -116,7 +119,7 @@ $(document).ready(function () {
             console.log(response);
             $("#tabelaPracownicy tr").remove();
             zaladujPracownikow();
-            $('#usunKontoModal').modal('hide');
+            $('#edytujKontoModal').modal('hide');
 
             //Dodać alert że zmieniono dane
         });
