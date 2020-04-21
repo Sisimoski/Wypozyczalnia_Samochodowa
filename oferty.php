@@ -120,7 +120,8 @@ session_start();
                             <div class="card-header">
                                 <ul class="nav nav-tabs card-header-tabs" id="carFilterCard" role="tablist">
                                     <li class="nav-item">
-                                        <a class="nav-link active" href="#nav-basic" id="tab-basic" data-toggle="tab">Podstawowe dane</a>
+                                        <a class="nav-link active" href="#nav-basic" id="tab-basic"
+                                            data-toggle="tab">Podstawowe dane</a>
                                     </li>
                                     <li class="nav-item">
                                         <a class="nav-link" href="#nav-specs" id="tab-specs"
@@ -171,33 +172,29 @@ session_start();
                                                     <option>2</option>
                                                 </select>
                                             </div>
-                                            <div class="form-group">
-                                                <label for="#">Typ silnika:</label>
-                                                <select class="form-control" id="#">
-                                                    <option>1</option>
-                                                    <option>2</option>
-                                                </select>
-                                            </div>
-                                            <div class="form-group">
-                                                <label for="#">Moc:</label>
-                                                <select class="form-control" id="#">
-                                                    <option>1</option>
-                                                    <option>2</option>
-                                                </select>
-                                            </div>
-                                            <div class="form-group">
-                                                <label for="#">Pojemność silnika:</label>
-                                                <select class="form-control" id="#">
-                                                    <option>1</option>
-                                                    <option>2</option>
-                                                </select>
-                                            </div>
-                                            <div class="form-group">
-                                                <label for="#">Średnie spalanie:</label>
-                                                <select class="form-control" id="#">
-                                                    <option>1</option>
-                                                    <option>2</option>
-                                                </select>
+                                            <div class="form-row">
+                                                <div class="form-group col-md-6">
+                                                    <label for="#">Typ silnika:</label>
+                                                    <select class="form-control" id="#">
+                                                        <option>1</option>
+                                                        <option>2</option>
+                                                    </select>
+                                                </div>
+                                                <div class="form-group col-md-3">
+                                                    <label for="#">Moc:</label>
+                                                    <select class="form-control" id="#">
+                                                        <option>1</option>
+                                                        <option>2</option>
+                                                    </select>
+                                                </div>
+                                                <div class="form-group col-md-3">
+                                                    <label for="#">Pojemność silnika:</label>
+                                                    <select class="form-control" id="#">
+                                                        <option>1</option>
+                                                        <option>2</option>
+                                                    </select>
+                                                </div>
+
                                             </div>
                                             <div class="form-group">
                                                 <label for="#">Skrzynia biegów:</label>
@@ -206,15 +203,24 @@ session_start();
                                                     <option>2</option>
                                                 </select>
                                             </div>
-                                            <div class="form-group">
-                                                <label for="#">Ilość miejsc:</label>
-                                                <select class="form-control" id="#">
-                                                    <option>1</option>
-                                                    <option>2</option>
-                                                </select>
+                                            <div class="form-row">
+                                                <div class="form-group col-md-6">
+                                                    <label for="#">Ilość miejsc:</label>
+                                                    <select class="form-control" id="#">
+                                                        <option>1</option>
+                                                        <option>2</option>
+                                                    </select>
+                                                </div>
+                                                <div class="form-group col-md-6">
+                                                    <label for="#">Pojemność bagażnika:</label>
+                                                    <select class="form-control" id="#">
+                                                        <option>1</option>
+                                                        <option>2</option>
+                                                    </select>
+                                                </div>
                                             </div>
                                             <div class="form-group">
-                                                <label for="#">Pojemność bagażnika:</label>
+                                                <label for="#">Średnie spalanie:</label>
                                                 <select class="form-control" id="#">
                                                     <option>1</option>
                                                     <option>2</option>
@@ -252,7 +258,7 @@ session_start();
                         <div class="card-body">
                             <h5 class="card-title">Ford</h5>
                             <h6 class="card-subtitle mb-2 text-muted">Mondeo</h6>
-                            
+
                             <a href="#" class="btn btn-primary">Wypożycz</a>
                         </div>
                     </div>
