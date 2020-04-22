@@ -121,6 +121,7 @@ function editKontoButtonClick(self){
     });
 
     request.done(function(response){
+        console.log(response);
         if(response.match("Wystąpił błąd")){
             console.log(response);
         }
@@ -132,7 +133,6 @@ function editKontoButtonClick(self){
             $("#imieEdit").val(obj[0]["imie"]);
             $("#nazwiskoEdit").val(obj[0]["nazwisko"]);
             $("#emailEdit").val(obj[0]["email"]);
-            $("#email_pracowniczyEdit").val(obj[0]["email_pracowniczy"]);
             $("#cityEdit").val(obj[0]["miejscowosc"]);
             $("#inputStateEdit").val(obj[0]["wojewodztwo"]);
             $("#ulicaEdit").val(obj[0]["ulica"]);
@@ -140,9 +140,8 @@ function editKontoButtonClick(self){
             $("#kodEdit").val(obj[0]["kod_pocztowy"]);
             $("#telefonEdit").val(obj[0]["nr_tel"]);
             $("#komorkaEdit").val(obj[0]["nr_kom"]);
-            $("#linkedinEdit").val(obj[0]["linkedin"]);
             $("#dodatkowe_informacjeEdit").val(obj[0]["dodatkowe_informacje"]);
-            $("#inputRoleEdit").val(obj[0]["rodzaj_pracownika"]);
+            $("#inputRoleEdit").val(obj[0]["rodzaj_uzytkownika"]);
             $("#inputActivationEdit").val(obj[0]["czy_aktywowany"]);
 
             var data_zatrudnienia = new Date(obj[0]["data_zatrudnienia"]).toISOString().split('T')[0];
@@ -175,6 +174,7 @@ function zaladujPracownikow() {
     request.done(function (response) {
         try {
             var obj = JSON.parse(response);
+            
             for (i = 0; i < obj.length; i++) {
                 if (obj[i]["czy_aktywowany"] == 0) {
                     var status = "Nie Aktywowany";
@@ -182,7 +182,7 @@ function zaladujPracownikow() {
                 else {
                     var status = "Aktywowany"
                 }
-                $("#tabelaPracownicy").append(" <tr><th scope='row'>" + (i + 1) + "</th><td>" + obj[i][1] + "</td><td>" + obj[i][2] + "</td><td>" + obj[i][3] + "</td><td>" + obj[i][4] + "</td><td>" + status + "</td><td><button type='button' class='btn btn-warning' id='edytujDaneButtonValue' data-toggle='modal' data-target='#edytujKontoModal' onclick='editKontoButtonClick(this)' value=" + obj[i]["id_pracownik"] + ">Edytuj Dane</button ><button type='button' class='usunKontoButtonValue btn btn-danger' value='" + obj[i]["id_pracownik"] + "' data-toggle='modal' data-target='#usunKontoModal' onclick='usunKontoButtonClick(this)'>Usuń Pracownika</button> </td></tr>");
+                $("#tabelaPracownicy").append(" <tr><th scope='row'>" + (i + 1) + "</th><td>" + obj[i]['imie'] + "</td><td>" + obj[i]['nazwisko'] + "</td><td>" + obj[i]['data_zatrudnienia'] + "</td><td>" + obj[i]['data_zwolnienia'] + "</td><td>" + status + "</td><td><button type='button' class='btn btn-warning' id='edytujDaneButtonValue' data-toggle='modal' data-target='#edytujKontoModal' onclick='editKontoButtonClick(this)' value=" + obj[i]["id_uzytkownik"] + ">Edytuj Dane</button ><button type='button' class='usunKontoButtonValue btn btn-danger' value='" + obj[i]["id_uzytkownik"] + "' data-toggle='modal' data-target='#usunKontoModal' onclick='usunKontoButtonClick(this)'>Usuń Pracownika</button> </td></tr>");
             }
         }
         catch(error){

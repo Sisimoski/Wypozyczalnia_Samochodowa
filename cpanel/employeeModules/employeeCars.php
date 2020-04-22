@@ -2,7 +2,15 @@
 session_start();
 
     if(!isset($_SESSION['id'])){
-    header("Location: ../index.php");
+    header("Location: /index.php");
+    }
+
+    if(isset($_SESSION["rodzaj_konta"])){
+        if($_SESSION["rodzaj_konta"] != 3 && $_SESSION["rodzaj_konta"] != 4)
+          header("Location: ../index.php");
+    }
+    else{
+        header("Location: ../index.php");
     }
 
 ?>

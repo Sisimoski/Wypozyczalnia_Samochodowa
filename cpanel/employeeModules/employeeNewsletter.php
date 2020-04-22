@@ -5,8 +5,8 @@ session_start();
     header("Location: /index.php");
     }
 
-    if(isset($_SESSION["rodzaj_pracownika"])){
-        if($_SESSION["rodzaj_pracownika"] != 1 && $_SESSION["rodzaj_pracownika"] != 2)
+    if(isset($_SESSION["rodzaj_konta"])){
+        if($_SESSION["rodzaj_konta"] != 3 && $_SESSION["rodzaj_konta"] != 4)
           header("Location: ../index.php");
     }
     else{

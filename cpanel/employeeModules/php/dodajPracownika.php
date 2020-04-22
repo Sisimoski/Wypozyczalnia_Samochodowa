@@ -7,7 +7,6 @@
     $imie = $_POST["imie"];
     $nazwisko = $_POST["nazwisko"];
     $email = $_POST["email"];
-    $email_pracowniczy = $_POST["email_pracowniczy"];
     $miasto = $_POST["city"];
     $wojewodztwo = $_POST["wojewodztwo"];
     $ulica = $_POST["ulica"];
@@ -15,7 +14,6 @@
     $kod = $_POST["kod"];
     $telefon = $_POST["telefon"];
     $komorka = $_POST["komorka"];
-    $linkedin = $_POST["linkedin"];
     $dodatkowe_informacje = $_POST["dodatkowe_informacje"];
     $rodzaj_pracownika = $_POST["rodzajPracownika"];
     $aktywacja = $_POST["aktywacjaPracownika"];
@@ -36,10 +34,8 @@
 
         
 
-            $sth = $db->prepare('INSERT INTO kontakty_pracownicy(linkedin,email_pracowniczy,nr_kom,nr_tel,email) 
-            VALUE (:linked,:email_pracowniczy,:nr_kom,:nr_tel,:email)');
-            $sth ->bindValue(':linked',$linkedin,PDO::PARAM_STR);
-            $sth ->bindValue(':email_pracowniczy',$email_pracowniczy,PDO::PARAM_STR);
+            $sth = $db->prepare('INSERT INTO kontakty(nr_kom,nr_tel,email) 
+            VALUE (:nr_kom,:nr_tel,:email)');
             $sth ->bindValue(':nr_kom',$komorka,PDO::PARAM_STR);
             $sth ->bindValue(':nr_tel',$telefon,PDO::PARAM_STR);
             $sth ->bindValue(':email',$email,PDO::PARAM_STR);
@@ -49,7 +45,7 @@
             $idKontakt = $db->lastInsertID();
             $data = date('Y-m-d');
 
-            $sth = $db->prepare('INSERT INTO pracownicy(id_adres,id_kontakt,login,haslo,imie,nazwisko,rodzaj_pracownika,data_zatrudnienia,czy_aktywowany) VALUES
+            $sth = $db->prepare('INSERT INTO uzytkownik(id_adres,id_kontakt,login,haslo,imie,nazwisko,rodzaj_uzytkownika,data_zatrudnienia,czy_aktywowany) VALUES
             (:adres,:kontakt,:login,:haslo,:imie,:nazwisko,:rodzaj,:data,:aktywacja)');
             $sth ->bindValue(':adres',$idAdres,PDO::PARAM_INT);
             $sth ->bindValue(':kontakt',$idKontakt,PDO::PARAM_INT);

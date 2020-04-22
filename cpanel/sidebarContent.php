@@ -52,7 +52,7 @@
 
                         <!-- MODUŁY PRACOWNIKA -->
                     <?php
-                        if(isset($_SESSION['rodzaj_pracownika'])){
+                        if($_SESSION['rodzaj_konta'] == 3 || $_SESSION['rodzaj_konta'] == 4){
                             echo '
                                 <ul class="list-group">
                                     <div>
@@ -79,7 +79,7 @@
                                     ';
 
                         // MODUŁY ADMINA
-                            if($_SESSION['rodzaj_pracownika'] == 2){
+                            if($_SESSION['rodzaj_konta'] === 4){
                                 echo'
                                         <a href="/cpanel/employeeModules/employees.php" class="list-group-item list-group-item-action">Pracownicy</a>
                                         

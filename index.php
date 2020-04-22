@@ -72,18 +72,20 @@
             echo "<button id='zarejestruj' type='submit' class='btn btn-primary my-2 my-sm-0'>Zarejestruj się</button>" ;
             }
             else{
-                if(isset($_SESSION['rodzaj_klienta'])){
-                    if($_SESSION['rodzaj_klienta'] == 1 || $_SESSION['rodzaj_klienta'] == 2){
+                if(isset($_SESSION['rodzaj_konta'])){
+                    if($_SESSION['rodzaj_konta'] == 1 || $_SESSION['rodzaj_konta'] == 2){
                         echo "<button id='panelKlienta' href='./cpanel/index.php' type='submit' class='btn btn-primary'>Panel Klienta</button>";
                     }
+                    if($_SESSION['rodzaj_konta'] == 3 || $_SESSION['rodzaj_konta'] = 4){
+                        echo "<button id='panelKlienta' href='./cpanel/index.php' type='submit' class='btn btn-primary'>Panel Pracownika</button>";
+                    }
                         
-                }
-                if(isset($_SESSION['rodzaj_pracownika'])){                   
-                        echo "<button id='panelKlienta' type='submit' class='btn btn-primary'>Panel Pracownika</button>"; 
                 }
                 echo "<button type='button' id='wyloguj' class='btn btn-outline-primary ml-2'>Wyloguj</button>";
             }
         ?>
+                
+           
             </div>
         </nav>
     </section>

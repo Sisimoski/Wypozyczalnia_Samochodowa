@@ -5,8 +5,8 @@ session_start();
     header("Location: /index.php");
     }
 
-    if(isset($_SESSION["rodzaj_pracownika"])){
-        if($_SESSION["rodzaj_pracownika"] != 1 && $_SESSION["rodzaj_pracownika"] != 2)
+    if(isset($_SESSION["rodzaj_konta"])){
+        if($_SESSION["rodzaj_konta"] != 3 && $_SESSION["rodzaj_konta"] != 4)
           header("Location: ../index.php");
     }
     else{
@@ -99,9 +99,6 @@ session_start();
                                 <input type="text" name="email" id="emailAdd" placeholder="Email" />
                             </div>
                             <div class="form-group">
-                                <input type="text" name="email_pracowniczy" id="email_pracowniczyAdd" placeholder="Email Pracowniczy" />
-                            </div>
-                            <div class="form-group">
                                 <input type="text" name="city" id="cityAdd" placeholder="Miasto" />
                             </div>
                             <div class="form-group col-md-4">
@@ -141,16 +138,13 @@ session_start();
                                 <input type="text" name="komorka" id="komorkaAdd" placeholder="Numer Komórkowy" />
                             </div>
                             <div class="form-group">
-                                <input type="text" name="linkedin" id="linkedinAdd" placeholder="LinkedIn" />
-                            </div>
-                            <div class="form-group">
                                 <input type="text" name="dodatkowe_informacje" id="dodatkowe_informacjeAdd" placeholder="Dodatkowe Informacje" />
                             </div>
                             <div class="form-group col-md-4">
                                 <label for="inputRoleAdd">Rodzaj Konta</label>
                                 <select id="inputRoleAdd" class="form-control" name="rodzajPracownika">
-                                    <option value="1">Pracownik</option>
-                                    <option value="2">Administrator</option>
+                                    <option value="3">Pracownik</option>
+                                    <option value="4">Administrator</option>
                                 </select>
                             </div>
                             <div class="form-group col-md-4">
@@ -218,9 +212,6 @@ session_start();
                                 <input type="text" name="email" id="emailEdit" placeholder="Email" />
                             </div>
                             <div class="form-group">
-                                <input type="text" name="email_pracowniczy" id="email_pracowniczyEdit" placeholder="Email Pracowniczy" />
-                            </div>
-                            <div class="form-group">
                                 <input type="text" name="city" id="cityEdit" placeholder="Miasto" />
                             </div>
                             <div class="form-group col-md-4">
@@ -260,9 +251,6 @@ session_start();
                                 <input type="text" name="komorka" id="komorkaEdit" placeholder="Numer Komórkowy" />
                             </div>
                             <div class="form-group">
-                                <input type="text" name="linkedin" id="linkedinEdit" placeholder="LinkedIn" />
-                            </div>
-                            <div class="form-group">
                                 <input type="text" name="dodatkowe_informacje" id="dodatkowe_informacjeEdit" placeholder="Dodatkowe Informacje" />
                             </div>
                             <div class="form-group">
@@ -274,8 +262,8 @@ session_start();
                             <div class="form-group col-md-4">
                                 <label for="inputRoleEdit">Rodzaj Konta</label>
                                 <select id="inputRoleEdit" class="form-control" name="rodzajPracownika">
-                                    <option value="1">Pracownik</option>
-                                    <option value="2">Administrator</option>
+                                    <option value="3">Pracownik</option>
+                                    <option value="4">Administrator</option>
                                 </select>
                             </div>
                             <div class="form-group col-md-4">

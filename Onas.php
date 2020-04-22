@@ -71,19 +71,17 @@ session_start();
             echo "<button id='zarejestruj' type='submit' class='btn btn-primary my-2 my-sm-0'>Zarejestruj się</button>" ;
             }
             else{
-                if(isset($_SESSION['rodzaj_klienta'])){
-                    if($_SESSION['rodzaj_klienta'] == 1 || $_SESSION['rodzaj_klienta'] == 2){
-                        echo "<button id='panelKlienta' href='./cpanel/zmianahasla.php' type='submit' class='btn btn-primary'>Panel Klienta</button>";
+                if(isset($_SESSION['rodzaj_konta'])){
+                    if($_SESSION['rodzaj_konta'] == 1 || $_SESSION['rodzaj_klienta'] == 2){
+                        echo "<button id='panelKlienta' href='./cpanel/index.php' type='submit' class='btn btn-primary'>Panel Klienta</button>";
+                    }
+                    if($_SESSION['rodzaj_konta'] == 3 || $_SESSION['rodzaj_klienta'] == 4){
+                        echo "<button id='panelKlienta' href='./cpanel/index.php' type='submit' class='btn btn-primary'>Panel Pracownika</button>";
                     }
                         
                 }
-                if(isset($_SESSION['rodzaj_pracownika'])){                   
-                        echo "<button id='panelPracownika' type='submit' class='btn btn-primary'>Panel Pracownika</button>"; 
-                    if($_SESSION['rodzaj_pracownika'] == 2){
-                        echo "<button id='panelAdministratora' type='submit' class='btn btn-primary ml-2'>Panel Administratora</button>";
-                    }
-                }
                 echo "<button type='button' id='wyloguj' class='btn btn-outline-primary ml-2'>Wyloguj</button>";
+
             }
         ?>
             </div>
