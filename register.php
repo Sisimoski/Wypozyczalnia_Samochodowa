@@ -39,7 +39,7 @@
 <body>
   <div class="container-fluid">
     <!-- Alert -->
-    <?php include("/include/alert.php")?>
+    <?php require_once $_SERVER['DOCUMENT_ROOT'] . '/include/alert.php';?>
     <div class="row">
       <div class="col-lg-4 p-0">
         <a href="index.php"><img src="images/Car4You-line-logo.png" class="m-5" alt="Car4You Logo"

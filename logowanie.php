@@ -40,7 +40,7 @@
 <body>
   <div class="container-fluid">
     <!-- Alert -->
-    <?php include("/include/alert.php")?>
+    <?php require_once $_SERVER['DOCUMENT_ROOT'] . '/include/alert.php';?>
 
     <div class="row" style="height: 100%;">
       <div class="col-lg-6 p-0">

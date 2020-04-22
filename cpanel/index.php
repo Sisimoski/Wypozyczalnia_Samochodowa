@@ -69,7 +69,7 @@ session_start();
     </section>
     <div class="container-fluid">
         <!-- Alert -->
-        <?php include("/include/alert.php")?>
+        <?php require_once $_SERVER['DOCUMENT_ROOT'] . '/include/alert.php';?>
         <div class="row">
             <nav class="col-md-2 d-none d-lg-block bg-light sidebar position-fixed">
                 <div class="sidebar-sticky">
