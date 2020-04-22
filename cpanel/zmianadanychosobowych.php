@@ -49,7 +49,6 @@ session_start();
     <script src="js/collapse.js"></script>
     <script src="/cpanel/js/logout.js"></script>
     <script src="./js/changeData.js"></script>
-    <script src="./js/carManagement.js"></script>
 </head>
 
 <body>
