@@ -19,7 +19,7 @@
 
 <body>
     <!-- Alert -->
-    <?php include("include/alert.php")?>
+    <?php include("/include/alert.php")?>
     <!-- Nagłówek Navbar -->
     <section id="header">
         <nav class="navbar navbar-expand-md fixed-top navbar-light bg-light"

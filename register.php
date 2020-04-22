@@ -38,9 +38,8 @@
 
 <body>
   <div class="container-fluid">
-    <div class="fixed-top justify-content-center d-flex">
-      <div class="alert ml-5 mr-5 mt-3 text-center" style="width:40%"></div>
-    </div>
+    <!-- Alert -->
+    <?php include("/include/alert.php")?>
     <div class="row">
       <div class="col-lg-4 p-0">
         <a href="index.php"><img src="images/Car4You-line-logo.png" class="m-5" alt="Car4You Logo"
