@@ -191,8 +191,9 @@ session_start();
             </div>
         </div>
     </div>
-
-
+<script>
+    zaladujSamochody();
+</script>
 
 </body>
 

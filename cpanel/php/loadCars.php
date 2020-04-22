@@ -6,7 +6,7 @@
            
          $sth = $db->prepare('SELECT producent,numer_tablicy_rejestracyjnej,czy_posiadany,vin FROM samochod
          INNER JOIN specyfikacja_samochodu ON specyfikacja_samochodu.id_specyfikacja_samochodu=samochod.id_specyfikacja_samochodu
-         WHERE id_klient = :id_klient');
+         WHERE id_uzytkownik = :id_klient');
          $sth ->bindValue(':id_klient',$idSession,PDO::PARAM_STR);
          $sth->execute();
          
@@ -17,6 +17,7 @@
             $data = json_encode($response);
             echo $data;
         }
+    
         
     
 
