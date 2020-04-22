@@ -32,6 +32,7 @@
                                 danych osobowych</a>
                             <a href="/cpanel/zmianahasla.php" class="list-group-item list-group-item-action">Zmiana hasła</a>
                             <a href="/cpanel/zmianamaila.php" class="list-group-item list-group-item-action">Zmiana maila</a>
+                            <a href="/cpanel/usuwaniekonta.php" class="list-group-item list-group-item-action">Usuń Konto</a>
                         </div>
                     </ul>
                         <!-- SAMOCHODY KLIENTA -->
