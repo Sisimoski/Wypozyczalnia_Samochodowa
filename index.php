@@ -11,38 +11,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-    <link rel="shortcut icon" type="image/jpg" href="favicon.png"/>
-
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Lato|Montserrat|Nunito|Quicksand&display=swap" rel="stylesheet">
-
-    <!-- CSS Files -->
-    <link rel="stylesheet" type="text/css" href="css/styles.css">
-
-    <!-- Boxicons -->
-    <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
-
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
-        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
-    </script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
-    </script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
-        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
-    </script>
-    <script src="https://kit.fontawesome.com/f75b93997c.js" crossorigin="anonymous"></script>
+    <?php 
+    include("include.php");
+    ?>
     
 </head>
 
 <body>
     <!-- Alert -->
-    <div class="position-fixed justify-content-center d-flex" style="width:100%;">
+    <div class="position-fixed justify-content-center d-flex" style="width:100%; z-index: 9;">
         <div class="alert mt-3 text-center" style="width:70%; "></div>
     </div>
     <!-- Nagłówek Navbar -->
@@ -121,28 +98,28 @@
             <div class="row">
                 <div class="col-md-6 col-lg-6 col-xl-3 d-flex align-items-stretch">
                     <div class="icon-box">
-                        <div class="icon"><i class='bx bx-car'></i></div>
+                        <div class="icon"><i class='bx bx-been-here'></i></div>
                         <h3 class="title">Innowacyjny pomysł</h4>
                             <p class="description">Pierwsza wypożyczalnia w Polsce, która umożliwia zarówno wypożyczenie, jak i wynajem samochodu.</p>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-6 col-xl-3 d-flex align-items-stretch">
                     <div class="icon-box">
-                        <div class="icon"><i class='bx bx-building-house'></i></div>
+                        <div class="icon"><i class='bx bx-dollar-circle'></i></div>
                         <h3 class="title">Konkurencyjna cena</h4>
                             <p class="description">Ceny są porównywalne z innymi okolicznymi wypożyczalniami. Dodatkowo Ty sam możesz zarobić, wynajmując komuś swój własny samochód.</p>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-6 col-xl-3 d-flex align-items-stretch">
                     <div class="icon-box">
-                        <div class="icon"><i class='bx bx-navigation'></i></div>
+                        <div class="icon"><i class='bx bx-home-heart'></i></div>
                         <h3 class="title">Wygoda</h4>
                             <p class="description">Wybór samochodu zależy od Ciebie. Możesz wybrać samochód bez wychodzenia z domu. To samo dotyczy rejestracji swojego samochodu w systemie.</p>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-6 col-xl-3 d-flex align-items-stretch">
                     <div class="icon-box">
-                        <div class="icon"><i class='bx bx-user-check'></i></div>
+                        <div class="icon"><i class='bx bx-check-double'></i></div>
                         <h3 class="title">Rabaty</h4>
                             <p class="description">Dzięki Karcie Lojalnościowej zdobywasz punkty, które pozwalają na zniżki okresowe, ale też na zniżki stałe. Jedyne co musisz zrobić, to zacząć wypożyczać/wynajmować!</p>
                     </div>
