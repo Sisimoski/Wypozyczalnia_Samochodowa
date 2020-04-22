@@ -1,5 +1,7 @@
 $(document).ready(function() { 
 
+    $(".alert").fadeOut();
+
     //dodawnaie samochodu
     $("form#addCarForm").submit(function(e) {
         e.preventDefault();  

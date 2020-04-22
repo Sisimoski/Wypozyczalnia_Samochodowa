@@ -1,5 +1,5 @@
 $(document).ready(function() {    
-   
+    $(".alert").fadeOut();
    
     $('#imie').blur(function(){
         var input = $(this);        

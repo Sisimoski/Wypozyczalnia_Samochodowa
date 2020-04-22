@@ -1,4 +1,6 @@
 $(document).ready(function() { 
+
+    $(".alert").fadeOut();
     //Zczytywanie danych z bazy zalogowanego użytkownika
 
    //Walidacja zmiany danych użytkownika
