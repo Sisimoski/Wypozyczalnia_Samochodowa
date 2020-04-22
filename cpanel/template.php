@@ -2,7 +2,7 @@
 session_start();
 
     if(!isset($_SESSION['id'])){
-    header("Location: /index.php");
+    header("Location: ../index.php");
     }
 
 ?>
@@ -11,11 +11,11 @@ session_start();
 <html lang="pl">
 
 <head>
-    <title>Car4You - Panel klienta</title>
+    <title>Dashboard</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- Zmienić link do pliku jak nie działa -->
+    <!-- CSS Files -->
     <link rel="stylesheet" type="text/css" href="css/dashboardstyles.css">
 
     <!-- Deafult Bootstrap theme -->
@@ -28,9 +28,17 @@ session_start();
     <!-- <link href="https://stackpath.bootstrapcdn.com/bootswatch/4.4.1/darkly/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-rCA2D+D9QXuP2TomtQwd+uP50EHjpafN+wruul0sXZzX/Da7Txn4tB9aLMZV4DZm" crossorigin="anonymous"> -->
 
+    <!-- Boxicons -->
+    <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
+
+    <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
         integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+
+    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Lato|Montserrat|Nunito|Quicksand&display=swap" rel="stylesheet">
+
+    <!-- Script Sources -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
         integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous">
@@ -38,10 +46,10 @@ session_start();
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
         integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous">
     </script>
-     <!-- Zmienić link do pliku jak nie działa -->
-    <script src="../js/index.js"></script>
+    
+    <!-- Wymagane skrypty JS -->
+    <script src="js/collapse.js"></script>
     <script src="/cpanel/js/logout.js"></script>
-    <!-- Skrypty do modułów -->
 </head>
 
 <body>
