@@ -37,6 +37,11 @@ $(document).ready(function () {
     });
 
     $('#usunKontoButton').click(function () {
+        $(".alert").removeClass("alert-success");
+        $(".alert").removeClass("alert-danger");
+        $(".alert").removeClass("alert-warning");
+        $(".alert").html('');
+        $(".alert").fadeIn();
         var value = $('#usunKontoButton').val();
         var data = { id: value }
         request = $.ajax({
@@ -45,19 +50,32 @@ $(document).ready(function () {
             type: "POST"
         });
 
-        request.done(function (response) {
-            console.log(response);
+        request.done(function () {
+            
             $("#tabelaPracownicy tr").remove();
             zaladujPracownikow();
             $('#usunKontoModal').modal('hide');
+            $(".alert").addClass("alert-success");
+            $(".alert-success").html("Usunięto Użytkownika");
+            $(".alert").fadeOut(3000);
         });
 
-        request.fail(function (response) {
-            console.log(response);
+        request.fail(function () {
+            $("#tabelaPracownicy tr").remove();
+            zaladujPracownikow();
+            $('#usunKontoModal').modal('hide');
+            $(".alert").addClass("alert-danger");
+            $(".alert-danger").html("Wystąpił nieznany błąd");
+            $(".alert").fadeOut(3000);
         });
     });
-    // Do napisania front modal
+   
     $("#dodajKontoButton").click(function () {
+        $(".alert").removeClass("alert-success");
+        $(".alert").removeClass("alert-danger");
+        $(".alert").removeClass("alert-warning");
+        $(".alert").html('');
+        $(".alert").fadeIn();
         var request;
         var data = $(".pracownikAddForm").serialize();
         request = $.ajax({
@@ -66,20 +84,33 @@ $(document).ready(function () {
             type: "POST"
         });
 
-        request.done(function (response) {
-            console.log(response);
+        request.done(function () {
+            
             $("#tabelaPracownicy tr").remove();
             zaladujPracownikow();
             $('#dodajKontoModal').modal('hide');
+            $(".alert").addClass("alert-success");
+            $(".alert-success").html("Dodano Użytkownika");
+            $(".alert").fadeOut(3000);
         });
 
-        request.fail(function (response) {
-            console.log("Error: ", response);
+        request.fail(function () {
+            $("#tabelaPracownicy tr").remove();
+            zaladujPracownikow();
+            $('#dodajKontoModal').modal('hide');
+            $(".alert").addClass("alert-danger");
+            $(".alert-danger").html("Wystąpił nieznany błąd");
+            $(".alert").fadeOut(3000);
 
         });
     });
 
     $("#edytujKontoButton").click(function(){
+        $(".alert").removeClass("alert-success");
+        $(".alert").removeClass("alert-danger");
+        $(".alert").removeClass("alert-warning");
+        $(".alert").html('');
+        $(".alert").fadeIn();
         var value = $('#edytujKontoButton').val();
         var data = $('.pracownikEditForm').serialize() + "&id="+value;
 
@@ -89,17 +120,23 @@ $(document).ready(function () {
             type: "POST"
         });
 
-        request.done(function (response) {
-            console.log(response);
+        request.done(function () {
+            
             $("#tabelaPracownicy tr").remove();
             zaladujPracownikow();
             $('#edytujKontoModal').modal('hide');
-
-            //Dodać alert że zmieniono dane
+            $(".alert").addClass("alert-success");
+            $(".alert-success").html("Edytowano Użytkownika");
+            $(".alert").fadeOut(3000);
         });
 
         request.fail(function (response) {
-            console.log(response);
+            $("#tabelaPracownicy tr").remove();
+            zaladujPracownikow();
+            $('#edytujKontoModal').modal('hide');
+            $(".alert").addClass("alert-danger");
+            $(".alert-danger").html("Wystąpił nieznany błąd");
+            $(".alert").fadeOut(3000);
         });
     });
 
