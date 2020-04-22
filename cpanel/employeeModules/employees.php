@@ -67,9 +67,7 @@ session_start();
     </section>
     <div class="container-fluid">
 <!-- ALERT -->
-    <div class="fixed-top justify-content-center d-flex">
-            <div class="alert ml-5 mr-5 mt-3 text-center" style="width:40%"></div>
-        </div>
+    <?php include("/include/alert.php")?>
 <!-- Modal dodawanie konta -->
 <div class="modal fade" id="dodajKontoModal" tabindex="-1" role="dialog" aria-labelledby="dodajKontoLabel"
             aria-hidden="true">

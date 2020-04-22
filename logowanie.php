@@ -39,9 +39,8 @@
 
 <body>
   <div class="container-fluid">
-    <div class="fixed-top justify-content-center d-flex">
-      <div class="alert ml-5 mr-5 mt-3 text-center" style="width:40%"></div>
-    </div>
+    <!-- Alert -->
+    <?php include("/include/alert.php")?>
 
     <div class="row" style="height: 100%;">
       <div class="col-lg-6 p-0">

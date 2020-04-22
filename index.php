@@ -19,9 +19,7 @@
 
 <body>
     <!-- Alert -->
-    <div class="position-fixed justify-content-center d-flex" style="width:100%; z-index: 9;">
-        <div class="alert mt-3 text-center" style="width:70%; display: none; "></div>
-    </div>
+    <?php include("/include/alert.php")?>
     <!-- Nagłówek Navbar -->
     <section id="header">
         <nav class="navbar navbar-expand-md fixed-top navbar-light bg-light"
@@ -122,7 +120,7 @@
                 </div>
                 <div class="col-md-6 col-lg-6 col-xl-3 d-flex align-items-stretch">
                     <div class="icon-box">
-                        <div class="icon"><i class='bx bx-check-double'></i></div>
+                        <div class="icon"><i class='bx bxs-coupon'></i></div>
                         <h3 class="title">Rabaty</h4>
                             <p class="description">Dzięki Karcie Lojalnościowej zdobywasz punkty, które pozwalają na
                                 zniżki okresowe, ale też na zniżki stałe. Jedyne co musisz zrobić, to zacząć

@@ -26,7 +26,7 @@ session_start();
     <!-- Zmienić link do pliku jak nie działa -->
     <link rel="stylesheet" type="text/css" href="../css/dashboardstyles.css">
 
-    
+
     <!-- Boxicons -->
     <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
 
@@ -34,7 +34,7 @@ session_start();
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
         integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
 
-        
+
 
     <!-- Deafult Bootstrap theme -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
@@ -56,7 +56,7 @@ session_start();
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
         integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous">
     </script>
-     <!-- Zmienić link do pliku jak nie działa -->
+    <!-- Zmienić link do pliku jak nie działa -->
     <script src="../js/collapse.js"></script>
     <script src="/cpanel/js/logout.js"></script>
     <script src="js/employeeModules.js"></script>
@@ -71,14 +71,15 @@ session_start();
         ?>
     </section>
     <div class="container-fluid">
-        <div class="fixed-top justify-content-center d-none">
-            <div class="alert ml-5 mr-5 mt-3 text-center" style="width:40%"></div>
-        </div>    
+        <!-- Alert -->
+        <div class="position-fixed justify-content-center d-flex" style="width:100%; z-index: 9;">
+            <div class="alert mt-3 text-center" style="width:70%; display: none; "></div>
+        </div>
         <div class="row">
             <!-- Sidebar -->
             <nav class="col-md-2 d-none d-md-block bg-light sidebar position-fixed">
                 <div class="sidebar-sticky">
-                <?php
+                    <?php
                         include("../sidebarContent.php");
                     ?>
 
@@ -86,51 +87,55 @@ session_start();
             </nav>
             <!-- Breadcrumb -->
             <div class="col-md-9 ml-sm-auto col-lg-10">
-                <div class="row" style="z-index:1030">          
-                        <nav class="position-fixed breadcrumbStyleFixed"  aria-label="breadcrumb" style="width:100%">
-                            <ol class="breadcrumb">
-                                <li class="breadcrumb-item active"><a href="index.php">Panel klienta</a></li>
-                            </ol>
-                        </nav>       
+                <div class="row" style="z-index:1030">
+                    <nav class="position-fixed breadcrumbStyleFixed" aria-label="breadcrumb" style="width:100%">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item active"><a href="index.php">Panel klienta</a></li>
+                        </ol>
+                    </nav>
                 </div>
-            <!-- CONTENT for webiste -->
-                <div class="row justify-content-center" style="margin-top:50px">  
-                <form class="statusPojazdowDane">
-                <?php
+                <!-- CONTENT for webiste -->
+                <div class="row justify-content-center" style="margin-top:50px">
+                    <form class="statusPojazdowDane">
+                        <?php
                      $d=strtotime("-1 Months");
                      $data = date("Y-m-d", $d); 
                 ?>
-                    <input class="form-control" type="date" id="dataOd" name="dataOd" value=<?php echo '"'.$data.'"' ?> placeholder="Data Wynajmu Od" />
-                    <input class="form-control" type="date" id="dataDo" name="dataDo" value=<?php echo '"'.date('Y-m-d').'"' ?> placeholder="Data Wynajmu Do" />
-                </form>
-                <div class="statusContent">
-                    <table class="table">
-                        <thead>
-                            <tr>
-                                <th scope="col">#</th>
-                                <th scope="col">Imie</th>
-                                <th scope="col">Nazwisko</th>
-                                <th scope="col">Pojazd</th>
-                                <th scope="col">Status Przyjecia</th>
-                                <th scope="col">Status Płatności</th>
-                                <th scope="col">Status Realizacji</th>
-                            </tr>
-                        </thead>
-                        <tbody id="tabelaStatus">
-                        </tbody>
-                    </table>
-                </div>
+                        <input class="form-control" type="date" id="dataOd" name="dataOd"
+                            value=<?php echo '"'.$data.'"' ?> placeholder="Data Wynajmu Od" />
+                        <input class="form-control" type="date" id="dataDo" name="dataDo"
+                            value=<?php echo '"'.date('Y-m-d').'"' ?> placeholder="Data Wynajmu Do" />
+                    </form>
+                    <div class="statusContent">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">Imie</th>
+                                    <th scope="col">Nazwisko</th>
+                                    <th scope="col">Pojazd</th>
+                                    <th scope="col">Status Przyjecia</th>
+                                    <th scope="col">Status Płatności</th>
+                                    <th scope="col">Status Realizacji</th>
+                                </tr>
+                            </thead>
+                            <tbody id="tabelaStatus">
+                            </tbody>
+                        </table>
+                    </div>
 
-                </div>     
+                </div>
             </div>
         </div>
     </div>
     </div>
 </body>
-<script>zaladujStatus();</script>
+<script>
+    zaladujStatus();
+</script>
+
 </html>
 
 
- 
- <!-- Statusy Pojazdów - Pracownik -->
- 
+
+<!-- Statusy Pojazdów - Pracownik -->
