@@ -57,7 +57,7 @@ session_start();
         integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous">
     </script>
      <!-- Zmienić link do pliku jak nie działa -->
-    <script src="../js/index.js"></script>
+    <script src="../js/collapse.js"></script>
     <script src="/cpanel/js/logout.js"></script>
     <script src="js/employeeModules.js"></script>
     <!-- Skrypty do modułów -->
