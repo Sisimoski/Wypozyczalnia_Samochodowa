@@ -40,7 +40,6 @@ $(document).ready(function() {
             $(".alert").html('');
             $(".alert").fadeIn();
             var data = $(".loginForm").serialize();
-            console.log(data);
             var request;
 
             request = $.ajax({
@@ -82,7 +81,7 @@ $(document).ready(function() {
             request.fail(function(response) {
                 $(".alert").addClass("alert-danger");
                 $(".alert-danger").html(response);
-                $(".alert-danger").fadeOut(3000);            
+                $(".alert").fadeOut(3000);            
             });
 
         }
@@ -110,14 +109,14 @@ function AktywacjaKonta(kodAktywacyjny){
         console.log(response);
         $(".alert").addClass("alert-success");
         $(".alert-success").html(response);
-        $(".alert-success").fadeOut(3000);            
+        $(".alert").fadeOut(3000);            
     });
 
 
     request.fail(function(response) {
         $(".alert").addClass("alert-danger");
         $(".alert-danger").html(response);
-        $(".alert-danger").fadeOut(3000);            
+        $(".alert").fadeOut(3000);            
     });
 
 };
