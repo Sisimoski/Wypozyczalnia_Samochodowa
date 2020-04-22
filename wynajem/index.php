@@ -1,4 +1,4 @@
 <?php
-// Strona główna z filtrami samochodów 
+    //Strona wybranego samochodu z danymi oraz modułem wynajęcia, kaledarzem itd.
 
 ?>
