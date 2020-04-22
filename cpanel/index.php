@@ -22,7 +22,7 @@ session_start();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="shortcut icon" type="image/jpg" href="../favicon.png"/>
+    <link rel="shortcut icon" type="image/jpg" href="../favicon.png" />
 
     <!-- CSS Files -->
     <link rel="stylesheet" type="text/css" href="css/dashboardstyles.css">
@@ -68,25 +68,30 @@ session_start();
         ?>
     </section>
     <div class="container-fluid">
-        <div class="fixed-top justify-content-center d-none">
-            <div class="alert ml-5 mr-5 mt-3 text-center" style="width:40%"></div>
+        <!-- Alert -->
+        <div class="position-fixed justify-content-center d-flex" style="width:100%; z-index: 9;">
+            <div class="alert alert-danger alert-dismissable fade show mt-3 text-center" role="alert">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            </div>
         </div>
         <div class="row">
             <nav class="col-md-2 d-none d-lg-block bg-light sidebar position-fixed">
                 <div class="sidebar-sticky">
 
-                  <!-- Sidebar -->
+                    <!-- Sidebar -->
                     <?php
                         include("sidebarContent.php");
                     ?>
-                   
+
                 </div>
             </nav>
             <!-- Main Dashboard -->
             <div class="col-lg-10 ml-sm-auto col-lg-10">
-                <div class="row" style="z-index:2; margin-bottom: 80px;">
+                <div class="row" style="z-index:2; margin-bottom: 80px;" >
                     <nav class="position-fixed breadcrumbStyleFixed" aria-label="breadcrumb">
-                        <ol class="breadcrumb">
+                        <ol class="breadcrumb" style="background-color: transparent;">
                             <li class="breadcrumb-item active"><a href="index.php">Panel klienta</a></li>
                         </ol>
                     </nav>
