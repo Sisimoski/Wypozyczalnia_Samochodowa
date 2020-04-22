@@ -1,5 +1,7 @@
 $(document).ready(function() { 
 
+    $(".alert").fadeOut();
+
     $('#login').blur(function(){
         if($('#login').val() == ""){
             $('#loginInfo').addClass("text-danger");     
