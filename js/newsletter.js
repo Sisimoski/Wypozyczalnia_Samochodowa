@@ -1,4 +1,7 @@
 $(document).ready(function() { 
+    $(".alert").fadeOut();
+
+
     $('#subscribeNewsletterButton').click(function(){
         $(".alert").removeClass("alert-success");
         $(".alert").removeClass("alert-danger");
