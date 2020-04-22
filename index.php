@@ -20,11 +20,7 @@
 <body>
     <!-- Alert -->
     <div class="position-fixed justify-content-center d-flex" style="width:100%; z-index: 9;">
-        <div class="alert alert-dismissible fade show mt-3 text-center" style="width:70%;" role="alert">
-            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-            </button>
-        </div>
+        <div class="alert mt-3 text-center" style="width:70%; display: none; "></div>
     </div>
     <!-- Nagłówek Navbar -->
     <section id="header">
