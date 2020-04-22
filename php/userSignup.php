@@ -43,7 +43,7 @@
             $czyFirma=1;
         }
 
-        $sth = $db->prepare('SELECT login, email FROM klienci INNER JOIN kontakty_klienci ON kontakty_klienci.id_kontakt=klienci.id_klient WHERE login = :login OR email = :email limit 1');
+        $sth = $db->prepare('SELECT login, email FROM uzytkownik INNER JOIN kontakty ON kontakty.id_kontakt=uzytkownik.id_uzytkownik WHERE login = :login OR email = :email limit 1');
         $sth ->bindValue(':login',$login,PDO::PARAM_STR);
         $sth ->bindValue(':email',$email,PDO::PARAM_STR);
         $sth->execute();
@@ -77,7 +77,7 @@
         $idAdres = $result['id_adres'];
 
         // Dodawanie danych kontaktowych klienta
-        $sth = $db->prepare('INSERT INTO kontakty_klienci(nr_kom,nr_tel,fax,email,www) 
+        $sth = $db->prepare('INSERT INTO kontakty(nr_kom,nr_tel,fax,email,www) 
         VALUE (:nrKom,:nrTel,:fax,:email,:www)');
         $sth ->bindValue(':nrKom',$nrKom,PDO::PARAM_STR);
         $sth ->bindValue(':nrTel',$nrTel,PDO::PARAM_STR);
@@ -86,7 +86,7 @@
         $sth ->bindValue(':www',$stronaInternetowa,PDO::PARAM_STR);
         $sth->execute();
 
-        $sth = $db->prepare('SELECT id_kontakt FROM kontakty_klienci WHERE nr_kom = :nr_kom AND nr_tel = :nr_tel AND fax = :fax
+        $sth = $db->prepare('SELECT id_kontakt FROM kontakty WHERE nr_kom = :nr_kom AND nr_tel = :nr_tel AND fax = :fax
         AND email = :email AND www = :www limit 1');
         $sth ->bindValue(':nr_kom',$nrKom,PDO::PARAM_STR);
         $sth ->bindValue(':nr_tel',$nrTel,PDO::PARAM_STR);
@@ -99,7 +99,7 @@
            
         $kodAktywacji = uniqid();
          //Dodawanie klienta
-        $sth = $db->prepare('INSERT INTO klienci(id_kontakt,id_adres,login,haslo,nazwa_firmy,REGON,NIP,nazwisko,imie,czy_aktywowany,kod_aktywacyjny,rodzaj_klienta) 
+        $sth = $db->prepare('INSERT INTO uzytkownik(id_kontakt,id_adres,login,haslo,nazwa_firmy,REGON,NIP,nazwisko,imie,czy_aktywowany,kod_aktywacyjny,rodzaj_uzytkownika) 
         VALUE (:idKontakt,:idAdres,:login,:haslo1,:nazwa_firmy,:REGON,:NIP,:nazwisko,:imie,:aktywacja,:kodAktywacji,:rodzajKlienta)');
         $sth ->bindValue(':login',$login,PDO::PARAM_STR);
         $sth ->bindValue(':haslo1',$haslo1,PDO::PARAM_STR);
