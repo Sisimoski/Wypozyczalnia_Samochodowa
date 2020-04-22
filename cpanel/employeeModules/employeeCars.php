@@ -127,7 +127,7 @@ session_start();
     </div>
     </div>
 </body>
-
+<script>zaladujStatus();</script>
 </html>
 
 
