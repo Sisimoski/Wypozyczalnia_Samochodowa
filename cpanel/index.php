@@ -69,13 +69,7 @@ session_start();
     </section>
     <div class="container-fluid">
         <!-- Alert -->
-        <div class="position-fixed justify-content-center d-flex" style="width:100%; z-index: 9;">
-            <div class="alert alert-danger alert-dismissable fade show mt-3 text-center" role="alert">
-            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-            </button>
-            </div>
-        </div>
+        <?php include("include/alert.php")?>
         <div class="row">
             <nav class="col-md-2 d-none d-lg-block bg-light sidebar position-fixed">
                 <div class="sidebar-sticky">

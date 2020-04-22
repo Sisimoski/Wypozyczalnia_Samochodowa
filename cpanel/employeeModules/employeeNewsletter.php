@@ -25,7 +25,7 @@ session_start();
 
     <link rel="stylesheet" type="text/css" href="../css/dashboardstyles.css">
 
-    
+
     <!-- Boxicons -->
     <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
 
@@ -66,40 +66,42 @@ session_start();
         ?>
     </section>
     <div class="container-fluid">
-        <div class="fixed-top justify-content-center d-flex">
-            <div class="alert ml-5 mr-5 mt-3 text-center" style="width:40%"></div>
+        <!-- Alert -->
+        <div class="position-fixed justify-content-center d-flex" style="width:100%; z-index: 9;">
+            <div class="alert mt-3 text-center" style="width:70%; display: none; "></div>
         </div>
         <div class="row">
             <nav class="col-md-2 d-none d-md-block bg-light sidebar position-fixed">
                 <div class="sidebar-sticky">
 
-                <?php
+                    <?php
                         include("../sidebarContent.php");
                     ?>
                 </div>
             </nav>
             <div class="col-md-9 ml-sm-auto col-lg-10">
-                <div class="row" style="z-index:1030">          
-                        <nav class="position-fixed breadcrumbStyleFixed"  aria-label="breadcrumb" style="width:100%">
-                            <ol class="breadcrumb">
-                                <li class="breadcrumb-item active"><a href="index.php">Panel klienta</a></li>
-                            </ol>
-                        </nav>       
+                <div class="row" style="z-index:1030">
+                    <nav class="position-fixed breadcrumbStyleFixed" aria-label="breadcrumb" style="width:100%">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item active"><a href="index.php">Panel klienta</a></li>
+                        </ol>
+                    </nav>
                 </div>
-                <div class="row justify-content-center" style="margin-top:50px">  
+                <div class="row justify-content-center" style="margin-top:50px">
                     <h1>Wysyłanie Newsletterów </h1>
                 </div>
                 <div class="row justify-content-center">
                     <form class="newsletterSending w-75 ">
                         <div class="form-group">
-                            <textarea class="form-control" name="message" id="newsletterMessage" rows="7" placeholder="Wiadomość" ></textarea>
+                            <textarea class="form-control" name="message" id="newsletterMessage" rows="7"
+                                placeholder="Wiadomość"></textarea>
                         </div>
                         <div class="form-group d-flex justify-content-center">
                             <button class="btn btn-primary" id="newsletterButton">Wyślij Wiadomości</button>
                         </div>
                     </form>
                 </div>
-                
+
             </div>
         </div>
     </div>
