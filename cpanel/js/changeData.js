@@ -348,7 +348,7 @@ $("#changePassword").click(function() {
             $(".alert").addClass("alert-success");
             $(".alert-success").html(response);
             $(".alert-success").fadeOut(3000);                
-            
+
         }
         else{
             $(".alert").addClass("alert-danger");
@@ -435,13 +435,15 @@ $("#changeMail").click(function() {
         if(response == "Pomyślnie wysłano maila"){
             $(".alert").addClass("alert-success");
             $(".alert-success").html(response);
-            $(".alert-success").fadeOut(3000);                
+            $(".alert-success").fadeOut(3000);  
+            console.log(response);              
 
         }
         else{
             $(".alert").addClass("alert-danger");
             $(".alert-success").fadeOut(3000);     
-            $(".alert-danger").html(response);            
+            $(".alert-danger").html(response);      
+            console.log(response);      
         }
     });
 
@@ -449,6 +451,7 @@ $("#changeMail").click(function() {
         $(".alert").addClass("alert-danger");
         $(".alert-success").fadeOut(3000);   
         $(".alert-danger").html(response);    
+        console.log(response);
     });
 
     

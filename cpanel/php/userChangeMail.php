@@ -5,23 +5,35 @@
        $oldMail= ($_POST['oldMail']);
        $newMail= ($_POST['newMail']);
 
-       $sth = $db->prepare('SELECT email,login FROM kontakty_klienci
-       INNER JOIN klienci ON klienci.id_kontakt=kontakty_klienci.id_kontakt
-       WHERE id_klient = :id_klient');
+       $sth = $db->prepare('SELECT email,login FROM kontakty
+       INNER JOIN uzytkownik ON uzytkownik.id_kontakt=kontakty.id_kontakt
+       WHERE id_uzytkownik = :id_klient');
        $sth ->bindValue(':id_klient',$idSession,PDO::PARAM_STR);
        $sth->execute();
        $result = $sth->fetch(PDO::FETCH_ASSOC);
        $login=$result['login'];
 
-       if($oldMail!=$result['email']){
+    if($oldMail!=$result['email']){
         die("Aktualny mail się nie zgadza z wprowadzonym");
     }
+
+    // $sth = $db->prepare('SELECT email FROM kontakty_klienci
+    // INNER JOIN klienci ON klienci.id_kontakt=kontakty_klienci.id_kontakt
+    // WHERE id_klient = :id_klient');
+    // $sth ->bindValue(':id_klient',$idSession,PDO::PARAM_STR);
+    // $sth->execute();
+    // $result = $sth->fetch(PDO::FETCH_ASSOC);
+    // $login=$result['login'];
+
+    // if($oldMail!=$result['email']){
+    //     die("Aktualny mail się nie zgadza z wprowadzonym");
+    // }
    
     require_once $_SERVER['DOCUMENT_ROOT'] . '/PHPMailer/config.php';
 
     $hash = uniqid();
 
-    $sth = $db->prepare('INSERT INTO zmiana_maila(wartosc_hash,id_klient,nowy_mail)
+    $sth = $db->prepare('INSERT INTO zmiana_maila(wartosc_hash,id_uzytkownik,nowy_mail)
     VALUES (:wartosc_hash,:id_klient,:nowy_mail)');
     $sth ->bindValue(':wartosc_hash',$hash,PDO::PARAM_STR);
     $sth ->bindValue(':id_klient',$idSession,PDO::PARAM_STR);
