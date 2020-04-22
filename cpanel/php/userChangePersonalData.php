@@ -23,8 +23,8 @@
         }
 
 
-        $sth = $db->prepare('UPDATE klienci 
-        INNER JOIN kontakty_klienci ON kontakty_klienci.id_kontakt=klienci.id_kontakt INNER JOIN adres ON adres.id_adres= klienci.id_adres SET imie=:imie,nazwisko=:nazwisko,nazwa_firmy=:nazwa_firmy,nip=:nip,regon=:regon,ulica=:ulica,nr_domu=:nr_domu,wojewodztwo=:wojewodztwo,kod_pocztowy=:kod_pocztowy,miejscowosc=:miejscowosc,nr_kom=:nr_kom,nr_tel=:nr_tel,fax=:fax,dodatkowe_informacje=:dodatkowe_informacje,www=:www WHERE id_klient = :id_klient');
+        $sth = $db->prepare('UPDATE uzytkownik
+        INNER JOIN kontakty ON kontakty.id_kontakt=uzytkownik.id_kontakt INNER JOIN adres ON adres.id_adres=uzytkownik.id_adres SET imie=:imie,nazwisko=:nazwisko,nazwa_firmy=:nazwa_firmy,nip=:nip,regon=:regon,ulica=:ulica,nr_domu=:nr_domu,wojewodztwo=:wojewodztwo,kod_pocztowy=:kod_pocztowy,miejscowosc=:miejscowosc,nr_kom=:nr_kom,nr_tel=:nr_tel,fax=:fax,dodatkowe_informacje=:dodatkowe_informacje,www=:www WHERE id_uzytkownik= :id_klient');
         $sth ->bindValue(':imie',$imie,PDO::PARAM_STR);
         $sth ->bindValue(':nazwisko',$nazwisko,PDO::PARAM_STR);
         $sth ->bindValue(':nazwa_firmy',$nazwa_firmy,PDO::PARAM_STR);
