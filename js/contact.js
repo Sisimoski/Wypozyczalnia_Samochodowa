@@ -59,8 +59,6 @@ $(document).ready(function() {
 
 
     $("#contact").click(function() {
-        $(".alert-success").html("");
-        $(".alert-error").html("");
         $(".alert").removeClass("alert-success");
         $(".alert").removeClass("alert-danger");
         $(".alert").html('');
@@ -83,23 +81,23 @@ $(document).ready(function() {
                 
             }
             else{
-                $(".alert").addClass("alert-danger");
-                $(".alert-success").fadeOut(3000);     
-                $(".alert-danger").html(response);            
+                $(".alert").addClass("alert-danger");               
+                $(".alert-danger").html(response);    
+                $(".alert-success").fadeOut(3000);        
             }
         });
 
         request.fail(function(response) {
-            $(".alert").addClass("alert-danger");
-            $(".alert-success").fadeOut(3000);   
-            $(".alert-danger").html(response);    
+            $(".alert").addClass("alert-danger");        
+            $(".alert-danger").html(response);   
+            $(".alert-success").fadeOut(3000); 
         });
     }
     else
     {
         $(".alert").addClass("alert-danger");
-        $(".alert-success").fadeOut(3000);
-        $(".alert").text("Wprowadź poprawne dane");	
+        $(".alert").html("Wprowadź poprawne dane");	
+        $(".alert").fadeOut(3000);
     }
         
     });
