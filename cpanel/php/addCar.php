@@ -38,7 +38,7 @@
         }
       }
     
-    $uploaddir = '../CarPictures/';
+    $uploaddir = $_SERVER['DOCUMENT_ROOT'].'/CarPictures/';
     $uploadfile = $uploaddir . basename($nazwa_pliku);
     
     if (move_uploaded_file($_FILES['zdjecie']['tmp_name'], $uploadfile)) {
