@@ -66,7 +66,7 @@ session_start();
         ?>
     </section>
     <div class="container-fluid">
-        <div class="fixed-top justify-content-center d-none">
+        <div class="fixed-top justify-content-center d-flex">
             <div class="alert ml-5 mr-5 mt-3 text-center" style="width:40%"></div>
         </div>
         <div class="row">
