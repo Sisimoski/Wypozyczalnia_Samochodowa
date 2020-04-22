@@ -35,9 +35,14 @@ session_start();
     </script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="./js/index.js"></script>
+    <script src="js/newsletter.js"></script>
 </head>
 
 <body>
+    <!-- Alert -->
+    <div class="position-fixed justify-content-center d-flex" style="width:100%;">
+        <div class="alert mt-3 text-center" style="width:70%; "></div>
+    </div>
     <!-- Nagłówek Navbar -->
     <section id="header">
         <nav class="navbar navbar-expand-md fixed-top navbar-light bg-light"
@@ -72,16 +77,15 @@ session_start();
             }
             else{
                 if(isset($_SESSION['rodzaj_konta'])){
-                    if($_SESSION['rodzaj_konta'] == 1 || $_SESSION['rodzaj_klienta'] == 2){
+                    if($_SESSION['rodzaj_konta'] == 1 || $_SESSION['rodzaj_konta'] == 2){
                         echo "<button id='panelKlienta' href='./cpanel/index.php' type='submit' class='btn btn-primary'>Panel Klienta</button>";
                     }
-                    if($_SESSION['rodzaj_konta'] == 3 || $_SESSION['rodzaj_klienta'] == 4){
+                    if($_SESSION['rodzaj_konta'] == 3 || $_SESSION['rodzaj_konta'] == 4){
                         echo "<button id='panelKlienta' href='./cpanel/index.php' type='submit' class='btn btn-primary'>Panel Pracownika</button>";
                     }
                         
                 }
                 echo "<button type='button' id='wyloguj' class='btn btn-outline-primary ml-2'>Wyloguj</button>";
-
             }
         ?>
             </div>
@@ -218,7 +222,7 @@ session_start();
                         <div class="form-group">
                             <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
                         </div>
-                        <button type="submit" class="btn btn-primary">Subskrybuj</button>
+                        <button type="button" id="subscribeNewsletterButton" class="btn btn-primary">Subskrybuj</button>
                     </form>
                 </div>
 
