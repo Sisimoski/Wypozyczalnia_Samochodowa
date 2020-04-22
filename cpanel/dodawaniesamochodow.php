@@ -31,7 +31,6 @@ session_start();
     </script>
     <script src="https://cdn.jsdelivr.net/npm/bs-custom-file-input/dist/bs-custom-file-input.js"></script>
     <script src="/cpanel/js/logout.js"></script>
-    <script src="./js/changeData.js"></script>
     <script src="./js/carManagement.js"></script>
 </head>
 
