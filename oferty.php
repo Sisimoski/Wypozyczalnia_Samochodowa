@@ -68,7 +68,7 @@ session_start();
                         <a class="nav-link" href="aboutus.php">O nas</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Kontakt</a>
+                        <a class="nav-link" href="kontakt.php">Kontakt</a>
                     </li>
                 </ul>
                 <?php
@@ -110,9 +110,9 @@ session_start();
             <div class="row">
                 <div class="col-12 mb-4">
                     <!-- Filter Button -->
-                    <div class="row text-right">
+                    <div class="row">
                         <div class="col">
-                            <a class="btn btn-primary mb-2" data-toggle="collapse" href="#filtruj">
+                            <a class="btn btn-primary btn-block mb-2" data-toggle="collapse" href="#filtruj">
                                 Filtruj
                             </a>
                         </div>
@@ -262,8 +262,10 @@ session_start();
                     <div class="card bg-light text-center h-100">
                         <img src="images/samochody/Ford_mondeo.png" class="card-img-top" alt="Ford Mondeo">
                         <div class="card-body">
-                            <h5 class="card-title">Ford</h5>
-                            <h6 class="card-subtitle mb-2 text-muted">Mondeo</h6>
+                            <h5 class="card-title">Ford Mondeo</h5>
+                            <h6 class="card-subtitle mb-2 text-muted">95zł</h6>
+                            
+                            <h6>Rok produkcji</h6>
 
                             <a href="#" class="btn btn-primary">Wypożycz</a>
                         </div>

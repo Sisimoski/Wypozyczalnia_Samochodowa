@@ -69,7 +69,7 @@
                         <a class="nav-link" href="aboutus.php">O nas</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Kontakt</a>
+                        <a class="nav-link" href="kontakt.php">Kontakt</a>
                     </li>
                 </ul>
                 <?php
