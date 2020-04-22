@@ -55,18 +55,18 @@
                     <?php
                         if($_SESSION['rodzaj_konta'] == 3 || $_SESSION['rodzaj_konta'] == 4){
                             echo '
-                                <ul class="list-group">
+                                <ul class="list-group mb-2">
                                     <div>
                                         <a data-toggle="collapse" href="#employeePanel"
                                             class="list-group-item list-group-item-action list-group-item-primary">Panel Pracownika</a>
                                     </div>
                                     <div class="collapse" id="employeePanel">
                                         <ul class="list-group mb-2">
-                                        <div>
+                                        <div class="mx-1 mt-1">
                                             <a data-toggle="collapse" href="#employeePojazdy"
-                                                class="list-group-item list-group-item-action list-group-item-dark">Pojazdy</a>
+                                                class="list-group-item list-group-item-action list-group-item-secondary">Pojazdy</a>
                                         </div>
-                                        <div class="collapse" id="employeePojazdy">
+                                        <div class="collapse mx-2" id="employeePojazdy">
                                             <a href="/cpanel/employeeModules/employeeCars.php" class="list-group-item list-group-item-action">Status Pojazdów</a>
                                             <a href="/cpanel/employeeModules/employeeCarsAcceptance.php" class="list-group-item list-group-item-action">Akceptacje Pojazdów</a>
                                             <a href="/cpanel/employeeModules/employeeCarsInspection.php" class="list-group-item list-group-item-action">Przeglądy</a>
