@@ -83,14 +83,14 @@ $(document).ready(function() {
             else{
                 $(".alert").addClass("alert-danger");               
                 $(".alert-danger").html(response);    
-                $(".alert-success").fadeOut(3000);        
+                $(".alert").fadeOut(3000);        
             }
         });
 
         request.fail(function(response) {
             $(".alert").addClass("alert-danger");        
             $(".alert-danger").html(response);   
-            $(".alert-success").fadeOut(3000); 
+            $(".alert").fadeOut(3000); 
         });
     }
     else
