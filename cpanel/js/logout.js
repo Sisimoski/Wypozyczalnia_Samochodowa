@@ -4,7 +4,7 @@ $(document).ready(function(){
         localStorage.clear();
         var request;
         request = $.ajax({
-            url:  "../php/logout.php",
+            url:  "/cpanel/php/logout.php",
             data: null,
             type: "POST"
         });
