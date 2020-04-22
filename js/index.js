@@ -41,17 +41,14 @@ $(document).ready(function() {
     });
 
     $('#subscribeNewsletterButton').click(function(){
-        if(emailVerify()){
-            console.log("test");
             $(".alert").removeClass("alert-success");
             $(".alert").removeClass("alert-danger");
             $(".alert").removeClass("alert-warning");
             $(".alert").html('');
-            $(".alert").stop().fadeOut();
             $(".alert").fadeIn();
-
-
+        if(emailVerify()){
             var data = $('.newsletterForm').serialize();
+            console.log(data);
             request = $.ajax({
                 url: "./php/userNewsletter.php",
                 data: data,
@@ -59,23 +56,30 @@ $(document).ready(function() {
             });
 
             request.done(function (response) {
-                $(".alert").addClass("alert-success");
+                if(response == "Podany Adres Email jest już zarejestrowany"){
+                    $(".alert").addClass("alert-warning");
+                }
+                else{
+                    $(".alert").addClass("alert-success");
+
+                }  
                 $(".alert").html(response);
-                $(".alert").fadeOut(3000);
+                $(".alert").fadeOut(1500);
             });
 
             request.fail(function (response) {
                 $(".alert").addClass("alert-danger");
                 $(".alert").html(response);
-                $(".alert").fadeOut(3000);
+                $(".alert").fadeOut(1500);
 
             });
         }
         else{
                 $(".alert").addClass("alert-danger");
                 $(".alert").html("Nie poprawny adres Email!");
-                $(".alert").fadeOut(3000);
+                $(".alert").fadeOut(1500);
         }
+        event.preventDefault();
     });
 });
 
