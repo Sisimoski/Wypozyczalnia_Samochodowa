@@ -41,7 +41,7 @@ session_start();
 </head>
 
 <body>
-    <div class="fixed-top justify-content-center d-flex">
+    <div class="position-fixed justify-content-center d-flex">
         <div class="alert ml-5 mr-5  text-center" style="width:40%"></div>
     </div>
     <!-- Nagłówek Navbar -->

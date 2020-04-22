@@ -58,7 +58,8 @@
                                 <ul class="list-group mb-2">
                                     <div>
                                         <a data-toggle="collapse" href="#employeePanel"
-                                            class="list-group-item list-group-item-action list-group-item-primary">Panel Pracownika</a>
+                                            class="list-group-item list-group-item-action list-group-item-primary">
+                                            <i class="bx bxs-music"></i>Panel Pracownika</a>
                                     </div>
                                     <div class="collapse" id="employeePanel">
                                         <ul class="list-group mb-2">
