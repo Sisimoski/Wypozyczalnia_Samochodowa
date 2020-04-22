@@ -80,7 +80,7 @@
                                     ';
 
                         // MODUŁY ADMINA
-                            if($_SESSION['rodzaj_konta'] === 4){
+                            if($_SESSION['rodzaj_konta'] == 4){
                                 echo'
                                         <a href="/cpanel/employeeModules/employees.php" class="list-group-item list-group-item-action">Pracownicy</a>
                                         
