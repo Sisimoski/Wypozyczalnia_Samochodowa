@@ -71,7 +71,7 @@
     }
 
   //Uzupelnianei tabeli samochod
-    $sth = $db->prepare('INSERT INTO samochod(vin,id_specyfikacja_samochodu,numer_tablicy_rejestracyjnej,id_klient)
+    $sth = $db->prepare('INSERT INTO samochod(vin,id_specyfikacja_samochodu,numer_tablicy_rejestracyjnej,id_uzytkownik)
     VALUES (:vin,:id_specyfikacja_samochodu,:numer_tablicy_rejestracyjnej,:id_klient)');
     $sth ->bindValue(':vin',$vin,PDO::PARAM_STR);
     $sth ->bindValue(':id_specyfikacja_samochodu',$id_specyfikacja_samochodu,PDO::PARAM_STR);
