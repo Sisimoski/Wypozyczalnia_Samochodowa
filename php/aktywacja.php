@@ -8,8 +8,8 @@
             $sth -> execute();
             $result = $sth->fetch(PDO::FETCH_ASSOC);
             if($result){
-                $id = $result["id_klient"];
-                $sth = $db-> prepare('UPDATE klienci SET czy_aktywowany = 1 WHERE (id_klient = :id)');
+                $id = $result["id_uzytkownik"];
+                $sth = $db-> prepare('UPDATE uzytkownik SET czy_aktywowany = 1 WHERE (id_uzytkownik = :id)');
                 $sth -> bindValue(':id',$id,PDO::PARAM_INT);
                 $sth -> execute();
                 
