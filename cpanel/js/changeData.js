@@ -1,39 +1,5 @@
 $(document).ready(function() { 
     //Zczytywanie danych z bazy zalogowanego użytkownika
-    function reqListener () {
-        console.log(this.responseText);
-      }
-      var oReq = new XMLHttpRequest(); 
-    oReq.onload = function() {
-        var arr = JSON.parse(this.responseText);
-        $("#imie").val(arr[0]);
-        $("#nazwisko").val(arr[1]);
-        $("#ulica").val(arr[3]);
-        $("#nr_domu").val(arr[4]);
-        $("#wojewodztwo").val(arr[5]);
-        $("#kod_pocztowy").val(arr[6]);
-        $("#nr_kom").val(arr[7]);
-        $("#nr_tel").val(arr[8]);
-        $("#fax").val(arr[9]);
-        $("#dodatkowe_informacje").val(arr[10]);
-        $("#www").val(arr[11]);
-        $("#nazwa_firmy").val(arr[12]);
-        $("#regon").val(arr[13]);
-        $("#nip").val(arr[14]);  
-        $("#miejscowosc").val(arr[15]);  
-       
-        if(arr[2]==1){
-            $("#nazwa_firmy").prop('hidden', true);
-            $("#regon").prop('hidden', true);
-            $("#nip").prop('hidden', true); 
-            $("#nazwa_firmy_label").prop('hidden', true); 
-            $("#regon_label").prop('hidden', true); 
-            $("#nip_label").prop('hidden', true); 
-        }
-        
-    };
-    oReq.open("get", "./php/showUserInfo.php", true);
-    oReq.send();
 
    //Walidacja zmiany danych użytkownika
    $(document).ready(function() { 
@@ -493,4 +459,40 @@ function validate(){
     }
 }
 
-
+function loadUserInfo(){
+    
+function reqListener () {
+    console.log(this.responseText);
+  }
+  var oReq = new XMLHttpRequest(); 
+oReq.onload = function() {
+    var arr = JSON.parse(this.responseText);
+    $("#imie").val(arr[0]);
+    $("#nazwisko").val(arr[1]);
+    $("#ulica").val(arr[3]);
+    $("#nr_domu").val(arr[4]);
+    $("#wojewodztwo").val(arr[5]);
+    $("#kod_pocztowy").val(arr[6]);
+    $("#nr_kom").val(arr[7]);
+    $("#nr_tel").val(arr[8]);
+    $("#fax").val(arr[9]);
+    $("#dodatkowe_informacje").val(arr[10]);
+    $("#www").val(arr[11]);
+    $("#nazwa_firmy").val(arr[12]);
+    $("#regon").val(arr[13]);
+    $("#nip").val(arr[14]);  
+    $("#miejscowosc").val(arr[15]);  
+   
+    if(arr[2]==1){
+        $("#nazwa_firmy").prop('hidden', true);
+        $("#regon").prop('hidden', true);
+        $("#nip").prop('hidden', true); 
+        $("#nazwa_firmy_label").prop('hidden', true); 
+        $("#regon_label").prop('hidden', true); 
+        $("#nip_label").prop('hidden', true); 
+    }
+    
+};
+oReq.open("get", "./php/showUserInfo.php", true);
+oReq.send();
+}
