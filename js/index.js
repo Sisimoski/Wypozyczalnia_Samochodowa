@@ -42,6 +42,15 @@ $(document).ready(function() {
 
     $('#subscribeNewsletterButton').click(function(){
         if(emailVerify()){
+            console.log("test");
+            $(".alert").removeClass("alert-success");
+            $(".alert").removeClass("alert-danger");
+            $(".alert").removeClass("alert-warning");
+            $(".alert").html('');
+            $(".alert").stop().fadeOut();
+            $(".alert").fadeIn();
+
+
             var data = $('.newsletterForm').serialize();
             request = $.ajax({
                 url: "./php/userNewsletter.php",
@@ -50,16 +59,22 @@ $(document).ready(function() {
             });
 
             request.done(function (response) {
-                console.log(response);
+                $(".alert").addClass("alert-success");
+                $(".alert").html(response);
+                $(".alert").fadeOut(3000);
             });
 
             request.fail(function (response) {
-                console.log("Error: ", response);
+                $(".alert").addClass("alert-danger");
+                $(".alert").html(response);
+                $(".alert").fadeOut(3000);
 
             });
         }
         else{
-            console.log("Nie poprawny adres email!");
+                $(".alert").addClass("alert-danger");
+                $(".alert").html("Nie poprawny adres Email!");
+                $(".alert").fadeOut(3000);
         }
     });
 });
