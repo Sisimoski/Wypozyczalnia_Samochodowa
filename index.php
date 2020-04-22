@@ -14,13 +14,17 @@
     <?php 
     include("include.php");
     ?>
-    
+
 </head>
 
 <body>
     <!-- Alert -->
     <div class="position-fixed justify-content-center d-flex" style="width:100%; z-index: 9;">
-        <div class="alert mt-3 text-center" style="width:70%; "></div>
+        <div class="alert alert-dismissible fade show mt-3 text-center" style="width:70%;" role="alert">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
     </div>
     <!-- Nagłówek Navbar -->
     <section id="header">
@@ -67,8 +71,8 @@
                 echo "<button type='button' id='wyloguj' class='btn btn-outline-primary ml-2'>Wyloguj</button>";
             }
         ?>
-                
-           
+
+
             </div>
         </nav>
     </section>
@@ -100,28 +104,33 @@
                     <div class="icon-box">
                         <div class="icon"><i class='bx bx-been-here'></i></div>
                         <h3 class="title">Innowacyjny pomysł</h4>
-                            <p class="description">Pierwsza wypożyczalnia w Polsce, która umożliwia zarówno wypożyczenie, jak i wynajem samochodu.</p>
+                            <p class="description">Pierwsza wypożyczalnia w Polsce, która umożliwia zarówno
+                                wypożyczenie, jak i wynajem samochodu.</p>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-6 col-xl-3 d-flex align-items-stretch">
                     <div class="icon-box">
                         <div class="icon"><i class='bx bx-dollar-circle'></i></div>
                         <h3 class="title">Konkurencyjna cena</h4>
-                            <p class="description">Ceny są porównywalne z innymi okolicznymi wypożyczalniami. Dodatkowo Ty sam możesz zarobić, wynajmując komuś swój własny samochód.</p>
+                            <p class="description">Ceny są porównywalne z innymi okolicznymi wypożyczalniami. Dodatkowo
+                                Ty sam możesz zarobić, wynajmując komuś swój własny samochód.</p>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-6 col-xl-3 d-flex align-items-stretch">
                     <div class="icon-box">
                         <div class="icon"><i class='bx bx-home-heart'></i></div>
                         <h3 class="title">Wygoda</h4>
-                            <p class="description">Wybór samochodu zależy od Ciebie. Możesz wybrać samochód bez wychodzenia z domu. To samo dotyczy rejestracji swojego samochodu w systemie.</p>
+                            <p class="description">Wybór samochodu zależy od Ciebie. Możesz wybrać samochód bez
+                                wychodzenia z domu. To samo dotyczy rejestracji swojego samochodu w systemie.</p>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-6 col-xl-3 d-flex align-items-stretch">
                     <div class="icon-box">
                         <div class="icon"><i class='bx bx-check-double'></i></div>
                         <h3 class="title">Rabaty</h4>
-                            <p class="description">Dzięki Karcie Lojalnościowej zdobywasz punkty, które pozwalają na zniżki okresowe, ale też na zniżki stałe. Jedyne co musisz zrobić, to zacząć wypożyczać/wynajmować!</p>
+                            <p class="description">Dzięki Karcie Lojalnościowej zdobywasz punkty, które pozwalają na
+                                zniżki okresowe, ale też na zniżki stałe. Jedyne co musisz zrobić, to zacząć
+                                wypożyczać/wynajmować!</p>
                     </div>
                 </div>
             </div>
@@ -135,107 +144,117 @@
                 <h2>Wybierz samochód</h2>
                 <p>Z ponad wielu dostępnych w naszym katalogu.</p>
             </div>
-                <section class="carousel slide" data-ride="carousel" id="carsCarousel">
-                    <div class="container pt-0 mt-2">
-                        <div class="carousel-inner">
-                            <div class="carousel-item active">
-                                <div class="card-deck">
-                                    <div class="card">
-                                        <div class="card-img-top p-4 card-img-top-250">
-                                            <img class="img-fluid" src="images/porsche-911.png" alt="Porsche 911">
-                                        </div>
-                                        <div class="card-body pt-2">
-                                            <h6 class="small text-wide p-b-2">Voluptatum deleniti atque corrupti quos dolores et quas molestias
-                                                excepturi sint occaecati cupiditate</h6>
-                                            <h2>
-                                                <a href="">Porsche 911</a>
-                                            </h2>
-                                        </div>
-                                    </div>
-                                    <div class="card">
-                                        <div class="card-img-top p-4 card-img-top-250">
-                                            <img class="img-fluid" src="images/Ford-Fusion-Mondeo-2013.png" alt="Ford Mondeo">
-                                        </div>
-                                        <div class="card-body pt-2">
-                                            <h6 class="small text-wide p-b-2">Voluptatum deleniti atque corrupti quos dolores et quas molestias
-                                                excepturi sint occaecati cupiditate</h6>
-                                            <h2>
-                                                <a href="">Ford Mondeo</a>
-                                            </h2>
-                                        </div>
-                                    </div>
-                                    <div class="card">
-                                        <div class="card-img-top p-4 card-img-top-250">
-                                            <img class="img-fluid" src="images/bmw-3-series.png" alt="BMW Serii 3">
-                                        </div>
-                                        <div class="card-body pt-2">
-                                            <h6 class="small text-wide p-b-2">Voluptatum deleniti atque corrupti quos dolores et quas molestias
-                                                excepturi sint occaecati cupiditate</h6>
-                                            <h2>
-                                                <a href="">BMW Serii 3</a>
-                                            </h2>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="carousel-item">
+            <section class="carousel slide" data-ride="carousel" id="carsCarousel">
+                <div class="container pt-0 mt-2">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
                             <div class="card-deck">
-                                    <div class="card">
-                                        <div class="card-img-top p-4 card-img-top-250">
-                                            <img class="img-fluid" src="images/porsche-911.png" alt="Porsche 911">
-                                        </div>
-                                        <div class="card-body pt-2">
-                                            <h6 class="small text-wide p-b-2">Voluptatum deleniti atque corrupti quos dolores et quas molestias
-                                                excepturi sint occaecati cupiditate</h6>
-                                            <h2>
-                                                <a href="">Porsche 911</a>
-                                            </h2>
-                                        </div>
+                                <div class="card">
+                                    <div class="card-img-top p-4 card-img-top-250">
+                                        <img class="img-fluid" src="images/porsche-911.png" alt="Porsche 911">
                                     </div>
-                                    <div class="card">
-                                        <div class="card-img-top p-4 card-img-top-250">
-                                            <img class="img-fluid" src="images/Ford-Fusion-Mondeo-2013.png" alt="Ford Mondeo">
-                                        </div>
-                                        <div class="card-body pt-2">
-                                            <h6 class="small text-wide p-b-2">Voluptatum deleniti atque corrupti quos dolores et quas molestias
-                                                excepturi sint occaecati cupiditate</h6>
-                                            <h2>
-                                                <a href="">Ford Mondeo</a>
-                                            </h2>
-                                        </div>
+                                    <div class="card-body pt-2">
+                                        <h6 class="small text-wide p-b-2">Voluptatum deleniti atque corrupti quos
+                                            dolores et quas molestias
+                                            excepturi sint occaecati cupiditate</h6>
+                                        <h2>
+                                            <a href="">Porsche 911</a>
+                                        </h2>
                                     </div>
-                                    <div class="card">
-                                        <div class="card-img-top p-4 card-img-top-250">
-                                            <img class="img-fluid" src="images/bmw-3-series.png" alt="BMW Serii 3">
-                                        </div>
-                                        <div class="card-body pt-2">
-                                            <h6 class="small text-wide p-b-2">Voluptatum deleniti atque corrupti quos dolores et quas molestias
-                                                excepturi sint occaecati cupiditate</h6>
-                                            <h2>
-                                                <a href="">BMW Serii 3</a>
-                                            </h2>
-                                        </div>
+                                </div>
+                                <div class="card">
+                                    <div class="card-img-top p-4 card-img-top-250">
+                                        <img class="img-fluid" src="images/Ford-Fusion-Mondeo-2013.png"
+                                            alt="Ford Mondeo">
+                                    </div>
+                                    <div class="card-body pt-2">
+                                        <h6 class="small text-wide p-b-2">Voluptatum deleniti atque corrupti quos
+                                            dolores et quas molestias
+                                            excepturi sint occaecati cupiditate</h6>
+                                        <h2>
+                                            <a href="">Ford Mondeo</a>
+                                        </h2>
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <div class="card-img-top p-4 card-img-top-250">
+                                        <img class="img-fluid" src="images/bmw-3-series.png" alt="BMW Serii 3">
+                                    </div>
+                                    <div class="card-body pt-2">
+                                        <h6 class="small text-wide p-b-2">Voluptatum deleniti atque corrupti quos
+                                            dolores et quas molestias
+                                            excepturi sint occaecati cupiditate</h6>
+                                        <h2>
+                                            <a href="">BMW Serii 3</a>
+                                        </h2>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>  
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-12 text-md-center lead">
-                                <a class="btn btn-secondary-outline prev" href="" title="go back"><i class="fa fa-lg fa-chevron-left"></i></a>
-                                <a class="btn btn-secondary-outline next" href="" title="more"><i class="fa fa-lg fa-chevron-right"></i></a>
+                        <div class="carousel-item">
+                            <div class="card-deck">
+                                <div class="card">
+                                    <div class="card-img-top p-4 card-img-top-250">
+                                        <img class="img-fluid" src="images/porsche-911.png" alt="Porsche 911">
+                                    </div>
+                                    <div class="card-body pt-2">
+                                        <h6 class="small text-wide p-b-2">Voluptatum deleniti atque corrupti quos
+                                            dolores et quas molestias
+                                            excepturi sint occaecati cupiditate</h6>
+                                        <h2>
+                                            <a href="">Porsche 911</a>
+                                        </h2>
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <div class="card-img-top p-4 card-img-top-250">
+                                        <img class="img-fluid" src="images/Ford-Fusion-Mondeo-2013.png"
+                                            alt="Ford Mondeo">
+                                    </div>
+                                    <div class="card-body pt-2">
+                                        <h6 class="small text-wide p-b-2">Voluptatum deleniti atque corrupti quos
+                                            dolores et quas molestias
+                                            excepturi sint occaecati cupiditate</h6>
+                                        <h2>
+                                            <a href="">Ford Mondeo</a>
+                                        </h2>
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <div class="card-img-top p-4 card-img-top-250">
+                                        <img class="img-fluid" src="images/bmw-3-series.png" alt="BMW Serii 3">
+                                    </div>
+                                    <div class="card-body pt-2">
+                                        <h6 class="small text-wide p-b-2">Voluptatum deleniti atque corrupti quos
+                                            dolores et quas molestias
+                                            excepturi sint occaecati cupiditate</h6>
+                                        <h2>
+                                            <a href="">BMW Serii 3</a>
+                                        </h2>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                    </div>      
-                </section>
-                <div class="row pt-3">
-                    <div class="col text-center">
-                        <button type='button' class='btn btn-primary mr-sm-2'>Zobacz wszystko</button>
                     </div>
                 </div>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12 text-md-center lead">
+                            <a class="btn btn-secondary-outline prev" href="" title="go back"><i
+                                    class="fa fa-lg fa-chevron-left"></i></a>
+                            <a class="btn btn-secondary-outline next" href="" title="more"><i
+                                    class="fa fa-lg fa-chevron-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <div class="row pt-3">
+                <div class="col text-center">
+                    <button type='button' class='btn btn-primary mr-sm-2'>Zobacz wszystko</button>
+                </div>
             </div>
-        </section>
+        </div>
+    </section>
     <section id="map">
         <div class="map-container">
             <iframe
@@ -254,9 +273,10 @@
                     </p>
                     <form class="newsletterForm">
                         <div class="form-group">
-                            <input type="email" name="email" class="form-control" id="newsletterEmail" placeholder="Email">
+                            <input type="email" name="email" class="form-control" id="newsletterEmail"
+                                placeholder="Email">
                         </div>
-                            <button type="button" id="subscribeNewsletterButton" class="btn btn-primary">Subskrybuj</button>
+                        <button type="button" id="subscribeNewsletterButton" class="btn btn-primary">Subskrybuj</button>
                     </form>
                 </div>
 
@@ -294,17 +314,17 @@
             </div>
         </div>
     </footer>
-        <div class="footer-copyright">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12 text-center">
-                        <p>Car4You © 2020. Wszystkie prawa zastrzeżone.</p>
-                    </div>
+    <div class="footer-copyright">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <p>Car4You © 2020. Wszystkie prawa zastrzeżone.</p>
                 </div>
             </div>
-        </div>  
-        <script src="js/index.js"></script>
-        <script src="js/newsletter.js"></script>
+        </div>
+    </div>
+    <script src="js/index.js"></script>
+    <script src="js/newsletter.js"></script>
 </body>
 
 </html>
