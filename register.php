@@ -14,7 +14,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-  <link rel="shortcut icon" type="image/jpg" href="favicon.png"/>
+  <link rel="shortcut icon" type="image/jpg" href="favicon.png" />
 
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
@@ -22,10 +22,10 @@
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Lato|Montserrat|Nunito|Quicksand&display=swap" rel="stylesheet">
-  
+
   <!-- Custom CSS Files -->
   <link rel="stylesheet" type="text/css" href="css/styles.css">
-  
+
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
     integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous">
@@ -58,11 +58,13 @@
                 <label for="inputEmail1">Login</label>
                 <input data-toggle="tooltip" data-placement="top" title="Tooltip on top" class="form-control" id="login"
                   placeholder="Wprowadź login" name="login">
+                <small class="form-text text-muted">To pole jest wymagane.</small>
                 <div class="komunikat"> </div>
               </div>
               <div class="form-group col-md-6">
                 <label for="inputEmail1">Email</label>
                 <input type="email" class="form-control" id="email" placeholder="Wprowadź adres e-mail" name="email">
+                <small class="form-text text-muted">To pole jest wymagane.</small>
                 <div class="komunikat"> </div>
               </div>
             </div>
@@ -71,12 +73,14 @@
                 <label for="inputPassword1">Hasło</label>
                 <input type="password" class="form-control" aria-describedby="passwordHelpBlock" id="haslo1"
                   placeholder="Wprowadź hasło" name="haslo1">
+                  <small class="form-text text-muted">To pole jest wymagane.</small>
                 <div class="komunikat"> </div>
               </div>
               <div class="form-group col-md-6">
                 <label for="inputPassword4">Powtórz hasło</label>
                 <input type="password" class="form-control" aria-describedby="passwordHelpBlock" id="haslo2"
                   name="haslo2">
+                  <small class="form-text text-muted">To pole jest wymagane.</small>
                 <div class="komunikat"> </div>
               </div>
             </div>
@@ -84,11 +88,13 @@
               <div class="form-group col-md-6">
                 <label for="inputFirstName1">Imię</label>
                 <input type="text" class="form-control" id="imie" placeholder="Imię" name="imie">
+                <small class="form-text text-muted">To pole jest wymagane.</small>
                 <div class="komunikat"> </div>
               </div>
               <div class="form-group col-md-6">
                 <label for="inputLastName1">Nazwisko</label>
                 <input type="text" class="form-control" id="nazwisko" placeholder="Nazwisko" name="nazwisko">
+                <small class="form-text text-muted">To pole jest wymagane.</small>
                 <div class="komunikat"> </div>
               </div>
             </div>
@@ -96,11 +102,13 @@
               <div class="form-group col-md-10">
                 <label for="inputAddress1">Ulica</label>
                 <input type="text" class="form-control" id="ulica" placeholder="ul. Przykładowa" name="ulica">
+                <small class="form-text text-muted">To pole jest wymagane.</small>
                 <div class="komunikat"> </div>
               </div>
               <div class="form-group col-md-2">
                 <label for="inputAddress2">Numer domu</label>
                 <input type="text" class="form-control" id="nr_domu" name="nr_domu">
+                <small class="form-text text-muted">To pole jest wymagane.</small>
                 <div class="komunikat"> </div>
               </div>
             </div>
@@ -108,6 +116,7 @@
               <div class="form-group col-md-6">
                 <label for="inputCity">Miasto</label>
                 <input type="text" class="form-control" id="miejscowosc" name="miejscowosc">
+                <small class="form-text text-muted">To pole jest wymagane.</small>
                 <div class="komunikat"> </div>
               </div>
               <div class="form-group col-md-4">
@@ -130,10 +139,12 @@
                   <option value="wielkopolskie">wielkopolskie</option>
                   <option value="zachodniopomorskie">zachodniopomorskie</option>
                 </select>
+                <small class="form-text text-muted">To pole jest wymagane.</small>
               </div>
               <div class="form-group col-md-2">
-                <label for="inputZip">Kod poczt.</label>
+                <label for="inputZip">Kod pocztowy</label>
                 <input type="text" class="form-control" id="kodPocztowy" name="kodPocztowy">
+                <small class="form-text text-muted">To pole jest wymagane.</small>
                 <div class="komunikat"> </div>
               </div>
             </div>
@@ -141,6 +152,7 @@
               <div class="form-group col-md-6">
                 <label for="inputPhoneNumber">Numer komórkowy</label>
                 <input type="tel" class="form-control" id="nrKom" placeholder="123456789" name="nrKom">
+                <small class="form-text text-muted">To pole jest wymagane.</small>
                 <div class="komunikat"> </div>
               </div>
               <div class="form-group col-md-3">
