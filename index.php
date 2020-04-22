@@ -41,7 +41,7 @@
 <body>
     <!-- Nagłówek Navbar -->
     <section id="header">
-        <nav class="navbar navbar-expand-lg fixed-top navbar-light bg-light"
+        <nav class="navbar navbar-expand-md fixed-top navbar-light bg-light"
             style="box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);">
             <a class="navbar-brand ml-2" href="index.php">
                 <img src="images/Car4You-line-logo.png" height="50" alt="car4you logo">
@@ -68,8 +68,8 @@
                 </ul>
                 <?php
             if(!isset($_SESSION['id'])){
-            echo "<button id='zaloguj' type='submit' class='btn btn-outline-primary mr-sm-2'>Zaloguj się</button>";
-            echo "<button id='zarejestruj' type='submit' class='btn btn-primary my-2 my-sm-0'>Zarejestruj się</button>" ;
+            echo "<button id='zaloguj' type='submit' class='btn btn-outline-primary'>Zaloguj się</button>";
+            echo "<button id='zarejestruj' type='submit' class='btn btn-primary ml-2'>Zarejestruj się</button>" ;
             }
             else{
                 if(isset($_SESSION['rodzaj_konta'])){
@@ -91,7 +91,6 @@
     </section>
 
     <!-- Sekcja Hero -->
-    <!-- Naprawiona responsywność -->
     <section id="hero" class="text-light">
         <div class="container">
             <div class="row justify-content-between align-items-center">
@@ -101,7 +100,7 @@
                 </div>
                 <div class="col-lg-6 order-1 order-lg-1">
                     <!-- Dodać cień do obrazka -->
-                    <img src="images/home-hero-background.png" class="img-fluid" alt="homepage-hero-background">
+                    <img src="images/bg/home-hero-background.png" class="img-fluid" alt="homepage-hero-background">
                 </div>
             </div>
         </div>
@@ -114,30 +113,30 @@
                 <h2>Zobacz, dlaczego klienci nas wybierają</h2>
             </div>
             <div class="row">
-                <div class="col-md-6 col-lg-3 d-flex align-items-stretch">
+                <div class="col-md-6 col-lg-6 col-xl-3 d-flex align-items-stretch">
                     <div class="icon-box">
-                        <div class="icon"><i class='bx bx-car bx-tada'></i></div>
+                        <div class="icon"><i class='bx bx-car'></i></div>
                         <h3 class="title">Innowacyjny pomysł</h4>
                             <p class="description">Pierwsza wypożyczalnia w Polsce, która umożliwia zarówno wypożyczenie, jak i wynajem samochodu.</p>
                     </div>
                 </div>
-                <div class="col-md-6 col-lg-3 d-flex align-items-stretch">
+                <div class="col-md-6 col-lg-6 col-xl-3 d-flex align-items-stretch">
                     <div class="icon-box">
-                        <div class="icon"><i class='bx bx-building-house bx-tada'></i></div>
+                        <div class="icon"><i class='bx bx-building-house'></i></div>
                         <h3 class="title">Konkurencyjna cena</h4>
                             <p class="description">Ceny są porównywalne z innymi okolicznymi wypożyczalniami. Dodatkowo Ty sam możesz zarobić, wynajmując komuś swój własny samochód.</p>
                     </div>
                 </div>
-                <div class="col-md-6 col-lg-3 d-flex align-items-stretch">
+                <div class="col-md-6 col-lg-6 col-xl-3 d-flex align-items-stretch">
                     <div class="icon-box">
-                        <div class="icon"><i class='bx bx-navigation bx-tada'></i></div>
+                        <div class="icon"><i class='bx bx-navigation'></i></div>
                         <h3 class="title">Wygoda</h4>
                             <p class="description">Wybór samochodu zależy od Ciebie. Możesz wybrać samochód bez wychodzenia z domu. To samo dotyczy rejestracji swojego samochodu w systemie.</p>
                     </div>
                 </div>
-                <div class="col-md-6 col-lg-3 d-flex align-items-stretch">
+                <div class="col-md-6 col-lg-6 col-xl-3 d-flex align-items-stretch">
                     <div class="icon-box">
-                        <div class="icon"><i class='bx bx-user-check bx-tada'></i></div>
+                        <div class="icon"><i class='bx bx-user-check'></i></div>
                         <h3 class="title">Rabaty</h4>
                             <p class="description">Dzięki Karcie Lojalnościowej zdobywasz punkty, które pozwalają na zniżki okresowe, ale też na zniżki stałe. Jedyne co musisz zrobić, to zacząć wypożyczać/wynajmować!</p>
                     </div>

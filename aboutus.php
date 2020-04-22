@@ -6,7 +6,7 @@ session_start();
 <html lang="pl">
 
 <head>
-    <title>Car4You - wypożyczalnia samochodów</title>
+    <title>O nas</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -40,7 +40,7 @@ session_start();
 <body>
     <!-- Nagłówek Navbar -->
     <section id="header">
-        <nav class="navbar navbar-expand-lg fixed-top navbar-light bg-light"
+        <nav class="navbar navbar-expand-md fixed-top navbar-light bg-light"
             style="box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);">
             <a class="navbar-brand ml-2" href="index.php">
                 <img src="images/Car4You-line-logo.png" height="50" alt="car4you logo">
@@ -52,13 +52,13 @@ session_start();
             </button>
             <div class="collapse navbar-collapse flex-grow-1" id="navbarSupportedContent">
                 <ul class="navbar-nav ml-auto">
-                    <li class="nav-item active">
+                    <li class="nav-item">
                         <a class="nav-link" href="index.php">Strona główna<span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="oferty.php">Oferty</a>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item active">
                         <a class="nav-link" href="aboutus.php">O nas</a>
                     </li>
                     <li class="nav-item">
@@ -67,8 +67,8 @@ session_start();
                 </ul>
                 <?php
             if(!isset($_SESSION['id'])){
-            echo "<button id='zaloguj' type='submit' class='btn btn-outline-primary mr-sm-2'>Zaloguj się</button>";
-            echo "<button id='zarejestruj' type='submit' class='btn btn-primary my-2 my-sm-0'>Zarejestruj się</button>" ;
+            echo "<button id='zaloguj' type='submit' class='btn btn-outline-primary'>Zaloguj się</button>";
+            echo "<button id='zarejestruj' type='submit' class='btn btn-primary ml-2'>Zarejestruj się</button>" ;
             }
             else{
                 if(isset($_SESSION['rodzaj_konta'])){
@@ -93,7 +93,7 @@ session_start();
     <section id="herous" class="text-light">
         <div class="container">
             <div class="row justify-content-between align-items-center">
-                <div class="col-lg-12 pt-5 pt-lg-0 order-2 order-lg-1">
+                <div class="col-lg-12 pt-lg-0 order-2 order-lg-1">
                     <h1>O nas</h1>
                     <h2>Dowiedz się, dlaczego klienci nas tak uwielbiają.</h2>
                 </div>
@@ -105,10 +105,10 @@ session_start();
     <section id="about" class="about">
         <div class="container">
             <div class="row justify-content-between text-dark">
-                <div class="col-lg-5 d-flex align-items-center justify-content-center about-img">
-                    <img src="images/login-man1-background.png" class="img-fluid" alt="">
+                <div class="col-md-5 d-flex align-items-center justify-content-center about-img">
+                    <img src="images/bg/bez tła 6.png" class="img-fluid" alt="">
                 </div>
-                <div class="col-lg-6 pt-5 pt-lg-0">
+                <div class="col-md-6 pt-5 pt-md-0">
                     <h3>Wypożycz, wynajmij</h3>
                     <p>
                         Opcja wypożyczenia samochodu ma wiele zalet, które usprawnią życie codziennie.
@@ -131,43 +131,43 @@ session_start();
                     </div>
                 </div>
             </div>
-
         </div>
-    </section>
-
-    <section id="about" class="about">
+        
         <div class="container">
-            <div class="row justify-content-between text-dark">
-                <div class="col-lg-6 pt-5 pt-lg-0">
-                    <h3>Główne zalety Car4You</h3>
-                    <p>
-                        Car4You to jedna z pierwszych w Polsce wypożyczalni samochodów, w której Użytkownik ma możliwość
-                        wypożyczenia samochodu dla siebie (jak dzieje się w standardowych wypożyczalniach), ale również
-                        wypożyczenia komuś swojego samochodu.
-                    </p>
-                    <div class="row justify-content-between highlightus">
-                        <div class="col d-flex align-items-stretch">
+            <div class="row my-3 my-md-5 justify-content-between text-dark d-flex">
+                <div class="col">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h3>Główne zalety Car4You</h3>
+                            <p>
+                                Car4You to jedna z pierwszych w Polsce wypożyczalni samochodów, w której Użytkownik ma możliwość
+                                wypożyczenia samochodu dla siebie (jak dzieje się w standardowych wypożyczalniach), ale również
+                                wypożyczenia komuś swojego samochodu.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="row highlightus justify-content-between">
+                        <div class="col-12 col-md-6 d-flex align-items-stretch order-1 order-md-1">
                             <div class="icon-box">
-                                <div class="icon"><i class='bx bx-shape-triangle'></i></div>
+                                <div class="icon my-auto"><i class='bx bx-shape-triangle'></i></div>
                                 <h4 class="title">Elastyczność</h4>
                                 <p class="description">Czyli możliwość zadecydowania zarówno o okresie wynajmu
                                     samochodu, ale
                                     także o jego marcie bądź klasie.</p>
                             </div>
                         </div>
+                        <div class="col-12 col-md-6 mt-3 mt-md-0 d-flex align-items-center justify-content-center about-img order-2 order-md-2">
+                            <img src="images/bg/bez tła 4.png" class="img-fluid" alt="">
+                        </div>
                     </div>
                 </div>
-                <div class="col-lg-5 d-flex align-items-center justify-content-center about-img">
-                    <img src="images/register-women1-background.png" class="img-fluid" alt="">
-                </div>
-                <div class="col-lg-5 d-flex align-items-center justify-content-center about-img">
-                    <img src="images/register-women1-background.png" class="img-fluid" alt="">
-                </div>
-                <div class="col-lg-6 pt-5 pt-lg-0">
-                    <div class="row justify-content-between highlightus">
-                        <div class="col d-flex align-items-stretch">
+            </div>
+            <div class="row my-3 my-md-5 justify-content-between">
+                <div class="col">
+                    <div class="row highlightus justify-content-between">
+                        <div class="col-12 col-md-6 d-flex align-items-stretch order-3 order-md-4">
                             <div class="icon-box">
-                                <div class="icon"><i class='bx bxs-navigation'></i></div>
+                                <div class="icon my-auto"><i class='bx bxs-navigation'></i></div>
                                 <h4 class="title">Wygoda</h4>
                                 <p class="description">Czyli szybkie i niezależne przemieszczanie się z miejsca na
                                     miejsce
@@ -175,13 +175,18 @@ session_start();
                                     konieczności korzystania z komunikacji miejskiej czy taxówek.</p>
                             </div>
                         </div>
+                        <div class="col-12 col-md-6 mt-3 mt-md-0 d-flex align-items-center justify-content-center about-img order-4 order-md-3">
+                            <img src="images/bg/obraz11.png" class="img-fluid" alt="">
+                        </div>
                     </div>
                 </div>
-                <div class="col-lg-6 pt-5 pt-lg-0">
-                    <div class="row justify-content-between highlightus">
-                        <div class="col d-flex align-items-stretch">
+            </div>
+            <div class="row mt-3 mt-md-5 justify-content-between">
+                <div class="col">
+                    <div class="row highlightus justify-content-between">
+                        <div class="col-12 col-md-6 d-flex align-items-stretch order-5 order-md-5">
                             <div class="icon-box">
-                                <div class="icon"><i class='bx bxs-map-alt'></i></div>
+                                <div class="icon my-auto"><i class='bx bxs-map-alt'></i></div>
                                 <h4 class="title">Mobilność</h4>
                                 <p class="description">Czyli swobodne poruszanie się samochodem przy oszczędności czasu
                                     i
@@ -190,51 +195,15 @@ session_start();
                                     samochód jest dopasowany do Klienta</p>
                             </div>
                         </div>
+                        <div class="col-12 col-md-6 mt-3 mt-md-0 d-flex align-items-center justify-content-center about-img order-6 order-md-6">
+                            <img src="images/bg/obraz5-removebg-preview.png" class="img-fluid" alt="">
+                        </div>
                     </div>
                 </div>
-                <div class="col-lg-5 d-flex align-items-center justify-content-center about-img">
-                    <img src="images/register-women1-background.png" class="img-fluid" alt="">
-                </div>
             </div>
+        </div>
+        </div>
     </section>
-    
-    <!-- Sekcja Highlight
-    <section id="highlightus" class="highlightus highlightus-bg">
-        <div class="container">
-            <div class="highlight-title text-light">
-                <h2>Główne zalety Car4You to:</h2>
-                <p>Opcja wypożyczenia samochodu ma wiele zalet, które usprawnią życie codziennie.</p>
-            </div>
-            <div class="row justify-content-between">
-                <div class="col-md-6 col-lg-4 d-flex align-items-stretch">
-                    <div class="icon-box">
-                        <div class="icon"><i class='bx bx-car bx-tada'></i></div>
-                        <h3 class="title">Elastyczność</h4>
-                            <p class="description">Czyli możliwość zadecydowania zarówno o okresie wynajmu samochodu,
-                                ale
-                                także o jego marcie bądź klasie.</p>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-4 d-flex align-items-stretch">
-                    <div class="icon-box">
-                        <div class="icon"><i class='bx bx-building-house bx-tada'></i></div>
-                        <h3 class="title">Wygoda</h4>
-                            <p class="description">Czyli szybkie i niezależne przemieszczanie się z miejsca na miejsce
-                                bez
-                                konieczności korzystania z komunikacji miejskiej czy taxówek.</p>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-4 d-flex align-items-stretch">
-                    <div class="icon-box">
-                        <div class="icon"><i class='bx bx-navigation bx-tada'></i></div>
-                        <h3 class="title">Mobilność</h4>
-                            <p class="description">Czyli swobodne poruszanie się samochodem przy oszczędności czasu i
-                                pieniędzy (co związane jest z koniecznością użycia innych środków transportu), a wybrany
-                                samochód jest dopasowany do Klienta</p>
-                    </div>
-                </div>
-            </div>
-    </section> -->
 
     <footer id="footer" class="footer bg-light">
         <div class="container">

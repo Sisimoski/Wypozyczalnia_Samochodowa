@@ -9,7 +9,7 @@
 <html lang="pl">
 
 <head>
-  <title>Car4You - Rejestracja</title>
+  <title>Rejestracja</title>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -43,7 +43,7 @@
       <div class="col-lg-4 p-0">
         <a href="index.php"><img src="images/Car4You-line-logo.png" class="m-5" alt="Car4You Logo"
             style="width: 200px;"></a>
-        <img src="images/register-women1-background.png" class="img-fluid p-5 d-none d-lg-block"
+        <img src="images/bg/register-women1-background.png" class="img-fluid p-5 d-none d-lg-block"
           alt="women-standing-background">
         <!-- <a href="https://www.freepik.com/free-photos-vectors/background">Background vector created by katemangostar - www.freepik.com</a> -->
       </div>

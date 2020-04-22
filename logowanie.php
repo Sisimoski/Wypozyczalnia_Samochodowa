@@ -9,7 +9,7 @@
 <html lang="pl">
 
 <head>
-  <title>Car4You - Logowanie</title>
+  <title>Logowanie</title>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -45,7 +45,7 @@
       <div class="col-lg-6 p-0">
         <a href="index.php"><img src="images/Car4You-line-logo.png" class="m-5" alt="Car4You Logo"
             style="width: 200px;"></a>
-        <img src="images/login-man1-background.png" class="img-fluid d-none d-lg-block" alt="man-standing-background">
+        <img src="images/bg/login-man1-background.png" class="img-fluid d-none d-lg-block" alt="man-standing-background">
         <!-- <a href="https://www.freepik.com/free-photos-vectors/background">Background vector created by katemangostar - www.freepik.com</a> -->
       </div>
       <div class="col-md p-5 text-light" style="background-color: #8AC2F6;">
