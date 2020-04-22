@@ -9,7 +9,7 @@
         die("Podany link nie istnieje");
     }
 
-    $id_klient = $result['id_klient'];
+    $id_klient = $result['id_uzytkownik'];
     $newMail = $result['nowy_mail'];
     
     $sth = $db->prepare('UPDATE kontakty 

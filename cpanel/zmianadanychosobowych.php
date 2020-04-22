@@ -207,6 +207,10 @@ session_start();
             </div>
         </div>
     </div>
+
+    <script>
+    loadUserInfo();
+    </script>
 </body>
 
 </html>
