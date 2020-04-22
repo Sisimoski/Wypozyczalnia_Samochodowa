@@ -1,5 +1,11 @@
 $(document).ready(function () {
     $('#newsletterButton').click(function(e){
+        $(".alert").removeClass("alert-success");
+        $(".alert").removeClass("alert-danger");
+        $(".alert").removeClass("alert-warning");
+        $(".alert").html('');
+        $(".alert").fadeIn();
+
         var message = $('#newsletterMessage').val();
         if(message != ""){
             
@@ -10,15 +16,21 @@ $(document).ready(function () {
             });
 
             request.done(function (response) {
-                console.log(response);
+                $(".alert").addClass("alert-success");
+                $(".alert-success").html(response);
+                $(".alert").fadeOut(3000);
             });
 
             request.fail(function (response) {
-                console.log("Error: "+response);
+                $(".alert").addClass("alert-warning");
+                $(".alert-warning").html(response);
+                $(".alert").fadeOut(3000);
             });
         }
         else{
-            console.log("ERROR ŻE NIE NAPISANO ŻADNEJ WIADOMOŚCI - BĘDZIE TAKIE INFO");
+            $(".alert").addClass("alert-warning");
+                $(".alert-warning").html("Nie wprowadzono żadnej wiadomości");
+                $(".alert").fadeOut(3000);
         }
 
         e.preventDefault();
