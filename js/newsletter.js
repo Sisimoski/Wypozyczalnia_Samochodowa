@@ -7,7 +7,6 @@ $(document).ready(function() {
         $(".alert").fadeIn();
     if(emailVerify()){
         var data = $('.newsletterForm').serialize();
-        console.log(data);
         request = $.ajax({
             url: "./php/userNewsletter.php",
             data: data,
