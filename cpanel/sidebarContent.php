@@ -14,7 +14,7 @@
                     <!-- PANEL KLIENTA -->
                     <ul class="list-group mb-2">
                         <a href="/cpanel/index.php" class="list-group-item list-group-item-action list-group-item-info">
-                            <i class='bx bxs-id-card'></i>
+                            <i class='bx bxs-dashboard'></i>
                             Panel klienta
                         </a>
                     </ul>
@@ -25,14 +25,22 @@
                                 class="list-group-item list-group-item-action list-group-item-primary">
                                 <i class='bx bxs-user-detail'></i>
                                 Mój profil
+                                <i class="bx bx-chevrons-down text-right"></i>
                             </a>
                         </div>
                         <div class="collapse" id="mojprofil">
-                            <a href="/cpanel/zmianadanychosobowych.php" class="list-group-item list-group-item-action">Zmiana
-                                danych osobowych</a>
-                            <a href="/cpanel/zmianahasla.php" class="list-group-item list-group-item-action">Zmiana hasła</a>
-                            <a href="/cpanel/zmianamaila.php" class="list-group-item list-group-item-action">Zmiana maila</a>
-                            <a href="/cpanel/usuwaniekonta.php" class="list-group-item list-group-item-action">Usuń Konto</a>
+                            <a href="/cpanel/zmianadanychosobowych.php" class="list-group-item list-group-item-action">
+                                <i class="bx bx-dots-vertical-rounded"></i>
+                                Zmiana danych osobowych</a>
+                            <a href="/cpanel/zmianahasla.php" class="list-group-item list-group-item-action">
+                                <i class="bx bx-dots-vertical-rounded"></i>
+                                Zmiana hasła</a>
+                            <a href="/cpanel/zmianamaila.php" class="list-group-item list-group-item-action">
+                                <i class="bx bx-dots-vertical-rounded"></i>
+                                Zmiana maila</a>
+                            <a href="/cpanel/usuwaniekonta.php" class="list-group-item list-group-item-action">
+                                <i class="bx bx-dots-vertical-rounded"></i>
+                                Usuń Konto</a>
                         </div>
                     </ul>
                         <!-- SAMOCHODY KLIENTA -->
@@ -41,13 +49,16 @@
                             <a data-toggle="collapse" href="#samochody" class="list-group-item list-group-item-action list-group-item-primary">
                                 <i class='bx bxs-car'></i>
                                 Samochody
+                                <i class="bx bx-chevrons-down text-right"></i>
                             </a>
                         </div>
                         <div class="collapse" id="samochody">
-                            <a href="/cpanel/dodawaniesamochodow.php" class="list-group-item list-group-item-action">Dodaj
-                                samochód</a>
-                            <a href="/cpanel/statussamochodow.php" class="list-group-item list-group-item-action">Status
-                                samochodów</a>
+                            <a href="/cpanel/dodawaniesamochodow.php" class="list-group-item list-group-item-action">
+                                <i class="bx bx-dots-vertical-rounded"></i>
+                                Dodaj samochód</a>
+                            <a href="/cpanel/statussamochodow.php" class="list-group-item list-group-item-action">
+                                <i class="bx bx-dots-vertical-rounded"></i>
+                                Status samochodów</a>
                         </div>
                     </ul>
 
@@ -58,23 +69,42 @@
                                 <ul class="list-group mb-2">
                                     <div>
                                         <a data-toggle="collapse" href="#employeePanel"
-                                            class="list-group-item list-group-item-action list-group-item-primary">
-                                            <i class="bx bxs-music"></i>Panel Pracownika</a>
+                                            class="list-group-item list-group-item-action list-group-item-info">
+                                            <i class="bx bxs-notepad"></i>
+                                            Panel Pracownika
+                                            <i class="bx bx-chevrons-down text-right"></i>
+                                        </a>
                                     </div>
                                     <div class="collapse" id="employeePanel">
-                                        <ul class="list-group mb-2">
-                                        <div class="mx-1 mt-1">
+                                        <ul class="list-group mb-1">
+                                        <div class=" mt-1">
                                             <a data-toggle="collapse" href="#employeePojazdy"
-                                                class="list-group-item list-group-item-action list-group-item-secondary">Pojazdy</a>
+                                                class="list-group-item list-group-item-action list-group-item">
+                                                <i class="bx bx-car"></i>
+                                                Pojazdy
+                                                <i class="bx bx-chevrons-down text-right"></i>
+                                            </a>
                                         </div>
-                                        <div class="collapse mx-2" id="employeePojazdy">
-                                            <a href="/cpanel/employeeModules/employeeCars.php" class="list-group-item list-group-item-action">Status Wypożyczeń</a>
-                                            <a href="/cpanel/employeeModules/employeeCarsAcceptance.php" class="list-group-item list-group-item-action">Akceptacje Pojazdów</a>
-                                            <a href="/cpanel/employeeModules/employeeCarsInspection.php" class="list-group-item list-group-item-action">Przeglądy</a>
+                                        <div class="collapse" id="employeePojazdy">
+                                            <a href="/cpanel/employeeModules/employeeCars.php" class="list-group-item list-group-item-action">
+                                                <i class="bx bx-dots-vertical-rounded"></i>
+                                                Status Wypożyczeń</a>
+                                            <a href="/cpanel/employeeModules/employeeCarsAcceptance.php" class="list-group-item list-group-item-action">
+                                                <i class="bx bx-dots-vertical-rounded"></i>
+                                                Akceptacje Pojazdów</a>
+                                            <a href="/cpanel/employeeModules/employeeCarsInspection.php" class="list-group-item list-group-item-action">
+                                                <i class="bx bx-dots-vertical-rounded"></i>
+                                                Przeglądy</a>
                                         </div>
                                         </ul>
 
-                                    <a href="/cpanel/employeeModules/employeeNewsletter.php" class="list-group-item list-group-item-action">Newsletter</a>
+                                        <ul class="list-group mb-1">
+                                            <a href="/cpanel/employeeModules/employeeNewsletter.php"
+                                                class="list-group-item list-group-item-action list-group-item">
+                                                <i class="bx bx-news"></i>
+                                                Newsletter
+                                            </a>
+                                        </ul>
                                     
                                     
                                     
@@ -83,7 +113,13 @@
                         // MODUŁY ADMINA
                             if($_SESSION['rodzaj_konta'] == 4){
                                 echo'
-                                        <a href="/cpanel/employeeModules/employees.php" class="list-group-item list-group-item-action">Pracownicy</a>
+                                <ul class="list-group mb-1">
+                                    <a href="/cpanel/employeeModules/employees.php"
+                                        class="list-group-item list-group-item-action list-group-item">
+                                        <i class="bx bxs-group"></i>
+                                        Pracownicy
+                                    </a>
+                                </ul>
                                         
                                 ';
                             }
