@@ -143,14 +143,17 @@ $(document).ready(function () {
     });
 
     $("#acceptCarButton").click(function(){
-
+        
+        $('#acceptCarModal').modal('hide');
+        console.log("ZAAKCEPTOWANO");
         
 
     });
 
     $("#declineCarButton").click(function(){
-        
-        
+        $('#acceptCarModal').modal('hide');
+        console.log("ODRZUCONO");
+
 
     });
     
