@@ -91,6 +91,56 @@ session_start();
                     </div>
                 </div> -->
                 <div class="row px-4">
+
+                <!-- Modal Akceptacja Pojazdu -->
+                <div class="modal fade" id="acceptCarModal" tabindex="-1" role="dialog" aria-labelledby="acceptCarLabel"
+            aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="acceptCarLabel">Kontrola Pojazdu</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+
+                    <div class="modal-body">
+                        <img src="" id="acceptCarPicture" />
+                        <form class="acceptCarData">
+                            <div class="form-group">
+                                <input type="text" name="producent" id="acceptCarProducent" placeholder=""/>
+                            </div>
+                            <div class="form-group">
+                                <input type="text" name="model" id="acceptCarModel" placeholder=""/>
+                            </div>
+                            <div class="form-group">
+                                <input type="text" name="rok_produkcji" id="acceptCarRok" placeholder=""/>
+                            </div>
+                            <div class="form-group">
+                                <input type="text" name="kolor" id="acceptCarKolor" placeholder=""/>
+                            </div>
+                            <div class="form-group">
+                                <input type="text" name="opis" id="acceptCarOpis" placeholder=""/>
+                            </div>
+                            <div class="form-group">
+                                <input type="text" name="numer_tablicy" id="acceptCarNumerTablicy" placeholder=""/>
+                            </div>
+                            <div class="form-group">
+                                <input type="text" name="VIN" id="acceptCarVIN" placeholder=""/>
+                            </div>
+
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Zamknij</button>
+                        <button type="button" id="declineCarButton" value="" class="btn btn-danger">Odrzuć pojazd</button>
+                        <button type="button" id="acceptCarButton" value="" class="btn btn-success">Zaakceptuj Pojazd</button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
                         Pojazdy do zaakceptowania przez pracowników
                         <div class="acceptContent">
                             <table class="table">

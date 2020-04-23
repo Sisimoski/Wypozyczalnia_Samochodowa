@@ -142,6 +142,19 @@ $(document).ready(function () {
         });
     });
 
+    $("#acceptCarButton").click(function(){
+
+        
+
+    });
+
+    $("#declineCarButton").click(function(){
+        
+        
+
+    });
+    
+
     $('#dataOd').on('input', function() { 
         $("#tabelaStatus tr").remove(); 
         zaladujStatus();
@@ -215,6 +228,38 @@ function editKontoButtonClick(self){
         console.log(response);
     })
 
+}
+
+function acceptCarButtonClick(self){
+    self = $(self);
+    $('#acceptCarButton').attr("value", self.val());
+    $('#declineCarButton').attr("value", self.val());
+    
+
+    var data = {vin: self.val()}
+
+        request = $.ajax({
+            url: "php/zaladujAkceptacjePojazdu.php",
+            data: data,
+            type: "POST"
+        });
+
+        request.done(function (response) {
+            var obj = JSON.parse(response);
+
+           $("#acceptCarProducent").val(obj[0]["producent"]);
+           $("#acceptCarModel").val(obj[0]["model"]);
+           $("#acceptCarRok").val(obj[0]["rok"]);
+           $("#acceptCarKolor").val(obj[0]["kolor"]);
+           $("#acceptCarOpis").val(obj[0]["opis"]);
+           $("#acceptCarNumerTablicy").val(obj[0]["numer_tablicy_rejestracyjnej"]);
+           $("#acceptCarVIN").val(self.val());
+           $("#acceptCarPicture").attr("src", "/CarPictures/"+obj[0]["fotografia"] );
+        });
+
+        request.fail(function (response) {
+            console.log(response);
+        });
 }
 
 function zaladujPracownikow() {
@@ -309,7 +354,11 @@ function zaladujAkceptacje(){
                  + obj[i]["miejscowosc"] + "</td><td>"
                  + obj[i]["ulica"] + "</td><td>"
                  + obj[i]["producent"] + " "+obj[i]["model"]+ "</td><td>"
-                 + "Jakieś funkcje do sprawdzania poprawności danych przez pracownika ( Czy zgadzają się z rzeczywistością)" + "</td><td>"
+
+                 + "<button type='button' class='acceptCarButtonValue btn btn-primary' value='" 
+                 + obj[i]["vin"] 
+                 + "' data-toggle='modal' data-target='#acceptCarModal' onclick='acceptCarButtonClick(this)'>Sprawdź pojazd</button>" 
+                 + "</td></tr>"
                 );
             }
         }
