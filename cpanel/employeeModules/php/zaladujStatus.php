@@ -11,7 +11,6 @@
     $sth->execute();
     if($sth->rowCount() != 0){
         $response = $sth->fetchAll();
-        var_dump($response);
         $data = json_encode($response);
         echo $data;
     }

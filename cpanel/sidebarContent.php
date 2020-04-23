@@ -68,7 +68,7 @@
                                                 class="list-group-item list-group-item-action list-group-item-secondary">Pojazdy</a>
                                         </div>
                                         <div class="collapse mx-2" id="employeePojazdy">
-                                            <a href="/cpanel/employeeModules/employeeCars.php" class="list-group-item list-group-item-action">Status Pojazdów</a>
+                                            <a href="/cpanel/employeeModules/employeeCars.php" class="list-group-item list-group-item-action">Status Wypożyczeń</a>
                                             <a href="/cpanel/employeeModules/employeeCarsAcceptance.php" class="list-group-item list-group-item-action">Akceptacje Pojazdów</a>
                                             <a href="/cpanel/employeeModules/employeeCarsInspection.php" class="list-group-item list-group-item-action">Przeglądy</a>
                                         </div>

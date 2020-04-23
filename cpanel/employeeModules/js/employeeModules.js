@@ -142,11 +142,13 @@ $(document).ready(function () {
         });
     });
 
-    $('#dataOd').on('input', function() {  
+    $('#dataOd').on('input', function() { 
+        $("#tabelaStatus tr").remove(); 
         zaladujStatus();
     });
 
     $('#dataDo').on('input', function() {
+        $("#tabelaStatus tr").remove(); 
         zaladujStatus();
     });
 
@@ -258,7 +260,9 @@ function zaladujStatus() {
             $("#alert").html("Brak pojazdów w podanym zakresie czasu");
         }
         else {
+            console.log(response);
             var obj = JSON.parse(response);
+            console.log(obj);
 
             for (i = 0; i < obj.length; i++) {
                 if (obj[i][4] == "0")
@@ -281,3 +285,43 @@ function zaladujStatus() {
         console.log("Error" + response);
     });
 };
+
+function zaladujAkceptacje(){
+        $(".alert").removeClass("alert-success");
+        $(".alert").removeClass("alert-danger");
+        $(".alert").removeClass("alert-warning");
+        $(".alert").html('');
+        $(".alert").fadeIn();
+
+    request = $.ajax({
+        url: "php/zaladujAkceptacje.php",
+    });
+
+    request.done(function (response) {
+        if(response != "Brak pojazdow do zaakceptowania"){
+            $("#acceptStatus tr").remove(); 
+            var obj = JSON.parse(response);
+            console.log(response);
+            for (i = 0; i < obj.length; i++) {
+                $("#acceptStatus").append("<tr><th scope='row'>" + (i + 1) + "</th><td>"
+                 + obj[i]['imie'] + "</td><td>"
+                 + obj[i]["nazwisko"] + "</td><td>"
+                 + obj[i]["miejscowosc"] + "</td><td>"
+                 + obj[i]["ulica"] + "</td><td>"
+                 + obj[i]["producent"] + " "+obj[i]["model"]+ "</td><td>"
+                 + "Jakieś funkcje do sprawdzania poprawności danych przez pracownika ( Czy zgadzają się z rzeczywistością)" + "</td><td>"
+                );
+            }
+        }
+        else{
+            $(".alert").addClass("alert-warning");
+            $(".alert").html(response);
+            $(".alert").fadeOut(3000);
+        }
+
+    });
+
+    request.fail(function (response) {
+        
+    });
+}
