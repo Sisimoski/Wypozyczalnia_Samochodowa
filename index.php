@@ -134,185 +134,151 @@
 
     <section id="car-catalog" class="car-catalog car-catalog-bg text-dark">
         <div class="container">
-            <div class="car-catalog-title">
-                <h2>Wybierz samochód</h2>
-                <p>Z ponad wielu dostępnych w naszym katalogu.</p>
+            <div class="row">
+                <div class="col">
+                    <div class="car-catalog-title">
+                        <h2>Wybierz samochód</h2>
+                        <p>Z ponad wielu dostępnych w naszym katalogu.</p>
+                    </div>
+                </div>
             </div>
-            <section class="carousel slide" data-ride="carousel" id="carsCarousel">
-                <div class="container pt-0 mt-2">
-                    <div class="carousel-inner">
-                        <div class="carousel-item active">
-                            <div class="card-deck">
-                                <div class="card">
-                                    <div class="card-img-top p-4 card-img-top-250">
-                                        <img class="img-fluid" src="images/porsche-911.png" alt="Porsche 911">
-                                    </div>
-                                    <div class="card-body pt-2">
-                                        <h6 class="small text-wide p-b-2">Voluptatum deleniti atque corrupti quos
-                                            dolores et quas molestias
-                                            excepturi sint occaecati cupiditate</h6>
-                                        <h2>
-                                            <a href="">Porsche 911</a>
-                                        </h2>
+            <div class="row justify-content-center">
+                <div class="col">
+                    <section class="carousel slide" data-ride="carousel" id="carsCarousel">
+                        <div class="container pt-0 mt-2">
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                    <div class="card-deck">
+                                        <div class="card bg-light border-primary text-center">
+                                            <img src="images/samochody/Ford_mondeo.png" class="card-img-top" alt="Ford Mondeo">
+                                            <div class="card-body card-body-flex">
+                                                <h5 class="card-title">Ford Mondeo</h5>
+                                                <h6 class="card-subtitle mb-2 text-muted">160zł/dzień</h6>
+                                                <div class="text-left">
+                                                    <p class="card-text">
+                                                        <h6><b>Klasa: B</b></h6>
+                                                        Rok produkcji: 2014r<br>
+                                                        Silnik: 1.5L 120KM diesel<br>
+                                                        Skrzynia biegów: Manualna
+                                                    </p>
+                                                </div>
+                                                <a href="wynajem/samochod.php" class="btn btn-primary">Wypożycz</a>
+                                            </div>
+                                        </div>
+                                        <div class="card bg-light border-primary text-center">
+                                            <img src="images/samochody/hyundai i10.png" class="card-img-top" alt="Hyundai i10">
+                                            <div class="card-body card-body-flex">
+                                                <h5 class="card-title">Hyundai i10</h5>
+                                                <h6 class="card-subtitle mb-2 text-muted">70zł/dzień</h6>
+                                                <div class="text-left">
+                                                    <p class="card-text">
+                                                        <h6><b>Klasa: B</b></h6>
+                                                        Rok produkcji: 2013r<br>
+                                                        Silnik: 1.0L 66KM benzyna<br>
+                                                        Skrzynia biegów: Manualna
+                                                    </p>
+                                                </div>
+                                                <a href="#" class="btn btn-primary">Wypożycz</a>
+                                            </div>
+                                        </div>
+                                        <div class="card bg-light border-primary text-center">
+                                            <img src="images/samochody/mercedes_cw205.png" class="card-img-top"
+                                                alt="mercedes_cw205">
+                                            <div class="card-body card-body-flex">
+                                                <h5 class="card-title">Mercedes CW205</h5>
+                                                <h6 class="card-subtitle mb-2 text-muted">300zł/dzień</h6>
+                                                <div class="text-left">
+                                                    <p class="card-text">
+                                                        <h6><b>Klasa: B+</b></h6>
+                                                        Rok produkcji: 2014r<br>
+                                                        Silnik: 1.6L 136KM diesel<br>
+                                                        Skrzynia biegów: Manualna
+                                                    </p>
+                                                </div>
+                                                <a href="#" class="btn btn-primary">Wypożycz</a>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
-                                <div class="card">
-                                    <div class="card-img-top p-4 card-img-top-250">
-                                        <img class="img-fluid" src="images/Ford-Fusion-Mondeo-2013.png"
-                                            alt="Ford Mondeo">
-                                    </div>
-                                    <div class="card-body pt-2">
-                                        <h6 class="small text-wide p-b-2">Voluptatum deleniti atque corrupti quos
-                                            dolores et quas molestias
-                                            excepturi sint occaecati cupiditate</h6>
-                                        <h2>
-                                            <a href="">Ford Mondeo</a>
-                                        </h2>
-                                    </div>
-                                </div>
-                                <div class="card">
-                                    <div class="card-img-top p-4 card-img-top-250">
-                                        <img class="img-fluid" src="images/bmw-3-series.png" alt="BMW Serii 3">
-                                    </div>
-                                    <div class="card-body pt-2">
-                                        <h6 class="small text-wide p-b-2">Voluptatum deleniti atque corrupti quos
-                                            dolores et quas molestias
-                                            excepturi sint occaecati cupiditate</h6>
-                                        <h2>
-                                            <a href="">BMW Serii 3</a>
-                                        </h2>
+                                <div class="carousel-item">
+                                    <div class="card-deck">
+                                        <div class="card bg-light border-primary text-center">
+                                            <img src="images/samochody/renault-trafic.png" class="card-img-top"
+                                                alt="renault-trafic">
+                                            <div class="card-body card-body-flex">
+                                                <h5 class="card-title">Renault Trafic</h5>
+                                                <h6 class="card-subtitle mb-2 text-muted">260zł/dzień</h6>
+                                                <div class="text-left">
+                                                    <p class="card-text">
+                                                        <h6><b>Klasa: B</b></h6>
+                                                        Rok produkcji: 2010r<br>
+                                                        Silnik: 2.0L 115KM diesel<br>
+                                                        Skrzynia biegów: Manualna
+                                                    </p>
+                                                </div>
+                                                <a href="#" class="btn btn-primary">Wypożycz</a>
+                                            </div>
+                                        </div>
+                                        <div class="card bg-light border-primary text-center">
+                                            <img src="images/samochody/Seat_ibiza.png" class="card-img-top" alt="Seat_ibiza">
+                                            <div class="card-body card-body-flex">
+                                                <h5 class="card-title">Seat Ibiza</h5>
+                                                <h6 class="card-subtitle mb-2 text-muted">110zł/dzień</h6>
+                                                <div class="text-left">
+                                                    <p class="card-text">
+        
+                                                        <h6><b>Klasa: B</b></h6>
+                                                        Rok produkcji: 2008r<br>
+                                                        Silnik: 1.9L 105KM benzyna<br>
+                                                        Skrzynia biegów: Manualna
+                                                    </p>
+                                                </div>
+                                                <a href="#" class="btn btn-primary">Wypożycz</a>
+                                            </div>
+                                        </div>
+                                        <div class="card bg-light border-primary text-center">
+                                            <img src="images/samochody/Skoda_fabia.png" class="card-img-top" alt="Skoda_fabia">
+                                            <div class="card-body card-body-flex">
+                                                <h5 class="card-title">Skoda Fabia</h5>
+                                                <h6 class="card-subtitle mb-2 text-muted">80zł/dzień</h6>
+                                                <div class="text-left">
+                                                    <p class="card-text">
+                                                        <h6><b>Klasa: B</b></h6>
+                                                        Rok produkcji: 2014r<br>
+                                                        Silnik: 1.0L 60KM benzyna<br>
+                                                        Skrzynia biegów: Manualna
+                                                    </p>
+                                                </div>
+                                                <a href="#" class="btn btn-primary">Wypożycz</a>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="carousel-item">
-                            <div class="card-deck">
-                                <div class="card">
-                                    <div class="card-img-top p-4 card-img-top-250">
-                                        <img class="img-fluid" src="images/porsche-911.png" alt="Porsche 911">
-                                    </div>
-                                    <div class="card-body pt-2">
-                                        <h6 class="small text-wide p-b-2">Voluptatum deleniti atque corrupti quos
-                                            dolores et quas molestias
-                                            excepturi sint occaecati cupiditate</h6>
-                                        <h2>
-                                            <a href="">Porsche 911</a>
-                                        </h2>
-                                    </div>
-                                </div>
-                                <div class="card">
-                                    <div class="card-img-top p-4 card-img-top-250">
-                                        <img class="img-fluid" src="images/Ford-Fusion-Mondeo-2013.png"
-                                            alt="Ford Mondeo">
-                                    </div>
-                                    <div class="card-body pt-2">
-                                        <h6 class="small text-wide p-b-2">Voluptatum deleniti atque corrupti quos
-                                            dolores et quas molestias
-                                            excepturi sint occaecati cupiditate</h6>
-                                        <h2>
-                                            <a href="">Ford Mondeo</a>
-                                        </h2>
-                                    </div>
-                                </div>
-                                <div class="card">
-                                    <div class="card-img-top p-4 card-img-top-250">
-                                        <img class="img-fluid" src="images/bmw-3-series.png" alt="BMW Serii 3">
-                                    </div>
-                                    <div class="card-body pt-2">
-                                        <h6 class="small text-wide p-b-2">Voluptatum deleniti atque corrupti quos
-                                            dolores et quas molestias
-                                            excepturi sint occaecati cupiditate</h6>
-                                        <h2>
-                                            <a href="">BMW Serii 3</a>
-                                        </h2>
-                                    </div>
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-12 text-center lead">
+                                    <a class="btn btn-secondary-outline prev" href="" title="go back"><i class="fa fa-lg fa-chevron-left"></i></a>
+                                    <a class="btn btn-secondary-outline next" href="" title="more"><i class="fa fa-lg fa-chevron-right"></i></a>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                </div>
-                <div class="container">
-                    <div class="row">
-                        <div class="col-12 text-md-center lead">
-                            <a class="btn btn-secondary-outline prev" href="" title="go back"><i
-                                    class="fa fa-lg fa-chevron-left"></i></a>
-                            <a class="btn btn-secondary-outline next" href="" title="more"><i
-                                    class="fa fa-lg fa-chevron-right"></i></a>
+                    </section>
+                    <div class="row pt-3">
+                        <div class="col text-center">
+                            <button type='button' class='btn btn-outline-primary'>Zobacz wszystko</button>
                         </div>
                     </div>
-                </div>
-            </section>
-            <div class="row pt-3">
-                <div class="col text-center">
-                    <button type='button' class='btn btn-primary mr-sm-2'>Zobacz wszystko</button>
+
                 </div>
             </div>
         </div>
     </section>
     
-    <footer id="footer" class="footer bg-light">
-        <div class="container">
-            <div class="row justify-content-between">
-
-                <div class="col-lg-3 col-md-6 footer-newsletter">
-                    <h4>Pozostań w kontakcie</h4>
-                    <p>
-                        Nie przegap żadnych informacji i zapisz się do naszego newslettera.
-                    </p>
-                    <form class="newsletterForm">
-                        <div class="form-group">
-                            <input type="email" name="email" class="form-control" id="newsletterEmail"
-                                placeholder="Email">
-                        </div>
-                        <button type="button" id="subscribeNewsletterButton" class="btn btn-primary">Subskrybuj</button>
-                    </form>
-                </div>
-
-                <div class="col-lg-3 col-md-6 footer-links">
-                    <h4>Przydatne linki</h4>
-                    <ul>
-                        <li><i class="bx bx-chevron-right"></i> <a href="#">Strona główna</a></li>
-                        <li><i class="bx bx-chevron-right"></i> <a href="#">Oferty</a></li>
-                        <li><i class="bx bx-chevron-right"></i> <a href="#">O nas</a></li>
-                        <li><i class="bx bx-chevron-right"></i> <a href="#">Kontakt</a></li>
-                    </ul>
-                </div>
-
-                <div class="col-lg-3 col-md-6 footer-social">
-                    <h4>Dołącz do sieci</h4>
-                    <p>Stwórz z nami najwspanialszą społeczność!</p>
-                    <div class="footer-social mt-3">
-                        <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
-                        <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
-                        <a href="#" class="instagram"><i class="bx bxl-instagram-alt"></i></a>
-                        <a href="#" class="play-store"><i class='bx bxl-play-store'></i></a>
-                        <a href="#" class="githyb"><i class="bx bxl-github"></i></a>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 footer-links">
-                    <h4>Kontakt</h4>
-                    <p>
-                        ul. Prószkowska niewiemjaka <br>
-                        Opole, 11-111<br>
-                        Polska <br><br>
-                        <strong>Telefon:</strong> +48 123 456 789<br>
-                        <strong>Email:</strong> Car4YouCompany@gmail.com<br>
-                    </p>
-                </div>
-            </div>
-        </div>
-    </footer>
-    <div class="footer-copyright">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12 text-center">
-                    <p>Car4You © 2020. Wszystkie prawa zastrzeżone.</p>
-                </div>
-            </div>
-        </div>
-    </div>
-    <script src="js/index.js"></script>
-    <script src="js/newsletter.js"></script>
+    <?php require_once $_SERVER['DOCUMENT_ROOT'] . '/include/footer.php';?>
+    <script src="/js/index.js"></script>
+    <script src="/js/newsletter.js"></script>
 </body>
 
 </html>
