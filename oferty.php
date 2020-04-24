@@ -311,22 +311,19 @@ session_start();
                     </div>
                 </div>
                 <div class="col mb-4">
-                    <div class="card bg-light h-100">
+                    <div class="card bg-light text-center h-100">
                         <img src="images/samochody/Seat_ibiza.png" class="card-img-top" alt="Seat_ibiza">
-                        <div class="card-body text-center">
+                        <div class="card-body">
                             <h5 class="card-title">Seat Ibiza</h5>
                             <h6 class="card-subtitle mb-2 text-muted">110zł/dzień</h6>
-                    </div>
-                        <div>
-                                <p class="card-text">
+                            <p class="card-text">
                         
-                                <h6><b>Klasa: B</b></h6>
-                                <h4>Rok produkcji: 2008r</h4>
-                                <h4>Silnik: 1.9L 105KM benzyna</h4>
-                                <h4>Skrzynia biegów: Manualna</h4>
-                                 </p>
-                         </div>
-                                 <a href="#" class="btn btn-primary">Wypożycz</a>
+                            <h6>Klasa: B</h6>
+                            <h6>Rok produkcji: 2008r</h6>
+                            <h6>Silnik: 1.9L 105KM benzyna</h6>
+                            <h6>Skrzynia biegów: Manualna</h6>
+                            </p>
+                            <a href="#" class="btn btn-primary">Wypożycz</a>
                         </div>
                     </div>
                 </div>
