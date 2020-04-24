@@ -58,7 +58,7 @@ session_start();
             <div class="collapse navbar-collapse flex-grow-1" id="navbarSupportedContent">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="index.php">Strona główna<span class="sr-only">(current)</span></a>
+                        <a class="nav-link" href="/index.php">Strona główna<span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="oferty.php">Oferty</a>
