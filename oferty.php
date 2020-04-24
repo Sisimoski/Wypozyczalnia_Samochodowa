@@ -251,9 +251,13 @@ session_start();
                         <img src="images/samochody/Ford_mondeo.png" class="card-img-top" alt="Ford Mondeo">
                         <div class="card-body">
                             <h5 class="card-title">Ford Mondeo</h5>
-                            <h6 class="card-subtitle mb-2 text-muted">95zł</h6>
+                            <h6 class="card-subtitle mb-2 text-muted">160zł/dzień</h6>
 
-                            <h6>Rok produkcji</h6>
+                            <h6>Klasa: B</h6>
+                            <h6>Rok produkcji: 2014r</h6>
+                            <h6>Silnik: diesel</h6>
+                            <h6>Skrzynia biegów: Manualna</h6>
+                            <h6>Liczba drzwi: 5</h6>
 
                             <a href="wynajem/samochod.php" class="btn btn-primary">Wypożycz</a>
                         </div>
