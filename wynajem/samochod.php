@@ -11,31 +11,7 @@ session_start();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-    <link rel="shortcut icon" type="image/jpg" href="/favicon.png" />
-
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Lato|Montserrat|Nunito|Quicksand&display=swap" rel="stylesheet">
-
-    <!-- CSS Files -->
-    <link rel="stylesheet" type="text/css" href="/css/styles.css">
-
-    <!-- Boxicons -->
-    <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
-
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
-        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
-    </script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
-    </script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
-        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
-    </script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <?php require_once $_SERVER['DOCUMENT_ROOT'] . '/include/include.php';?>
     <script src="./js/index.js"></script>
     <script src="js/newsletter.js"></script>
 </head>
@@ -61,13 +37,13 @@ session_start();
                         <a class="nav-link" href="/index.php">Strona główna<span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="oferty.php">Oferty</a>
+                        <a class="nav-link" href="/oferty.php">Oferty</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="aboutus.php">O nas</a>
+                        <a class="nav-link" href="/aboutus.php">O nas</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="kontakt.php">Kontakt</a>
+                        <a class="nav-link" href="/kontakt.php">Kontakt</a>
                     </li>
                 </ul>
                 <?php
@@ -120,11 +96,13 @@ session_start();
                                 <img class="d-block w-100" src="/images/samochody/Ford_mondeo.png" alt="First slide">
                             </div>
                         </div>
-                        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button"
+                            data-slide="prev">
                             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                             <span class="sr-only">Previous</span>
                         </a>
-                        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button"
+                            data-slide="next">
                             <span class="carousel-control-next-icon" aria-hidden="true"></span>
                             <span class="sr-only">Next</span>
                         </a>
@@ -183,55 +161,55 @@ session_start();
                                 </select>
                             </div>
                             <h4 class="card-title mt-3 mb-2">Data:</h4>
-                                <div class="input-group mb-2">
-                                    <div class="input-group-prepend">
-                                        <label class="input-group-text" for="inputGroupSelect01">Od:</label>
-                                    </div>
-                                    <select class="custom-select" id="inputGroupSelect01">
-                                        <option selected>Dzień</option>
-                                        <option value="1">One</option>
-                                        <option value="2">Two</option>
-                                        <option value="3">Three</option>
-                                    </select>
-                                    <select class="custom-select" id="inputGroupSelect01">
-                                        <option selected>Miesiąc</option>
-                                        <option value="1">One</option>
-                                        <option value="2">Two</option>
-                                        <option value="3">Three</option>
-                                    </select>
-                                    <select class="custom-select" id="inputGroupSelect01">
-                                        <option selected>Rok</option>
-                                        <option value="1">One</option>
-                                        <option value="2">Two</option>
-                                        <option value="3">Three</option>
-                                    </select>
+                            <div class="input-group mb-2">
+                                <div class="input-group-prepend">
+                                    <label class="input-group-text" for="inputGroupSelect01">Od:</label>
                                 </div>
-                                <div class="input-group mb-3">
-                                    <div class="input-group-prepend">
-                                        <label class="input-group-text" for="inputGroupSelect01">Do:</label>
-                                    </div>
-                                    <select class="custom-select" id="inputGroupSelect01">
-                                        <option selected>Dzień</option>
-                                        <option value="1">One</option>
-                                        <option value="2">Two</option>
-                                        <option value="3">Three</option>
-                                    </select>
-                                    <select class="custom-select" id="inputGroupSelect01">
-                                        <option selected>Miesiąc</option>
-                                        <option value="1">One</option>
-                                        <option value="2">Two</option>
-                                        <option value="3">Three</option>
-                                    </select>
-                                    <select class="custom-select" id="inputGroupSelect01">
-                                        <option selected>Rok</option>
-                                        <option value="1">One</option>
-                                        <option value="2">Two</option>
-                                        <option value="3">Three</option>
-                                    </select>
+                                <select class="custom-select" id="inputGroupSelect01">
+                                    <option selected>Dzień</option>
+                                    <option value="1">One</option>
+                                    <option value="2">Two</option>
+                                    <option value="3">Three</option>
+                                </select>
+                                <select class="custom-select" id="inputGroupSelect01">
+                                    <option selected>Miesiąc</option>
+                                    <option value="1">One</option>
+                                    <option value="2">Two</option>
+                                    <option value="3">Three</option>
+                                </select>
+                                <select class="custom-select" id="inputGroupSelect01">
+                                    <option selected>Rok</option>
+                                    <option value="1">One</option>
+                                    <option value="2">Two</option>
+                                    <option value="3">Three</option>
+                                </select>
+                            </div>
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                    <label class="input-group-text" for="inputGroupSelect01">Do:</label>
                                 </div>
-                                <div class="mt-3 d-flex flex-column">
-                                    <a href="#" class="btn btn-success">Rezerwuj</a>
-                                </div>
+                                <select class="custom-select" id="inputGroupSelect01">
+                                    <option selected>Dzień</option>
+                                    <option value="1">One</option>
+                                    <option value="2">Two</option>
+                                    <option value="3">Three</option>
+                                </select>
+                                <select class="custom-select" id="inputGroupSelect01">
+                                    <option selected>Miesiąc</option>
+                                    <option value="1">One</option>
+                                    <option value="2">Two</option>
+                                    <option value="3">Three</option>
+                                </select>
+                                <select class="custom-select" id="inputGroupSelect01">
+                                    <option selected>Rok</option>
+                                    <option value="1">One</option>
+                                    <option value="2">Two</option>
+                                    <option value="3">Three</option>
+                                </select>
+                            </div>
+                            <div class="mt-3 d-flex flex-column">
+                                <a href="#" class="btn btn-success">Rezerwuj</a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -239,72 +217,7 @@ session_start();
         </div>
 
     </section>
-
-
-    <footer id="footer" class="footer bg-light">
-        <div class="container">
-            <div class="row">
-
-                <div class="col-lg-3 col-md-6 footer-newsletter">
-                    <h4>Pozostań w kontakcie</h4>
-                    <p>
-                        Nie przegap żadnych informacji i zapisz się do naszego newslettera.
-                    </p>
-                    <form>
-                        <div class="form-group">
-                            <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
-                        </div>
-                        <button type="button" id="subscribeNewsletterButton" class="btn btn-primary">Subskrybuj</button>
-                    </form>
-                </div>
-
-                <div class="col-lg-3 col-md-6 footer-links">
-                    <h4>Przydatne linki</h4>
-                    <ul>
-                        <li><i class="bx bx-chevron-right"></i> <a href="#">Strona główna</a></li>
-                        <li><i class="bx bx-chevron-right"></i> <a href="#">Oferty</a></li>
-                        <li><i class="bx bx-chevron-right"></i> <a href="#">O nas</a></li>
-                        <li><i class="bx bx-chevron-right"></i> <a href="#">Kontakt</a></li>
-                    </ul>
-                </div>
-
-                <div class="col-lg-3 col-md-6 footer-social">
-                    <h4>Dołącz do sieci</h4>
-                    <p>Stwórz z nami najwspanialszą społeczność!</p>
-                    <div class="footer-social mt-3">
-                        <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
-                        <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
-                        <a href="#" class="instagram"><i class="bx bxl-instagram-alt"></i></a>
-                        <a href="#" class="play-store"><i class='bx bxl-play-store'></i></a>
-                        <a href="#" class="githyb"><i class="bx bxl-github"></i></a>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 footer-links">
-                    <h4>Kontakt</h4>
-                    <p>
-                        ul. Prószkowska niewiemjaka <br>
-                        Opole, 11-111<br>
-                        Polska <br><br>
-                        <strong>Telefon:</strong> +48 123 456 789<br>
-                        <strong>Email:</strong> car4you@poczta.pl<br>
-                    </p>
-                </div>
-
-
-            </div>
-        </div>
-    </footer>
-    <div class="footer-copyright">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12 text-center">
-                    <p>Car4You © 2020. Wszystkie prawa zastrzeżone.</p>
-                </div>
-            </div>
-        </div>
-    </div>
-
-
+    <?php require_once $_SERVER['DOCUMENT_ROOT'] . '/include/footer.php';?>
 </body>
 
 </html>

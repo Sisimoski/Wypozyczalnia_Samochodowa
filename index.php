@@ -11,9 +11,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-    <?php 
-    include("include.php");
-    ?>
+    <?php require_once $_SERVER['DOCUMENT_ROOT'] . '/include/include.php';?>
 
 </head>
 
@@ -267,7 +265,7 @@
                     </section>
                     <div class="row pt-3">
                         <div class="col text-center">
-                            <button type='button' class='btn btn-outline-primary'>Zobacz wszystko</button>
+                            <a href="oferty.php" class='btn btn-outline-primary'>Zobacz wszystko</a>
                         </div>
                     </div>
 
