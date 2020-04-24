@@ -137,21 +137,18 @@ session_start();
                 <div class="col">
                     <div class="card">
                         <div class="card-body">
-                            <h4 class="card-title">Dane:</h4>
+                            <h4 class="card-title">Lokalizacja:</h4>
                             <div class="input-group mb-2">
                                 <div class="input-group-prepend">
-                                    <label class="input-group-text" for="inputGroupSelect01">Odbiór:</label>
+                                    <label class="input-group-text input-group-lokalizacja"
+                                        for="inputGroupSelect01">Odbiór:</label>
                                 </div>
-                                <select class="custom-select" id="inputGroupSelect01">
-                                    <option selected>Wybierz punkt wypożyczalni...</option>
-                                    <option value="1">One</option>
-                                    <option value="2">Two</option>
-                                    <option value="3">Three</option>
-                                </select>
+                                <input class="form-control" type="text" placeholder="Opole, ul. Prószkowska" readonly>
                             </div>
                             <div class="input-group mb-3">
                                 <div class="input-group-prepend">
-                                    <label class="input-group-text" for="inputGroupSelect01">Zwrot:</label>
+                                    <label class="input-group-text input-group-lokalizacja"
+                                        for="inputGroupSelect01">Zwrot:</label>
                                 </div>
                                 <select class="custom-select" id="inputGroupSelect01">
                                     <option selected>Wybierz punkt wypożyczalni...</option>
@@ -163,7 +160,8 @@ session_start();
                             <h4 class="card-title mt-3 mb-2">Data:</h4>
                             <div class="input-group mb-2">
                                 <div class="input-group-prepend">
-                                    <label class="input-group-text" for="inputGroupSelect01">Od:</label>
+                                    <label class="input-group-text input-group-data"
+                                        for="inputGroupSelect01">Od:</label>
                                 </div>
                                 <select class="custom-select" id="inputGroupSelect01">
                                     <option selected>Dzień</option>
@@ -186,7 +184,8 @@ session_start();
                             </div>
                             <div class="input-group mb-3">
                                 <div class="input-group-prepend">
-                                    <label class="input-group-text" for="inputGroupSelect01">Do:</label>
+                                    <label class="input-group-text input-group-data"
+                                        for="inputGroupSelect01">Do:</label>
                                 </div>
                                 <select class="custom-select" id="inputGroupSelect01">
                                     <option selected>Dzień</option>
@@ -207,6 +206,24 @@ session_start();
                                     <option value="3">Three</option>
                                 </select>
                             </div>
+                            <h4 class="card-title mt-3 mb-2">Podsumowanie:</h4>
+                            <form class="form-inline align-items-baseline">
+                                <div class="form-group">
+                                    <label>Rabat:</label>
+                                </div>
+                                <div class="form-group d-flex flex-column">
+                                    <input type="text" class="form-control form-control-sm mx-3">
+                                    <small class="text-muted text-center">
+                                        Wprowadź kod rabatowy.
+                                    </small>
+                                </div>
+                                <div class="form-group mx-1">
+                                    <button type="submit" class="btn btn-primary btn-sm mb-2">Akceptuj</button>
+                                </div>
+                            </form>
+                            <div class="border-bottom mt-3 mb-3"></div>
+                            <h4 class="card-title mt-3 mb-2 text-center">Zsumowana kwota: <span
+                                    class="badge badge-danger text-wrap">160zł</span></h4>
                             <div class="mt-3 d-flex flex-column">
                                 <a href="#" class="btn btn-success">Rezerwuj</a>
                             </div>

@@ -448,3 +448,13 @@ h1, h2, h3, h4, h5, h6 {
 .btn-group-card a {
   margin-top: auto;
 }
+
+.input-group-lokalizacja {
+  text-align: center;
+  width: 6em;
+}
+
+.input-group-data{
+  text-align: center;
+  width: 3.2em;
+}
