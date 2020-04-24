@@ -319,9 +319,9 @@ session_start();
                             <p class="card-text">
                         
                             <h6><b>Klasa: B</b></h6>
-                            <h4>Rok produkcji: 2008r</h4>
-                            <h4>Silnik: 1.9L 105KM benzyna</h4>
-                            <h4>Skrzynia biegów: Manualna</h4>
+                            Rok produkcji: 2008r
+                            Silnik: 1.9L 105KM benzyna
+                            Skrzynia biegów: Manualna
                             </p>
                             <a href="#" class="btn btn-primary">Wypożycz</a>
                         </div>
