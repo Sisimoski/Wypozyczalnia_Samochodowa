@@ -85,7 +85,7 @@ session_start();
             <div class="col-lg-10 ml-sm-auto col-lg-10">
                 <div class="row" style="z-index:2; margin-bottom: 80px;" >
                     <nav class="position-fixed breadcrumbStyleFixed" aria-label="breadcrumb">
-                        <ol class="breadcrumb" style="background-color: transparent;">
+                        <ol class="breadcrumb">
                             <li class="breadcrumb-item active"><a href="index.php">Panel klienta</a></li>
                         </ol>
                     </nav>

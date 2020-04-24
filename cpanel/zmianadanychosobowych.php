@@ -84,7 +84,7 @@ session_start();
                         </ol>
                     </nav>
                 </div>
-                <div class="row px-4">
+                <div class="row px-4 pb-3">
                     <div class="col">
                         <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom px-2">
                             <h1>Zmiana danych osobowych</h1>

@@ -8,11 +8,11 @@
     </button>
     <div class="collapse navbar-collapse flex-grow-1" id="navbarSupportedContent">
         <ul class="navbar-nav ml-auto">
-            <input class="form-control form-control" type="text" placeholder="Szukaj" aria-label="Search">
             <li class="nav-item text-nowrap">
+                <input class="form-control form-control" type="text" placeholder="Szukaj" aria-label="Search">
                 
-            </li>
-        </ul> 
-        <button type='button' id='wyloguj' class='btn btn-outline-danger ml-2'>Wyloguj</button>
+                </li>
+            </ul>
+        <button type='button' id='wyloguj' class='btn btn-outline-danger ml-0 mt-2 ml-md-2 mt-md-0'>Wyloguj</button>
     </div>
 </nav>
