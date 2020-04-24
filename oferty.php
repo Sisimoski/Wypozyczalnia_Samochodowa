@@ -254,10 +254,10 @@ session_start();
                             <h6 class="card-subtitle mb-2 text-muted">160zł/dzień</h6>
                             <div class="text-left">
                             <p class="card-text">
-                            <h6>Klasa: B</h6>
-                            <h6>Rok produkcji: 2014r</h6>
-                            <h6>Silnik: 1.5L 120KM diesel</h6>
-                            <h6>Skrzynia biegów: Manualna</h6>
+                            <h6><b>Klasa: B</b></h6>
+                            Rok produkcji: 2014r<br>
+                            Silnik: 1.5L 120KM diesel<br>
+                            Skrzynia biegów: Manualna
                             </p>
                             </div>
                             <a href="wynajem/samochod.php" class="btn btn-primary">Wypożycz</a>
@@ -272,10 +272,10 @@ session_start();
                             <h6 class="card-subtitle mb-2 text-muted">70zł/dzień</h6>
                             <div class="text-left">
                             <p class="card-text">
-                            <h6>Klasa: B</h6>
-                            <h6>Rok produkcji: 2013r</h6>
-                            <h6>Silnik: 1.0L 66KM benzyna</h6>
-                            <h6>Skrzynia biegów: Manualna</h6>
+                            <h6><b>Klasa: B</b></h6>
+                            Rok produkcji: 2013r<br>
+                            Silnik: 1.0L 66KM benzyna<br>
+                            Skrzynia biegów: Manualna
                             </p>
                             </div>
                             <a href="#" class="btn btn-primary">Wypożycz</a>
@@ -290,10 +290,10 @@ session_start();
                             <h6 class="card-subtitle mb-2 text-muted">300zł/dzień</h6>
                             <div class="text-left">
                             <p class="card-text">
-                            <h6>Klasa: B+</h6>
-                            <h6>Rok produkcji: 2014r</h6>
-                            <h6>Silnik: 1.6L 136KM diesel</h6>
-                            <h6>Skrzynia biegów: Manualna</h6>
+                            <h6><b>Klasa: B+</b></h6>
+                            Rok produkcji: 2014r<br>
+                            Silnik: 1.6L 136KM diesel<br>
+                            Skrzynia biegów: Manualna
                             </p>
                             </div>
                             <a href="#" class="btn btn-primary">Wypożycz</a>
@@ -308,10 +308,10 @@ session_start();
                             <h6 class="card-subtitle mb-2 text-muted">260zł/dzień</h6>
                             <div class="text-left">
                             <p class="card-text">
-                            <h6>Klasa: B</h6>
-                            <h6>Rok produkcji: 2010r</h6>
-                            <h6>Silnik: 2.0L 115KM diesel</h6>
-                            <h6>Skrzynia biegów: Manualna</h6>
+                            <h6><b>Klasa: B</b></h6>
+                            Rok produkcji: 2010r<br>
+                            Silnik: 2.0L 115KM diesel<br>
+                            Skrzynia biegów: Manualna
                             </p>
                             </div>
                             <a href="#" class="btn btn-primary">Wypożycz</a>
@@ -330,7 +330,7 @@ session_start();
                                 <h6><b>Klasa: B</b></h6>
                                  Rok produkcji: 2008r<br>
                                  Silnik: 1.9L 105KM benzyna<br>
-                                Skrzynia biegów: Manualna
+                                 Skrzynia biegów: Manualna
                                  </p>
                             </div>
                             <a href="#" class="btn btn-primary">Wypożycz</a>
@@ -345,10 +345,10 @@ session_start();
                             <h6 class="card-subtitle mb-2 text-muted">80zł/dzień</h6>
                             <div class="text-left">
                             <p class="card-text">
-                            <h6>Klasa: B</h6>
-                            <h6>Rok produkcji: 2014r</h6>
-                            <h6>Silnik: 1.0L 60KM benzyna</h6>
-                            <h6>Skrzynia biegów: Manualna</h6>
+                            <h6><b>Klasa: B</b></h6>
+                            Rok produkcji: 2014r<br>
+                            Silnik: 1.0L 60KM benzyna<br>
+                            Skrzynia biegów: Manualna
                             </p>
                             </div>
                             <a href="#" class="btn btn-primary">Wypożycz</a>
@@ -363,10 +363,10 @@ session_start();
                             <h6 class="card-subtitle mb-2 text-muted">220zł/dzień</h6>
                             <div class="text-left">
                             <p class="card-text">
-                            <h6>Klasa: B</h6>
-                            <h6>Rok produkcji: 2015r</h6>
-                            <h6>Silnik: 1.4L 125KM benzyna</h6>
-                            <h6>Skrzynia biegów: Manualna</h6>
+                            <h6><b>Klasa: B</b></h6>
+                            Rok produkcji: 2015r<br>
+                            Silnik: 1.4L 125KM benzyna<br>
+                            Skrzynia biegów: Manualna
                             </p>
                            </div>
                             <a href="#" class="btn btn-primary">Wypożycz</a>
@@ -381,10 +381,10 @@ session_start();
                             <h6 class="card-subtitle mb-2 text-muted">120zł/dzień</h6>
                             <div class="text-left">
                             <p class="card-text">
-                            <h6>Klasa: B</h6>
-                            <h6>Rok produkcji: 2010r</h6>
-                            <h6>Silnik: 1.2L 105KM benzyna</h6>
-                            <h6>Skrzynia biegów: Manualna</h6>
+                            <h6><b>Klasa: B</b></h6>
+                            Rok produkcji: 2010r<br>
+                            Silnik: 1.2L 105KM benzyna<br>
+                            Skrzynia biegów: Manualna
                             </p>
                             </div>
                             <a href="#" class="btn btn-primary">Wypożycz</a>
@@ -399,10 +399,10 @@ session_start();
                             <h6 class="card-subtitle mb-2 text-muted">250zł/dzień</h6>
                             <div class="text-left">
                             <p class="card-text">
-                            <h6>Klasa: B+</h6>
-                            <h6>Rok produkcji: 2017r</h6>
-                            <h6>Silnik: 2.0L 150KM benzyna</h6>
-                            <h6>Skrzynia biegów: Manualna</h6>
+                            <h6><b>Klasa: B+</b></h6>
+                            Rok produkcji: 2017r<br>
+                            Silnik: 2.0L 150KM benzyna<br>
+                            Skrzynia biegów: Manualna
                             </p>
                             </div>
                             <a href="#" class="btn btn-primary">Wypożycz</a>
@@ -417,10 +417,10 @@ session_start();
                             <h6 class="card-subtitle mb-2 text-muted">100zł/dzień</h6>
                             <div class="text-left">
                             <p class="card-text">
-                            <h6>Klasa: B</h6>
-                            <h6>Rok produkcji: 2010r</h6>
-                            <h6>Silnik: 2.0L 140KM benzyna</h6>
-                            <h6>Skrzynia biegów: Manualna</h6>
+                            <h6><b>Klasa: B</b></h6>
+                            Rok produkcji: 2010r<br>
+                            Silnik: 2.0L 140KM benzyna<br>
+                            Skrzynia biegów: Manualna
                             </p>
                             </div>
                             <a href="#" class="btn btn-primary">Wypożycz</a>
