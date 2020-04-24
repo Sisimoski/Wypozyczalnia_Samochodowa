@@ -316,16 +316,13 @@ session_start();
                         <div class="card-body">
                             <h5 class="card-title">Seat Ibiza</h5>
                             <h6 class="card-subtitle mb-2 text-muted">110zł/dzień</h6>
-                            <p class="card-text">
-                        
+                            <p class="card-text text-left">
                             <h6><b>Klasa: B</b></h6>
-                            <div class="text-left">
                             Rok produkcji: 2008r<br>
                             Silnik: 1.9L 105KM benzyna<br>
                             Skrzynia biegów: Manualna
                             </p>
-                            </div>
-                            <a href="#" class="btn btn-primary">Wypożycz</a>
+                            </div> <a href="#" class="btn btn-primary">Wypożycz</a>
                         </div>
                     </div>
                 </div>
