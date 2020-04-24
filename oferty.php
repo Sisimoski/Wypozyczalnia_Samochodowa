@@ -280,7 +280,7 @@ session_start();
                                     Skrzynia biegów: 
                                 </p>
                             </div>
-                            <a href="#" class="btn btn-primary">Wypożycz</a>
+                            <a href="wynajem/samochod.php" class="btn btn-primary">Wypożycz</a>
                         </div>
                     </div>
                 </div>
