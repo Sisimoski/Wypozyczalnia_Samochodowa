@@ -81,6 +81,164 @@ session_start();
         </div>
     </section>
 
+    <!-- Default Car Section -->
+    <section id="carcontent">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 d-flex align-items-stretch">
+                    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                        <ol class="carousel-indicators">
+                            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                        </ol>
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img class="d-block w-100" src="#" alt="First slide">
+                            </div>
+                        </div>
+                        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button"
+                            data-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Previous</span>
+                        </a>
+                        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button"
+                            data-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Next</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h3 class="card-title">Title</h3>
+                            <h5 class="card-subtitle mb-2 text-muted">Cena</h5>
+                            <p class="card-text card-text-details">Segment: </p>
+                            <p class="card-text card-text-details">Rok produkcji: </p>
+                            <p class="card-text card-text-details">Typ silnika: </p>
+                            <p class="card-text card-text-details">Moc: </p>
+                            <p class="card-text card-text-details">Pojemność silnika: </p>
+                            <p class="card-text card-text-details">Średnie spalanie: </p>
+                            <p class="card-text card-text-details">Skrzynia biegów: </p>
+                            <p class="card-text card-text-details">Ilość miejsc: </p>
+                            <p class="card-text card-text-details">Pojemność bagażnika: </p>
+                            <p class="card-text card-text-details">Zasięg na pełnym baku: </p>
+                            <p class="card-text card-text-details">Średni koszt wynajmu: </p>
+
+                            <div class="btn-group-card mt-4">
+                                <a href="/oferty.php" class="btn btn-outline-danger btn-sm">Wróć do ofert</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row mt-4 mt-lg-4">
+                <div class="col">
+                    <div class="card">
+                        <div class="card-body">
+                            <h4 class="card-title">Lokalizacja:</h4>
+                            <div class="input-group mb-2">
+                                <div class="input-group-prepend">
+                                    <label class="input-group-text input-group-lokalizacja"
+                                        for="inputGroupSelect01">Odbiór:</label>
+                                </div>
+                                <input class="form-control" type="text" placeholder="Placeholder" readonly>
+                            </div>
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                    <label class="input-group-text input-group-lokalizacja"
+                                        for="inputGroupSelect01">Zwrot:</label>
+                                </div>
+                                <select class="custom-select" id="inputGroupSelect01">
+                                    <option selected>Select...</option>
+                                    <option value="1">One</option>
+                                    <option value="2">Two</option>
+                                    <option value="3">Three</option>
+                                </select>
+                            </div>
+                            <h4 class="card-title mt-3 mb-2">Data:</h4>
+                            <div class="input-group mb-2">
+                                <div class="input-group-prepend">
+                                    <label class="input-group-text input-group-data"
+                                        for="inputGroupSelect01">Od:</label>
+                                </div>
+                                <select class="custom-select" id="inputGroupSelect01">
+                                    <option selected>Dzień</option>
+                                    <option value="1">One</option>
+                                    <option value="2">Two</option>
+                                    <option value="3">Three</option>
+                                </select>
+                                <select class="custom-select" id="inputGroupSelect01">
+                                    <option selected>Miesiąc</option>
+                                    <option value="1">One</option>
+                                    <option value="2">Two</option>
+                                    <option value="3">Three</option>
+                                </select>
+                                <select class="custom-select" id="inputGroupSelect01">
+                                    <option selected>Rok</option>
+                                    <option value="1">One</option>
+                                    <option value="2">Two</option>
+                                    <option value="3">Three</option>
+                                </select>
+                            </div>
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                    <label class="input-group-text input-group-data"
+                                        for="inputGroupSelect01">Do:</label>
+                                </div>
+                                <select class="custom-select" id="inputGroupSelect01">
+                                    <option selected>Dzień</option>
+                                    <option value="1">One</option>
+                                    <option value="2">Two</option>
+                                    <option value="3">Three</option>
+                                </select>
+                                <select class="custom-select" id="inputGroupSelect01">
+                                    <option selected>Miesiąc</option>
+                                    <option value="1">One</option>
+                                    <option value="2">Two</option>
+                                    <option value="3">Three</option>
+                                </select>
+                                <select class="custom-select" id="inputGroupSelect01">
+                                    <option selected>Rok</option>
+                                    <option value="1">One</option>
+                                    <option value="2">Two</option>
+                                    <option value="3">Three</option>
+                                </select>
+                            </div>
+                            <h4 class="card-title mt-3 mb-2">Podsumowanie:</h4>
+                            <form class="form-inline align-items-baseline">
+                                <div class="form-group">
+                                    <label>Rabat:</label>
+                                </div>
+                                <div class="form-group d-flex flex-column">
+                                    <input type="text" class="form-control form-control-sm mx-3">
+                                    <small class="text-muted text-center">
+                                        Wprowadź kod rabatowy.
+                                    </small>
+                                </div>
+                                <div class="form-group mx-1">
+                                    <button type="submit" class="btn btn-primary btn-sm mb-2">Akceptuj</button>
+                                </div>
+                            </form>
+                            <div class="border-bottom mt-3 mb-3"></div>
+                            <h4 class="card-title mt-3 mb-2 text-center">Zsumowana kwota: <span
+                                    class="badge badge-danger text-wrap">Cena</span></h4>
+                            <div class="mt-3 d-flex flex-column">
+                                <a href="#" class="btn btn-success">Rezerwuj</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+    <!-- End of Default Car Section -->
+
+
+
     <section id="carcontent">
         <div class="container">
             <div class="row">
