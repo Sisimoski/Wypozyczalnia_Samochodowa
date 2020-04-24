@@ -319,8 +319,8 @@ session_start();
                             <p class="card-text">
                         
                             <h6><b>Klasa: B</b></h6>
-                            Rok produkcji: 2008r
-                            Silnik: 1.9L 105KM benzyna
+                            Rok produkcji: 2008r<br>
+                            Silnik: 1.9L 105KM benzyna<br>
                             Skrzynia biegów: Manualna
                             </p>
                             <a href="#" class="btn btn-primary">Wypożycz</a>
