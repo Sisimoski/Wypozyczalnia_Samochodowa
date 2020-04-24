@@ -147,6 +147,26 @@
                             <div class="carousel-inner">
                                 <div class="carousel-item active">
                                     <div class="card-deck">
+                                        
+                                    <!-- Default Main Card -->
+                                        <div class="card bg-light border-primary text-center">
+                                            <img src="#" class="card-img-top" alt="Default">
+                                            <div class="card-body card-body-flex">
+                                                <h5 class="card-title">Title</h5>
+                                                <h6 class="card-subtitle mb-2 text-muted">Cena</h6>
+                                                <div class="text-left">
+                                                    <p class="card-text">
+                                                        <h6><b>Klasa: </b></h6>
+                                                        Rok produkcji: <br>
+                                                        Silnik: <br>
+                                                        Skrzynia biegów: 
+                                                    </p>
+                                                </div>
+                                                <a href="wynajem/samochod.php" class="btn btn-primary">Wypożycz</a>
+                                            </div>
+                                        </div>
+                                        <!-- End of Default Main Card -->
+
                                         <div class="card bg-light border-primary text-center">
                                             <img src="images/samochody/Ford_mondeo.png" class="card-img-top" alt="Ford Mondeo">
                                             <div class="card-body card-body-flex">
