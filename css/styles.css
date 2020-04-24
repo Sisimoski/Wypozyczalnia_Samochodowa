@@ -219,12 +219,12 @@ h1, h2, h3, h4, h5, h6 {
 /*--------------------------------------------------------------
 # Car Body Bootstrap class override
 --------------------------------------------------------------*/
-.card-body {
+.card-body-flex {
   display: flex;
   flex-direction: column;
 }
 
-.card-body a {
+.card-body-flex a {
   margin-top: auto;
 }
 
@@ -424,4 +424,27 @@ h1, h2, h3, h4, h5, h6 {
 .carousel-inner>.carousel-item.prev.right
 {
     transition: all 1s ease;
+}
+
+/*--------------------------------------------------------------
+# Styles for Ssamochod carousel
+--------------------------------------------------------------*/
+#carcontent {
+  padding: 50px 0;
+  background-color:#dff1ff;
+  border-bottom: 2px solid #4a89c5;
+  box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
+}
+
+.card-text-details {
+  margin-bottom: 0.4rem;
+}
+
+.btn-group-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.btn-group-card a {
+  margin-top: auto;
 }
