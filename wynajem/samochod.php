@@ -133,8 +133,8 @@ session_start();
                 <div class="col-lg-4">
                     <div class="card">
                         <div class="card-body">
-                            <h5 class="card-title">Ford Mondeo</h5>
-                            <h6 class="card-subtitle mb-2 text-muted">160zł/dzień</h6>
+                            <h3 class="card-title">Ford Mondeo</h3>
+                            <h5 class="card-subtitle mb-2 text-muted">160zł/dzień</h5>
                             <p class="card-text card-text-details">Segment: klasa średnia</p>
                             <p class="card-text card-text-details">Rok produkcji: 2014</p>
                             <p class="card-text card-text-details">Typ silnika: Diesel</p>
@@ -148,8 +148,7 @@ session_start();
                             <p class="card-text card-text-details">Średni koszt wynajmu: 160zł/dzień</p>
 
                             <div class="btn-group-card mt-4">
-                                <a href="#" class="btn btn-success mb-2">Rezerwuj</a>
-                                <a href="/oferty.php" class="btn btn-outline-danger">Wróć do ofert</a>
+                                <a href="/oferty.php" class="btn btn-outline-danger btn-sm">Wróć do ofert</a>
                             </div>
                         </div>
                     </div>
@@ -160,8 +159,8 @@ session_start();
                 <div class="col">
                     <div class="card">
                         <div class="card-body">
-                            <h4 class="card-title">Dane:</h5>
-                            <div class="input-group mb-3">
+                            <h4 class="card-title">Dane:</h4>
+                            <div class="input-group mb-2">
                                 <div class="input-group-prepend">
                                     <label class="input-group-text" for="inputGroupSelect01">Odbiór:</label>
                                 </div>
@@ -183,8 +182,8 @@ session_start();
                                     <option value="3">Three</option>
                                 </select>
                             </div>
-                            <h5 class="card-subtitle mb-2">Data:</h6>
-                                <div class="input-group mb-3">
+                            <h4 class="card-title mt-3 mb-2">Data:</h4>
+                                <div class="input-group mb-2">
                                     <div class="input-group-prepend">
                                         <label class="input-group-text" for="inputGroupSelect01">Od:</label>
                                     </div>
@@ -230,11 +229,9 @@ session_start();
                                         <option value="3">Three</option>
                                     </select>
                                 </div>
-                                <a href="#" class="btn btn-success">Rezerwuj</a>
-                                <a href="/oferty.php" class="btn btn-outline-danger">Wróć do ofert</a>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of
-                                the card's
-                                content.</p>
+                                <div class="mt-3 d-flex flex-column">
+                                    <a href="#" class="btn btn-success">Rezerwuj</a>
+                                </div>
                         </div>
                     </div>
                 </div>
