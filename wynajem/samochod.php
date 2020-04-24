@@ -11,7 +11,7 @@ session_start();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-    <link rel="shortcut icon" type="image/jpg" href="favicon.png"/>
+    <link rel="shortcut icon" type="image/jpg" href="favicon.png" />
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
@@ -103,6 +103,161 @@ session_start();
                 </div>
             </div>
         </div>
+    </section>
+
+    <section id="carcontent">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 d-flex align-items-stretch">
+                    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                        <ol class="carousel-indicators">
+                            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                        </ol>
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img class="d-block w-100" src="/images/samochody/Ford_mondeo.png" alt="First slide">
+                            </div>
+                        </div>
+                        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Previous</span>
+                        </a>
+                        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Next</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Ford Mondeo</h5>
+                            <h6 class="card-subtitle mb-2 text-muted">160zł/dzień</h6>
+                            <p class="card-text card-text-details">Segment: klasa średnia</p>
+                            <p class="card-text card-text-details">Rok produkcji: 2014</p>
+                            <p class="card-text card-text-details">Typ silnika: Diesel</p>
+                            <p class="card-text card-text-details">Moc: 120 KM</p>
+                            <p class="card-text card-text-details">Pojemność silnika: 1.5 L</p>
+                            <p class="card-text card-text-details">Średnie spalanie: 4,0 l/100km</p>
+                            <p class="card-text card-text-details">Skrzynia biegów: Manualna 6 biegowa</p>
+                            <p class="card-text card-text-details">Ilość miejsc: 5</p>
+                            <p class="card-text card-text-details">Pojemność bagażnika: 383 l</p>
+                            <p class="card-text card-text-details">Zasięg na pełnym baku: 1520km</p>
+                            <p class="card-text card-text-details">Średni koszt wynajmu: 160zł/dzień</p>
+
+                            <div class="btn-group-card mt-4">
+                                <a href="#" class="btn btn-success mb-2">Rezerwuj</a>
+                                <a href="/oferty.php" class="btn btn-outline-danger">Wróć do ofert</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row mt-4 mt-lg-4">
+                <div class="col">
+                    <div class="card">
+                        <div class="card-body">
+                            <h4 class="card-title">Dane:</h5>
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                    <label class="input-group-text" for="inputGroupSelect01">Odbiór:</label>
+                                </div>
+                                <select class="custom-select" id="inputGroupSelect01">
+                                    <option selected>Wybierz punkt wypożyczalni...</option>
+                                    <option value="1">One</option>
+                                    <option value="2">Two</option>
+                                    <option value="3">Three</option>
+                                </select>
+                            </div>
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                    <label class="input-group-text" for="inputGroupSelect01">Zwrot:</label>
+                                </div>
+                                <select class="custom-select" id="inputGroupSelect01">
+                                    <option selected>Wybierz punkt wypożyczalni...</option>
+                                    <option value="1">One</option>
+                                    <option value="2">Two</option>
+                                    <option value="3">Three</option>
+                                </select>
+                            </div>
+                            <h5 class="card-subtitle mb-2">Data:</h6>
+                                <div class="input-group mb-3">
+                                    <div class="input-group-prepend">
+                                        <label class="input-group-text" for="inputGroupSelect01">Od:</label>
+                                    </div>
+                                    <select class="custom-select" id="inputGroupSelect01">
+                                        <option selected>Dzień</option>
+                                        <option value="1">One</option>
+                                        <option value="2">Two</option>
+                                        <option value="3">Three</option>
+                                    </select>
+                                    <select class="custom-select" id="inputGroupSelect01">
+                                        <option selected>Miesiąc</option>
+                                        <option value="1">One</option>
+                                        <option value="2">Two</option>
+                                        <option value="3">Three</option>
+                                    </select>
+                                    <select class="custom-select" id="inputGroupSelect01">
+                                        <option selected>Rok</option>
+                                        <option value="1">One</option>
+                                        <option value="2">Two</option>
+                                        <option value="3">Three</option>
+                                    </select>
+                                </div>
+                                <div class="input-group mb-3">
+                                    <div class="input-group-prepend">
+                                        <label class="input-group-text" for="inputGroupSelect01">Do:</label>
+                                    </div>
+                                    <select class="custom-select" id="inputGroupSelect01">
+                                        <option selected>Dzień</option>
+                                        <option value="1">One</option>
+                                        <option value="2">Two</option>
+                                        <option value="3">Three</option>
+                                    </select>
+                                    <select class="custom-select" id="inputGroupSelect01">
+                                        <option selected>Miesiąc</option>
+                                        <option value="1">One</option>
+                                        <option value="2">Two</option>
+                                        <option value="3">Three</option>
+                                    </select>
+                                    <select class="custom-select" id="inputGroupSelect01">
+                                        <option selected>Rok</option>
+                                        <option value="1">One</option>
+                                        <option value="2">Two</option>
+                                        <option value="3">Three</option>
+                                    </select>
+                                </div>
+                                <div style="overflow:hidden;">
+                                    <div class="form-group">
+                                        <div class="row">
+                                            <div class="col-md-8">
+                                                <div id="datetimepicker12"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <script type="text/javascript">
+                                        $(function () {
+                                            $('#datetimepicker12').datetimepicker({
+                                                inline: true,
+                                                sideBySide: true
+                                            });
+                                        });
+                                    </script>
+                                </div>
+                                <a href="#" class="btn btn-success mb-2">Rezerwuj</a>
+                                <a href="/oferty.php" class="btn btn-outline-danger">Wróć do ofert</a>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of
+                                the card's
+                                content.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
     </section>
 
 
