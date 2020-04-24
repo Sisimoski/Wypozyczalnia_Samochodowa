@@ -11,7 +11,7 @@ session_start();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-    <link rel="shortcut icon" type="image/jpg" href="favicon.png" />
+    <link rel="shortcut icon" type="image/jpg" href="/favicon.png" />
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
@@ -63,7 +63,7 @@ session_start();
                     <li class="nav-item">
                         <a class="nav-link" href="oferty.php">Oferty</a>
                     </li>
-                    <li class="nav-item active">
+                    <li class="nav-item">
                         <a class="nav-link" href="aboutus.php">O nas</a>
                     </li>
                     <li class="nav-item">
@@ -230,24 +230,7 @@ session_start();
                                         <option value="3">Three</option>
                                     </select>
                                 </div>
-                                <div style="overflow:hidden;">
-                                    <div class="form-group">
-                                        <div class="row">
-                                            <div class="col-md-8">
-                                                <div id="datetimepicker12"></div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <script type="text/javascript">
-                                        $(function () {
-                                            $('#datetimepicker12').datetimepicker({
-                                                inline: true,
-                                                sideBySide: true
-                                            });
-                                        });
-                                    </script>
-                                </div>
-                                <a href="#" class="btn btn-success mb-2">Rezerwuj</a>
+                                <a href="#" class="btn btn-success">Rezerwuj</a>
                                 <a href="/oferty.php" class="btn btn-outline-danger">Wróć do ofert</a>
                             <p class="card-text">Some quick example text to build on the card title and make up the bulk of
                                 the card's
