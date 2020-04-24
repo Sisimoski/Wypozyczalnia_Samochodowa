@@ -255,9 +255,9 @@ session_start();
 
                             <h6>Klasa: B</h6>
                             <h6>Rok produkcji: 2014r</h6>
-                            <h6>Silnik: diesel</h6>
+                            <h6>Silnik: 1.5L 120KM diesel</h6>
                             <h6>Skrzynia biegów: Manualna</h6>
-                            <h6>Liczba drzwi: 5</h6>
+                          
 
                             <a href="wynajem/samochod.php" class="btn btn-primary">Wypożycz</a>
                         </div>
@@ -267,10 +267,14 @@ session_start();
                     <div class="card bg-light text-center h-100">
                         <img src="images/samochody/hyundai i10.png" class="card-img-top" alt="Hyundai i10">
                         <div class="card-body">
-                            <h5 class="card-title">Hyundai</h5>
-                            <h6 class="card-subtitle mb-2 text-muted">i10</h6>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
-                                of the card's content.</p>
+                            <h5 class="card-title">Hyundai i10</h5>
+                            <h6 class="card-subtitle mb-2 text-muted">70zł/dzień</h6>
+                            <p class="card-text">
+                            <h6>Klasa: B</h6>
+                            <h6>Rok produkcji: 2013r</h6>
+                            <h6>Silnik: 1.0L 66KM benzyna</h6>
+                            <h6>Skrzynia biegów: Manualna</h6>
+                            </p>
                             <a href="#" class="btn btn-primary">Wypożycz</a>
                         </div>
                     </div>
