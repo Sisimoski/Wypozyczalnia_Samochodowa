@@ -255,7 +255,7 @@ session_start();
 
                             <h6>Rok produkcji</h6>
 
-                            <a href="#" class="btn btn-primary">Wypożycz</a>
+                            <a href="wynajem/samochod.php" class="btn btn-primary">Wypożycz</a>
                         </div>
                     </div>
                 </div>
@@ -369,7 +369,6 @@ session_start();
                 </div>
             </div>
 
-            <!-- Default oferta card(?) -->
             <div class="row justify-content-center">
                 <div class="col d-flex align-items-stretch">
                     <div class="icon-box">
@@ -381,6 +380,19 @@ session_start();
                         </div>
                     </div>
                 </div>
+                <div class="col d-flex align-items-stretch">
+                    <div class="icon-box">
+                        <div class="icon"><img src="images/samochody/hyundai i10.png" class="img-fluid"
+                                alt="Ford Mondeo"></div>
+                                <div class="mt-auto">
+                                    <h3 class="title">Ford Mondeo</h4>
+                                        <p class="description">Voluptatum deleniti atque corrupti quos dolores et quas molestias
+                                            excepturi sint occaecati cupiditate</p>
+
+                                </div>
+                    </div>
+                </div>
+                
             </div>
         </div>
     </section>
