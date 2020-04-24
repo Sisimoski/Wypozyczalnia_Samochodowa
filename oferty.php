@@ -251,10 +251,13 @@ session_start();
                         <img src="images/samochody/Ford_mondeo.png" class="card-img-top" alt="Ford Mondeo">
                         <div class="card-body">
                             <h5 class="card-title">Ford Mondeo</h5>
-                            <h6 class="card-subtitle mb-2 text-muted">95zł</h6>
-
-                            <h6>Rok produkcji</h6>
-
+                            <h6 class="card-subtitle mb-2 text-muted">160zł/dzień</h6>
+                            <p class="card-text">
+                            <h6>Klasa: B</h6>
+                            <h6>Rok produkcji: 2014r</h6>
+                            <h6>Silnik: 1.5L 120KM diesel</h6>
+                            <h6>Skrzynia biegów: Manualna</h6>
+                            </p>
                             <a href="wynajem/samochod.php" class="btn btn-primary">Wypożycz</a>
                         </div>
                     </div>
@@ -263,10 +266,14 @@ session_start();
                     <div class="card bg-light text-center h-100">
                         <img src="images/samochody/hyundai i10.png" class="card-img-top" alt="Hyundai i10">
                         <div class="card-body">
-                            <h5 class="card-title">Hyundai</h5>
-                            <h6 class="card-subtitle mb-2 text-muted">i10</h6>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
-                                of the card's content.</p>
+                            <h5 class="card-title">Hyundai i10</h5>
+                            <h6 class="card-subtitle mb-2 text-muted">70zł/dzień</h6>
+                            <p class="card-text">
+                            <h6>Klasa: B</h6>
+                            <h6>Rok produkcji: 2013r</h6>
+                            <h6>Silnik: 1.0L 66KM benzyna</h6>
+                            <h6>Skrzynia biegów: Manualna</h6>
+                            </p>
                             <a href="#" class="btn btn-primary">Wypożycz</a>
                         </div>
                     </div>
@@ -275,10 +282,14 @@ session_start();
                     <div class="card bg-light text-center h-100 justify-content-between">
                         <img src="images/samochody/mercedes_cw205.png" class="card-img-top" alt="mercedes_cw205">
                         <div class="card-body">
-                            <h5 class="card-title">Mercedes</h5>
-                            <h6 class="card-subtitle mb-2 text-muted">CW205</h6>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
-                                of the card's content.</p>
+                            <h5 class="card-title">Mercedes CW205</h5>
+                            <h6 class="card-subtitle mb-2 text-muted">300zł/dzień</h6>
+                            <p class="card-text">
+                            <h6>Klasa: B+</h6>
+                            <h6>Rok produkcji: 2014r</h6>
+                            <h6>Silnik: 1.6L 136KM diesel</h6>
+                            <h6>Skrzynia biegów: Manualna</h6>
+                            </p>
                             <a href="#" class="btn btn-primary">Wypożycz</a>
                         </div>
                     </div>
@@ -287,10 +298,14 @@ session_start();
                     <div class="card bg-light text-center h-100">
                         <img src="images/samochody/renault-trafic.png" class="card-img-top" alt="renault-trafic">
                         <div class="card-body">
-                            <h5 class="card-title">Renault</h5>
-                            <h6 class="card-subtitle mb-2 text-muted">Trafic</h6>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
-                                of the card's content.</p>
+                            <h5 class="card-title">Renault Trafic</h5>
+                            <h6 class="card-subtitle mb-2 text-muted">260zł/dzień</h6>
+                            <p class="card-text">
+                            <h6>Klasa: B</h6>
+                            <h6>Rok produkcji: 2010r</h6>
+                            <h6>Silnik: 2.0L 115KM diesel</h6>
+                            <h6>Skrzynia biegów: Manualna</h6>
+                            </p>
                             <a href="#" class="btn btn-primary">Wypożycz</a>
                         </div>
                     </div>
@@ -299,11 +314,18 @@ session_start();
                     <div class="card bg-light text-center h-100">
                         <img src="images/samochody/Seat_ibiza.png" class="card-img-top" alt="Seat_ibiza">
                         <div class="card-body">
-                            <h5 class="card-title">Seat</h5>
-                            <h6 class="card-subtitle mb-2 text-muted">Ibiza</h6>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
-                                of the card's content.</p>
-                            <a href="#" class="btn btn-primary">Wypożycz</a>
+                            <h5 class="card-title">Seat Ibiza</h5>
+                            <h6 class="card-subtitle mb-2 text-muted">110zł/dzień</h6>
+                            <div class="text-left">
+                            <p class="card-text">
+                                
+                            <h6><b>Klasa: B</b></h6>
+                            Rok produkcji: 2008r<br>
+                            Silnik: 1.9L 105KM benzyna<br>
+                            Skrzynia biegów: Manualna
+                            </p>
+                                </div>
+                            </div> <a href="#" class="btn btn-primary">Wypożycz</a>
                         </div>
                     </div>
                 </div>
@@ -311,10 +333,14 @@ session_start();
                     <div class="card bg-light text-center h-100">
                         <img src="images/samochody/Skoda_fabia.png" class="card-img-top" alt="Skoda_fabia">
                         <div class="card-body">
-                            <h5 class="card-title">Skoda</h5>
-                            <h6 class="card-subtitle mb-2 text-muted">Fabia</h6>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
-                                of the card's content.</p>
+                            <h5 class="card-title">Skoda Fabia</h5>
+                            <h6 class="card-subtitle mb-2 text-muted">80zł/dzień</h6>
+                            <p class="card-text">
+                            <h6>Klasa: B</h6>
+                            <h6>Rok produkcji: 2014r</h6>
+                            <h6>Silnik: 1.0L 60KM benzyna</h6>
+                            <h6>Skrzynia biegów: Manualna</h6>
+                            </p>
                             <a href="#" class="btn btn-primary">Wypożycz</a>
                         </div>
                     </div>
@@ -323,10 +349,14 @@ session_start();
                     <div class="card bg-light text-center h-100">
                         <img src="images/samochody/skoda_superb.png" class="card-img-top" alt="Skoda Superb">
                         <div class="card-body">
-                            <h5 class="card-title">Skoda</h5>
-                            <h6 class="card-subtitle mb-2 text-muted">Superb</h6>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
-                                of the card's content.</p>
+                            <h5 class="card-title">Skoda Superb</h5>
+                            <h6 class="card-subtitle mb-2 text-muted">220zł/dzień</h6>
+                            <p class="card-text">
+                            <h6>Klasa: B</h6>
+                            <h6>Rok produkcji: 2015r</h6>
+                            <h6>Silnik: 1.4L 125KM benzyna</h6>
+                            <h6>Skrzynia biegów: Manualna</h6>
+                            </p>
                             <a href="#" class="btn btn-primary">Wypożycz</a>
                         </div>
                     </div>
@@ -335,10 +365,14 @@ session_start();
                     <div class="card bg-light text-center h-100">
                         <img src="images/samochody/vw golf.png" class="card-img-top" alt="VW Golf">
                         <div class="card-body">
-                            <h5 class="card-title">Volkswagen</h5>
-                            <h6 class="card-subtitle mb-2 text-muted">Golf</h6>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
-                                of the card's content.</p>
+                            <h5 class="card-title">Volkswagen Golf</h5>
+                            <h6 class="card-subtitle mb-2 text-muted">120zł/dzień</h6>
+                            <p class="card-text">
+                            <h6>Klasa: B</h6>
+                            <h6>Rok produkcji: 2010r</h6>
+                            <h6>Silnik: 1.2L 105KM benzyna</h6>
+                            <h6>Skrzynia biegów: Manualna</h6>
+                            </p>
                             <a href="#" class="btn btn-primary">Wypożycz</a>
                         </div>
                     </div>
@@ -347,10 +381,14 @@ session_start();
                     <div class="card bg-light text-center h-100">
                         <img src="images/samochody/vw_arteon.jpg" class="card-img-top" alt="VW Arteon">
                         <div class="card-body">
-                            <h5 class="card-title">Volkswagen</h5>
-                            <h6 class="card-subtitle mb-2 text-muted">Arteon</h6>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
-                                of the card's content.</p>
+                            <h5 class="card-title">Volkswagen Areton</h5>
+                            <h6 class="card-subtitle mb-2 text-muted">250zł/dzień</h6>
+                            <p class="card-text">
+                            <h6>Klasa: B+</h6>
+                            <h6>Rok produkcji: 2017r</h6>
+                            <h6>Silnik: 2.0L 150KM benzyna</h6>
+                            <h6>Skrzynia biegów: Manualna</h6>
+                            </p>
                             <a href="#" class="btn btn-primary">Wypożycz</a>
                         </div>
                     </div>
@@ -359,10 +397,14 @@ session_start();
                     <div class="card bg-light text-center h-100">
                         <img src="images/samochody/vw_passat.png" class="card-img-top" alt="VW Passat">
                         <div class="card-body">
-                            <h5 class="card-title">Volkswagen</h5>
-                            <h6 class="card-subtitle mb-2 text-muted">Passat</h6>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
-                                of the card's content.</p>
+                            <h5 class="card-title">Volkswagen Passat</h5>
+                            <h6 class="card-subtitle mb-2 text-muted">100zł/dzień</h6>
+                            <p class="card-text">
+                            <h6>Klasa: B</h6>
+                            <h6>Rok produkcji: 2010r</h6>
+                            <h6>Silnik: 2.0L 140KM benzyna</h6>
+                            <h6>Skrzynia biegów: Manualna</h6>
+                            </p>
                             <a href="#" class="btn btn-primary">Wypożycz</a>
                         </div>
                     </div>
