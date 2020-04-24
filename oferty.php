@@ -369,39 +369,20 @@ session_start();
                 </div>
             </div>
 
-            <!-- <div class="row">
-                <div class="col">
+            <!-- Default oferta card(?) -->
+            <div class="row justify-content-center">
+                <div class="col d-flex align-items-stretch">
                     <div class="icon-box">
-                        <div class="icon"><img src="images/porsche-911.png" class="img-fluid" alt="Porsche 911"></div>
-                        <h3 class="title">Porsche 911</h4>
-                            <p class="description">Voluptatum deleniti atque corrupti quos dolores et quas molestias
-                                excepturi sint occaecati cupiditate</p>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="icon-box">
-                        <div class="icon"><img src="images/Ford-Fusion-Mondeo-2013.png" class="img-fluid"
-                                alt="Ford Mondeo"></div>
-                        <h3 class="title">Ford Mondeo</h4>
-                            <p class="description">Voluptatum deleniti atque corrupti quos dolores et quas molestias
-                                excepturi sint occaecati cupiditate</p>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="icon-box">
-                        <div class="icon"><img src="images/bmw-3-series.png" class="img-fluid" alt="Ford Mondeo"></div>
-                        <h3 class="title">BMW Serii 3</h4>
-                            <p class="description">Voluptatum deleniti atque corrupti quos dolores et quas molestias
-                                excepturi sint occaecati cupiditate</p>
+                        <div class="icon"><img src="images/samochody/Ford_mondeo.png" class="img-fluid" alt="Ford Mondeo"></div>
+                        <div class="mt-auto">
+                            <h5 class="title">Ford Mondeo</h5>
+                            <h6 class="mb-2 text-muted">95zł</h6>
+                            <p class="description">Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate</p>
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="row">
-                <div class="col text-center">
-                    <button type='button' class='btn btn-primary mr-sm-2'>Zobacz wszystko</button>
-                </div>
-            </div>
-        </div> -->
+        </div>
     </section>
 
     <footer id="footer" class="footer bg-light">

@@ -179,15 +179,41 @@ h1, h2, h3, h4, h5, h6 {
   border-radius: 15px;
   text-align: center;
   text-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
 }
 
 .car-catalog .icon{
-  height: 75px;
-  width: 250px;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 50px;
+  width: 100%;
+  object-fit: contain;
+}
+
+.car-catalog .description {
+  font-size: 15px;
+  line-height: 28px;
+  margin: auto 0 auto;
+}
+
+.car-catalog h3 {
+  font-weight: 700;
+  font-size: 34px;
+}
+
+.car-catalog h4 {
+  font-size: 20px;
+  font-weight: 700;
+  margin-top: 5px;
+}
+
+.car-catalog i {
+  font-size: 48px;
+  margin-top: 15px;
+  color: #2b77eb;
+}
+
+.car-catalog p {
+  font-size: 15px;
+  color: #5a6570;
 }
 
 /*--------------------------------------------------------------
