@@ -175,7 +175,7 @@
                                                 <div class="text-left">
                                                     <p class="card-text">
                                                         <h6><b>Klasa: B</b></h6>
-                                                        Rok produkcji: 2014r<br>
+                                                        Rok produkcji: 2013r<br>
                                                         Silnik: 1.5L 120KM diesel<br>
                                                         Skrzynia biegów: Manualna
                                                     </p>

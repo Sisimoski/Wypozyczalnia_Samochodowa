@@ -40,9 +40,25 @@ $(document).ready(function() {
          $('.carousel').carousel('prev');return false; 
     });
 
+
+    loadCarousel();
     
 });
 
+
+function loadCarousel(){
+    request = $.ajax({
+        url: "php/loadCarouselCars.php"    
+    });
+
+    request.done(function(response) {
+        console.log(response);
+    });
+
+    request.fail(function(response) {
+        console.log(response);
+    });
+}
 
 
 
