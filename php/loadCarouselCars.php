@@ -11,7 +11,7 @@
         echo $data;
     }
     else{
-        echo "Brak Pojazdów w Bazie";
+        echo "Brak Pojazdów w Bazie!";
     }
 
 
