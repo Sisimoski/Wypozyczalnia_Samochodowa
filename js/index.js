@@ -70,7 +70,7 @@ function loadCarousel(){
                                     "<h6 class='card-subtitle mb-2 text-muted'>"+obj[i]['sredni_koszt_wynajmu']+"zł/dzień</h6>"+
                                     "<div class='text-left'>"+
                                         "<p class='card-text'>"+
-                                            "<h6><b>Klasa:"+obj[i]['segment']+" </b></h6>"+
+                                            "<h6><b>Klasa: "+obj[i]['segment']+" </b></h6>"+
                                             "Rok produkcji: "+obj[i]['rok']+" <br>"+
                                             "Silnik: "+obj[i]['pojemnosc_silnika']+"L "+obj[i]['moc']+"KM "+obj[i]['typ_silnika']+" <br>"+
                                             "Skrzynia biegów: "+obj[i]['skrzynia_biegow']+
