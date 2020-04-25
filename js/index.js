@@ -52,7 +52,63 @@ function loadCarousel(){
     });
 
     request.done(function(response) {
-        console.log(response);
+        if(response == "Brak Pojazdów w Bazie!"){
+            console.log("Brak Pojazdów w Bazie");
+        }
+        else{
+            var obj = JSON.parse(response);
+            $(".carousel-inner").append(
+                "<div class='carousel-item active'>"+
+                    "<div class='card-deck' id='carouselOne'>");
+            for(i = 0;i<6;i++){
+                if(i<=2){
+                    $("#carouselOne").append(
+                        "<div class='card bg-light border-primary text-center'>"+
+                            "<img src='/CarPictures/"+obj[i]['fotografia']+"' class='card-img-top' alt='Default'>"+
+                                "<div class='card-body card-body-flex'>"+
+                                    "<h5 class='card-title'>"+obj[i]['producent']+' '+obj[i]['model']+"</h5>"+
+                                    "<h6 class='card-subtitle mb-2 text-muted'>"+obj[i]['sredni_koszt_wynajmu']+"zł/dzień</h6>"+
+                                    "<div class='text-left'>"+
+                                        "<p class='card-text'>"+
+                                            "<h6><b>Klasa:"+obj[i]['segment']+" </b></h6>"+
+                                            "Rok produkcji: "+obj[i]['rok']+" <br>"+
+                                            "Silnik: "+obj[i]['pojemnosc_silnika']+"L "+obj[i]['moc']+"KM "+obj[i]['typ_silnika']+" <br>"+
+                                            "Skrzynia biegów: "+obj[i]['skrzynia_biegow']+
+                                        "</p>"+
+                                    "</div>"+
+                                    "<a href='wynajem/samochod.php?idCar="+obj[i]['id_specyfikacja_samochodu']+"' class='btn btn-primary'>Wypożycz</a>"+
+                                "</div>"+
+                        "</div>"
+                        );
+                }
+
+                 if(i==3){
+                    $(".carousel-inner").append(
+                        "<div class='carousel-item'>"+
+                            "<div class='card-deck' id='carouselTwo'>");
+                 }
+                 if(i>=3){
+                    $("#carouselTwo").append(
+                        "<div class='card bg-light border-primary text-center'>"+
+                            "<img src='/CarPictures/"+obj[i]['fotografia']+"' class='card-img-top' alt='Default'>"+
+                                "<div class='card-body card-body-flex'>"+
+                                    "<h5 class='card-title'>"+obj[i]['producent']+' '+obj[i]['model']+"</h5>"+
+                                    "<h6 class='card-subtitle mb-2 text-muted'>"+obj[i]['sredni_koszt_wynajmu']+"zł/dzień</h6>"+
+                                    "<div class='text-left'>"+
+                                        "<p class='card-text'>"+
+                                            "<h6><b>Klasa: "+obj[i]['segment']+" </b></h6>"+
+                                            "Rok produkcji: "+obj[i]['rok']+" <br>"+
+                                            "Silnik: "+obj[i]['pojemnosc_silnika']+"L "+obj[i]['moc']+"KM "+obj[i]['typ_silnika']+" <br>"+
+                                            "Skrzynia biegów: "+obj[i]['skrzynia_biegow']+
+                                        "</p>"+
+                                    "</div>"+
+                                    "<a href='wynajem/samochod.php?idCar="+obj[i]['id_specyfikacja_samochodu']+"' class='btn btn-primary'>Wypożycz</a>"+
+                                "</div>"+
+                        "</div>"
+                        );
+                 }   
+            }
+        }
     });
 
     request.fail(function(response) {
