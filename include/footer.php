@@ -29,11 +29,11 @@
                 <h4>Dołącz do sieci</h4>
                 <p>Stwórz z nami najwspanialszą społeczność!</p>
                 <div class="footer-social mt-3">
-                    <a href="#"><i class="bx bxl-twitter"></i></a>
-                    <a href="#"><i class="bx bxl-facebook"></i></a>
-                    <a href="#"><i class="bx bxl-instagram-alt"></i></a>
-                    <a href="#"><i class='bx bxl-play-store'></i></a>
-                    <a href="#"><i class="bx bxl-github"></i></a>
+                    <a href="https://twitter.com/"><i class="bx bxl-twitter"></i></a>
+                    <a href="https://www.facebook.com"><i class="bx bxl-facebook"></i></a>
+                    <a href="https://www.instagram.com"><i class="bx bxl-instagram-alt"></i></a>
+                    <a href="https://play.google.com/store"><i class='bx bxl-play-store'></i></a>
+                    <a href="https://github.com"><i class="bx bxl-github"></i></a>
                 </div>
             </div>
             <div class="col-lg-3 col-md-6 footer-links">
