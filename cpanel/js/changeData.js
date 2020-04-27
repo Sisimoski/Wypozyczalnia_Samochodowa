@@ -443,19 +443,21 @@ $("#deleteAccountButton").click(function() {
         if(response == "Pomyślnie usunięto konto"){
             $(".alert").addClass("alert-success");
             $(".alert-success").html(response);
-            $(".alert-success").fadeOut(3000);       
+            $(".alert-success").fadeOut(3000);   
+            setTimeout(function(){ window.location.replace("../index.php"); }, 2000);
         }
         else{
             $(".alert").addClass("alert-danger");
             $(".alert-success").fadeOut(3000);     
-            $(".alert-danger").html(response);      
+            $(".alert-danger").html(response);    
+
         }
     });
 
     request.fail(function(response) {
         $(".alert").addClass("alert-danger");
         $(".alert-success").fadeOut(3000);   
-        $(".alert-danger").html(response);    
+        $(".alert-danger").html(response);     
     });
 
     
