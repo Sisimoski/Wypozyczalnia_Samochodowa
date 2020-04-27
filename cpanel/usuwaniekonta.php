@@ -19,7 +19,6 @@ session_start();
     <script src="js/collapse.js"></script>
     <script src="/cpanel/js/logout.js"></script>
     <script src="./js/changeData.js"></script>
-    <script src="./js/carManagement.js"></script>
 </head>
 
 <body>
@@ -59,9 +58,35 @@ session_start();
                             aria-label="Search">
                     </div>
                 </div> -->
-                <div class="row px-4">
-                    
-                        TEST
+
+                <!-- Popout okno do usuwanai konta -->
+                <div class="modal fade" id="deleteAccountModal" tabindex="-1" role="dialog" aria-labelledby="deleteAccountLabel"
+                     aria-hidden="true">
+                 <div class="modal-dialog" role="document">
+                     <div class="modal-content">
+                        <div class="modal-header">
+                             <h5 class="modal-title" id="deleteAccountLabel">Usuwanie Samochodu</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    Czy napewno chcesz konto? Utracisz wszystkie twoje dane wraz z dodanymi samochodami.
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-outline-danger" data-dismiss="modal">Anuluj</button>
+                    <button type="button" id="deleteAccountButton" name="deleteAccountButton" value="" class="btn btn-danger">Usuwam</button>
+                </div>
+            </div>
+        </div>
+    </div>
+                <div class="col px-4">
+                    <div class="col mb-3">
+                       Usuwanie konta.
+                       </div>
+                       <div>
+                       <button type='button' class='deleteCarButtonValue btn btn-danger' data-toggle='modal' data-target='#deleteAccountModal'  >Usuń Samochód</button>
+                       </div>
                     
                 </div>
             </div>

@@ -481,21 +481,6 @@ function validate(){
     var nazwaFirmy= $('#nazwaFirmy');
     var regon = $('#regon');
     var nip = $('#nip');
-    console.log(login.hasClass('valid'));
-    console.log(imie.hasClass('valid'));
-    console.log(nazwisko.hasClass('valid'));
-    console.log(nrKom.hasClass('valid'));
-    console.log(nrTel.hasClass('valid'));
-    console.log(fax.hasClass('valid') );
-    console.log(email.hasClass('valid'));
-    console.log(stronaInterentowa.hasClass('valid'));
-    console.log(miejscowosc.hasClass('valid') );
-    console.log(kodPocztowy.hasClass('valid'));
-    console.log(ulica.hasClass('valid'));
-    console.log(nr_domu.hasClass('valid'));
-    console.log(nazwaFirmy.hasClass('valid') );
-    console.log(regon.hasClass('valid'));
-    console.log(nip.hasClass('valid'));
 
 
     if(login.hasClass('valid') && haslo1.hasClass('valid') && haslo2.hasClass('valid') && 

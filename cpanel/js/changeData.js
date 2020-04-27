@@ -403,15 +403,14 @@ $("#changeMail").click(function() {
         if(response == "Pomyślnie wysłano maila"){
             $(".alert").addClass("alert-success");
             $(".alert-success").html(response);
-            $(".alert-success").fadeOut(3000);  
-            console.log(response);              
+            $(".alert-success").fadeOut(3000);          
 
         }
         else{
             $(".alert").addClass("alert-danger");
             $(".alert-success").fadeOut(3000);     
             $(".alert-danger").html(response);      
-            console.log(response);      
+ 
         }
     });
 
@@ -419,11 +418,49 @@ $("#changeMail").click(function() {
         $(".alert").addClass("alert-danger");
         $(".alert-success").fadeOut(3000);   
         $(".alert-danger").html(response);    
-        console.log(response);
     });
 
     
 });
+
+//Usuwanie konta
+
+$("#deleteAccountButton").click(function() {
+    $(".alert-success").html("");
+    $(".alert-error").html("");
+    $(".alert").removeClass("alert-success");
+    $(".alert").removeClass("alert-danger");
+    $(".alert").html('');
+    $(".alert").fadeIn();
+
+
+    request = $.ajax({
+        url: "./php/userDeleteAccount.php",
+        type: "POST"
+    });
+
+    request.done(function(response) {
+        if(response == "Pomyślnie usunięto konto"){
+            $(".alert").addClass("alert-success");
+            $(".alert-success").html(response);
+            $(".alert-success").fadeOut(3000);       
+        }
+        else{
+            $(".alert").addClass("alert-danger");
+            $(".alert-success").fadeOut(3000);     
+            $(".alert-danger").html(response);      
+        }
+    });
+
+    request.fail(function(response) {
+        $(".alert").addClass("alert-danger");
+        $(".alert-success").fadeOut(3000);   
+        $(".alert-danger").html(response);    
+    });
+
+    
+});
+
 
 $("#goMainPage").click(function() {
 
@@ -431,6 +468,8 @@ $("#goMainPage").click(function() {
     });
 
 });
+
+
 
 });
 function validate(){
