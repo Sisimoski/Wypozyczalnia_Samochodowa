@@ -1,5 +1,34 @@
 <?php
-session_start();
+    session_start();
+    require_once $_SERVER['DOCUMENT_ROOT'] . '/php/config.php';
+    $limit = 12;
+    $page = isset($_GET["page"]) ? $_GET["page"] : 1;
+    $start = ($page - 1) * $limit;
+
+    $sth = $db->prepare('SELECT count(id_specyfikacja_samochodu) FROM specyfikacja_samochodu');
+    $sth->execute();
+    $ammountOfCars = $sth->fetchAll();
+
+    $pages = ceil( $ammountOfCars[0][0] / $limit);
+
+    if($sth ->rowCount() == 0){
+        // Tutaj wyświetlanie informacji że nie ma samochodów w bazie;
+    }
+    else{
+        $sth = $db->prepare('SELECT * FROM specyfikacja_samochodu LIMIT :start , :limit');
+        $sth ->bindValue(":start",$start,PDO::PARAM_INT);
+        $sth ->bindValue(":limit",$limit,PDO::PARAM_INT);
+        $sth ->execute();  
+        $amountOfCarsInPage = $sth ->rowCount();
+        
+        if($amountOfCarsInPage != 0){
+            $pageCars = $sth->fetchAll();
+        }
+    }
+
+    $previousPage = $page - 1;
+    $nextPage = $page + 1;
+
 ?>
 
 <!DOCTYPE html>
@@ -15,6 +44,7 @@ session_start();
 
     <script src="./js/index.js"></script>
     <script src="js/newsletter.js"></script>
+    <script src="js/oferty.js"></script>
 </head>
 
 <body>
@@ -265,222 +295,43 @@ session_start();
 
             <!-- Oferty Cards -->
             <div class="row row-cols-1 row-cols-md-3 row-cols-lg-4 justify-content-center">
-                <!-- Default Card -->
-                <div class="col mb-4">
-                    <div class="card bg-light text-center h-100">
-                        <img src="#" class="card-img-top" alt="Default Card Image">
-                        <div class="card-body card-body-flex">
-                            <h5 class="card-title">Title</h5>
-                            <h6 class="card-subtitle mb-2 text-muted">Cena</h6>
-                            <div class="text-left">
-                                <p class="card-text">
-                                    <h6><b>Klasa: </b></h6>
-                                    Rok produkcji: <br>
-                                    Silnik: <br>
-                                    Skrzynia biegów: 
-                                </p>
+                <?php for($j = 0; $j < $amountOfCarsInPage; $j++) : ?>
+                    <div class="col mb-4">
+                        <div class="card bg-light text-center h-100">
+                            <img src="/CarPictures/<?= $pageCars[$j]['fotografia'] ?>" class="card-img-top" alt="Default Card Image">
+                            <div class="card-body card-body-flex">
+                                <h5 class="card-title"><?= $pageCars[$j]['producent'].' '.$pageCars[$j]['model']  ?></h5>
+                                <h6 class="card-subtitle mb-2 text-muted"><?= $pageCars[$j]['sredni_koszt_wynajmu'] ?>zł/dzień</h6>
+                                <div class="text-left">
+                                    <p class="card-text">
+                                        <h6><b>Klasa: <?= $pageCars[$j]['segment'] ?></b></h6>
+                                        Rok produkcji: <?= $pageCars[$j]['rok'] ?><br>
+                                        Silnik: <?= $pageCars[$j]['pojemnosc_silnika'].'L '.$pageCars[$j]['pojemnosc_silnika'].'KM '.$pageCars[$j]['typ_silnika']  ?><br>
+                                        Skrzynia biegów: <?= $pageCars[$j]['skrzynia_biegow'] ?>
+                                    </p>
+                                </div>
+                                <a href="wynajem/samochod.php?idCar=<?= $pageCars[$j]['id_specyfikacja_samochodu'] ?>" class="btn btn-primary">Wypożycz</a>
                             </div>
-                            <a href="wynajem/samochod.php" class="btn btn-primary">Wypożycz</a>
                         </div>
                     </div>
-                </div>
-                <!-- End of Default Card -->
-                <div class="col mb-4">
-                    <div class="card bg-light text-center h-100">
-                        <img src="images/samochody/Ford_mondeo.png" class="card-img-top" alt="Ford Mondeo">
-                        <div class="card-body card-body-flex">
-                            <h5 class="card-title">Ford Mondeo</h5>
-                            <h6 class="card-subtitle mb-2 text-muted">160zł/dzień</h6>
-                            <div class="text-left">
-                                <p class="card-text">
-                                    <h6><b>Klasa: B</b></h6>
-                                    Rok produkcji: 2014r<br>
-                                    Silnik: 1.5L 120KM diesel<br>
-                                    Skrzynia biegów: Manualna
-                                </p>
-                            </div>
-                            <a href="wynajem/samochod.php" class="btn btn-primary">Wypożycz</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col mb-4">
-                    <div class="card bg-light text-center h-100">
-                        <img src="images/samochody/hyundai i10.png" class="card-img-top" alt="Hyundai i10">
-                        <div class="card-body card-body-flex">
-                            <h5 class="card-title">Hyundai i10</h5>
-                            <h6 class="card-subtitle mb-2 text-muted">70zł/dzień</h6>
-                            <div class="text-left">
-                                <p class="card-text">
-                                    <h6><b>Klasa: B</b></h6>
-                                    Rok produkcji: 2013r<br>
-                                    Silnik: 1.0L 66KM benzyna<br>
-                                    Skrzynia biegów: Manualna
-                                </p>
-                            </div>
-                            <a href="#" class="btn btn-primary">Wypożycz</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col mb-4">
-                    <div class="card bg-light text-center h-100 justify-content-between">
-                        <img src="images/samochody/mercedes_cw205.png" class="card-img-top" alt="mercedes_cw205">
-                        <div class="card-body card-body-flex">
-                            <h5 class="card-title">Mercedes CW205</h5>
-                            <h6 class="card-subtitle mb-2 text-muted">300zł/dzień</h6>
-                            <div class="text-left">
-                                <p class="card-text">
-                                    <h6><b>Klasa: B+</b></h6>
-                                    Rok produkcji: 2014r<br>
-                                    Silnik: 1.6L 136KM diesel<br>
-                                    Skrzynia biegów: Manualna
-                                </p>
-                            </div>
-                            <a href="#" class="btn btn-primary">Wypożycz</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col mb-4">
-                    <div class="card bg-light text-center h-100">
-                        <img src="images/samochody/renault-trafic.png" class="card-img-top" alt="renault-trafic">
-                        <div class="card-body card-body-flex">
-                            <h5 class="card-title">Renault Trafic</h5>
-                            <h6 class="card-subtitle mb-2 text-muted">260zł/dzień</h6>
-                            <div class="text-left">
-                                <p class="card-text">
-                                    <h6><b>Klasa: B</b></h6>
-                                    Rok produkcji: 2010r<br>
-                                    Silnik: 2.0L 115KM diesel<br>
-                                    Skrzynia biegów: Manualna
-                                </p>
-                            </div>
-                            <a href="#" class="btn btn-primary">Wypożycz</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col mb-4">
-                    <div class="card bg-light text-center h-100">
-                        <img src="images/samochody/Seat_ibiza.png" class="card-img-top" alt="Seat_ibiza">
-                        <div class="card-body card-body-flex">
-                            <h5 class="card-title">Seat Ibiza</h5>
-                            <h6 class="card-subtitle mb-2 text-muted">110zł/dzień</h6>
-                            <div class="text-left">
-                                <p class="card-text">
-
-                                    <h6><b>Klasa: B</b></h6>
-                                    Rok produkcji: 2008r<br>
-                                    Silnik: 1.9L 105KM benzyna<br>
-                                    Skrzynia biegów: Manualna
-                                </p>
-                            </div>
-                            <a href="#" class="btn btn-primary">Wypożycz</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col mb-4">
-                    <div class="card bg-light text-center h-100">
-                        <img src="images/samochody/Skoda_fabia.png" class="card-img-top" alt="Skoda_fabia">
-                        <div class="card-body card-body-flex">
-                            <h5 class="card-title">Skoda Fabia</h5>
-                            <h6 class="card-subtitle mb-2 text-muted">80zł/dzień</h6>
-                            <div class="text-left">
-                                <p class="card-text">
-                                    <h6><b>Klasa: B</b></h6>
-                                    Rok produkcji: 2014r<br>
-                                    Silnik: 1.0L 60KM benzyna<br>
-                                    Skrzynia biegów: Manualna
-                                </p>
-                            </div>
-                            <a href="#" class="btn btn-primary">Wypożycz</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col mb-4">
-                    <div class="card bg-light text-center h-100">
-                        <img src="images/samochody/skoda_superb.png" class="card-img-top" alt="Skoda Superb">
-                        <div class="card-body card-body-flex">
-                            <h5 class="card-title">Skoda Superb</h5>
-                            <h6 class="card-subtitle mb-2 text-muted">220zł/dzień</h6>
-                            <div class="text-left">
-                                <p class="card-text">
-                                    <h6><b>Klasa: B</b></h6>
-                                    Rok produkcji: 2015r<br>
-                                    Silnik: 1.4L 125KM benzyna<br>
-                                    Skrzynia biegów: Manualna
-                                </p>
-                            </div>
-                            <a href="#" class="btn btn-primary">Wypożycz</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col mb-4">
-                    <div class="card bg-light text-center h-100">
-                        <img src="images/samochody/vw golf.png" class="card-img-top" alt="VW Golf">
-                        <div class="card-body card-body-flex">
-                            <h5 class="card-title">Volkswagen Golf</h5>
-                            <h6 class="card-subtitle mb-2 text-muted">120zł/dzień</h6>
-                            <div class="text-left">
-                                <p class="card-text">
-                                    <h6><b>Klasa: B</b></h6>
-                                    Rok produkcji: 2010r<br>
-                                    Silnik: 1.2L 105KM benzyna<br>
-                                    Skrzynia biegów: Manualna
-                                </p>
-                            </div>
-                            <a href="#" class="btn btn-primary">Wypożycz</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col mb-4">
-                    <div class="card bg-light text-center h-100">
-                        <img src="images/samochody/vw_arteon.jpg" class="card-img-top" alt="VW Arteon">
-                        <div class="card-body card-body-flex">
-                            <h5 class="card-title">Volkswagen Areton</h5>
-                            <h6 class="card-subtitle mb-2 text-muted">250zł/dzień</h6>
-                            <div class="text-left">
-                                <p class="card-text">
-                                    <h6><b>Klasa: B+</b></h6>
-                                    Rok produkcji: 2017r<br>
-                                    Silnik: 2.0L 150KM benzyna<br>
-                                    Skrzynia biegów: Manualna
-                                </p>
-                            </div>
-                            <a href="#" class="btn btn-primary">Wypożycz</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col mb-4">
-                    <div class="card bg-light text-center h-100">
-                        <img src="images/samochody/vw_passat.png" class="card-img-top" alt="VW Passat">
-                        <div class="card-body card-body-flex">
-                            <h5 class="card-title">Volkswagen Passat</h5>
-                            <h6 class="card-subtitle mb-2 text-muted">100zł/dzień</h6>
-                            <div class="text-left">
-                                <p class="card-text">
-                                    <h6><b>Klasa: B</b></h6>
-                                    Rok produkcji: 2010r<br>
-                                    Silnik: 2.0L 140KM benzyna<br>
-                                    Skrzynia biegów: Manualna
-                                </p>
-                            </div>
-                            <a href="#" class="btn btn-primary">Wypożycz</a>
-                        </div>
-                    </div>
-                </div>
+                <?php endfor; ?>
+                
+                
             </div>
 
             <nav aria-label="...">
                 <ul class="pagination justify-content-center">
-                    <li class="page-item disabled">
-                        <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Poprzednia strona</a>
+                    <li class="page-item" id="previousPage">
+                        <a class="page-link"  href="/oferty.php?page=<?= $previousPage; ?>" tabindex="-1" >Poprzednia strona</a>
                     </li>
-                    <li class="page-item active"><a class="page-link" href="#">1<span
-                                class="sr-only">(current)</span></a></li>
-                    <li class="page-item" aria-current="page">
-                        <a class="page-link" href="#">2 </a>
-                    </li>
-                    <li class="page-item"><a class="page-link" href="#">3</a></li>
-                    <li class="page-item">
-                        <a class="page-link" href="#">Następna strona</a>
+                    <?php for($i = 1; $i<= $pages; $i++) : ?>
+                        <li class="page-item" id="pageID-<?= $i ?>">
+                            <a class="page-link"  href="/oferty.php?page=<?= $i ?>"><?= $i; ?></a>
+                        </li>
+                    <?php endfor; ?>
+                    
+                    <li class="page-item" id="nextPage">
+                        <a class="page-link"  tabindex="<?=$i++ ?>" href="/oferty.php?page=<?= $nextPage; ?>">Następna strona</a>
                     </li>
                 </ul>
             </nav>
@@ -514,7 +365,7 @@ session_start();
     </section>
 
     <?php require_once $_SERVER['DOCUMENT_ROOT'] . '/include/footer.php';?>
-
+    <script>updatePaginator(<?php echo $page.','.$pages ?>);</script>
 
 </body>
 
