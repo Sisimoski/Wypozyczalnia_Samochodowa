@@ -74,8 +74,8 @@ session_start();
                 </ul>
                 <?php
             if(!isset($_SESSION['id'])){
-            echo "<button id='zaloguj' type='submit' class='btn btn-outline-primary'>Zaloguj się</button>";
-            echo "<button id='zarejestruj' type='submit' class='btn btn-primary ml-2'>Zarejestruj się</button>" ;
+            echo "<button id='zaloguj' type='submit' href='/logowanie.php' class='btn btn-outline-primary'>Zaloguj się</button>";
+            echo "<button id='zarejestruj' type='submit' href='/register.php' class='btn btn-primary ml-2'>Zarejestruj się</button>" ;
             }
             else{
                 if(isset($_SESSION['rodzaj_konta'])){
@@ -94,7 +94,37 @@ session_start();
         </nav>
     </section>
 
-    <!-- Sekcja Hero -->
+    <!-- Sekcja Modal -->
+    <div class="modal fade" id="rezerwacjaModal" tabindex="-1" role="dialog" aria-labelledby="rezerwacjaLabel"
+            aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="rezerwacjaLabel">Rezerwacja Pojazdu</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+
+                    <div class="modal-body">
+                    <?php
+                        if(!isset($_SESSION["id"])) { ?>
+                            Zaloguj/Zarejestruj Się aby zarezerwować pojazd.
+                        
+                        <?php }else{ ?>
+
+                            to jest test dla użytkownika <?= $_SESSION["imie"]?>
+                        <?php }; ?>
+
+                        
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Zamknij</button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
     <!-- Naprawiona responsywność -->
     <section id="herous" class="text-light">
         <div class="container">
@@ -215,7 +245,7 @@ session_start();
                             <h4 class="card-title mt-3 mb-2 text-center">Zsumowana kwota: <span
                                     class="badge badge-danger text-wrap">160zł</span></h4>
                             <div class="mt-3 d-flex flex-column">
-                                <a href="" class="btn btn-success rezerwacja">Rezerwuj</a>
+                                <a href="" class="btn btn-success rezerwacja" data-toggle='modal' data-target='#rezerwacjaModal'>Rezerwuj</a>
                             </div>
                         </div>
                     </div>
