@@ -36,8 +36,10 @@ session_start();
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
     <?php require_once $_SERVER['DOCUMENT_ROOT'] . '/include/include.php';?>
+    <link href="css/jquery.datetimepicker.min.css" rel="stylesheet"/>
     <script src="/js/newsletter.js"></script>
     <script src="js/car.js"></script>
+    <script src="js/jquery.datetimepicker.full.min.js"></script>
 </head>
 
 <body>
@@ -187,48 +189,12 @@ session_start();
                                     <label class="input-group-text input-group-data"
                                         for="inputGroupSelect01">Od:</label>
                                 </div>
-                                <select class="custom-select" id="inputGroupSelect01">
-                                    <option selected>Dzień</option>
-                                    <option value="1">One</option>
-                                    <option value="2">Two</option>
-                                    <option value="3">Three</option>
-                                </select>
-                                <select class="custom-select" id="inputGroupSelect01">
-                                    <option selected>Miesiąc</option>
-                                    <option value="1">One</option>
-                                    <option value="2">Two</option>
-                                    <option value="3">Three</option>
-                                </select>
-                                <select class="custom-select" id="inputGroupSelect01">
-                                    <option selected>Rok</option>
-                                    <option value="1">One</option>
-                                    <option value="2">Two</option>
-                                    <option value="3">Three</option>
-                                </select>
-                            </div>
-                            <div class="input-group mb-3">
+                                <input autocomplete="off" type="text" id="picker" class="form-control">
                                 <div class="input-group-prepend">
                                     <label class="input-group-text input-group-data"
                                         for="inputGroupSelect01">Do:</label>
                                 </div>
-                                <select class="custom-select" id="inputGroupSelect01">
-                                    <option selected>Dzień</option>
-                                    <option value="1">One</option>
-                                    <option value="2">Two</option>
-                                    <option value="3">Three</option>
-                                </select>
-                                <select class="custom-select" id="inputGroupSelect01">
-                                    <option selected>Miesiąc</option>
-                                    <option value="1">One</option>
-                                    <option value="2">Two</option>
-                                    <option value="3">Three</option>
-                                </select>
-                                <select class="custom-select" id="inputGroupSelect01">
-                                    <option selected>Rok</option>
-                                    <option value="1">One</option>
-                                    <option value="2">Two</option>
-                                    <option value="3">Three</option>
-                                </select>
+                                <input autocomplete="off" type="text" id="picker2" class="form-control">
                             </div>
                             <h4 class="card-title mt-3 mb-2">Podsumowanie:</h4>
                             <form class="form-inline align-items-baseline">

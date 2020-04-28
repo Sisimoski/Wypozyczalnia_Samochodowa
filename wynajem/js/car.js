@@ -1,5 +1,29 @@
 $(document).ready(function(){
 
+    $('#picker').datetimepicker({
+        timepicker: false,
+        format:'Y/m/d',
+        startDate:'0',
+        minDate:'0',
+        onSelectDate:function(ct,$i){
+            $('#picker2').datetimepicker('setOptions', {mindate: $('#picker').val()?$("#picker").val():false});
+            if($('#picker').val() > $('#picker2').val())
+                $('#picker2').datetimepicker('setOptions', {value: $('#picker').val()?$("#picker").val():false});
+          }
+    });
+
+    $('#picker2').datetimepicker({
+        timepicker: false,
+        format:'Y/m/d',
+        onShow:function( ct ){
+            this.setOptions({
+             minDate:$('#picker').val()?$("#picker").val():false
+            })
+           },
+        startDate:'+1970/01/02'
+        
+    });
+
 });
 
 
