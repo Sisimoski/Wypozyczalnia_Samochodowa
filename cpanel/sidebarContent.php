@@ -62,6 +62,24 @@
                         </div>
                     </ul>
 
+                    <!-- Wypożyczenia -->
+                    <ul class="list-group mb-2">
+                        <div>
+                            <a data-toggle="collapse" href="#wypozyczenia" class="list-group-item list-group-item-action list-group-item-primary">
+                                <i class='bx bxs-car'></i>
+                                Moje Wypożyczenia
+                                <i class="bx bx-chevrons-down text-right"></i>
+                            </a>
+                        </div>
+                        <div class="collapse" id="wypozyczenia">
+                            <a href="/cpanel/activeRent.php" class="list-group-item list-group-item-action">
+                                <i class="bx bx-dots-vertical-rounded"></i>
+                                Aktualne Wypożyczenia</a>
+                            <a href="/cpanel/rentHistory.php" class="list-group-item list-group-item-action">
+                                <i class="bx bx-dots-vertical-rounded"></i>
+                                Historia Wypożyczeń</a>
+                        </div>
+                    </ul>
                         <!-- MODUŁY PRACOWNIKA -->
                     <?php
                         if($_SESSION['rodzaj_konta'] == 3 || $_SESSION['rodzaj_konta'] == 4){
