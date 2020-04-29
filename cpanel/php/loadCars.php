@@ -17,11 +17,5 @@
             $data = json_encode($response);
             echo $data;
         }
-    
-        
-    
-
-      
-        
-        
+       
 ?>

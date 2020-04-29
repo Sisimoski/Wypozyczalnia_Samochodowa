@@ -122,24 +122,17 @@
                                     <a class="nav-link active" href="#nav1" id="tab1"
                                         data-toggle="tab">Tab 1</a>
                                 </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#nav2" id="tab2"
-                                        data-toggle="tab">Tab 2</a>
-                                </li>
                             </ul>
                         </div>
                         <div class="card-body">
                             <div class="tab-content" id="tabContent">
                                 <div class="tab-pane fade show active" id="nav1" role="tabpanel">
-                                    <form>
-                                        <div class="form-group">
-                                            <label for="producentFilter">Title 1:</label>
-                                            <select class="form-control" id="producentFilter">
-                                                <option>Option 1</option>
-                                                <option>Option 2</option>
-                                            </select>
-                                        </div>
-                                        <button type="submit" class="btn btn-primary">Zastosuj</button>
+                                <form class="FindCarForm" id="FindCarForm" method="POST" enctype="multipart/form-data">
+                                            <label for="searchResult">Wyszukiwarka</label>
+                                            <input id="searchResult" name="searchResult" class="form-control" placeholder="Wpisz jakiego samochodu szukasz :)">
+                                            
+                                        <button name="findCarButton" id="findCarButton" class="btn btn-primary" type="button">Szukaj</button>
+                                    
                                     </form>
                                 </div>
                                 <div class="tab-pane fade" id="nav2" role="tabpanel">

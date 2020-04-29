@@ -61,9 +61,9 @@
 
 
    //Uzupelnianei tabeli specyfikacja samochodu
-    $sth = $db->prepare('INSERT INTO specyfikacja_samochodu(producent,model,rok,kolor,fotografia,opis,cena_netto,procent_vat_ceny,cena_brutto,czy_posiadany,segment,typ_silnika,moc,pojemnosc_silnika,srednie_spalenie,skrzynia_biegow,ilosc_miejsc,pojemnosc_bagaznika,zasieg,sredni_koszt_wynajmu)
+    $sth = $db->prepare('INSERT INTO specyfikacja_samochodu(producent,model,rok,kolor,fotografia,opis,cena_netto,procent_vat_ceny,cena_brutto,czy_posiadany,segment,typ_silnika,moc,pojemnosc_silnika,srednie_spalenie,skrzynia_biegow,ilosc_miejsc,pojemnosc_bagaznika,zasieg)
     VALUES (:producent,:model,:rok,:kolor,:fotografia,:opis,:cena_netto,:procent_vat_ceny,:cena_brutto,:czy_posiadany,
-    :segment,:typ_silnika,:moc,:pojemnosc_silnika,:srednie_spalanie,:skrzynia_biegow,:ilosc_miejsc,:pojemnosc_bagaznika,:zasieg,:sredni_koszt_wynajmu)');
+    :segment,:typ_silnika,:moc,:pojemnosc_silnika,:srednie_spalanie,:skrzynia_biegow,:ilosc_miejsc,:pojemnosc_bagaznika,:zasieg)');
     $sth ->bindValue(':producent',$producent,PDO::PARAM_STR);
     $sth ->bindValue(':model',$model,PDO::PARAM_STR);
     $sth ->bindValue(':rok',$rok,PDO::PARAM_STR);
@@ -83,7 +83,6 @@
     $sth ->bindValue(':ilosc_miejsc',$ilosc_miejsc,PDO::PARAM_STR);
     $sth ->bindValue(':pojemnosc_bagaznika',$pojemnosc_bagaznika,PDO::PARAM_STR);
     $sth ->bindValue(':zasieg',$zasieg,PDO::PARAM_STR);
-    $sth ->bindValue(':sredni_koszt_wynajmu',211,PDO::PARAM_STR);
    
    
     $sth->execute();

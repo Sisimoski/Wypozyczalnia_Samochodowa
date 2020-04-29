@@ -21,5 +21,44 @@ function updatePaginator(pageID, pages){
     else{
         $("#nextPage").removeClass("disabled");
     }
+
+//Wyszukiwarka samochodu
+    $("#findCarButton").click(function() {
+        $(".alert-success").html("");
+        $(".alert-error").html("");
+        $(".alert").removeClass("alert-success");
+        $(".alert").removeClass("alert-danger");
+        $(".alert").html('');
+        $(".alert").fadeIn();
+        var data = $(".findCarForm").serialize();
+        var request;
+    
+    
+        request = $.ajax({
+            url: "./php/findCar.php",
+            data: data,
+            type: "POST"
+        });
+    
+        request.done(function(response) {
+            if(response == "Znaleziono wyniki"){
+                console.log(response);
+            }
+            else{
+               // $(".alert").addClass("alert-danger");
+               // $(".alert-success").fadeOut(3000);     
+               // $(".alert-danger").html(response);  
+                console.log(response);  
+            }
+        });
+    
+        request.fail(function(response) {
+            $(".alert").addClass("alert-danger");
+            $(".alert-success").fadeOut(3000);   
+            $(".alert-danger").html(response);     
+        });
+    
+        
+    });
     
 }
