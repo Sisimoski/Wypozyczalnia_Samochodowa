@@ -189,26 +189,20 @@
                                     <form>
                                         <div class="form-group">
                                             <label for="producentFilter">Producent:</label>
-                                            <select class="form-control" id="producentFilter">
-                                                <option>Volkswagen</option>
-                                                <option>Ford</option>
+                                            <select class="form-control" id="producentFilter" name="producentFilter">
                                             </select>
                                         </div>
                                         <div class="form-group">
                                             <label for="modelFilter">Model:</label>
-                                            <select class="form-control" id="modelFilter">
-                                                <option>Mondeo</option>
-                                                <option>Golf</option>
+                                            <select class="form-control" id="modelFilter"  name="modelFilter">
                                             </select>
                                         </div>
                                         <div class="form-group">
-                                            <label for="productionYearFilter">Rok produkcji od:</label>
-                                            <select class="form-control" id="productionYearFilter">
-                                                <option>2020</option>
-                                                <option>2019</option>
+                                            <label for="rokFilter">Rok produkcji od:</label>
+                                            <select class="form-control" id="rokFilter">
                                             </select>
                                         </div>
-                                        <button type="submit" class="btn btn-primary">Zastosuj</button>
+                                        <button type="button" class="btn btn-primary">Filtruj</button>
                                     </form>
                                 </div>
                                 <div class="tab-pane fade" id="nav-specs" role="tabpanel">
@@ -305,7 +299,7 @@
             </div>
 
             <!-- Oferty Cards -->
-            <div class="row row-cols-1 row-cols-md-3 row-cols-lg-4 justify-content-center card-content">
+            <div class="row row-cols-1 row-cols-md-3 row-cols-lg-4 justify-content-center card-content" id="scrollThere">
                 <?php for($j = 0; $j < $amountOfCarsInPage; $j++) : ?>
                     <div class="col mb-4">
                         <div class="card bg-light text-center h-100">

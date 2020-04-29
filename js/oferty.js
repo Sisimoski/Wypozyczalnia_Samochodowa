@@ -1,4 +1,8 @@
 $(document).ready(function(){
+    //Ładowanei filtrów samochodów
+   loadDefaultFilters();
+
+
     //Wyszukiwarka samochodu
     $("#findCarButton").click(function() {
         $(".alert-success").html("");
@@ -19,6 +23,7 @@ $(document).ready(function(){
     
         request.done(function(response) {
             window.location.replace(response);
+
         });
     
         request.fail(function(response) {
@@ -26,11 +31,11 @@ $(document).ready(function(){
             $(".alert-success").fadeOut(3000);   
             $(".alert-danger").html(response);     
         });
-    
-        
+
     });
 
 })
+
 
 function updatePaginator(pageID, pages){
 
@@ -68,3 +73,30 @@ function updatePaginator(pageID, pages){
         }
 }
 }
+
+function loadDefaultFilters() {
+    var request;
+
+    request = $.ajax({
+        url: "./php/loadFilters.php",
+        type: "POST"
+    });
+
+    request.done(function(response) {
+        if(response!=""){
+            var obj = JSON.parse(response);
+            for (i = 0; i < obj.length; i++) {     
+                $('#producentFilter').append(new Option(obj[i][0], obj[i][0], true, true));
+                $('#modelFilter').append(new Option(obj[i][1], obj[i][1], true, true));
+                $('#rokFilter').append(new Option(obj[i][2], obj[i][2], true, true));
+            }   
+        }
+    });
+
+    request.fail(function(response) {
+        $(".alert").addClass("alert-danger");
+        $(".alert-success").fadeOut(3000);   
+        $(".alert-danger").html(response);     
+    });
+
+};
