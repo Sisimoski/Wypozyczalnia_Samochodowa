@@ -18,15 +18,7 @@ $(document).ready(function(){
         });
     
         request.done(function(response) {
-            if(response == "Znaleziono wyniki"){
-                console.log(response);
-            }
-            else{
-               // $(".alert").addClass("alert-danger");
-               // $(".alert-success").fadeOut(3000);     
-               // $(".alert-danger").html(response);  
-                console.log(response);  
-            }
+            window.location.replace(response);
         });
     
         request.fail(function(response) {

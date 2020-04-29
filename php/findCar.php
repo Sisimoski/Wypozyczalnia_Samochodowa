@@ -5,6 +5,8 @@
 
     $searchResult= ($_POST['searchResult']);
 
+    $searchLink = '/oferty.php?page=1&searchResult='.$searchResult;
+    echo $searchLink;
  
     
 //     $sth = $db->prepare('SELECT vin FROM samochod
@@ -21,6 +23,6 @@
 //        echo $data;
 //    }
 
-//echo 'Znaleziono wyniki';
+
 
 ?>

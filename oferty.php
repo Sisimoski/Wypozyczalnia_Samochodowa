@@ -1,14 +1,26 @@
 <?php
     session_start();
     require_once $_SERVER['DOCUMENT_ROOT'] . '/php/config.php';
+
+    $searchResult=NULL;
+    if(isset($_GET['searchResult'])){
+    $searchResult = ($_GET['searchResult']);
+    }
+
     $limit = 12;
     $page = isset($_GET["page"]) ? $_GET["page"] : 1;
     $start = ($page - 1) * $limit;
 
+    if($searchResult!=NULL){
+        $sth = $db->prepare("SELECT count(id_specyfikacja_samochodu) FROM specyfikacja_samochodu WHERE czy_posiadany != 3 AND producent LIKE '%{$searchResult}%' OR
+        model LIKE '%{$searchResult}%'");
+    }
+    else{
     $sth = $db->prepare('SELECT count(id_specyfikacja_samochodu) FROM specyfikacja_samochodu WHERE czy_posiadany != 3');
+    }
     $sth->execute();
     $ammountOfCars = $sth->fetchAll();
-
+    
 
     $pages = ceil( $ammountOfCars[0][0] / $limit);
 
@@ -16,7 +28,13 @@
         // Tutaj wyświetlanie informacji że nie ma samochodów w bazie;
     }
     else{
-        $sth = $db->prepare('SELECT * FROM specyfikacja_samochodu WHERE czy_posiadany != 3 LIMIT :start , :limit');
+        if($searchResult!=NULL){
+            $sth = $db->prepare("SELECT * FROM specyfikacja_samochodu WHERE producent LIKE '%{$searchResult}%' OR
+            model LIKE '%{$searchResult}%' AND czy_posiadany != 3 LIMIT :start , :limit ");
+        }
+        else{
+        $sth = $db->prepare('SELECT * FROM specyfikacja_samochodu WHERE czy_posiadany != 3 LIMIT :start , :limit ');
+        }
         $sth ->bindValue(":start",$start,PDO::PARAM_INT);
         $sth ->bindValue(":limit",$limit,PDO::PARAM_INT);
         $sth ->execute();  
@@ -29,7 +47,7 @@
 
     $previousPage = $page - 1;
     $nextPage = $page + 1;
-
+    
 ?>
 
 <!DOCTYPE html>
@@ -128,10 +146,9 @@
                         <div class="card-body">
                             <div class="tab-content" id="tabContent">
                                 <div class="tab-pane fade show active" id="nav1" role="tabpanel">
-                                <form class="FindCarForm" id="FindCarForm" method="POST" enctype="multipart/form-data">
+                                <form class="findCarForm" id="findCarForm" method="POST">
                                             <label for="searchResult">Wyszukiwarka</label>
-                                            <input id="searchResult" name="searchResult" class="form-control" placeholder="Wpisz jakiego samochodu szukasz :)">
-                                            
+                                            <input id="searchResult" name="searchResult" class="form-control" placeholder="Wpisz jakiego samochodu szukasz :)">                                        
                                         <button name="findCarButton" id="findCarButton" class="btn btn-primary" type="button">Szukaj</button>
                                     
                                     </form>
