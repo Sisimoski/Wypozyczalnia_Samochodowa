@@ -128,7 +128,7 @@ session_start();
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Zamknij</button>
                         <?php
                             if(isset($_SESSION["id"])) {
-                                echo '<button type="button" class="btn btn-success">Potwierdzam i rezerwuję</button>';
+                                echo '<button type="button" class="btn btn-success rentCarButton">Potwierdzam i rezerwuję</button>';
                             }
                         ?>
                     </div>
@@ -244,7 +244,9 @@ session_start();
                             <h4 class="card-title mt-3 mb-2 text-center">Zsumowana kwota: <span
                                     class="badge badge-danger text-wrap total-cost">160zł</span></h4>
                             <div class="mt-3 d-flex flex-column">
+                            
                                 <a href="" class="btn btn-success rezerwacja" data-toggle='modal' data-target='#rezerwacjaModal'>Rezerwuj</a>
+        
                             </div>
                         </div>
                     </div>
