@@ -5,9 +5,10 @@
     $page = isset($_GET["page"]) ? $_GET["page"] : 1;
     $start = ($page - 1) * $limit;
 
-    $sth = $db->prepare('SELECT count(id_specyfikacja_samochodu) FROM specyfikacja_samochodu');
+    $sth = $db->prepare('SELECT count(id_specyfikacja_samochodu) FROM specyfikacja_samochodu WHERE czy_posiadany != 3');
     $sth->execute();
     $ammountOfCars = $sth->fetchAll();
+
 
     $pages = ceil( $ammountOfCars[0][0] / $limit);
 
@@ -15,7 +16,7 @@
         // Tutaj wyświetlanie informacji że nie ma samochodów w bazie;
     }
     else{
-        $sth = $db->prepare('SELECT * FROM specyfikacja_samochodu LIMIT :start , :limit');
+        $sth = $db->prepare('SELECT * FROM specyfikacja_samochodu WHERE czy_posiadany != 3 LIMIT :start , :limit');
         $sth ->bindValue(":start",$start,PDO::PARAM_INT);
         $sth ->bindValue(":limit",$limit,PDO::PARAM_INT);
         $sth ->execute();  
@@ -287,14 +288,14 @@
             </div>
 
             <!-- Oferty Cards -->
-            <div class="row row-cols-1 row-cols-md-3 row-cols-lg-4 justify-content-center">
+            <div class="row row-cols-1 row-cols-md-3 row-cols-lg-4 justify-content-center card-content">
                 <?php for($j = 0; $j < $amountOfCarsInPage; $j++) : ?>
                     <div class="col mb-4">
                         <div class="card bg-light text-center h-100">
                             <img src="/CarPictures/<?= $pageCars[$j]['fotografia'] ?>" class="card-img-top" alt="Default Card Image">
                             <div class="card-body card-body-flex">
                                 <h5 class="card-title"><?= $pageCars[$j]['producent'].' '.$pageCars[$j]['model']  ?></h5>
-                                <h6 class="card-subtitle mb-2 text-muted"><?= $pageCars[$j]['sredni_koszt_wynajmu'] ?>zł/dzień</h6>
+                                <h6 class="card-subtitle mb-2 text-muted"><?= $pageCars[$j]['cena_brutto'] ?>zł/dzień</h6>
                                 <div class="text-left">
                                     <p class="card-text">
                                         <h6><b>Klasa: <?= $pageCars[$j]['segment'] ?></b></h6>
@@ -303,7 +304,7 @@
                                         Skrzynia biegów: <?= $pageCars[$j]['skrzynia_biegow'] ?>
                                     </p>
                                 </div>
-                                <a href="wynajem/samochod.php?idCar=<?= $pageCars[$j]['id_specyfikacja_samochodu'] ?>" class="btn btn-primary">Wypożycz</a>
+                                <a href="wynajem/samochod.php?idCar=<?= $pageCars[$j]['id_specyfikacja_samochodu'] ?>" class="btn btn-primary <?= ($pageCars[$j]['czy_posiadany'] == 2 ? 'disabled' : false)  ?>">Wypożycz</a>
                             </div>
                         </div>
                     </div>
