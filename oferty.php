@@ -44,9 +44,14 @@
             $pageCars = $sth->fetchAll();
         }
     }
-
-    $previousPage = $page - 1;
-    $nextPage = $page + 1;
+    if(!isset($_GET['searchResult'])){
+        $previousPage = '?page='.($page - 1);
+        $nextPage = '?page='.($page + 1);
+    }
+    else{
+        $previousPage = '?page='.($page - 1).'&searchResult='.$searchResult;
+        $nextPage = '?page='.($page + 1).'&searchResult='.$searchResult;
+    }
     
 ?>
 
@@ -327,16 +332,16 @@
             <nav aria-label="...">
                 <ul class="pagination justify-content-center">
                     <li class="page-item" id="previousPage">
-                        <a class="page-link"  href="/oferty.php?page=<?= $previousPage; ?>" tabindex="-1" >Poprzednia strona</a>
+                        <a class="page-link"  href="/oferty.php<?= $previousPage; ?>" tabindex="-1" >Poprzednia strona</a>
                     </li>
                     <?php for($i = 1; $i<= $pages; $i++) : ?>
                         <li class="page-item" id="pageID-<?= $i ?>">
-                            <a class="page-link"  href="/oferty.php?page=<?= $i ?>"><?= $i; ?></a>
+                            <a class="page-link"  href="/oferty.php<?= $searchResult ? '?page='.$i.'&searchResult='.$searchResult : '?page='.$i ?>"><?= $i; ?></a>
                         </li>
                     <?php endfor; ?>
                     
                     <li class="page-item" id="nextPage">
-                        <a class="page-link"  tabindex="<?=$i++ ?>" href="/oferty.php?page=<?= $nextPage; ?>">Następna strona</a>
+                        <a class="page-link"  tabindex="<?=$i++ ?>" href="/oferty.php<?= $nextPage; ?>">Następna strona</a>
                     </li>
                 </ul>
             </nav>
