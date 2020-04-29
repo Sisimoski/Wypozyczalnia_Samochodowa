@@ -41,7 +41,7 @@ $(document).ready(function() {
     });
 
 
-    loadCarousel();
+   
     
 });
 
@@ -67,7 +67,7 @@ function loadCarousel(){
                             "<img src='/CarPictures/"+obj[i]['fotografia']+"' class='card-img-top' alt='Default'>"+
                                 "<div class='card-body card-body-flex'>"+
                                     "<h5 class='card-title'>"+obj[i]['producent']+' '+obj[i]['model']+"</h5>"+
-                                    "<h6 class='card-subtitle mb-2 text-muted'>"+obj[i]['sredni_koszt_wynajmu']+"zł/dzień</h6>"+
+                                    "<h6 class='card-subtitle mb-2 text-muted'>"+obj[i]['cena_brutto']+"zł/dzień</h6>"+
                                     "<div class='text-left'>"+
                                         "<p class='card-text'>"+
                                             "<h6><b>Klasa: "+obj[i]['segment']+" </b></h6>"+
@@ -93,7 +93,7 @@ function loadCarousel(){
                             "<img src='/CarPictures/"+obj[i]['fotografia']+"' class='card-img-top' alt='Default'>"+
                                 "<div class='card-body card-body-flex'>"+
                                     "<h5 class='card-title'>"+obj[i]['producent']+' '+obj[i]['model']+"</h5>"+
-                                    "<h6 class='card-subtitle mb-2 text-muted'>"+obj[i]['sredni_koszt_wynajmu']+"zł/dzień</h6>"+
+                                    "<h6 class='card-subtitle mb-2 text-muted'>"+obj[i]['cena_brutto']+"zł/dzień</h6>"+
                                     "<div class='text-left'>"+
                                         "<p class='card-text'>"+
                                             "<h6><b>Klasa: "+obj[i]['segment']+" </b></h6>"+

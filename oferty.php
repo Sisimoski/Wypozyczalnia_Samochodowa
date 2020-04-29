@@ -321,7 +321,7 @@
                                         Skrzynia biegów: <?= $pageCars[$j]['skrzynia_biegow'] ?>
                                     </p>
                                 </div>
-                                <a href="wynajem/samochod.php?idCar=<?= $pageCars[$j]['id_specyfikacja_samochodu'] ?>" class="btn btn-primary <?= ($pageCars[$j]['czy_posiadany'] == 2 ? 'disabled' : false)  ?>">Wypożycz</a>
+                                <a href="wynajem/samochod.php?idCar=<?= $pageCars[$j]['id_specyfikacja_samochodu'] ?>" class="btn  <?= ($pageCars[$j]['czy_posiadany'] == 2 ? 'disabled btn-danger' : 'btn-primary')  ?>"><?= ($pageCars[$j]['czy_posiadany'] == 2 ? 'Aktualnie niedostępny' : 'Wypożycz')  ?></a>
                             </div>
                         </div>
                     </div>
