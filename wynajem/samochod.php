@@ -6,7 +6,7 @@ session_start();
         }
         else{
             require $_SERVER['DOCUMENT_ROOT'] . '/php/config.php'; 
-            $sth = $db->prepare("SELECT vin, samochod.id_specyfikacja_samochodu, numer_tablicy_rejestracyjnej, producent, model, rok, kolor, opis, cena_netto, procent_vat_ceny, cena_brutto, czy_posiadany, segment, typ_silnika, moc, pojemnosc_silnika, srednie_spalenie, skrzynia_biegow, ilosc_miejsc, pojemnosc_bagaznika, zasieg, sredni_koszt_wynajmu, fotografia
+            $sth = $db->prepare("SELECT vin, samochod.id_specyfikacja_samochodu, numer_tablicy_rejestracyjnej, producent, model, rok, kolor, opis, cena_netto, procent_vat_ceny, cena_brutto, czy_posiadany, segment, typ_silnika, moc, pojemnosc_silnika, srednie_spalenie, skrzynia_biegow, ilosc_miejsc, pojemnosc_bagaznika, zasieg, fotografia
             FROM specyfikacja_samochodu
             INNER JOIN samochod ON samochod.id_specyfikacja_samochodu = specyfikacja_samochodu.id_specyfikacja_samochodu 
             WHERE specyfikacja_samochodu.id_specyfikacja_samochodu = :id");
@@ -112,14 +112,25 @@ session_start();
                             Zaloguj/Zarejestruj Się aby zarezerwować pojazd.
                         
                         <?php }else{ ?>
+                            Potwierdź swój wybór
+                        <div>
+                            <div class="modalDataOd"></div>
+                            <div class="modalDataDo"></div>
+                            <div class="modalCena"></div>
 
-                            to jest test dla użytkownika <?= $_SESSION["imie"]?>
+                        </div>
+
                         <?php }; ?>
 
                         
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Zamknij</button>
+                        <?php
+                            if(isset($_SESSION["id"])) {
+                                echo '<button type="button" class="btn btn-success">Potwierdzam i rezerwuję</button>';
+                            }
+                        ?>
                     </div>
 
                 </div>
@@ -201,18 +212,6 @@ session_start();
                                 </div>
                                 <input class="form-control" type="text" placeholder="Opole, ul. Prószkowska" readonly>
                             </div>
-                            <div class="input-group mb-3">
-                                <div class="input-group-prepend">
-                                    <label class="input-group-text input-group-lokalizacja"
-                                        for="inputGroupSelect01">Zwrot:</label>
-                                </div>
-                                <select class="custom-select" id="inputGroupSelect01">
-                                    <option selected>Wybierz punkt wypożyczalni...</option>
-                                    <option value="1">One</option>
-                                    <option value="2">Two</option>
-                                    <option value="3">Three</option>
-                                </select>
-                            </div>
                             <h4 class="card-title mt-3 mb-2">Data:</h4>
                             <div class="input-group mb-2">
                                 <div class="input-group-prepend">
@@ -243,7 +242,7 @@ session_start();
                             </form>
                             <div class="border-bottom mt-3 mb-3"></div>
                             <h4 class="card-title mt-3 mb-2 text-center">Zsumowana kwota: <span
-                                    class="badge badge-danger text-wrap">160zł</span></h4>
+                                    class="badge badge-danger text-wrap total-cost">160zł</span></h4>
                             <div class="mt-3 d-flex flex-column">
                                 <a href="" class="btn btn-success rezerwacja" data-toggle='modal' data-target='#rezerwacjaModal'>Rezerwuj</a>
                             </div>
@@ -257,6 +256,7 @@ session_start();
     <?php 
         require_once $_SERVER['DOCUMENT_ROOT'] . '/include/footer.php';
         echo "<script>loadCar(".$data.");</script>";
+        echo "<script>const data = saveData(".$data.");</script>";
     ?>
 
 </body>
