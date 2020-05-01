@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-md fixed-top navbar-light bg-light">
+<nav class="navbar navbar-expand-lg fixed-top navbar-light bg-light">
     <a class="navbar-brand ml-2" href="../index.php">
         <img src="/images/Car4You-line-logo.png" height="50" alt="car4you logo">
     </a>
@@ -13,6 +13,11 @@
                 
                 </li>
             </ul>
-        <button type='button' id='wyloguj' class='btn btn-outline-danger ml-0 mt-2 ml-md-2 mt-md-0'>Wyloguj</button>
+        <button type='button' id='wyloguj' class='btn btn-outline-danger ml-0 mt-2 ml-lg-2 mt-lg-0'>Wyloguj</button>
+        <div class="d-lg-none mt-2">
+        <?php
+            include("sidebarContent.php");
+        ?>
+        </div>
     </div>
 </nav>
