@@ -74,71 +74,84 @@ session_start();
                                         </div>
                                     </div>
                                     <div class="form-row">
-                                        <div class="form-group col-md-10">
-                                            <label for="kolor">Kolor</label>
-                                            <input id="kolor" class="form-control" type="input" name="kolor"
-                                                placeholder="np. Czerwony">
-                                            <div class="komunikat"> </div>
-                                        </div>
-                                        <div class="form-group ">
+                                        <div class="form-group col-md-2">
                                             <label for="rok_produkcji">Rok produkcji</label>
                                             <input id="rok_produkcji" class="form-control" type="number" min="1960"
                                                 max="2020" step="1" name="rok_produkcji" placeholder="np. 1995">
                                             <div class="komunikat"> </div>
                                         </div>
-                                    </div>
-                                    <div class="form-group ">
+                                        <div class="form-group col-md-2">
                                             <label for="segment">Segment</label>
-                                            <input id="segment" class="form-control" type="input" 
-                                                name="segment" placeholder="A">
+                                            <input id="segment" class="form-control" type="input" name="segment"
+                                                placeholder="A">
                                             <div class="komunikat"> </div>
                                         </div>
-                                        <div class="form-group ">
+                                        <div class="form-group col-md-8">
+                                            <label for="kolor">Kolor</label>
+                                            <input id="kolor" class="form-control" type="input" name="kolor"
+                                                placeholder="np. Czerwony">
+                                            <div class="komunikat"> </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-row">
+                                        <div class="form-group col-lg-2 col-md-3">
                                             <label for="typ_silnika">Typ silnika</label>
-                                            <input id="typ_silnika" class="form-control" type="input" name="typ_silnika" placeholder="Diesel">
+                                            <input id="typ_silnika" class="form-control" type="input" name="typ_silnika"
+                                                placeholder="Diesel">
                                             <div class="komunikat"> </div>
                                         </div>
-                                        <div class="form-group ">
+                                        <div class="form-group col-lg-2 col-md-3">
                                             <label for="moc">Moc</label>
                                             <input id="moc" class="form-control" type="input" name="moc" placeholder="150">
                                             <div class="komunikat"> </div>
                                         </div>
-                                        <div class="form-group ">
+                                        <div class="form-group col-lg-2 col-md-3">
                                             <label for="pojemnosc_silnika">Pojemność silnika</label>
-                                            <input id="pojemnosc_silnika" class="form-control" type="input" name="pojemnosc_silnika" placeholder="2.0">
+                                            <input id="pojemnosc_silnika" class="form-control" type="input"
+                                                name="pojemnosc_silnika" placeholder="2.0">
                                             <div class="komunikat"> </div>
                                         </div>
-                                        <div class="form-group ">
-                                            <label for="srednie_spalanie">Średnie spalanie L/100km</label>
-                                            <input id="srednie_spalanie" class="form-control" type="input" name="srednie_spalanie" placeholder="6">
-                                            <div class="komunikat"> </div>
-                                        </div>
-                                        <div class="form-group ">
+                                        <div class="form-group col-lg-2 col-md-3">
                                             <label for="skyrzynia_biegow">Skrzynia biegów</label>
-                                            <input id="skyrzynia_biegow" class="form-control" type="input" name="skrzynia_biegow" placeholder="manualna">
+                                            <input id="skyrzynia_biegow" class="form-control" type="input"
+                                                name="skrzynia_biegow" placeholder="manualna">
                                             <div class="komunikat"> </div>
                                         </div>
-                                        <div class="form-group ">
-                                            <label for="ilosc_miejsc">Ilość miejsc</label>
-                                            <input id="ilosc_miejsc" class="form-control" type="input" name="ilosc_miejsc" placeholder="5">
+                                        <div class="form-group col-lg-2 col-md-4">
+                                            <label for="srednie_spalanie">Średnie spalanie L/100km</label>
+                                            <input id="srednie_spalanie" class="form-control" type="input"
+                                                name="srednie_spalanie" placeholder="6">
                                             <div class="komunikat"> </div>
                                         </div>
-                                        </div>
-                                        <div class="form-group ">
-                                            <label for="pojemnosc_bagaznika">Pojemność bagażnika</label>
-                                            <input id="pojemnosc_bagaznika" class="form-control" type="input" name="pojemnosc_bagaznika" placeholder="1200l">
-                                            <div class="komunikat"> </div>
-                                        </div>
-                                        <div class="form-group ">
+                                        <div class="form-group col-lg-2 col-md-4">
                                             <label for="zasieg">Zasięg</label>
-                                            <input id="zasieg" class="form-control" type="input" name="zasieg" placeholder="5">
+                                            <input id="zasieg" class="form-control" type="input" name="zasieg"
+                                                placeholder="5">
                                             <div class="komunikat"> </div>
                                         </div>
+                                        <div class="form-group col-lg-2 col-md-4">
+                                            <label for="ilosc_miejsc">Ilość miejsc</label>
+                                            <input id="ilosc_miejsc" class="form-control" type="input" name="ilosc_miejsc"
+                                                placeholder="5">
+                                            <div class="komunikat"> </div>
+                                        </div>
+                                        <div class="form-group col-lg-2 col-md-4">
+                                            <label for="pojemnosc_bagaznika">Pojemność bagażnika</label>
+                                            <input id="pojemnosc_bagaznika" class="form-control" type="input"
+                                                name="pojemnosc_bagaznika" placeholder="1200l">
+                                            <div class="komunikat"> </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-row">
+                                    </div>
                                     <div class="form-group">
                                         <label for="opis">Opis</label>
                                         <textarea class="form-control" rows="4" id="opis" type="input" name="opis"
                                             placeholder="Wprowadź opis samochodu"></textarea>
                                         <div class="komunikat"> </div>
+                                    </div>
+                                    <div
+                                        class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center border-bottom my-4">
                                     </div>
                                     <div class="form-group">
                                         <label for="cena">Cena wypożyczenia(zł/24h)</label>
@@ -170,19 +183,23 @@ session_start();
                                             <div class="komunikat"> </div>
                                         </div>
                                     </div>
+                                    <div
+                                        class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center border-bottom my-4">
+                                    </div>
                                     <div>
                                         <button class="btn btn-primary" type="submit">Dodaj samochód</button>
                                     </div>
                                 </form>
-
                             </div>
-                        </div>
 
+                        </div>
                     </div>
 
                 </div>
+
             </div>
         </div>
+    </div>
     </div>
 </body>
 
