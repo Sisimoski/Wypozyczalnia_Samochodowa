@@ -402,8 +402,31 @@
                         <a class="page-link"  href="/oferty.php<?= $previousPage; ?>" tabindex="-1" >Poprzednia strona</a>
                     </li>
                     <?php for($i = 1; $i<= $pages; $i++) : ?>
-                        <li class="page-item" id="pageID-<?= $i ?>">
-                            <a class="page-link"  href="/oferty.php<?= $searchResult ? '?page='.$i.'&searchResult='.$searchResult : '?page='.$i ?>"><?= $i; ?></a>
+                        <li class="page-item" id="pageID-<?= $i; ?>">
+                            
+                            <?php
+                                $string = "";
+                                if(isset($_GET['searchResult'])){
+                                    $string =  "<a class='page-link'  href='/oferty.php?page=".$i.'&searchResult='.$searchResult."' >".$i."</a>";
+                                }
+                                //producent
+                                if(isset($_GET['producentF'])){
+                                    $string = "<a class='page-link'  href='/oferty.php?page=".$i.'&producentF='.$producentF."' >".$i."</a>";
+                                }
+                                //model
+                                if(isset($_GET['modelF'])){
+                                    $string = "<a class='page-link'  href='/oferty.php?page=".$i.'&producentF='.$producentF.'&modelF='.$modelF."' >".$i."</a>";
+                                }
+                                //rok 
+                                if(isset($_GET['rokF'])){
+                                    $string = "<a class='page-link'  href='/oferty.php?page=".$i.'&producentF='.$producentF.'&modelF='.$modelF.'&rokF='.$rokF."' >".$i."</a>";
+                                }
+                                if($string == ""){
+                                    $string =  "<a class='page-link'  href='/oferty.php?page=".$i."' >".$i."</a>";
+                                }
+                                echo $string;
+                             
+                             ?>
                         </li>
                     <?php endfor; ?>
                     
