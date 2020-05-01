@@ -58,8 +58,8 @@ session_start();
                             <h1>Status samochodów</h1>
                         </div>
                         <div class="LoadCarTableHead">
-                            <table class="table">
-                                <thead>
+                            <table class="table table-striped table-hover text-center align-items-center border">
+                                <thead class="thead-light">
                                     <tr>
                                         <th scope="col">#</th>
                                         <th scope="col">Nazwa</th>
@@ -68,7 +68,7 @@ session_start();
                                         <th scope="col">Funkcje</th>
                                     </tr>
                                 </thead>
-                                <tbody id="LoadCarTable">
+                                <tbody class="" id="LoadCarTable">
 
                                 </tbody>
                             </table>
