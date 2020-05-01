@@ -4,7 +4,7 @@
 
 
 
-    if(isset(($_POST['yearFilter'])))
+    if(isset(($_POST['yearFilter']))&& $_POST['yearFilter']!="default")
     {
         $producent= ($_POST['producentFilter']);
         $model= ($_POST['modelFilter']);
@@ -12,7 +12,7 @@
         $searchResult= $producent.'&modelF='.$model.'&rokF='.$rok;
  
     }
-    else if(isset($_POST['modelFilter']) ){
+    else if(isset(($_POST['modelFilter'])) && $_POST['modelFilter']!="default"){
         $producent= ($_POST['producentFilter']);
         $model= ($_POST['modelFilter']);
         $searchResult= $producent.'&modelF='.$model;

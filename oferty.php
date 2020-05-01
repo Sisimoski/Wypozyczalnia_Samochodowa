@@ -99,6 +99,23 @@
         $previousPage = '?page='.($page - 1).'&searchResult='.$searchResult;
         $nextPage = '?page='.($page + 1).'&searchResult='.$searchResult;
     }
+//producent
+    if(isset($_GET['producentF'])){
+        $previousPage = '?page='.($page - 1).'&producentF='.$producentF;
+        $nextPage = '?page='.($page + 1).'&producentF='.$producentF;
+    }
+//model
+    if(isset($_GET['modelF'])){
+
+        $previousPage = '?page='.($page - 1).'&producentF='.$producentF.'&modelF='.$modelF;
+        $nextPage = '?page='.($page + 1).'&producentF='.$producentF.'&modelF='.$modelF;
+    }
+//rok 
+    if(isset($_GET['rokF'])){
+
+        $previousPage = '?page='.($page - 1).'&producentF='.$producentF.'&modelF='.$modelF.'&rokF='.$rokF;
+        $nextPage = '?page='.($page + 1).'&producentF='.$producentF.'&modelF='.$modelF.'&rokF='.$rokF;
+    }
     
 ?>
 
