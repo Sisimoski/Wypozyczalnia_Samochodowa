@@ -7,6 +7,18 @@
     $searchResult = ($_GET['searchResult']);
     }
 
+    if(isset($_GET['producentF'])){
+        $producentF = ($_GET['producentF']);
+    }
+
+    if(isset($_GET['modelF'])){
+        $modelF = ($_GET['modelF']);
+    }
+
+    if(isset($_GET['rokF'])){
+        $rokF = ($_GET['rokF']);
+    }
+
     $limit = 12;
     $page = isset($_GET["page"]) ? $_GET["page"] : 1;
     $start = ($page - 1) * $limit;
@@ -14,6 +26,13 @@
     if($searchResult!=NULL){
         $sth = $db->prepare("SELECT count(id_specyfikacja_samochodu) FROM specyfikacja_samochodu WHERE czy_posiadany != 3 AND producent LIKE '%{$searchResult}%' OR
         model LIKE '%{$searchResult}%'");
+    }
+    else if(isset($_GET['rokF'])){
+        $sth = $db->prepare("SELECT count(id_specyfikacja_samochodu) FROM specyfikacja_samochodu WHERE czy_posiadany != 3 AND producent LIKE :producent AND model LIKE :model
+        AND rok LIKE :rok ");
+         $sth ->bindValue(':producent',$producentF,PDO::PARAM_STR);
+         $sth ->bindValue(':model',$modelF,PDO::PARAM_STR);
+         $sth ->bindValue(':rok',$rokF,PDO::PARAM_STR);
     }
     else{
     $sth = $db->prepare('SELECT count(id_specyfikacja_samochodu) FROM specyfikacja_samochodu WHERE czy_posiadany != 3');
@@ -31,6 +50,13 @@
         if($searchResult!=NULL){
             $sth = $db->prepare("SELECT * FROM specyfikacja_samochodu WHERE producent LIKE '%{$searchResult}%' OR
             model LIKE '%{$searchResult}%' AND czy_posiadany != 3 LIMIT :start , :limit ");
+        }
+        else if(isset($_GET['rokF'])){
+            $sth = $db->prepare("SELECT * FROM specyfikacja_samochodu WHERE czy_posiadany != 3 AND producent LIKE :producent AND model LIKE :model
+            AND rok LIKE :rok LIMIT :start , :limit");
+             $sth ->bindValue(':producent',$producentF,PDO::PARAM_STR);
+             $sth ->bindValue(':model',$modelF,PDO::PARAM_STR);
+             $sth ->bindValue(':rok',$rokF,PDO::PARAM_STR);
         }
         else{
         $sth = $db->prepare('SELECT * FROM specyfikacja_samochodu WHERE czy_posiadany != 3 LIMIT :start , :limit ');
@@ -191,23 +217,26 @@
                         <div class="card-body">
                             <div class="tab-content" id="tabContent">
                                 <div class="tab-pane fade show active" id="nav-basic" role="tabpanel">
-                                    <form>
+                                    <form class="filterForm" method="POST">
                                         <div class="form-group">
                                             <label for="producentFilter">Producent:</label>
                                             <select class="form-control" id="producentFilter" name="producentFilter">
+                                            <option value="default">Wszystkie</option>
                                             </select>
                                         </div>
                                         <div class="form-group">
                                             <label for="modelFilter">Model:</label>
-                                            <select class="form-control" id="modelFilter"  name="modelFilter">
+                                            <select class="form-control" id="modelFilter"  name="modelFilter" disabled>
+                                            <option value="default">Wszystkie</option>
                                             </select>
                                         </div>
                                         <div class="form-group">
-                                            <label for="rokFilter">Rok produkcji od:</label>
-                                            <select class="form-control" id="rokFilter">
+                                            <label for="yearFilter">Rok produkcji od:</label>
+                                            <select class="form-control" id="yearFilter" name="yearFilter" disabled>
+                                            <option value="default">Wszystkie</option>
                                             </select>
                                         </div>
-                                        <button type="button" class="btn btn-primary">Filtruj</button>
+                                        <button name="filterButton" id="filterButton" type="button" class="btn btn-primary">Filtruj</button>
                                     </form>
                                 </div>
                                 <div class="tab-pane fade" id="nav-specs" role="tabpanel">
