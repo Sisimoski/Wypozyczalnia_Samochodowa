@@ -36,7 +36,7 @@ session_start();
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
     <?php require_once $_SERVER['DOCUMENT_ROOT'] . '/include/include.php';?>
-    <link href="css/jquery.datetimepicker.min.css" rel="stylesheet"/>
+    <link href="css/jquery.datetimepicker.min.css" rel="stylesheet" />
     <script src="/js/newsletter.js"></script>
     <script src="js/car.js"></script>
     <script src="js/jquery.datetimepicker.full.min.js"></script>
@@ -96,46 +96,56 @@ session_start();
 
     <!-- Sekcja Modal -->
     <div class="modal fade" id="rezerwacjaModal" tabindex="-1" role="dialog" aria-labelledby="rezerwacjaLabel"
-            aria-hidden="true">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="rezerwacjaLabel">Rezerwacja Pojazdu</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="rezerwacjaLabel">Potwierdź rezerwację pojazdu</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
 
-                    <div class="modal-body">
+                <div class="modal-body">
                     <?php
                         if(!isset($_SESSION["id"])) { ?>
-                            Zaloguj/Zarejestruj Się aby zarezerwować pojazd.
-                        
-                        <?php }else{ ?>
-                            Potwierdź swój wybór
-                        <div>
-                            <div class="modalDataOd"></div>
-                            <div class="modalDataDo"></div>
-                            <div class="modalCena"></div>
+                    Zaloguj/Zarejestruj Się aby zarezerwować pojazd.
 
+                    <?php }else{ ?>
+                    <div>
+                        <h5 class="mt-3 mb-2">Data:</h5>
+                        <div class="input-group mb-2">
+                            <div class="input-group-prepend">
+                                <label class="input-group-text input-group-data" for="inputGroupSelect01">Od:</label>
+                            </div>
+                            <input type="text" class="form-control" name="DataOd" readonly>
+                            <div class="input-group-prepend ml-2">
+                                <label class="input-group-text input-group-data" for="inputGroupSelect01">Do:</label>
+                            </div>
+                            <input type="text" class="form-control" name="DataDo" readonly>
                         </div>
+                        <div class="border-bottom mt-3 mb-3"></div>
+                        <h5 class="mt-3 mb-2 text-center">Zsumowana kwota: <span
+                                class="badge badge-danger text-wrap total-cost"></span></h5>
 
-                        <?php }; ?>
-
-                        
                     </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Zamknij</button>
-                        <?php
+
+                    <?php }; ?>
+
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-outline-danger" data-dismiss="modal">Anuluj</button>
+                    <?php
                             if(isset($_SESSION["id"])) {
                                 echo '<button type="button" class="btn btn-success rentCarButton">Potwierdzam i rezerwuję</button>';
                             }
                         ?>
-                    </div>
-
                 </div>
+
             </div>
         </div>
+    </div>
     <!-- Naprawiona responsywność -->
     <section id="herous" class="text-light">
         <div class="container">
@@ -186,7 +196,8 @@ session_start();
                             <p class="card-text card-text-details moc-auta">Moc: 120 KM</p>
                             <p class="card-text card-text-details pojemnosc-auta">Pojemność silnika: 1.5 L</p>
                             <p class="card-text card-text-details srednie-spalanie">Średnie spalanie: 4,0 l/100km</p>
-                            <p class="card-text card-text-details skrzynia-biegow">Skrzynia biegów: Manualna 6 biegowa</p>
+                            <p class="card-text card-text-details skrzynia-biegow">Skrzynia biegów: Manualna 6 biegowa
+                            </p>
                             <p class="card-text card-text-details ilosc-miejsc">Ilość miejsc: 5</p>
                             <p class="card-text card-text-details pojemnosc-bagaznika">Pojemność bagażnika: 383 l</p>
                             <p class="card-text card-text-details zasieg-auta">Zasięg na pełnym baku: 1520km</p>
@@ -244,9 +255,10 @@ session_start();
                             <h4 class="card-title mt-3 mb-2 text-center">Zsumowana kwota: <span
                                     class="badge badge-danger text-wrap total-cost">160zł</span></h4>
                             <div class="mt-3 d-flex flex-column">
-                            
-                                <a href="" class="btn btn-success rezerwacja" data-toggle='modal' data-target='#rezerwacjaModal'>Rezerwuj</a>
-        
+
+                                <a href="" class="btn btn-success rezerwacja" data-toggle='modal'
+                                    data-target='#rezerwacjaModal'>Rezerwuj</a>
+
                             </div>
                         </div>
                     </div>

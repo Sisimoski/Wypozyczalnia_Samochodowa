@@ -34,6 +34,8 @@ $(document).ready(function(){
 
     $('.rezerwacja').click(function(){
         
+        document.getElementsByName('DataOd')[0].placeholder = $('#picker').val();
+        document.getElementsByName('DataDo')[0].placeholder = $('#picker2').val();
         $(".modalDataOd").html("Data od: "+$('#picker').val());
         $(".modalDataDo").html("Data do: "+$('#picker2').val());
         $(".modalCena").html("Cena: "+$(".total-cost").html());
