@@ -3,6 +3,9 @@
     require_once $_SERVER['DOCUMENT_ROOT'] . '/php/config.php';
 
     $searchResult=NULL;
+    $producentF='default';
+    $modelF='default';
+    $rokF='default';
     if(isset($_GET['searchResult'])){
     $searchResult = ($_GET['searchResult']);
     }
@@ -27,12 +30,21 @@
         $sth = $db->prepare("SELECT count(id_specyfikacja_samochodu) FROM specyfikacja_samochodu WHERE czy_posiadany != 3 AND producent LIKE '%{$searchResult}%' OR
         model LIKE '%{$searchResult}%'");
     }
-    else if(isset($_GET['rokF'])){
+    else if($rokF!='default'){
         $sth = $db->prepare("SELECT count(id_specyfikacja_samochodu) FROM specyfikacja_samochodu WHERE czy_posiadany != 3 AND producent LIKE :producent AND model LIKE :model
         AND rok LIKE :rok ");
          $sth ->bindValue(':producent',$producentF,PDO::PARAM_STR);
          $sth ->bindValue(':model',$modelF,PDO::PARAM_STR);
          $sth ->bindValue(':rok',$rokF,PDO::PARAM_STR);
+    }
+    else if($modelF!='default'){
+        $sth = $db->prepare("SELECT count(id_specyfikacja_samochodu) FROM specyfikacja_samochodu WHERE czy_posiadany != 3 AND producent LIKE :producent AND model LIKE :model");
+         $sth ->bindValue(':producent',$producentF,PDO::PARAM_STR);
+         $sth ->bindValue(':model',$modelF,PDO::PARAM_STR);
+    }
+    else if($producentF!='default'){
+        $sth = $db->prepare("SELECT count(id_specyfikacja_samochodu) FROM specyfikacja_samochodu WHERE czy_posiadany != 3 AND producent LIKE :producent");
+         $sth ->bindValue(':producent',$producentF,PDO::PARAM_STR);
     }
     else{
     $sth = $db->prepare('SELECT count(id_specyfikacja_samochodu) FROM specyfikacja_samochodu WHERE czy_posiadany != 3');
@@ -51,12 +63,21 @@
             $sth = $db->prepare("SELECT * FROM specyfikacja_samochodu WHERE producent LIKE '%{$searchResult}%' OR
             model LIKE '%{$searchResult}%' AND czy_posiadany != 3 LIMIT :start , :limit ");
         }
-        else if(isset($_GET['rokF'])){
+        else if($rokF!='default'){
             $sth = $db->prepare("SELECT * FROM specyfikacja_samochodu WHERE czy_posiadany != 3 AND producent LIKE :producent AND model LIKE :model
             AND rok LIKE :rok LIMIT :start , :limit");
              $sth ->bindValue(':producent',$producentF,PDO::PARAM_STR);
              $sth ->bindValue(':model',$modelF,PDO::PARAM_STR);
              $sth ->bindValue(':rok',$rokF,PDO::PARAM_STR);
+        }
+        else if($modelF!='default'){
+            $sth = $db->prepare("SELECT * FROM specyfikacja_samochodu WHERE czy_posiadany != 3 AND producent LIKE :producent AND model LIKE :model LIMIT :start , :limit");
+             $sth ->bindValue(':producent',$producentF,PDO::PARAM_STR);
+             $sth ->bindValue(':model',$modelF,PDO::PARAM_STR);
+        }
+        else if($producentF!='default'){
+            $sth = $db->prepare("SELECT * FROM specyfikacja_samochodu WHERE czy_posiadany != 3 AND producent LIKE :producent LIMIT :start , :limit");
+             $sth ->bindValue(':producent',$producentF,PDO::PARAM_STR);
         }
         else{
         $sth = $db->prepare('SELECT * FROM specyfikacja_samochodu WHERE czy_posiadany != 3 LIMIT :start , :limit ');
