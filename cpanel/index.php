@@ -23,9 +23,11 @@ session_start();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <?php require_once $_SERVER['DOCUMENT_ROOT'] . '/cpanel/include/include.php';?>
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
     <script src="./js/index.js"></script>
     <script src="js/collapse.js"></script>
     <script src="/cpanel/js/logout.js"></script>
+    
 </head>
 
 <body>
@@ -74,72 +76,32 @@ session_start();
                                 ?>
                             </h1>
                         </div>
-                        <div class="card border-primary">
-                            <div class="card-header">
-                                Sprawdź to!
-                            </div>
-                            <div class="card-body">
-                                <h5 class="card-title">Odbierz nagrodę</h5>
-                                <p class="card-text">Dzięki Twojemu wkładowi w rozwój wypożyczalni, możesz już teraz
-                                    odebrać nagrodę za lojalność.</p>
-                                <a href="#" class="btn btn-primary">Odbierz nagrodę</a>
-                            </div>
-                            <div class="card-footer text-muted">
-                                2 days ago
-                            </div>
-                        </div>
-                        <div class="pt-2 pb-2 mb-3 border-bottom"></div>
                         <div class="row">
-                            <div class="col-sm-3">
+                            <div class="col-sm-4">
                                 <div class="card">
-                                    <img src="#" class="card-img-top" alt="Punkty klienta pic">
                                     <div class="card-body">
-                                        <h5 class="card-title">Twoje punkty</h5>
-                                        <p class="card-text">SPEECH 100</p>
-                                        <a href="#" class="btn btn-primary">Sprawdź</a>
+                                        <div id="clientCarsChart">
+
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-sm-3">
-                                <div class="card">
-                                    <img src="#" class="card-img-top" alt="Punkty klienta pic">
+                            <div class="col-sm-4">
+                                <div class="card">                       
                                     <div class="card-body">
-                                        <h5 class="card-title">Twoje samochody</h5>
-                                        <p class="card-text">SAMOCHODY 100</p>
-                                        <a href="#" class="btn btn-primary">Sprawdź</a>
+                                        <div id="clientPointsLvl">
+
+                                        </div>                                 
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-sm-3">
-                                <div class="card">
-                                    <img src="#" class="card-img-top" alt="Punkty klienta pic">
+                            <div class="col-sm-4">
+                                <div class="card">                         
                                     <div class="card-body">
-                                        <h5 class="card-title">Twoje placeholder</h5>
-                                        <p class="card-text">Ilość: 100</p>
-                                        <a href="#" class="btn btn-primary">Sprawdź</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-sm-3">
-                                <div class="card">
-                                    <img src="#" class="card-img-top" alt="Punkty klienta pic">
-                                    <div class="card-body">
-                                        <h5 class="card-title">Twoje placeholder</h5>
-                                        <p class="card-text">Ilość: 100</p>
-                                        <a href="#" class="btn btn-primary">Sprawdź</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row my-4">
-                            <div class="col-sm-6">
-                                <div class="card">
-                                    <div class="card-body">
-                                        <h5 class="card-title">Special title treatment</h5>
-                                        <p class="card-text">With supporting text below as a natural lead-in to
-                                            additional
-                                            content.</p>
-                                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                                        <div id="clientChart">
+
+                                        </div>
+                                        
                                     </div>
                                 </div>
                             </div>
