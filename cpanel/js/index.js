@@ -5,13 +5,14 @@ $(document).ready(function(){
             type: "radialBar"
         },
         
-        series: [100],
+        series: [90],
         
         plotOptions: {
             radialBar: {
             hollow: {
-                margin: 15,
-                size: "70%"
+                margin: 0,
+                size: "70%",
+                background: "#293450"
             },
             
             dataLabels: {
@@ -19,11 +20,11 @@ $(document).ready(function(){
                 name: {
                 offsetY: -10,
                 show: true,
-                color: "#000000",
+                color: "#fff",
                 fontSize: "13px"
                 },
                 value: {
-                color: "#111",
+                color: "#fff",
                 fontSize: "30px",
                 show: true,
                 formatter: function (val) {
@@ -46,25 +47,28 @@ $(document).ready(function(){
             type: "radialBar"
         },
         
-        series: [100],
+        series: [50],
         
         plotOptions: {
             radialBar: {
             hollow: {
-                margin: 15,
-                size: "70%"
+                margin: 0,
+                size: "70%",
+                background: "#293450"
             },
+
+            
             
             dataLabels: {
                 showOn: "always",
                 name: {
                 offsetY: -10,
                 show: true,
-                color: "#000",
+                color: "#fff",
                 fontSize: "13px"
                 },
                 value: {
-                color: "#111",
+                color: "#fff",
                 fontSize: "30px",
                 show: true,
                 formatter: function (val) {
@@ -74,6 +78,10 @@ $(document).ready(function(){
             }
             }
         },
+
+        fill: {
+            colors: ['#2ecc71']
+          },
         
         stroke: {
             lineCap: "round",
@@ -87,25 +95,28 @@ $(document).ready(function(){
             type: "radialBar"
         },
         
-        series: [100],
+        series: [80],
         
         plotOptions: {
             radialBar: {
             hollow: {
-                margin: 15,
-                size: "70%"
+                margin: 0,
+                size: "70%",
+                background: "#293450"
             },
+
+            
             
             dataLabels: {
                 showOn: "always",
                 name: {
                 offsetY: -10,
                 show: true,
-                color: "#000",
+                color: "#fff",
                 fontSize: "13px"
                 },
                 value: {
-                color: "#111",
+                color: "#fff",
                 fontSize: "30px",
                 show: true,
                 formatter: function (val) {
@@ -115,6 +126,10 @@ $(document).ready(function(){
             }
             }
         },
+
+        fill: {
+            colors: ['#c0392b']
+          },
         
         stroke: {
             lineCap: "round",
