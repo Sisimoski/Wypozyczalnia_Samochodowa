@@ -72,12 +72,12 @@ session_start();
     </section>
     <div class="container-fluid">
         <!-- Alert -->
-        <div class="position-fixed justify-content-center d-flex" style="width:100%; z-index: 9;">
-            <div class="alert mt-3 text-center" style="width:70%; display: none; "></div>
+        <div class="fixed-top justify-content-center d-none">
+            <div class="alert ml-5 mr-5 mt-3 text-center" style="width:40%"></div>
         </div>
-        <div class="row">
+        <div class="row" style="height: 100%;">
             <!-- Sidebar -->
-            <nav class="col-md-2 d-none d-md-block bg-light sidebar position-fixed">
+            <nav class="col-md-2 d-none d-lg-block bg-light sidebar position-fixed">
                 <div class="sidebar-sticky">
                     <?php
                         include("../sidebarContent.php");
@@ -86,45 +86,71 @@ session_start();
                 </div>
             </nav>
             <!-- Breadcrumb -->
-            <div class="col-md-9 ml-sm-auto col-lg-10">
-                <div class="row" style="z-index:1030">
-                    <nav class="position-fixed breadcrumbStyleFixed" aria-label="breadcrumb" style="width:100%">
+            <div class="col-md-10 ml-sm-auto col-lg-10">
+                <div class="row" style="z-index:2; margin-bottom: 80px;">
+                    <nav class="position-fixed breadcrumbStyleFixed" aria-label="breadcrumb">
                         <ol class="breadcrumb">
                             <li class="breadcrumb-item active"><a href="index.php">Panel klienta</a></li>
+                            <li class="breadcrumb-item active">Panel pracownika</li>
+                            <li class="breadcrumb-item active">Pojazdy</li>
+                            <li class="breadcrumb-item active" aria-current="page">Status Wypożyczeń</li>
                         </ol>
                     </nav>
                 </div>
                 <!-- CONTENT for webiste -->
-                <div class="row justify-content-center" style="margin-top:50px">
-                    <form class="statusPojazdowDane">
-                        <?php
-                     $d=strtotime("-1 Months");
-                     $data = date("Y-m-d", $d); 
-                ?>
-                        <input class="form-control" type="date" id="dataOd" name="dataOd"
-                            value=<?php echo '"'.$data.'"' ?> placeholder="Data Wynajmu Od" />
-                        <input class="form-control" type="date" id="dataDo" name="dataDo"
-                            value=<?php echo '"'.date('Y-m-d').'"' ?> placeholder="Data Wynajmu Do" />
-                    </form>
-                    <div class="statusContent">
-                        <table class="table">
-                            <thead>
-                                <tr>
-                                    <th scope="col">#</th>
-                                    <th scope="col">Imie</th>
-                                    <th scope="col">Nazwisko</th>
-                                    <th scope="col">Pojazd</th>
-                                    <th scope="col">Status Przyjecia</th>
-                                    <th scope="col">Status Płatności</th>
-                                    <th scope="col">Status Realizacji</th>
-                                </tr>
-                            </thead>
-                            <tbody id="tabelaStatus">
-                            </tbody>
-                        </table>
-                    </div>
+                <div class="row px-4 pb-3">
+                    <div class="col">
+                        <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2
+                            mb-3 border-bottom px-2">
+                            <h1>Status wypożyczeń</h1>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-2">
+                                <h3>Filtruj</h3>
+                                <form class="statusPojazdowDane">
+                                    <div class="form-group row">
+                                        <label for="" class="col-md-1 col-form-label">Od:</label>
+                                        <div class="col">
+                                            <?php
+                                            $d=strtotime("-1 Months");
+                                            $data = date("Y-m-d", $d); 
+                                            ?>
+                                            <input class="form-control" type="date" id="dataOd" name="dataOd"
+                                                value=<?php echo '"'.$data.'"' ?> placeholder="Data Wynajmu Od" />
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label for="" class="col-md-1 col-form-label">Do:</label>
+                                        <div class="col">
+                                            <input class="form-control" type="date" id="dataDo" name="dataDo"
+                                                value=<?php echo '"'.date('Y-m-d').'"' ?>
+                                                placeholder="Data Wynajmu Do" />
 
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="statusContent">
+                            <table class="table table-striped table-hover text-center align-items-center border">
+                                <thead class="thead-light">
+                                    <tr>
+                                        <th scope="col">#</th>
+                                        <th scope="col">Imie</th>
+                                        <th scope="col">Nazwisko</th>
+                                        <th scope="col">Pojazd</th>
+                                        <th scope="col">Status Przyjecia</th>
+                                        <th scope="col">Status Płatności</th>
+                                        <th scope="col">Status Realizacji</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="tabelaStatus">
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
                 </div>
+
             </div>
         </div>
     </div>
