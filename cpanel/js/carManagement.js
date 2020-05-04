@@ -102,6 +102,10 @@ $(document).ready(function () {
         zaladujWypozyczenia();
     }
 
+    $(document).on("click", "button.returnRentedCar" , function() {
+        console.log("test");
+    });
+
     $(document).on("click", "button.payRent" , function() {
         $(".alert-success").html("");
         $(".alert-error").html("");
@@ -233,11 +237,12 @@ function zaladujWypozyczenia(){
                 $(".activeRentCarsTable").append("<tr><th scope='row'>" + (i + 1) + "</th><td>"+obj[i]["producent"]+" "+obj[i]["model"]+"</td><td>"+obj[i]["data_zlozenia"]+"</td><td>"+obj[i]["data_odbioru"]+"</td><td>"+obj[i]["data_zwrotu"]+"</td><td>"+obj[i]["czy_oplacono"]+"</td><td>"+obj[i]["czy_zrealizowano"]+"</td> <td class='rentCarfunctions"+obj[i]["id_wypozyczenia"]+"'></td> </tr>");
                
                 if(obj[i]["czy_oplacono"] == 'Nie opłacone'){
-                    $(".rentCarfunctions"+obj[i]["id_wypozyczenia"]).append("<button type='button' class='payRent btn btn-sm btn-success ml-2 flex-fill' value='" + obj[i]["id_wypozyczenia"] + "'>Opłać</button><button type='button' class='btn btn-sm btn-success ml-2 flex-fill'>Custom Button</button>");
+                    $(".rentCarfunctions"+obj[i]["id_wypozyczenia"]).append("<button type='button' class='payRent btn btn-sm btn-success ml-2 flex-fill' value='" + obj[i]["id_wypozyczenia"] + "'>Opłać</button>");
                 }
-                else{
-                    $(".rentCarfunctions"+obj[i]["id_wypozyczenia"]).append("<button type='button' class='btn btn-sm btn-success ml-2 flex-fill'>Custom Button</button>");
+                else {
+                    $(".rentCarfunctions"+obj[i]["id_wypozyczenia"]).append("<button type='button' class='returnRentedCar btn btn-sm btn-primary ml-2 flex-fill' value='" + obj[i]["id_wypozyczenia"] + "'>Oddaj Pojazd</button>");
                 }
+                 
             }
         }
 
