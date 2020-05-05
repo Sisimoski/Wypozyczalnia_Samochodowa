@@ -86,7 +86,6 @@ $(document).ready(function () {
         });
 
         request.done(function (response) {
-            console.log(response);
             $("#LoadCarTable tr").remove();
             zaladujSamochody();
             $('#editCarModal').modal('hide');
@@ -181,6 +180,16 @@ function editCarButtonClick(self) {
         $("#kolorEdit").val(obj[0][3]);
         $("#opisEdit").val(obj[0][4]);
         $("#cenaEdit").val(obj[0][5]);
+        $("#segmentEdit").val(obj[0][6]);
+        $("#typ_silnikaEdit").val(obj[0][7]);
+        $("#mocEdit").val(obj[0][8]);
+        $("#pojemnosc_silnikaEdit").val(obj[0][9]);
+        $("#srednie_spalenieEdit").val(obj[0][10]);
+        $("#skrzynia_biegowEdit").val(obj[0][11]);
+        $("#ilosc_miejscEdit").val(obj[0][12]);
+        $("#pojemnosc_bagaznikaEdit").val(obj[0][13]);
+        $("#zasiegEdit").val(obj[0][14]);
+
     });
 
     request.fail(function (response) {
