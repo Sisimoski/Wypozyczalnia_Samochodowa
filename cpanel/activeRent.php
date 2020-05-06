@@ -30,8 +30,8 @@ session_start();
         </nav>
     </section>
     <div class="container-fluid">
-        <div class="fixed-top justify-content-center d-none">
-            <div class="alert ml-5 mr-5 mt-3 text-center" style="width:40%"></div>
+        <div class="position-fixed justify-content-center d-flex" style="width:100%; z-index: 9;">
+            <div class="alert mt-3 text-center" style="width:40%; display: none; "></div>
         </div>
         <div class="row" style="height: 100%;">
             <nav class="col-md-2 d-none d-lg-block bg-light sidebar position-fixed">
@@ -77,7 +77,6 @@ session_start();
                                 </tbody>
                                 
                             </table>
-                            <div class="alert"></div>
                         </div>
                         <!-- End of Table Template -->
                     </div>
@@ -86,47 +85,6 @@ session_start();
             </div>
         </div>
     </div>
-
-
-    <!-- Modal Template -->
-    <div class="modal fade" id="" tabindex="-1" role="dialog" aria-labelledby="" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="">Modal Title</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    Modal body
-                    <form class="" method="POST">
-                    <div class="modal-body">
-                        <div class="form-group">
-                            <label for="">Label</label>
-                            <input id="" class="form-control" name="" placeholder="Input">
-                            <div class="komunikat"> </div>
-                        </div>
-                    </div>
-                    <div class="modal-footer">
-                        <div class="form-group">
-                            <div class="komunikat"> </div>
-                            <button type="button" class="btn btn-outline-danger" data-dismiss="modal">Anuluj</button>
-                            <button type="button" id="editCarButton" name="editCarButton" value=""
-                                class="btn btn-success">Zatwierdź zmianę</button>
-                        </div>
-                    </div>
-                </form>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-danger" data-dismiss="modal">Button</button>
-                    <button type="button" class="btn btn-primary">Button</button>
-                </div>
-            </div>
-        </div>
-    </div>
-    
-
 </body>
 
 </html>

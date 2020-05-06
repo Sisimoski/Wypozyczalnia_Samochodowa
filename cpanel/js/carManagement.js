@@ -102,7 +102,39 @@ $(document).ready(function () {
     }
 
     $(document).on("click", "button.returnRentedCar" , function() {
-        console.log("test");
+        $(".alert-success").html("");
+        $(".alert-error").html("");
+        $(".alert").removeClass("alert-success");
+        $(".alert").removeClass("alert-danger");
+        $(".alert").html('');
+        $(".alert").fadeIn();
+        $(this).val();
+
+        request = $.ajax({
+            url: "./php/returnRentedCar.php",
+            data: {id : $(this).val()},
+            type: "POST"
+        })
+
+        request.done(function (response) {
+            console.log(response);
+            if (response == "Oddano pojazd") {
+                $(".alert").addClass("alert-success");
+                $(".alert-success").html(response);
+                $(".alert-success").fadeOut(3000);
+                $(".activeRentCarsTable tr").remove();
+                zaladujWypozyczenia();
+            } else {
+                $(".alert").addClass("alert-danger");
+                $(".alert-success").fadeOut(3000);
+                $(".alert-danger").html(response);
+
+            }
+        });
+
+        request.fail(function (response){
+
+        });
     });
 
     $(document).on("click", "button.payRent" , function() {
@@ -219,6 +251,8 @@ function zaladujSamochody() {
                 }
                 $("#LoadCarTable").append(" <tr><th scope='row'>" + (i + 1) + "</th><td>" + obj[i]["producent"]+' '+obj[i]["model"] + "</td><td>" + obj[i][2] + "</td><td>" + obj[i][3] + "</td><td><div class='d-flex justify-content-between'><button type='button' class='editCarButtonValue btn btn-sm btn-outline-primary flex-fill' value='" + obj[i]["vin"] + "' data-toggle='modal' data-target='#editCarModal' onclick='editCarButtonClick(this) '>Edytuj</button><button type='button' class='deleteCarButtonValue btn btn-sm btn-danger ml-2 flex-fill' value='" + obj[i]["vin"] + "' data-toggle='modal' data-target='#deleteCarModal' onclick='deleteCarButtonClick(this) '>Usuń</button></div></td></tr>");
             }
+        }else{
+            $("#LoadCarTable").append("<tr><td colspan='5'><h6>Brak dodanych Pojazdów</h6></td></tr>");
         }
 
 
@@ -253,7 +287,9 @@ function zaladujWypozyczenia(){
                 }
                  
             }
-        }
+        }else{
+            $(".activeRentCarsTable").append("<tr><td colspan='8'><h6>Brak wypożyczonych Pojazdów</h6></td></tr>");
+      }
 
 
     });

@@ -97,6 +97,7 @@ function loadCar(data){
     $(".pojemnosc-bagaznika").html('Pojemność bagażnika: '+data[0]['pojemnosc_bagaznika']);
     $(".zasieg-auta").html('Zasięg na pełnym baku: '+data[0]['zasieg']);
     $(".sredni-koszt").html('Średni koszt wynajmu: '+data[0]['cena_brutto']+'zł/dzień');
+    $(".ulica").attr("placeholder","ul. "+data[0]["ulica"]);
     if(data[0]['czy_posiadany'] == 1)
         $(".rezerwacja").attr("value",data[0]['id_specyfikacja_samochodu']);
     else{

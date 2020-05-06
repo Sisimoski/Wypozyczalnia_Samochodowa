@@ -6,11 +6,14 @@ session_start();
         }
         else{
             require $_SERVER['DOCUMENT_ROOT'] . '/php/config.php'; 
-            $sth = $db->prepare("SELECT vin, samochod.id_specyfikacja_samochodu, numer_tablicy_rejestracyjnej, producent, model, rok, kolor, opis, cena_netto, procent_vat_ceny, cena_brutto, czy_posiadany, segment, typ_silnika, moc, pojemnosc_silnika, srednie_spalenie, skrzynia_biegow, ilosc_miejsc, pojemnosc_bagaznika, zasieg, fotografia
+            $sth = $db->prepare("SELECT ulica, vin, samochod.id_specyfikacja_samochodu, numer_tablicy_rejestracyjnej, producent, model, rok, kolor, opis, cena_netto, procent_vat_ceny, cena_brutto, czy_posiadany, segment, typ_silnika, moc, pojemnosc_silnika, srednie_spalenie, skrzynia_biegow, ilosc_miejsc, pojemnosc_bagaznika, zasieg, fotografia
             FROM specyfikacja_samochodu
+            INNER JOIN uzytkownik ON uzytkownik.id_uzytkownik = :idUser
+            INNER JOIN adres ON adres.id_adres = uzytkownik.id_adres
             INNER JOIN samochod ON samochod.id_specyfikacja_samochodu = specyfikacja_samochodu.id_specyfikacja_samochodu 
             WHERE specyfikacja_samochodu.id_specyfikacja_samochodu = :id");
             $sth ->bindValue(":id", $_GET["idCar"],PDO::PARAM_INT);
+            $sth ->bindValue(":idUser", $_SESSION["id"],PDO::PARAM_INT);
             $sth ->execute();
             if($sth ->rowCount() != 0){
                 $response = $sth->fetchAll();
@@ -221,7 +224,7 @@ session_start();
                                     <label class="input-group-text input-group-lokalizacja"
                                         for="inputGroupSelect01">Odbiór:</label>
                                 </div>
-                                <input class="form-control" type="text" placeholder="Opole, ul. Prószkowska" readonly>
+                                <input class="form-control ulica" type="text" placeholder="Opole, ul. Prószkowska" readonly>
                             </div>
                             <h4 class="card-title mt-3 mb-2">Data:</h4>
                             <div class="input-group mb-2">
