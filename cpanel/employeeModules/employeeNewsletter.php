@@ -67,11 +67,11 @@ session_start();
     </section>
     <div class="container-fluid">
         <!-- Alert -->
-        <div class="position-fixed justify-content-center d-flex" style="width:100%; z-index: 9;">
-            <div class="alert mt-3 text-center" style="width:70%; display: none; "></div>
+        <div class="fixed-top justify-content-center d-none">
+            <div class="alert ml-5 mr-5 mt-3 text-center" style="width:40%"></div>
         </div>
-        <div class="row">
-            <nav class="col-md-2 d-none d-md-block bg-light sidebar position-fixed">
+        <div class="row" style="height: 100%;">
+            <nav class="col-md-2 d-none d-lg-block bg-light sidebar position-fixed">
                 <div class="sidebar-sticky">
 
                     <?php
@@ -79,33 +79,40 @@ session_start();
                     ?>
                 </div>
             </nav>
-            <div class="col-md-9 ml-sm-auto col-lg-10">
-                <div class="row" style="z-index:1030">
-                    <nav class="position-fixed breadcrumbStyleFixed" aria-label="breadcrumb" style="width:100%">
+            <div class="col-lg-9 ml-sm-auto col-lg-10">
+                <div class="row" style="z-index:2; margin-bottom: 80px;">
+                    <nav class="position-fixed breadcrumbStyleFixed" aria-label="breadcrumb">
                         <ol class="breadcrumb">
-                            <li class="breadcrumb-item active"><a href="index.php">Panel klienta</a></li>
+                            <li class="breadcrumb-item active"><a href="index.php">Panel pracownika</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">Newsletter</li>
                         </ol>
                     </nav>
                 </div>
-                <div class="row justify-content-center" style="margin-top:50px">
-                    <h1>Wysyłanie Newsletterów </h1>
-                </div>
-                <div class="row justify-content-center">
-                    <form class="newsletterSending w-75 ">
-                        <div class="form-group">
-                            <textarea class="form-control" name="message" id="newsletterMessage" rows="7"
-                                placeholder="Wiadomość"></textarea>
+                <div class="row px-4 pb-3">
+                    <div class="col">
+                        <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom px-2">
+                            <h1>Newsletter</h1>
                         </div>
-                        <div class="form-group d-flex justify-content-center">
-                            <button class="btn btn-primary" id="newsletterButton">Wyślij Wiadomości</button>
+                        <div class="row mx-5">
+                            <div class="col-12">
+                                <form class="newsletterSending">
+                                    <div class="form-group">
+                                        <label>Wprowadź treść wiadomości:</label>
+                                        <textarea class="form-control" name="message" id="newsletterMessage" rows="7"
+                                            placeholder="Wiadomość"></textarea>
+                                    </div>
+                                    <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center mt-4 mb-4 border-bottom"></div>
+                                    <div class="form-group d-flex justify-content-center">
+                                        <button class="btn btn-primary" id="newsletterButton">Wyślij Wiadomość</button>
+                                    </div>
+                                </form>
+                            </div>
                         </div>
-                    </form>
-                </div>
 
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
-    </div>
 </body>
 
 </html>

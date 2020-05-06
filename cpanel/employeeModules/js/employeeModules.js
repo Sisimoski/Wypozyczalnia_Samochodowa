@@ -281,7 +281,7 @@ function zaladujPracownikow() {
                 else {
                     var status = "Aktywowany"
                 }
-                $("#tabelaPracownicy").append(" <tr><th scope='row'>" + (i + 1) + "</th><td>" + obj[i]['imie'] + "</td><td>" + obj[i]['nazwisko'] + "</td><td>" + obj[i]['data_zatrudnienia'] + "</td><td>" + obj[i]['data_zwolnienia'] + "</td><td>" + status + "</td><td><button type='button' class='btn btn-warning' id='edytujDaneButtonValue' data-toggle='modal' data-target='#edytujKontoModal' onclick='editKontoButtonClick(this)' value=" + obj[i]["id_uzytkownik"] + ">Edytuj Dane</button ><button type='button' class='usunKontoButtonValue btn btn-danger' value='" + obj[i]["id_uzytkownik"] + "' data-toggle='modal' data-target='#usunKontoModal' onclick='usunKontoButtonClick(this)'>Usuń Pracownika</button> </td></tr>");
+                $("#tabelaPracownicy").append(" <tr><th scope='row'>" + (i + 1) + "</th><td>" + obj[i]['imie'] + "</td><td>" + obj[i]['nazwisko'] + "</td><td>" + obj[i]['data_zatrudnienia'] + "</td><td>" + obj[i]['data_zwolnienia'] + "</td><td>" + status + "</td><td><div class='d-flex justify-content-between'><button type='button' class='btn btn-sm btn-outline-primary flex-fill' id='edytujDaneButtonValue' data-toggle='modal' data-target='#edytujKontoModal' onclick='editKontoButtonClick(this)' value=" + obj[i]["id_uzytkownik"] + ">Edytuj Konto</button ><button type='button' class='usunKontoButtonValue btn btn-sm btn-danger ml-2 flex-fill' value='" + obj[i]["id_uzytkownik"] + "' data-toggle='modal' data-target='#usunKontoModal' onclick='usunKontoButtonClick(this)'>Usuń Konto</button></div> </td></tr>");
             }
         }
         catch(error){
