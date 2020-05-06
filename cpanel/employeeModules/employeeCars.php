@@ -90,8 +90,7 @@ session_start();
                 <div class="row" style="z-index:2; margin-bottom: 80px;">
                     <nav class="position-fixed breadcrumbStyleFixed" aria-label="breadcrumb">
                         <ol class="breadcrumb">
-                            <li class="breadcrumb-item active"><a href="index.php">Panel klienta</a></li>
-                            <li class="breadcrumb-item active">Panel pracownika</li>
+                            <li class="breadcrumb-item active"><a href="index.php">Panel pracownika</a></li>
                             <li class="breadcrumb-item active">Pojazdy</li>
                             <li class="breadcrumb-item active" aria-current="page">Status Wypożyczeń</li>
                         </ol>
