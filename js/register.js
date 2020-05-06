@@ -26,7 +26,7 @@ $(document).ready(function() {
     $('#haslo1').blur(function(){
         var input = $(this);     
         var login = input.val()       
-        var passwordReg = new RegExp("^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,})");
+        var passwordReg = new RegExp("^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!-@#\$%\^&\*])(?=.{8,})");
                
         if( passwordReg.test(login)) {    
             input.removeClass("invalid").addClass("valid"); 

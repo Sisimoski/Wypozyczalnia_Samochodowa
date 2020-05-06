@@ -13,6 +13,7 @@
     <script src="./js/index.js"></script>
 </head>
 
+
 <body>
     <!-- Alert -->
     <?php require_once $_SERVER['DOCUMENT_ROOT'] . '/include/alert.php';?>
@@ -67,35 +68,28 @@
 <section>
 
     <label>
-        Aby zresetować hasło, wprowadź poniżej swoją nazwę użytkownika lub adres e-mail.
-        Jeżeli uda nam się znaleźć Twoje dane w bazie danych, zostanie wysłana wiadomość na Twój adres e-mail z linkiem do zmiany hasła.
+        Wprowadź swoje nowe hasło.
     </label>
-    <div>
-        Wyszukaj po nazwie użytkownika
-    </div>
-    <form class="recoveryForm" type="POST">
+    <form class="newPswdForm" type="POST">
             <div class="form-group">
-              <label for="loginRecovery">Login</label>
-              <input type="text" name="loginRecovery" class="form-control" id="loginRecovery">
+              <label for="newPswd">Hasło</label>
+              <input type="password" name="newPswd" class="form-control" id="newPswd">
+              <div class="komunikat"></div>
                 <div class="form-group col-xs-auto">
-                    <button id="loginRecoveryButton" name="loginRecoveryButton" class="btn btn-primary"  value="login" type="button">Wyszukaj</button>
-   
-    <div>
-        Wyszukaj po adresie e-mail
-    </div>
-            <div class="form-group">
-              <label for="emailRecovery">E-mail</label>
-              <input type="text" name="emailRecovery" class="form-control" id="emailRecovery">
-                <div class="form-group col-xs-auto">
-                    <button id="emailRecoveryButton" class="btn btn-primary"  value="email" type="button">Wyszukaj</button>
+                    <button id="newPswdButton" class="btn btn-primary"  type="button">Zatwierdź</button>
                 </div>
             </div>
     </form>
 </section>
 
-   
+
    
     <?php require_once $_SERVER['DOCUMENT_ROOT'] . '/include/footer.php';?>
+
+    
+<script>
+checkHash();
+</script>
 </body>
 
 </html>

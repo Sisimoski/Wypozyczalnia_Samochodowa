@@ -6,13 +6,20 @@
 
     if($value=='login'){
         $loginRecovery=($_POST['loginRecovery']);
-        $sth = $db->prepare('SELECT email FROM uzytkownik INNER JOIN kontakty ON uzytkownik.id_kontakt = kontakty.id_kontakt WHERE login = :login limit 1');
+        $sth = $db->prepare('SELECT id_uzytkownik,email FROM uzytkownik INNER JOIN kontakty ON uzytkownik.id_kontakt = kontakty.id_kontakt WHERE login = :login limit 1');
         $sth ->bindValue(':login',$loginRecovery,PDO::PARAM_STR);
         $sth->execute();
         $result = $sth->fetch(PDO::FETCH_ASSOC);
         if($result){
-
+            $id_uzy=$result['id_uzytkownik'];
             $hash = uniqid();
+
+            $sth = $db->prepare('INSERT INTO zmiana_hasla(wartosc_hash,id_uzytkownik)
+            VALUES (:wartosc_hash,:id_uzytkownik)');
+            $sth ->bindValue(':wartosc_hash',$hash,PDO::PARAM_STR);
+            $sth ->bindValue(':id_uzytkownik',$id_uzy,PDO::PARAM_STR);
+            $sth->execute();
+
             $emailRecovery=$result['email'];
 
             $passwordChangerLink = 'http://car4you.net.pl/recoverPassword.php?hash='.$hash;
@@ -64,13 +71,19 @@
     }
     else if($value=='email'){
         $emailRecovery=($_POST['emailRecovery']);
-        $sth = $db->prepare('SELECT * FROM kontakty WHERE email = :email limit 1');
+        $sth = $db->prepare('SELECT id_uzytkownik FROM uzytkownik INNER JOIN kontakty ON uzytkownik.id_kontakt = kontakty.id_kontakt WHERE email = :email limit 1');
         $sth ->bindValue(':email',$emailRecovery,PDO::PARAM_STR);
         $sth->execute();
         $result = $sth->fetch(PDO::FETCH_ASSOC);
         if($result){
-
+            $id_uzy=$result['id_uzytkownik'];
             $hash = uniqid();
+
+            $sth = $db->prepare('INSERT INTO zmiana_hasla(wartosc_hash,id_uzytkownik)
+            VALUES (:wartosc_hash,:id_uzytkownik)');
+            $sth ->bindValue(':wartosc_hash',$hash,PDO::PARAM_STR);
+            $sth ->bindValue(':id_uzytkownik',$id_uzy,PDO::PARAM_STR);
+            $sth->execute();
 
             $passwordChangerLink = 'http://car4you.net.pl/recoverPassword.php?hash='.$hash;
             $message = '
