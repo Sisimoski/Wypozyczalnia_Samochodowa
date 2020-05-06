@@ -57,7 +57,7 @@ session_start();
                             mb-3 border-bottom px-2">
                             <h1>Status samochodów</h1>
                         </div>
-                        <div class="LoadCarTableHead">
+                        <div class="LoadCarTableHead table-responsive">
                             <table class="table table-striped table-hover text-center align-items-center border">
                                 <thead class="thead-light">
                                     <tr>

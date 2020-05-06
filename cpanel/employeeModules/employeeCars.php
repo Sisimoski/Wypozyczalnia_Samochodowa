@@ -86,7 +86,7 @@ session_start();
                 </div>
             </nav>
             <!-- Breadcrumb -->
-            <div class="col-md-10 ml-sm-auto col-lg-10">
+            <div class="col-lg-10 ml-sm-auto col-lg-10">
                 <div class="row" style="z-index:2; margin-bottom: 80px;">
                     <nav class="position-fixed breadcrumbStyleFixed" aria-label="breadcrumb">
                         <ol class="breadcrumb">
@@ -105,12 +105,15 @@ session_start();
                             <h1>Status wypożyczeń</h1>
                         </div>
                         <div class="row">
-                            <div class="col-md-2">
-                                <h3>Filtruj</h3>
+                            <div class="col-12 col-md-6 col-lg-3">
+                                <h3 class="ml-2">Filtruj</h3>
+                                <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center my-3 border-bottom px-2"></div>
                                 <form class="statusPojazdowDane">
-                                    <div class="form-group row">
-                                        <label for="" class="col-md-1 col-form-label">Od:</label>
-                                        <div class="col">
+                                    <div class="form-group d-flex">
+                                        <div class="mr-3">
+                                            <label for="" class="col-form-label">Od:</label>
+                                        </div>
+                                        <div class="flex-grow-1">
                                             <?php
                                             $d=strtotime("-1 Months");
                                             $data = date("Y-m-d", $d); 
@@ -118,20 +121,23 @@ session_start();
                                             <input class="form-control" type="date" id="dataOd" name="dataOd"
                                                 value=<?php echo '"'.$data.'"' ?> placeholder="Data Wynajmu Od" />
                                         </div>
+
                                     </div>
-                                    <div class="form-group row">
-                                        <label for="" class="col-md-1 col-form-label">Do:</label>
-                                        <div class="col">
+                                    <div class="form-group d-flex">
+                                        <div class="mr-3">
+                                            <label for="" class="col-form-label">Do:</label>
+                                        </div>
+                                        <div class="flex-grow-1">
                                             <input class="form-control" type="date" id="dataDo" name="dataDo"
                                                 value=<?php echo '"'.date('Y-m-d').'"' ?>
                                                 placeholder="Data Wynajmu Do" />
-
                                         </div>
                                     </div>
                                 </form>
+                                <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center my-3 border-bottom px-2"></div>
                             </div>
                         </div>
-                        <div class="statusContent">
+                        <div class="statusContent table-responsive">
                             <table class="table table-striped table-hover text-center align-items-center border">
                                 <thead class="thead-light">
                                     <tr>

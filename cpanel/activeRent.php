@@ -58,7 +58,7 @@ session_start();
                             <h1>Aktualne Wypożyczenia</h1>
                         </div>
                         <!-- Table Template -->
-                        <div class="">
+                        <div class="table-responsive">
                             <table class="table table-striped table-hover text-center align-items-center border">
                                 <thead class="thead-light">
                                     <tr>
