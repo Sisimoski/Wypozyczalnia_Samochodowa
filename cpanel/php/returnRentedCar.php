@@ -5,7 +5,7 @@
      $id = $_POST["id"];
      $dataRealizacji = date("Y-m-d");
      
-    $sth = $db->prepare("UPDATE wypozyczenie SET czy_zrealizowano = 1 data_realizacji = :date WHERE id_wypozyczenia = {$id} AND czy_oplacono = 1");
+    $sth = $db->prepare("UPDATE wypozyczenie SET czy_zrealizowano = 1 , data_realizacji = :date WHERE id_wypozyczenia = {$id} AND czy_oplacono = 1");
     $sth ->bindValue(":date",$dataRealizacji,PDO::PARAM_STR);
     $sth ->execute();
     $sth = $db->prepare("SELECT specyfikacja_samochodu.id_specyfikacja_samochodu FROM wypozyczony_samochod
