@@ -98,7 +98,7 @@ session_start();
                             mb-3 border-bottom px-2">
                             <h1>Akceptacje pojazdów</h1>
                         </div>
-                        <div class="acceptContent">
+                        <div class="acceptContent table-responsive">
                             <h3>Pojazdy do zaakceptowania przez pracowników:</h3>
                             <table class="table table-striped table-hover text-center align-items-center border">
                                 <thead class="thead-light">
