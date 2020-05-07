@@ -83,6 +83,7 @@ $(document).ready(function(){
 
 
 function loadCar(data){
+    console.log(data);
     $("#fotografia").attr("src","/CarPictures/"+data[0]['fotografia']);
     $(".producent-model").html(data[0]['producent']+' '+data[0]['model']);
     $(".koszt-dzienny").html(data[0]['cena_brutto']+'zł/dzień');

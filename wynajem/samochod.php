@@ -8,14 +8,13 @@ session_start();
             require $_SERVER['DOCUMENT_ROOT'] . '/php/config.php'; 
             $sth = $db->prepare("SELECT ulica, vin, samochod.id_specyfikacja_samochodu, numer_tablicy_rejestracyjnej, producent, model, rok, kolor, opis, cena_netto, procent_vat_ceny, cena_brutto, czy_posiadany, segment, typ_silnika, moc, pojemnosc_silnika, srednie_spalenie, skrzynia_biegow, ilosc_miejsc, pojemnosc_bagaznika, zasieg, fotografia
             FROM specyfikacja_samochodu
-            INNER JOIN uzytkownik ON uzytkownik.id_uzytkownik = :idUser
-            INNER JOIN adres ON adres.id_adres = uzytkownik.id_adres
-            INNER JOIN samochod ON samochod.id_specyfikacja_samochodu = specyfikacja_samochodu.id_specyfikacja_samochodu 
+            INNER JOIN samochod ON samochod.id_specyfikacja_samochodu = specyfikacja_samochodu.id_specyfikacja_samochodu
+            INNER JOIN uzytkownik ON uzytkownik.id_uzytkownik = samochod.id_uzytkownik
+            INNER JOIN adres ON adres.id_adres = uzytkownik.id_adres     
             WHERE specyfikacja_samochodu.id_specyfikacja_samochodu = :id");
             $sth ->bindValue(":id", $_GET["idCar"],PDO::PARAM_INT);
-            $sth ->bindValue(":idUser", $_SESSION["id"],PDO::PARAM_INT);
             $sth ->execute();
-            if($sth ->rowCount() != 0){
+            if($sth ->rowCount() != 0){   
                 $response = $sth->fetchAll();
                 $data = json_encode($response);
             }
@@ -164,29 +163,12 @@ session_start();
     <section id="carcontent">
         <div class="container">
             <div class="row">
-                <div class="col-lg-8 d-flex align-items-stretch">
-                    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-                        <ol class="carousel-indicators">
-                            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-                            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-                            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-                        </ol>
+                <div class="col-lg-8 d-flex align-items-stretch">                   
                         <div class="carousel-inner">
                             <div class="carousel-item active">
                                 <img class="d-block w-100" id="fotografia" src="" alt="First slide">
                             </div>
-                        </div>
-                        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button"
-                            data-slide="prev">
-                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                            <span class="sr-only">Previous</span>
-                        </a>
-                        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button"
-                            data-slide="next">
-                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                            <span class="sr-only">Next</span>
-                        </a>
-                    </div>
+                        </div>           
                 </div>
                 <div class="col-lg-4">
                     <div class="card">
@@ -272,6 +254,7 @@ session_start();
     </section>
     <?php 
         require_once $_SERVER['DOCUMENT_ROOT'] . '/include/footer.php';
+        
         echo "<script>loadCar(".$data.");</script>";
         echo "<script>const data = saveData(".$data.");</script>";
     ?>
