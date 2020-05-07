@@ -136,10 +136,6 @@
                                                 class="list-group-item list-group-item-action text-secondary">
                                                 <i class="bx bx-dots-vertical-rounded"></i>
                                                 Akceptacje Pojazdów</a>
-                                            <a href="/cpanel/employeeModules/employeeCarsInspection.php"
-                                                class="list-group-item list-group-item-action text-secondary">
-                                                <i class="bx bx-dots-vertical-rounded"></i>
-                                                Przeglądy</a>
                                         </div>
                                         </ul>
 
