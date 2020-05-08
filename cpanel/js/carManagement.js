@@ -100,6 +100,9 @@ $(document).ready(function () {
     if(link.includes("activeRent.php")){
         zaladujWypozyczenia();
     }
+    if(link.includes("rentHistory.php")){
+        zaladujHistorieWypozyczen();
+    }
 
     $(document).on("click", "button.returnRentedCar" , function() {
         $(".alert-success").html("");
@@ -173,6 +176,24 @@ $(document).ready(function () {
 
         });
     });
+
+    $(document).on("click", "button.makeReview" , function() {
+        $("#addReviewModal").modal("show");
+
+    });
+
+    $('#dataOd').on('input', function() { 
+        $(".historyRentCars tr").remove(); 
+        zaladujHistorieWypozyczen();
+        
+    });
+
+    $('#dataDo').on('input', function() {
+        $(".historyRentCars tr").remove();
+        zaladujHistorieWypozyczen(); 
+        
+    });
+
     
 });
 
@@ -289,6 +310,42 @@ function zaladujWypozyczenia(){
             }
         }else{
             $(".activeRentCarsTable").append("<tr><td colspan='8'><h6>Brak wypożyczonych Pojazdów</h6></td></tr>");
+      }
+
+
+    });
+
+    request.fail(function (response) {
+        console.log("Error" + response);
+
+    });
+}
+
+function zaladujHistorieWypozyczen(){
+    var data = $(".historiaPojazdow").serialize();
+    request = $.ajax({
+        url: "./php/loadHistoryRents.php",
+        data: data,
+        type: "POST"
+    })
+
+    request.done(function (response) {
+        if (response != "Brak pojazdow") {
+            
+            var obj = JSON.parse(response);
+            for (i = 0; i < obj.length; i++) {
+                obj[i]['czy_oplacono'] == 0 ? obj[i]['czy_oplacono'] = 'Nie opłacone' : obj[i]['czy_oplacono'] = 'Opłacony';
+                obj[i]['czy_zrealizowano'] == 0 ? obj[i]['czy_zrealizowano'] = 'Nie zrealizowane' : obj[i]['czy_zrealizowano'] = 'Zrealizowane';
+    
+                $(".historyRentCars").append("<tr><th scope='row'>" + (i + 1) + "</th><td>"+obj[i]["producent"]+" "+obj[i]["model"]+"</td><td>"+obj[i]["data_zlozenia"]+"</td><td>"+obj[i]["data_odbioru"]+"</td><td>"+obj[i]["data_zwrotu"]+"</td><td>"+obj[i]["czy_oplacono"]+"</td><td>"+obj[i]["czy_zrealizowano"]+"</td> <td class='historyRentCars"+obj[i]["id_wypozyczenia"]+"'></td> </tr>");
+               
+                if(obj[i]["czy_opinia"] == '0'){
+                    $(".historyRentCars"+obj[i]["id_wypozyczenia"]).append("<button type='button' class='makeReview btn btn-sm btn-success ml-2 flex-fill' value='" + obj[i]["id_wypozyczenia"] + "'>Wystaw Opinię</button>");
+                }
+                 
+            }
+        }else{
+            $(".historyRentCars").append("<tr><td colspan='8'><h6>Brak wypożyczonych Pojazdów</h6></td></tr>");
       }
 
 
