@@ -16,7 +16,6 @@ session_start();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <?php require_once $_SERVER['DOCUMENT_ROOT'] . '/cpanel/include/include.php';?>
-    
     <script src="js/collapse.js"></script>
     <script src="/cpanel/js/logout.js"></script>
     <script src="./js/carManagement.js"></script>
@@ -26,7 +25,7 @@ session_start();
     <!-- Nagłówek Navbar -->
     <section id="header">
         <?php
-            include("../headerContent.php");
+            include("headerContent.php");
         ?>
         </nav>
     </section>
@@ -38,7 +37,7 @@ session_start();
             <nav class="col-md-2 d-none d-lg-block bg-light sidebar position-fixed">
                 <div class="sidebar-sticky">
                     <?php
-                            include("../sidebarContent.php");
+                            include("sidebarContent.php");
                         ?>
                 </div>
             </nav>

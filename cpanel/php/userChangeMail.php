@@ -32,7 +32,7 @@
     $sth = $db->prepare('INSERT INTO zmiana_maila(wartosc_hash,id_klient,nowy_mail)
     VALUES (:wartosc_hash,:id_klient,:nowy_mail)');
     $sth ->bindValue(':wartosc_hash',$hash,PDO::PARAM_STR);
-    $sth ->bindValue(':id_klient',$idSession,PDO::PARAM_STR);
+    $sth ->bindValue(':id_uzytkownik',$idSession,PDO::PARAM_STR);
     $sth ->bindValue(':nowy_mail',$newMail,PDO::PARAM_STR);
     $sth->execute();
 

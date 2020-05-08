@@ -1,7 +1,7 @@
 <?php
 
-$server = 'mysql:host=35.246.20.38;port=3306;dbname=developer';
-$dbUser = 'root';
+$server = 'mysql:host=35.198.107.158;port=3306;dbname=developer;charset=utf8';
+$dbUser = 'admin';
 $dbPass = 'Kappa123';
 
 // Logowanie do bazy danych

@@ -1,5 +1,122 @@
 <?php
-session_start();
+    session_start();
+    require_once $_SERVER['DOCUMENT_ROOT'] . '/php/config.php';
+
+    $searchResult=NULL;
+    $producentF='default';
+    $modelF='default';
+    $rokF='default';
+    if(isset($_GET['searchResult'])){
+    $searchResult = ($_GET['searchResult']);
+    }
+
+    if(isset($_GET['producentF'])){
+        $producentF = ($_GET['producentF']);
+    }
+
+    if(isset($_GET['modelF'])){
+        $modelF = ($_GET['modelF']);
+    }
+
+    if(isset($_GET['rokF'])){
+        $rokF = ($_GET['rokF']);
+    }
+
+    $limit = 12;
+    $page = isset($_GET["page"]) ? $_GET["page"] : 1;
+    $start = ($page - 1) * $limit;
+
+    if($searchResult!=NULL){
+        $sth = $db->prepare("SELECT count(id_specyfikacja_samochodu) FROM specyfikacja_samochodu WHERE czy_posiadany != 3 AND producent LIKE '%{$searchResult}%' OR
+        model LIKE '%{$searchResult}%'");
+    }
+    else if($rokF!='default'){
+        $sth = $db->prepare("SELECT count(id_specyfikacja_samochodu) FROM specyfikacja_samochodu WHERE czy_posiadany != 3 AND producent LIKE :producent AND model LIKE :model
+        AND rok LIKE :rok ");
+         $sth ->bindValue(':producent',$producentF,PDO::PARAM_STR);
+         $sth ->bindValue(':model',$modelF,PDO::PARAM_STR);
+         $sth ->bindValue(':rok',$rokF,PDO::PARAM_STR);
+    }
+    else if($modelF!='default'){
+        $sth = $db->prepare("SELECT count(id_specyfikacja_samochodu) FROM specyfikacja_samochodu WHERE czy_posiadany != 3 AND producent LIKE :producent AND model LIKE :model");
+         $sth ->bindValue(':producent',$producentF,PDO::PARAM_STR);
+         $sth ->bindValue(':model',$modelF,PDO::PARAM_STR);
+    }
+    else if($producentF!='default'){
+        $sth = $db->prepare("SELECT count(id_specyfikacja_samochodu) FROM specyfikacja_samochodu WHERE czy_posiadany != 3 AND producent LIKE :producent");
+         $sth ->bindValue(':producent',$producentF,PDO::PARAM_STR);
+    }
+    else{
+    $sth = $db->prepare('SELECT count(id_specyfikacja_samochodu) FROM specyfikacja_samochodu WHERE czy_posiadany != 3');
+    }
+    $sth->execute();
+    $ammountOfCars = $sth->fetchAll();
+    
+
+    $pages = ceil( $ammountOfCars[0][0] / $limit);
+
+    if($sth ->rowCount() == 0){
+        // Tutaj wyświetlanie informacji że nie ma samochodów w bazie;
+    }
+    else{
+        if($searchResult!=NULL){
+            $sth = $db->prepare("SELECT * FROM specyfikacja_samochodu WHERE producent LIKE '%{$searchResult}%' OR
+            model LIKE '%{$searchResult}%' AND czy_posiadany != 3 LIMIT :start , :limit ");
+        }
+        else if($rokF!='default'){
+            $sth = $db->prepare("SELECT * FROM specyfikacja_samochodu WHERE czy_posiadany != 3 AND producent LIKE :producent AND model LIKE :model
+            AND rok LIKE :rok LIMIT :start , :limit");
+             $sth ->bindValue(':producent',$producentF,PDO::PARAM_STR);
+             $sth ->bindValue(':model',$modelF,PDO::PARAM_STR);
+             $sth ->bindValue(':rok',$rokF,PDO::PARAM_STR);
+        }
+        else if($modelF!='default'){
+            $sth = $db->prepare("SELECT * FROM specyfikacja_samochodu WHERE czy_posiadany != 3 AND producent LIKE :producent AND model LIKE :model LIMIT :start , :limit");
+             $sth ->bindValue(':producent',$producentF,PDO::PARAM_STR);
+             $sth ->bindValue(':model',$modelF,PDO::PARAM_STR);
+        }
+        else if($producentF!='default'){
+            $sth = $db->prepare("SELECT * FROM specyfikacja_samochodu WHERE czy_posiadany != 3 AND producent LIKE :producent LIMIT :start , :limit");
+             $sth ->bindValue(':producent',$producentF,PDO::PARAM_STR);
+        }
+        else{
+        $sth = $db->prepare('SELECT * FROM specyfikacja_samochodu WHERE czy_posiadany != 3 LIMIT :start , :limit ');
+        }
+        $sth ->bindValue(":start",$start,PDO::PARAM_INT);
+        $sth ->bindValue(":limit",$limit,PDO::PARAM_INT);
+        $sth ->execute();  
+        $amountOfCarsInPage = $sth ->rowCount();
+        
+        if($amountOfCarsInPage != 0){
+            $pageCars = $sth->fetchAll();
+        }
+    }
+    if(!isset($_GET['searchResult'])){
+        $previousPage = '?page='.($page - 1);
+        $nextPage = '?page='.($page + 1);
+    }
+    else{
+        $previousPage = '?page='.($page - 1).'&searchResult='.$searchResult;
+        $nextPage = '?page='.($page + 1).'&searchResult='.$searchResult;
+    }
+//producent
+    if(isset($_GET['producentF'])){
+        $previousPage = '?page='.($page - 1).'&producentF='.$producentF;
+        $nextPage = '?page='.($page + 1).'&producentF='.$producentF;
+    }
+//model
+    if(isset($_GET['modelF'])){
+
+        $previousPage = '?page='.($page - 1).'&producentF='.$producentF.'&modelF='.$modelF;
+        $nextPage = '?page='.($page + 1).'&producentF='.$producentF.'&modelF='.$modelF;
+    }
+//rok 
+    if(isset($_GET['rokF'])){
+
+        $previousPage = '?page='.($page - 1).'&producentF='.$producentF.'&modelF='.$modelF.'&rokF='.$rokF;
+        $nextPage = '?page='.($page + 1).'&producentF='.$producentF.'&modelF='.$modelF.'&rokF='.$rokF;
+    }
+    
 ?>
 
 <!DOCTYPE html>
@@ -15,6 +132,7 @@ session_start();
 
     <script src="./js/index.js"></script>
     <script src="js/newsletter.js"></script>
+    <script src="js/oferty.js"></script>
 </head>
 
 <body>
@@ -92,24 +210,16 @@ session_start();
                                     <a class="nav-link active" href="#nav1" id="tab1"
                                         data-toggle="tab">Tab 1</a>
                                 </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#nav2" id="tab2"
-                                        data-toggle="tab">Tab 2</a>
-                                </li>
                             </ul>
                         </div>
                         <div class="card-body">
                             <div class="tab-content" id="tabContent">
                                 <div class="tab-pane fade show active" id="nav1" role="tabpanel">
-                                    <form>
-                                        <div class="form-group">
-                                            <label for="producentFilter">Title 1:</label>
-                                            <select class="form-control" id="producentFilter">
-                                                <option>Option 1</option>
-                                                <option>Option 2</option>
-                                            </select>
-                                        </div>
-                                        <button type="submit" class="btn btn-primary">Zastosuj</button>
+                                <form class="findCarForm" id="findCarForm" method="POST">
+                                            <label for="searchResult">Wyszukiwarka</label>
+                                            <input id="searchResult" name="searchResult" class="form-control" placeholder="Wpisz jakiego samochodu szukasz :)">                                        
+                                        <button name="findCarButton" id="findCarButton" class="btn btn-primary" type="button">Szukaj</button>
+                                    
                                     </form>
                                 </div>
                                 <div class="tab-pane fade" id="nav2" role="tabpanel">
@@ -145,29 +255,26 @@ session_start();
                         <div class="card-body">
                             <div class="tab-content" id="tabContent">
                                 <div class="tab-pane fade show active" id="nav-basic" role="tabpanel">
-                                    <form>
+                                    <form class="filterForm" method="POST">
                                         <div class="form-group">
                                             <label for="producentFilter">Producent:</label>
-                                            <select class="form-control" id="producentFilter">
-                                                <option>Volkswagen</option>
-                                                <option>Ford</option>
+                                            <select class="form-control" id="producentFilter" name="producentFilter">
+                                            <option value="default">Wszystkie</option>
                                             </select>
                                         </div>
                                         <div class="form-group">
                                             <label for="modelFilter">Model:</label>
-                                            <select class="form-control" id="modelFilter">
-                                                <option>Mondeo</option>
-                                                <option>Golf</option>
+                                            <select class="form-control" id="modelFilter"  name="modelFilter" disabled>
+                                            <option value="default">Wszystkie</option>
                                             </select>
                                         </div>
                                         <div class="form-group">
-                                            <label for="productionYearFilter">Rok produkcji od:</label>
-                                            <select class="form-control" id="productionYearFilter">
-                                                <option>2020</option>
-                                                <option>2019</option>
+                                            <label for="yearFilter">Rok produkcji od:</label>
+                                            <select class="form-control" id="yearFilter" name="yearFilter" disabled>
+                                            <option value="default">Wszystkie</option>
                                             </select>
                                         </div>
-                                        <button type="submit" class="btn btn-primary">Zastosuj</button>
+                                        <button name="filterButton" id="filterButton" type="button" class="btn btn-primary">Filtruj</button>
                                     </form>
                                 </div>
                                 <div class="tab-pane fade" id="nav-specs" role="tabpanel">
@@ -264,223 +371,67 @@ session_start();
             </div>
 
             <!-- Oferty Cards -->
-            <div class="row row-cols-1 row-cols-md-3 row-cols-lg-4 justify-content-center">
-                <!-- Default Card -->
-                <div class="col mb-4">
-                    <div class="card bg-light text-center h-100">
-                        <img src="#" class="card-img-top" alt="Default Card Image">
-                        <div class="card-body card-body-flex">
-                            <h5 class="card-title">Title</h5>
-                            <h6 class="card-subtitle mb-2 text-muted">Cena</h6>
-                            <div class="text-left">
-                                <p class="card-text">
-                                    <h6><b>Klasa: </b></h6>
-                                    Rok produkcji: <br>
-                                    Silnik: <br>
-                                    Skrzynia biegów: 
-                                </p>
+            <div class="row row-cols-1 row-cols-md-3 row-cols-lg-4 justify-content-center card-content" id="scrollThere">
+                <?php for($j = 0; $j < $amountOfCarsInPage; $j++) : ?>
+                    <div class="col mb-4">
+                        <div class="card bg-light text-center h-100">
+                            <img src="/CarPictures/<?= $pageCars[$j]['fotografia'] ?>" class="card-img-top" alt="Default Card Image">
+                            <div class="card-body card-body-flex">
+                                <h5 class="card-title"><?= $pageCars[$j]['producent'].' '.$pageCars[$j]['model']  ?></h5>
+                                <h6 class="card-subtitle mb-2 text-muted"><?= $pageCars[$j]['cena_brutto'] ?>zł/dzień</h6>
+                                <div class="text-left">
+                                    <p class="card-text">
+                                        <h6><b>Klasa: <?= $pageCars[$j]['segment'] ?></b></h6>
+                                        Rok produkcji: <?= $pageCars[$j]['rok'] ?><br>
+                                        Silnik: <?= $pageCars[$j]['pojemnosc_silnika'].'L '.$pageCars[$j]['pojemnosc_silnika'].'KM '.$pageCars[$j]['typ_silnika']  ?><br>
+                                        Skrzynia biegów: <?= $pageCars[$j]['skrzynia_biegow'] ?>
+                                    </p>
+                                </div>
+                                <a href="wynajem/samochod.php?idCar=<?= $pageCars[$j]['id_specyfikacja_samochodu'] ?>" class="btn  <?= ($pageCars[$j]['czy_posiadany'] == 2 ? 'disabled btn-danger' : 'btn-primary')  ?>"><?= ($pageCars[$j]['czy_posiadany'] == 2 ? 'Aktualnie niedostępny' : 'Wypożycz')  ?></a>
                             </div>
-                            <a href="wynajem/samochod.php" class="btn btn-primary">Wypożycz</a>
                         </div>
                     </div>
-                </div>
-                <!-- End of Default Card -->
-                <div class="col mb-4">
-                    <div class="card bg-light text-center h-100">
-                        <img src="images/samochody/Ford_mondeo.png" class="card-img-top" alt="Ford Mondeo">
-                        <div class="card-body card-body-flex">
-                            <h5 class="card-title">Ford Mondeo</h5>
-                            <h6 class="card-subtitle mb-2 text-muted">160zł/dzień</h6>
-                            <div class="text-left">
-                                <p class="card-text">
-                                    <h6><b>Klasa: B</b></h6>
-                                    Rok produkcji: 2014r<br>
-                                    Silnik: 1.5L 120KM diesel<br>
-                                    Skrzynia biegów: Manualna
-                                </p>
-                            </div>
-                            <a href="wynajem/samochod.php" class="btn btn-primary">Wypożycz</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col mb-4">
-                    <div class="card bg-light text-center h-100">
-                        <img src="images/samochody/hyundai i10.png" class="card-img-top" alt="Hyundai i10">
-                        <div class="card-body card-body-flex">
-                            <h5 class="card-title">Hyundai i10</h5>
-                            <h6 class="card-subtitle mb-2 text-muted">70zł/dzień</h6>
-                            <div class="text-left">
-                                <p class="card-text">
-                                    <h6><b>Klasa: B</b></h6>
-                                    Rok produkcji: 2013r<br>
-                                    Silnik: 1.0L 66KM benzyna<br>
-                                    Skrzynia biegów: Manualna
-                                </p>
-                            </div>
-                            <a href="#" class="btn btn-primary">Wypożycz</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col mb-4">
-                    <div class="card bg-light text-center h-100 justify-content-between">
-                        <img src="images/samochody/mercedes_cw205.png" class="card-img-top" alt="mercedes_cw205">
-                        <div class="card-body card-body-flex">
-                            <h5 class="card-title">Mercedes CW205</h5>
-                            <h6 class="card-subtitle mb-2 text-muted">300zł/dzień</h6>
-                            <div class="text-left">
-                                <p class="card-text">
-                                    <h6><b>Klasa: B+</b></h6>
-                                    Rok produkcji: 2014r<br>
-                                    Silnik: 1.6L 136KM diesel<br>
-                                    Skrzynia biegów: Manualna
-                                </p>
-                            </div>
-                            <a href="#" class="btn btn-primary">Wypożycz</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col mb-4">
-                    <div class="card bg-light text-center h-100">
-                        <img src="images/samochody/renault-trafic.png" class="card-img-top" alt="renault-trafic">
-                        <div class="card-body card-body-flex">
-                            <h5 class="card-title">Renault Trafic</h5>
-                            <h6 class="card-subtitle mb-2 text-muted">260zł/dzień</h6>
-                            <div class="text-left">
-                                <p class="card-text">
-                                    <h6><b>Klasa: B</b></h6>
-                                    Rok produkcji: 2010r<br>
-                                    Silnik: 2.0L 115KM diesel<br>
-                                    Skrzynia biegów: Manualna
-                                </p>
-                            </div>
-                            <a href="#" class="btn btn-primary">Wypożycz</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col mb-4">
-                    <div class="card bg-light text-center h-100">
-                        <img src="images/samochody/Seat_ibiza.png" class="card-img-top" alt="Seat_ibiza">
-                        <div class="card-body card-body-flex">
-                            <h5 class="card-title">Seat Ibiza</h5>
-                            <h6 class="card-subtitle mb-2 text-muted">110zł/dzień</h6>
-                            <div class="text-left">
-                                <p class="card-text">
-
-                                    <h6><b>Klasa: B</b></h6>
-                                    Rok produkcji: 2008r<br>
-                                    Silnik: 1.9L 105KM benzyna<br>
-                                    Skrzynia biegów: Manualna
-                                </p>
-                            </div>
-                            <a href="#" class="btn btn-primary">Wypożycz</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col mb-4">
-                    <div class="card bg-light text-center h-100">
-                        <img src="images/samochody/Skoda_fabia.png" class="card-img-top" alt="Skoda_fabia">
-                        <div class="card-body card-body-flex">
-                            <h5 class="card-title">Skoda Fabia</h5>
-                            <h6 class="card-subtitle mb-2 text-muted">80zł/dzień</h6>
-                            <div class="text-left">
-                                <p class="card-text">
-                                    <h6><b>Klasa: B</b></h6>
-                                    Rok produkcji: 2014r<br>
-                                    Silnik: 1.0L 60KM benzyna<br>
-                                    Skrzynia biegów: Manualna
-                                </p>
-                            </div>
-                            <a href="#" class="btn btn-primary">Wypożycz</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col mb-4">
-                    <div class="card bg-light text-center h-100">
-                        <img src="images/samochody/skoda_superb.png" class="card-img-top" alt="Skoda Superb">
-                        <div class="card-body card-body-flex">
-                            <h5 class="card-title">Skoda Superb</h5>
-                            <h6 class="card-subtitle mb-2 text-muted">220zł/dzień</h6>
-                            <div class="text-left">
-                                <p class="card-text">
-                                    <h6><b>Klasa: B</b></h6>
-                                    Rok produkcji: 2015r<br>
-                                    Silnik: 1.4L 125KM benzyna<br>
-                                    Skrzynia biegów: Manualna
-                                </p>
-                            </div>
-                            <a href="#" class="btn btn-primary">Wypożycz</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col mb-4">
-                    <div class="card bg-light text-center h-100">
-                        <img src="images/samochody/vw golf.png" class="card-img-top" alt="VW Golf">
-                        <div class="card-body card-body-flex">
-                            <h5 class="card-title">Volkswagen Golf</h5>
-                            <h6 class="card-subtitle mb-2 text-muted">120zł/dzień</h6>
-                            <div class="text-left">
-                                <p class="card-text">
-                                    <h6><b>Klasa: B</b></h6>
-                                    Rok produkcji: 2010r<br>
-                                    Silnik: 1.2L 105KM benzyna<br>
-                                    Skrzynia biegów: Manualna
-                                </p>
-                            </div>
-                            <a href="#" class="btn btn-primary">Wypożycz</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col mb-4">
-                    <div class="card bg-light text-center h-100">
-                        <img src="images/samochody/vw_arteon.jpg" class="card-img-top" alt="VW Arteon">
-                        <div class="card-body card-body-flex">
-                            <h5 class="card-title">Volkswagen Areton</h5>
-                            <h6 class="card-subtitle mb-2 text-muted">250zł/dzień</h6>
-                            <div class="text-left">
-                                <p class="card-text">
-                                    <h6><b>Klasa: B+</b></h6>
-                                    Rok produkcji: 2017r<br>
-                                    Silnik: 2.0L 150KM benzyna<br>
-                                    Skrzynia biegów: Manualna
-                                </p>
-                            </div>
-                            <a href="#" class="btn btn-primary">Wypożycz</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col mb-4">
-                    <div class="card bg-light text-center h-100">
-                        <img src="images/samochody/vw_passat.png" class="card-img-top" alt="VW Passat">
-                        <div class="card-body card-body-flex">
-                            <h5 class="card-title">Volkswagen Passat</h5>
-                            <h6 class="card-subtitle mb-2 text-muted">100zł/dzień</h6>
-                            <div class="text-left">
-                                <p class="card-text">
-                                    <h6><b>Klasa: B</b></h6>
-                                    Rok produkcji: 2010r<br>
-                                    Silnik: 2.0L 140KM benzyna<br>
-                                    Skrzynia biegów: Manualna
-                                </p>
-                            </div>
-                            <a href="#" class="btn btn-primary">Wypożycz</a>
-                        </div>
-                    </div>
-                </div>
+                <?php endfor; ?>
+                
+                
             </div>
 
             <nav aria-label="...">
                 <ul class="pagination justify-content-center">
-                    <li class="page-item disabled">
-                        <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Poprzednia strona</a>
+                    <li class="page-item" id="previousPage">
+                        <a class="page-link"  href="/oferty.php<?= $previousPage; ?>" tabindex="-1" >Poprzednia strona</a>
                     </li>
-                    <li class="page-item active"><a class="page-link" href="#">1<span
-                                class="sr-only">(current)</span></a></li>
-                    <li class="page-item" aria-current="page">
-                        <a class="page-link" href="#">2 </a>
-                    </li>
-                    <li class="page-item"><a class="page-link" href="#">3</a></li>
-                    <li class="page-item">
-                        <a class="page-link" href="#">Następna strona</a>
+                    <?php for($i = 1; $i<= $pages; $i++) : ?>
+                        <li class="page-item" id="pageID-<?= $i; ?>">
+                            
+                            <?php
+                                $string = "";
+                                if(isset($_GET['searchResult'])){
+                                    $string =  "<a class='page-link'  href='/oferty.php?page=".$i.'&searchResult='.$searchResult."' >".$i."</a>";
+                                }
+                                //producent
+                                if(isset($_GET['producentF'])){
+                                    $string = "<a class='page-link'  href='/oferty.php?page=".$i.'&producentF='.$producentF."' >".$i."</a>";
+                                }
+                                //model
+                                if(isset($_GET['modelF'])){
+                                    $string = "<a class='page-link'  href='/oferty.php?page=".$i.'&producentF='.$producentF.'&modelF='.$modelF."' >".$i."</a>";
+                                }
+                                //rok 
+                                if(isset($_GET['rokF'])){
+                                    $string = "<a class='page-link'  href='/oferty.php?page=".$i.'&producentF='.$producentF.'&modelF='.$modelF.'&rokF='.$rokF."' >".$i."</a>";
+                                }
+                                if($string == ""){
+                                    $string =  "<a class='page-link'  href='/oferty.php?page=".$i."' >".$i."</a>";
+                                }
+                                echo $string;
+                             
+                             ?>
+                        </li>
+                    <?php endfor; ?>
+                    
+                    <li class="page-item" id="nextPage">
+                        <a class="page-link"  tabindex="<?=$i++ ?>" href="/oferty.php<?= $nextPage; ?>">Następna strona</a>
                     </li>
                 </ul>
             </nav>
@@ -514,7 +465,7 @@ session_start();
     </section>
 
     <?php require_once $_SERVER['DOCUMENT_ROOT'] . '/include/footer.php';?>
-
+    <script>updatePaginator(<?php echo $page.','.$pages ?>);</script>
 
 </body>
 

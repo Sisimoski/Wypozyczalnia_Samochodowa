@@ -143,16 +143,57 @@ $(document).ready(function () {
     });
 
     $("#acceptCarButton").click(function(){
+        $(".alert").removeClass("alert-success");
+        $(".alert").removeClass("alert-danger");
+        $(".alert").removeClass("alert-warning");
+        $(".alert").html('');
+        $(".alert").fadeIn();
         
         $('#acceptCarModal').modal('hide');
-        console.log("ZAAKCEPTOWANO");
+        request = $.ajax({
+            url: "php/zaakceptujPojazd.php",
+            data: {idCar : $('#acceptCarButton').val()},
+            type: "POST"
+        });
+
+        request.done(function (response) {
+            zaladujAkceptacje();
+            $(".alert").addClass("alert-success");
+            $(".alert-success").html(response);
+            $(".alert").fadeOut(3000);
+        });
+
+        request.fail(function (response) {
+           
+        });
         
 
     });
 
     $("#declineCarButton").click(function(){
+        $(".alert").removeClass("alert-success");
+        $(".alert").removeClass("alert-danger");
+        $(".alert").removeClass("alert-warning");
+        $(".alert").html('');
+        $(".alert").fadeIn();
+        
         $('#acceptCarModal').modal('hide');
-        console.log("ODRZUCONO");
+        request = $.ajax({
+            url: "php/odrzucPojazd.php",
+            data: {idCar : $('#declineCarButton').val()},
+            type: "POST"
+        });
+
+        request.done(function (response) {
+            zaladujAkceptacje();
+            $(".alert").addClass("alert-success");
+            $(".alert-success").html(response);
+            $(".alert").fadeOut(3000);
+        });
+
+        request.fail(function (response) {
+           
+        });
 
 
     });
@@ -281,7 +322,7 @@ function zaladujPracownikow() {
                 else {
                     var status = "Aktywowany"
                 }
-                $("#tabelaPracownicy").append(" <tr><th scope='row'>" + (i + 1) + "</th><td>" + obj[i]['imie'] + "</td><td>" + obj[i]['nazwisko'] + "</td><td>" + obj[i]['data_zatrudnienia'] + "</td><td>" + obj[i]['data_zwolnienia'] + "</td><td>" + status + "</td><td><button type='button' class='btn btn-warning' id='edytujDaneButtonValue' data-toggle='modal' data-target='#edytujKontoModal' onclick='editKontoButtonClick(this)' value=" + obj[i]["id_uzytkownik"] + ">Edytuj Dane</button ><button type='button' class='usunKontoButtonValue btn btn-danger' value='" + obj[i]["id_uzytkownik"] + "' data-toggle='modal' data-target='#usunKontoModal' onclick='usunKontoButtonClick(this)'>Usuń Pracownika</button> </td></tr>");
+                $("#tabelaPracownicy").append(" <tr><th scope='row'>" + (i + 1) + "</th><td>" + obj[i]['imie'] + "</td><td>" + obj[i]['nazwisko'] + "</td><td>" + obj[i]['data_zatrudnienia'] + "</td><td>" + obj[i]['data_zwolnienia'] + "</td><td>" + status + "</td><td><div class='d-flex justify-content-between'><button type='button' class='btn btn-sm btn-outline-primary flex-fill' id='edytujDaneButtonValue' data-toggle='modal' data-target='#edytujKontoModal' onclick='editKontoButtonClick(this)' value=" + obj[i]["id_uzytkownik"] + ">Edytuj Konto</button ><button type='button' class='usunKontoButtonValue btn btn-sm btn-danger ml-2 flex-fill' value='" + obj[i]["id_uzytkownik"] + "' data-toggle='modal' data-target='#usunKontoModal' onclick='usunKontoButtonClick(this)'>Usuń Konto</button></div> </td></tr>");
             }
         }
         catch(error){
@@ -305,7 +346,8 @@ function zaladujStatus() {
 
     request.done(function (response) {
         if (response == "Brak pojazdow") {
-            $("#alert").html("Brak pojazdów w podanym zakresie czasu");
+            $("#tabelaStatus tr").remove();
+            $("#tabelaStatus").append("<tr><td colspan='7'><h6>Brak Wypożyczonych Pojazdów w podanym zakresie czasu</h6></td></tr>");
         }
         else {
             console.log(response);
@@ -349,7 +391,6 @@ function zaladujAkceptacje(){
         if(response != "Brak pojazdow do zaakceptowania"){
             $("#acceptStatus tr").remove(); 
             var obj = JSON.parse(response);
-            console.log(response);
             for (i = 0; i < obj.length; i++) {
                 $("#acceptStatus").append("<tr><th scope='row'>" + (i + 1) + "</th><td>"
                  + obj[i]['imie'] + "</td><td>"
@@ -359,16 +400,15 @@ function zaladujAkceptacje(){
                  + obj[i]["producent"] + " "+obj[i]["model"]+ "</td><td>"
 
                  + "<button type='button' class='acceptCarButtonValue btn btn-primary' value='" 
-                 + obj[i]["vin"] 
+                 + obj[i]["id_specyfikacja_samochodu"] 
                  + "' data-toggle='modal' data-target='#acceptCarModal' onclick='acceptCarButtonClick(this)'>Sprawdź pojazd</button>" 
                  + "</td></tr>"
                 );
             }
         }
         else{
-            $(".alert").addClass("alert-warning");
-            $(".alert").html(response);
-            $(".alert").fadeOut(3000);
+            $("#acceptStatus tr").remove();
+            $("#acceptStatus").append("<tr><td colspan='7'><h6>Brak Pojazdów do Akceptacji</h6></td></tr>");
         }
 
     });

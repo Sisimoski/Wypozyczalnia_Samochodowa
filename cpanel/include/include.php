@@ -1,7 +1,7 @@
 <link rel="shortcut icon" type="image/jpg" href="../favicon.png" />
 
     <!-- CSS Files -->
-    <link rel="stylesheet" type="text/css" href="css/dashboardstyles.css">
+    <link rel="stylesheet" type="text/css" href="/cpanel/css/dashboardstyles.css">
 
     <!-- Deafult Bootstrap theme -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"

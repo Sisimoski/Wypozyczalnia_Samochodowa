@@ -6,13 +6,15 @@ session_start();
         }
         else{
             require $_SERVER['DOCUMENT_ROOT'] . '/php/config.php'; 
-            $sth = $db->prepare("SELECT vin, samochod.id_specyfikacja_samochodu, numer_tablicy_rejestracyjnej, producent, model, rok, kolor, opis, cena_netto, procent_vat_ceny, cena_brutto, czy_posiadany, segment, typ_silnika, moc, pojemnosc_silnika, srednie_spalenie, skrzynia_biegow, ilosc_miejsc, pojemnosc_bagaznika, zasieg, sredni_koszt_wynajmu, fotografia
+            $sth = $db->prepare("SELECT ulica, vin, samochod.id_specyfikacja_samochodu, numer_tablicy_rejestracyjnej, producent, model, rok, kolor, opis, cena_netto, procent_vat_ceny, cena_brutto, czy_posiadany, segment, typ_silnika, moc, pojemnosc_silnika, srednie_spalenie, skrzynia_biegow, ilosc_miejsc, pojemnosc_bagaznika, zasieg, fotografia
             FROM specyfikacja_samochodu
-            INNER JOIN samochod ON samochod.id_specyfikacja_samochodu = specyfikacja_samochodu.id_specyfikacja_samochodu 
+            INNER JOIN samochod ON samochod.id_specyfikacja_samochodu = specyfikacja_samochodu.id_specyfikacja_samochodu
+            INNER JOIN uzytkownik ON uzytkownik.id_uzytkownik = samochod.id_uzytkownik
+            INNER JOIN adres ON adres.id_adres = uzytkownik.id_adres     
             WHERE specyfikacja_samochodu.id_specyfikacja_samochodu = :id");
             $sth ->bindValue(":id", $_GET["idCar"],PDO::PARAM_INT);
             $sth ->execute();
-            if($sth ->rowCount() != 0){
+            if($sth ->rowCount() != 0){   
                 $response = $sth->fetchAll();
                 $data = json_encode($response);
             }
@@ -36,8 +38,10 @@ session_start();
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
     <?php require_once $_SERVER['DOCUMENT_ROOT'] . '/include/include.php';?>
+    <link href="css/jquery.datetimepicker.min.css" rel="stylesheet" />
     <script src="/js/newsletter.js"></script>
     <script src="js/car.js"></script>
+    <script src="js/jquery.datetimepicker.full.min.js"></script>
 </head>
 
 <body>
@@ -72,8 +76,8 @@ session_start();
                 </ul>
                 <?php
             if(!isset($_SESSION['id'])){
-            echo "<button id='zaloguj' type='submit' class='btn btn-outline-primary'>Zaloguj się</button>";
-            echo "<button id='zarejestruj' type='submit' class='btn btn-primary ml-2'>Zarejestruj się</button>" ;
+            echo "<button id='zaloguj' type='submit' href='/logowanie.php' class='btn btn-outline-primary'>Zaloguj się</button>";
+            echo "<button id='zarejestruj' type='submit' href='/register.php' class='btn btn-primary ml-2'>Zarejestruj się</button>" ;
             }
             else{
                 if(isset($_SESSION['rodzaj_konta'])){
@@ -92,7 +96,58 @@ session_start();
         </nav>
     </section>
 
-    <!-- Sekcja Hero -->
+    <!-- Sekcja Modal -->
+    <div class="modal fade" id="rezerwacjaModal" tabindex="-1" role="dialog" aria-labelledby="rezerwacjaLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="rezerwacjaLabel">Potwierdź rezerwację pojazdu</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+
+                <div class="modal-body">
+                    <?php
+                        if(!isset($_SESSION["id"])) { ?>
+                    Zaloguj/Zarejestruj Się aby zarezerwować pojazd.
+
+                    <?php }else{ ?>
+                    <div>
+                        <h5 class="mt-3 mb-2">Data:</h5>
+                        <div class="input-group mb-2">
+                            <div class="input-group-prepend">
+                                <label class="input-group-text input-group-data" for="inputGroupSelect01">Od:</label>
+                            </div>
+                            <input type="text" class="form-control" name="DataOd" readonly>
+                            <div class="input-group-prepend ml-2">
+                                <label class="input-group-text input-group-data" for="inputGroupSelect01">Do:</label>
+                            </div>
+                            <input type="text" class="form-control" name="DataDo" readonly>
+                        </div>
+                        <div class="border-bottom mt-3 mb-3"></div>
+                        <h5 class="mt-3 mb-2 text-center">Zsumowana kwota: <span
+                                class="badge badge-danger text-wrap total-cost"></span></h5>
+
+                    </div>
+
+                    <?php }; ?>
+
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-outline-danger" data-dismiss="modal">Anuluj</button>
+                    <?php
+                            if(isset($_SESSION["id"])) {
+                                echo '<button type="button" class="btn btn-success rentCarButton">Potwierdzam i rezerwuję</button>';
+                            }
+                        ?>
+                </div>
+
+            </div>
+        </div>
+    </div>
     <!-- Naprawiona responsywność -->
     <section id="herous" class="text-light">
         <div class="container">
@@ -108,29 +163,12 @@ session_start();
     <section id="carcontent">
         <div class="container">
             <div class="row">
-                <div class="col-lg-8 d-flex align-items-stretch">
-                    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-                        <ol class="carousel-indicators">
-                            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-                            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-                            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-                        </ol>
+                <div class="col-lg-8 d-flex align-items-stretch">                   
                         <div class="carousel-inner">
                             <div class="carousel-item active">
                                 <img class="d-block w-100" id="fotografia" src="" alt="First slide">
                             </div>
-                        </div>
-                        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button"
-                            data-slide="prev">
-                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                            <span class="sr-only">Previous</span>
-                        </a>
-                        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button"
-                            data-slide="next">
-                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                            <span class="sr-only">Next</span>
-                        </a>
-                    </div>
+                        </div>           
                 </div>
                 <div class="col-lg-4">
                     <div class="card">
@@ -143,7 +181,8 @@ session_start();
                             <p class="card-text card-text-details moc-auta">Moc: 120 KM</p>
                             <p class="card-text card-text-details pojemnosc-auta">Pojemność silnika: 1.5 L</p>
                             <p class="card-text card-text-details srednie-spalanie">Średnie spalanie: 4,0 l/100km</p>
-                            <p class="card-text card-text-details skrzynia-biegow">Skrzynia biegów: Manualna 6 biegowa</p>
+                            <p class="card-text card-text-details skrzynia-biegow">Skrzynia biegów: Manualna 6 biegowa
+                            </p>
                             <p class="card-text card-text-details ilosc-miejsc">Ilość miejsc: 5</p>
                             <p class="card-text card-text-details pojemnosc-bagaznika">Pojemność bagażnika: 383 l</p>
                             <p class="card-text card-text-details zasieg-auta">Zasięg na pełnym baku: 1520km</p>
@@ -167,19 +206,7 @@ session_start();
                                     <label class="input-group-text input-group-lokalizacja"
                                         for="inputGroupSelect01">Odbiór:</label>
                                 </div>
-                                <input class="form-control" type="text" placeholder="Opole, ul. Prószkowska" readonly>
-                            </div>
-                            <div class="input-group mb-3">
-                                <div class="input-group-prepend">
-                                    <label class="input-group-text input-group-lokalizacja"
-                                        for="inputGroupSelect01">Zwrot:</label>
-                                </div>
-                                <select class="custom-select" id="inputGroupSelect01">
-                                    <option selected>Wybierz punkt wypożyczalni...</option>
-                                    <option value="1">One</option>
-                                    <option value="2">Two</option>
-                                    <option value="3">Three</option>
-                                </select>
+                                <input class="form-control ulica" type="text" placeholder="Opole, ul. Prószkowska" readonly>
                             </div>
                             <h4 class="card-title mt-3 mb-2">Data:</h4>
                             <div class="input-group mb-2">
@@ -187,48 +214,12 @@ session_start();
                                     <label class="input-group-text input-group-data"
                                         for="inputGroupSelect01">Od:</label>
                                 </div>
-                                <select class="custom-select" id="inputGroupSelect01">
-                                    <option selected>Dzień</option>
-                                    <option value="1">One</option>
-                                    <option value="2">Two</option>
-                                    <option value="3">Three</option>
-                                </select>
-                                <select class="custom-select" id="inputGroupSelect01">
-                                    <option selected>Miesiąc</option>
-                                    <option value="1">One</option>
-                                    <option value="2">Two</option>
-                                    <option value="3">Three</option>
-                                </select>
-                                <select class="custom-select" id="inputGroupSelect01">
-                                    <option selected>Rok</option>
-                                    <option value="1">One</option>
-                                    <option value="2">Two</option>
-                                    <option value="3">Three</option>
-                                </select>
-                            </div>
-                            <div class="input-group mb-3">
+                                <input autocomplete="off" type="text" id="picker" class="form-control">
                                 <div class="input-group-prepend">
                                     <label class="input-group-text input-group-data"
                                         for="inputGroupSelect01">Do:</label>
                                 </div>
-                                <select class="custom-select" id="inputGroupSelect01">
-                                    <option selected>Dzień</option>
-                                    <option value="1">One</option>
-                                    <option value="2">Two</option>
-                                    <option value="3">Three</option>
-                                </select>
-                                <select class="custom-select" id="inputGroupSelect01">
-                                    <option selected>Miesiąc</option>
-                                    <option value="1">One</option>
-                                    <option value="2">Two</option>
-                                    <option value="3">Three</option>
-                                </select>
-                                <select class="custom-select" id="inputGroupSelect01">
-                                    <option selected>Rok</option>
-                                    <option value="1">One</option>
-                                    <option value="2">Two</option>
-                                    <option value="3">Three</option>
-                                </select>
+                                <input autocomplete="off" type="text" id="picker2" class="form-control">
                             </div>
                             <h4 class="card-title mt-3 mb-2">Podsumowanie:</h4>
                             <form class="form-inline align-items-baseline">
@@ -247,9 +238,12 @@ session_start();
                             </form>
                             <div class="border-bottom mt-3 mb-3"></div>
                             <h4 class="card-title mt-3 mb-2 text-center">Zsumowana kwota: <span
-                                    class="badge badge-danger text-wrap">160zł</span></h4>
+                                    class="badge badge-danger text-wrap total-cost">160zł</span></h4>
                             <div class="mt-3 d-flex flex-column">
-                                <a href="" class="btn btn-success rezerwacja">Rezerwuj</a>
+
+                                <a href="" class="btn btn-success rezerwacja" data-toggle='modal'
+                                    data-target='#rezerwacjaModal'>Rezerwuj</a>
+
                             </div>
                         </div>
                     </div>
@@ -260,7 +254,9 @@ session_start();
     </section>
     <?php 
         require_once $_SERVER['DOCUMENT_ROOT'] . '/include/footer.php';
+        
         echo "<script>loadCar(".$data.");</script>";
+        echo "<script>const data = saveData(".$data.");</script>";
     ?>
 
 </body>

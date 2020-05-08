@@ -171,6 +171,7 @@
     <?php require_once $_SERVER['DOCUMENT_ROOT'] . '/include/footer.php';?>
     <script src="/js/index.js"></script>
     <script src="/js/newsletter.js"></script>
+    <script>loadCarousel();</script>
 </body>
 
 </html>

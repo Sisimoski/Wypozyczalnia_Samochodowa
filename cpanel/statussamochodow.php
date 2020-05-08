@@ -53,14 +53,13 @@ session_start();
                 </div>
                 <div class="row px-4 pb-3">
                     <div class="col">
-                        <div
-                            class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2
+                        <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2
                             mb-3 border-bottom px-2">
                             <h1>Status samochodów</h1>
                         </div>
-                        <div class="LoadCarTableHead">
-                            <table class="table">
-                                <thead>
+                        <div class="LoadCarTableHead table-responsive">
+                            <table class="table table-striped table-hover text-center align-items-center border">
+                                <thead class="thead-light">
                                     <tr>
                                         <th scope="col">#</th>
                                         <th scope="col">Nazwa</th>
@@ -69,8 +68,8 @@ session_start();
                                         <th scope="col">Funkcje</th>
                                     </tr>
                                 </thead>
-                                <tbody id="LoadCarTable">
-        
+                                <tbody class="" id="LoadCarTable">
+
                                 </tbody>
                             </table>
                             <div id="alert"></div>
@@ -116,53 +115,100 @@ session_start();
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-                <div class="modal-footer" style="justify-content: flex-start;">
-                    <form class="editCarForm" method="POST">
+                <form class="editCarForm" method="POST">
+                    <div class="modal-body">
                         <div class="form-group">
                             <label for="producentEdit">Producent</label>
-                            <input id="producentEdit" class="form-control" name="producentEdit" placeholder="np. Audi">
+                            <input id="producentEdit" class="form-control" name="producentEdit" >
                             <div class="komunikat"> </div>
                         </div>
                         <div class="form-group">
                             <label for="modelEdit">Model</label>
-                            <input id="modelEdit" class="form-control" name="modelEdit" placeholder="np. RS5">
+                            <input id="modelEdit" class="form-control" name="modelEdit" >
                             <div class="komunikat"> </div>
                         </div>
                         <div class="form-group">
                             <label for="rok_produkcjiEdit">Rok produkcji</label>
-                            <input id="rok_produkcjiEdit"class="form-control"  type="number" min="1960" max="2020" step="1"
-                                name="rok_produkcjiEdit" placeholder="np. 1995">
+                            <input id="rok_produkcjiEdit" class="form-control" type="number" min="1960" max="2020"
+                                step="1" name="rok_produkcjiEdit">
                             <div class="komunikat"> </div>
                         </div>
                         <div class="form-group">
                             <label for="kolorEdit">Kolor</label>
-                            <input id="kolorEdit"  class="form-control" type="input" name="kolorEdit" placeholder="czerwony">
+                            <input id="kolorEdit" class="form-control" type="input" name="kolorEdit">
                             <div class="komunikat"> </div>
                         </div>
                         <div class="form-group">
                             <label for="opisEdit">Opis</label>
-                            <input id="opisEdit" class="form-control"  type="input" name="opisEdit" placeholder="czerwony">
+                            <input id="opisEdit" class="form-control" type="input" name="opisEdit">
                             <div class="komunikat"> </div>
                         </div>
                         <div class="form-group">
                             <label for="cenaEdit">Cena wypożyczenia (zł/24h)</label>
-                            <input id="cenaEdit"  class="form-control" type="input" name="cenaEdit" placeholder="np. 200zł">
+                            <input id="cenaEdit" class="form-control" type="input" name="cenaEdit">
                             <div class="komunikat"> </div>
                         </div>
+                        <div class="form-group">
+                            <label for="segmentEdit">Segment</label>
+                            <input id="segmentEdit" class="form-control" type="input" name="segmentEdit">
+                            <div class="komunikat"> </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="typ_silnikaEdit">Typ silnika</label>
+                            <input id="typ_silnikaEdit" class="form-control" type="input" name="typ_silnikaEdit">
+                            <div class="komunikat"> </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="mocEdit">Moc</label>
+                            <input id="mocEdit" class="form-control" type="input" name="mocEdit">
+                            <div class="komunikat"> </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="pojemnosc_silnikaEdit">Pojemnosc silnika</label>
+                            <input id="pojemnosc_silnikaEdit" class="form-control" type="input" name="pojemnosc_silnikaEdit">
+                            <div class="komunikat"> </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="srednie_spalenieEdit">Średnie spalanie</label>
+                            <input id="srednie_spalenieEdit" class="form-control" type="input" name="srednie_spalenieEdit">
+                            <div class="komunikat"> </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="skrzynia_biegowEdit">Skrzynia biegów</label>
+                            <input id="skrzynia_biegowEdit" class="form-control" type="input" name="skrzynia_biegowEdit">
+                            <div class="komunikat"> </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="ilosc_miejscEdit">Ilość miejsc</label>
+                            <input id="ilosc_miejscEdit" class="form-control" type="input" name="ilosc_miejscEdit">
+                            <div class="komunikat"> </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="pojemnosc_bagaznikaEdit">Pojemność bagażnika</label>
+                            <input id="pojemnosc_bagaznikaEdit" class="form-control" type="input" name="pojemnosc_bagaznikaEdit">
+                            <div class="komunikat"> </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="zasiegEdit">Zasięg</label>
+                            <input id="zasiegEdit" class="form-control" type="input" name="zasiegEdit">
+                            <div class="komunikat"> </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
                         <div class="form-group">
                             <div class="komunikat"> </div>
                             <button type="button" class="btn btn-outline-danger" data-dismiss="modal">Anuluj</button>
                             <button type="button" id="editCarButton" name="editCarButton" value=""
                                 class="btn btn-success">Zatwierdź zmianę</button>
                         </div>
-                    </form>
-                </div>
+                    </div>
+                </form>
             </div>
         </div>
     </div>
-<script>
-    zaladujSamochody();
-</script>
+    <script>
+        zaladujSamochody();
+    </script>
 
 </body>
 
