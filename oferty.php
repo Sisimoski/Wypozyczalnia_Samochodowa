@@ -247,7 +247,6 @@
                             <div class="tab-content" id="tabContent">
                                 <div class="tab-pane fade show active" id="nav-basic" role="tabpanel">
                                     <form class="filterForm" method="POST">
-                                    <label for="searchResult">Filtry:</label><br/>
                                         <div class="form-group">
                                             <label for="producentFilter">Producent:</label>
                                             <select class="form-control" id="producentFilter" name="producentFilter">
