@@ -87,28 +87,20 @@
                             </ul>
                         </div>
                         <div class="card-body">
-                        <h3 class="title">
-        Aby zresetować hasło, wprowadź poniżej swoją nazwę użytkownika lub adres e-mail.
-        Jeżeli uda nam się znaleźć Twoje dane w bazie danych, zostanie wysłana wiadomość na Twój adres e-mail z linkiem do zmiany hasła.
+                        <h4 class="title">
+        Aby zresetować hasło, wprowadź poniżej swoją nazwę użytkownika lub adres e-mail.</br>
+        Jeżeli uda nam się znaleźć Twoje dane w bazie danych, zostanie wysłana wiadomość</br> na Twój adres e-mail z linkiem do zmiany hasła.
     </h4>
-    <div>
-        Wyszukaj po nazwie użytkownika:
-    </div> </br>
-    <form class="recoveryForm" type="POST">
-            <div class="form-group">
-              
-              <input type="text" name="loginRecovery" class="form-control" id="loginRecovery" placeholder="Login">
-                <div class="form-group col-xs-auto">
-                    <button id="loginRecoveryButton" name="loginRecoveryButton" class="btn btn-primary"  value="login" type="button">Wyszukaj</button>
-                    
-    <div></br>
+    <div> </br>
         Wyszukaj po adresie e-mail:
-    </div> </br>
+    </div> 
+    <form>
             <div class="form-group">
-             
-              <input type="text" name="emailRecovery" class="form-control" id="emailRecovery" placeholder="Email">
-                <div class="form-group col-xs-auto">
-                    <button id="emailRecoveryButton" class="btn btn-primary"  value="email" type="button">Wyszukaj</button>
+                <div class="col-5">
+                        <input type="text" name="emailRecovery" class="form-control" id="emailRecovery" placeholder="Email">
+                </div>
+                <div class="form-group col-xs-auto"> </br>
+                        <button id="emailRecoveryButton" class="btn btn-primary"  value="email" type="button">Wyszukaj</button>
                 </div>
             </div>
     </form>
