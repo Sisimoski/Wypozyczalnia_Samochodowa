@@ -206,10 +206,7 @@
                     <div class="card">
                         <div class="card-header">
                             <ul class="nav nav-tabs card-header-tabs" id="id1" role="tablist">
-                                <li class="nav-item">
-                                    <a class="nav-link active" href="#nav1" id="tab1"
-                                        data-toggle="tab">Tab 1</a>
-                                </li>
+                               
                             </ul>
                         </div>
                         <div class="card-body">
