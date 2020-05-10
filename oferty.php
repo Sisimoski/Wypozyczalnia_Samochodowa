@@ -210,9 +210,9 @@
                             </ul>
                         </div>
                         <div class="card-body">
-                            <div class="tab-content" id="tabContent">
-                            <label for="searchResult">Wyszukiwarka</label>
+                        <label for="searchResult">Wyszukiwarka</label>
 
+                            <div class="tab-content"id="tabContent">
                                 <div class="tab-pane fade show active" id="nav1" role="tabpanel">
                                 <form class="findCarForm" id="findCarForm" method="POST">
                                             <label for="searchResult">Wyszukiwarka</label>
