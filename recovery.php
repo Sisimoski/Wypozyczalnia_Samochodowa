@@ -66,22 +66,21 @@
     </section>
 <section>
 
-    <label>
+<h3 class="title">
         Aby zresetować hasło, wprowadź poniżej swoją nazwę użytkownika lub adres e-mail.
         Jeżeli uda nam się znaleźć Twoje dane w bazie danych, zostanie wysłana wiadomość na Twój adres e-mail z linkiem do zmiany hasła.
-    </label>
+    </h4>
     <div>
-        Wyszukaj po nazwie użytkownika
-    </div>
+        Wyszukaj po nazwie użytkownika:
+    </div> </br>
     <form class="recoveryForm" type="POST">
             <div class="form-group">
               
               <input type="text" name="loginRecovery" class="form-control" id="loginRecovery" placeholder="Login">
                 <div class="form-group col-xs-auto">
                     <button id="loginRecoveryButton" name="loginRecoveryButton" class="btn btn-primary"  value="login" type="button">Wyszukaj</button>
-                    </br>
-    <div>
-    
+                    
+    <div></br>
         Wyszukaj po adresie e-mail:
     </div> </br>
             <div class="form-group">
