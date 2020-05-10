@@ -202,73 +202,77 @@
         <div class="container">
             <div class="row">
                 <div class="col-12 mb-4">
-                    <!-- Default Filter Card -->
-                    <div class="card">
-                        <div class="card-header">
-                            <ul class="nav nav-tabs card-header-tabs" id="id1" role="tablist">
-                               
-                            </ul>
-                        </div>
-                        <div class="card-body">
-                            <div class="tab-content" id="tabContent">
-                                <div class="tab-pane fade show active" id="nav1" role="tabpanel">
-                                <form class="findCarForm" id="findCarForm" method="POST">
-                                            <label for="searchResult">Wyszukiwarka:</label>
-                                            <input id="searchResult" name="searchResult" class="form-control" placeholder="Wpisz jakiego samochodu szukasz :)"> 
-                                            </br>                                       
-                                        <button name="findCarButton" id="findCarButton" class="btn btn-primary" type="button">Szukaj</button>
-                                    
-                                    </form>
-                                </div>
-                                <div class="tab-pane fade" id="nav2" role="tabpanel">
-                                    <form>
-                                        <div class="form-group">
-                                            <label for="#">Title 2:</label>
-                                            <select class="form-control" id="#">
-                                                <option>1</option>
-                                                <option>2</option>
-                                            </select>
-                                        </div>
-                                        <button type="submit" class="btn btn-primary">Zastosuj</button>
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- End of Default Filter Card -->
                     <!-- Filter Panel -->
                     <div class="card">
-                        <div class="card-header">
-                            <ul class="nav nav-tabs card-header-tabs" id="carFilterCard" role="tablist">
-                                
-                            </ul>
-                        </div>
                         <div class="card-body">
                             <div class="tab-content" id="tabContent">
                                 <div class="tab-pane fade show active" id="nav-basic" role="tabpanel">
-                                    <form class="filterForm" method="POST">
-                                        <div class="form-group">
-                                            <label for="producentFilter">Producent:</label>
-                                            <select class="form-control" id="producentFilter" name="producentFilter">
-                                            <option value="default">Wszystkie</option>
-                                            </select>
+                                    <!-- Wyszukiwarka -->
+                                    <div class="row">
+                                        <div class="col">
+                                            <form class="findCarFor" id="findCarForm" method="POST">
+                                                <div class="form-group d-flex">
+                                                    <div class="flex-grow-1 mr-3">
+                                                        <input id="searchResult" name="searchResult"
+                                                            class="form-control" placeholder="Szukaj..."></input>
+
+                                                    </div>
+                                                    <div class="">
+                                                        <button name="findCarButton" id="findCarButton"
+                                                            class="btn btn-primary" type="button">Szukaj</button>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                            <div
+                                                class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center my-4 border-bottom px-2">
+                                            </div>
                                         </div>
-                                        <div class="form-group">
-                                            <label for="modelFilter">Model:</label>
-                                            <select class="form-control" id="modelFilter"  name="modelFilter" disabled>
-                                            <option value="default">Wszystkie</option>
-                                            </select>
+                                    </div>
+                                    <!-- Filtrowanie -->
+                                    <div class="row">
+                                        <div class="col">
+                                            <h3>Filtruj:</h3>
+                                            <form class="filterForm" method="POST">
+                                                <div class="form-group row">
+                                                    <label class="col-lg-2 col-form-label"
+                                                        for="producentFilter">Producent:</label>
+                                                    <div class="col-lg-10">
+                                                        <select class="form-control" id="producentFilter"
+                                                            name="producentFilter">
+                                                            <option value="default">Wszystkie</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group row">
+                                                    <label class="col-lg-2 col-form-label"
+                                                        for="modelFilter">Model:</label>
+                                                    <div class="col-lg-10">
+                                                        <select class="form-control" id="modelFilter" name="modelFilter"
+                                                            disabled>
+                                                            <option value="default">Wszystkie</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group row">
+                                                    <label class="col-lg-2 col-form-label" for="yearFilter">Rok
+                                                        produkcji od:</label>
+                                                    <div class="col-lg-10">
+                                                        <select class="form-control" id="yearFilter" name="yearFilter"
+                                                            disabled>
+                                                            <option value="default">Wszystkie</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group row">
+                                                    <div class="col-lg-12">
+                                                        <button name="filterButton" id="filterButton" type="button"
+                                                            class="btn btn-outline-primary btn-block">Filtruj</button>
+                                                    </div>
+                                                </div>
+                                            </form>
                                         </div>
-                                        <div class="form-group">
-                                            <label for="yearFilter">Rok produkcji od:</label>
-                                            <select class="form-control" id="yearFilter" name="yearFilter" disabled>
-                                            <option value="default">Wszystkie</option>
-                                            </select>
-                                        </div>
-                                        <button name="filterButton" id="filterButton" type="button" class="btn btn-primary">Filtruj</button>
-                                    </form>
+                                    </div>
                                 </div>
-                     
                             </div>
                         </div>
                     </div>
