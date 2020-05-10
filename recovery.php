@@ -75,17 +75,18 @@
     </div>
     <form class="recoveryForm" type="POST">
             <div class="form-group">
-              <label for="loginRecovery">Login</label>
-              <input type="text" name="loginRecovery" class="form-control" id="loginRecovery">
+              
+              <input type="text" name="loginRecovery" class="form-control" id="loginRecovery" placeholder="Login">
                 <div class="form-group col-xs-auto">
                     <button id="loginRecoveryButton" name="loginRecoveryButton" class="btn btn-primary"  value="login" type="button">Wyszukaj</button>
-   
+                    </br>
     <div>
-        Wyszukaj po adresie e-mail
-    </div>
+    
+        Wyszukaj po adresie e-mail:
+    </div> </br>
             <div class="form-group">
-              <label for="emailRecovery">E-mail</label>
-              <input type="text" name="emailRecovery" class="form-control" id="emailRecovery">
+             
+              <input type="text" name="emailRecovery" class="form-control" id="emailRecovery" placeholder="Email">
                 <div class="form-group col-xs-auto">
                     <button id="emailRecoveryButton" class="btn btn-primary"  value="email" type="button">Wyszukaj</button>
                 </div>
