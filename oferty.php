@@ -212,8 +212,9 @@
                         <div class="card-body">
                             <div class="tab-content" id="tabContent">
                                 <div class="tab-pane fade show active" id="nav1" role="tabpanel">
+                                <label for="searchResult">Wyszukiwarka</label>
                                 <form class="findCarForm" id="findCarForm" method="POST">
-                                            <label for="searchResult">Wyszukiwarka</label>
+                                            
                                             <input id="searchResult" name="searchResult" class="form-control" placeholder="Wpisz jakiego samochodu szukasz :)"> 
                                             </br>                                       
                                         <button name="findCarButton" id="findCarButton" class="btn btn-primary" type="button">Szukaj</button>
