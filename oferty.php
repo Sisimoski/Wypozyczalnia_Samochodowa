@@ -214,7 +214,8 @@
                                 <div class="tab-pane fade show active" id="nav1" role="tabpanel">
                                 <form class="findCarForm" id="findCarForm" method="POST">
                                             <label for="searchResult">Wyszukiwarka</label>
-                                            <input id="searchResult" name="searchResult" class="form-control" placeholder="Wpisz jakiego samochodu szukasz :)">                                        
+                                            <input id="searchResult" name="searchResult" class="form-control" placeholder="Wpisz jakiego samochodu szukasz :)"> 
+                                            </br>                                       
                                         <button name="findCarButton" id="findCarButton" class="btn btn-primary" type="button">Szukaj</button>
                                     
                                     </form>
@@ -274,93 +275,7 @@
                                         <button name="filterButton" id="filterButton" type="button" class="btn btn-primary">Filtruj</button>
                                     </form>
                                 </div>
-                                <div class="tab-pane fade" id="nav-specs" role="tabpanel">
-                                    <form>
-                                        <div class="form-group">
-                                            <label for="#">Ocena klientów:</label>
-                                            <select class="form-control" id="#">
-                                                <option>1</option>
-                                                <option>2</option>
-                                            </select>
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="#">Segment:</label>
-                                            <select class="form-control" id="#">
-                                                <option>1</option>
-                                                <option>2</option>
-                                            </select>
-                                        </div>
-                                        <div class="form-row">
-                                            <div class="form-group col-md-6">
-                                                <label for="#">Typ silnika:</label>
-                                                <select class="form-control" id="#">
-                                                    <option>1</option>
-                                                    <option>2</option>
-                                                </select>
-                                            </div>
-                                            <div class="form-group col-md-3">
-                                                <label for="#">Moc:</label>
-                                                <select class="form-control" id="#">
-                                                    <option>1</option>
-                                                    <option>2</option>
-                                                </select>
-                                            </div>
-                                            <div class="form-group col-md-3">
-                                                <label for="#">Pojemność silnika:</label>
-                                                <select class="form-control" id="#">
-                                                    <option>1</option>
-                                                    <option>2</option>
-                                                </select>
-                                            </div>
-
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="#">Skrzynia biegów:</label>
-                                            <select class="form-control" id="#">
-                                                <option>1</option>
-                                                <option>2</option>
-                                            </select>
-                                        </div>
-                                        <div class="form-row">
-                                            <div class="form-group col-md-6">
-                                                <label for="#">Ilość miejsc:</label>
-                                                <select class="form-control" id="#">
-                                                    <option>1</option>
-                                                    <option>2</option>
-                                                </select>
-                                            </div>
-                                            <div class="form-group col-md-6">
-                                                <label for="#">Pojemność bagażnika:</label>
-                                                <select class="form-control" id="#">
-                                                    <option>1</option>
-                                                    <option>2</option>
-                                                </select>
-                                            </div>
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="#">Średnie spalanie:</label>
-                                            <select class="form-control" id="#">
-                                                <option>1</option>
-                                                <option>2</option>
-                                            </select>
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="#">Zasięg na pełnym baku:</label>
-                                            <select class="form-control" id="#">
-                                                <option>1</option>
-                                                <option>2</option>
-                                            </select>
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="#">Średni koszt wynajmu:</label>
-                                            <select class="form-control" id="#">
-                                                <option>1</option>
-                                                <option>2</option>
-                                            </select>
-                                        </div>
-                                        <button type="submit" class="btn btn-primary">Zastosuj</button>
-                                    </form>
-                                </div>
+                     
                             </div>
                         </div>
                     </div>
