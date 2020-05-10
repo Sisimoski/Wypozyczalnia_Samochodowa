@@ -240,20 +240,14 @@
                     <div class="card">
                         <div class="card-header">
                             <ul class="nav nav-tabs card-header-tabs" id="carFilterCard" role="tablist">
-                                <li class="nav-item">
-                                    <a class="nav-link active" href="#nav-basic" id="tab-basic"
-                                        data-toggle="tab">Podstawowe dane</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#nav-specs" id="tab-specs"
-                                        data-toggle="tab">Specyfikacje</a>
-                                </li>
+                                
                             </ul>
                         </div>
                         <div class="card-body">
                             <div class="tab-content" id="tabContent">
                                 <div class="tab-pane fade show active" id="nav-basic" role="tabpanel">
                                     <form class="filterForm" method="POST">
+                                    <label for="searchResult">Filtry:</label>
                                         <div class="form-group">
                                             <label for="producentFilter">Producent:</label>
                                             <select class="form-control" id="producentFilter" name="producentFilter">
