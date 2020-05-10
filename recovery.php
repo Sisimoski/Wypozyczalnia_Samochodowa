@@ -75,46 +75,34 @@
             </div>
         </div>
     </section>
-<section>
-<div class="container">
+    <section id="about">
+        <div class="container">
             <div class="row">
-                <div class="col-12 mb-4">
-                    <!-- Default Filter Card -->
-                    <div class="card">
-                        <div class="card-header">
-                            <ul class="nav nav-tabs card-header-tabs" id="id1" role="tablist">
-                               
-                            </ul>
+                <div class="col">
+                    <h5 class="text-center">Aby zresetować hasło, wprowadź poniżej swój adres e-mail.</h5>
+                    <p class="text-center">
+                        Jeżeli uda nam się znaleźć Twoje dane w bazie danych, zostanie wysłana wiadomość</br> na Twój
+                        adres e-mail z linkiem do zmiany hasła.
+                    </p>
+                    <form class="contactForm" method="POST">
+                        <div class="form-row">
+                            <div class="form-group col-md-12">
+                                <label for="">Wyszukaj po adresie e-mail:</label>
+                                <input type="text" name="emailRecovery" class="form-control" id="emailRecovery"
+                                    placeholder="Email">
+                                <div class="komunikat"> </div>
+                            </div>
+                            <div class="form-group col-xs-auto">
+                                <button id="emailRecoveryButton" class="btn btn-primary" value="email"
+                                    type="button">Wyszukaj</button>
+                            </div>
                         </div>
-                        <div class="card-body">
-                        <h4 class="title">
-        Aby zresetować hasło, wprowadź poniżej swoją nazwę użytkownika lub adres e-mail.</br>
-        Jeżeli uda nam się znaleźć Twoje dane w bazie danych, zostanie wysłana wiadomość</br> na Twój adres e-mail z linkiem do zmiany hasła.
-    </h4>
-    <div> </br>
-        Wyszukaj po adresie e-mail:
-    </div> 
-    <form>
-            <div class="form-group">
-                <div class="col-5">
-                        <input type="text" name="emailRecovery" class="form-control" id="emailRecovery" placeholder="Email">
-                </div>
-                <div class="form-group col-xs-auto"> </br>
-                        <button id="emailRecoveryButton" class="btn btn-primary"  value="email" type="button">Wyszukaj</button>
+                    </form>
+
                 </div>
             </div>
-    </form>
-</section>
-                        </div>
-                    </div>
-                    <!-- End of Default Filter Card -->
-                    <!-- Filter Panel -->
-                   
-
-    
-
-   
-   
+        </div>
+    </section>
     <?php require_once $_SERVER['DOCUMENT_ROOT'] . '/include/footer.php';?>
 </body>
 

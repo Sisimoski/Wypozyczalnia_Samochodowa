@@ -9,7 +9,7 @@
 <html lang="pl">
 
 <head>
-  <title>Logowanie</title>
+  <title>Zapomniałeś hasła?</title>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -51,33 +51,25 @@
       </div>
       <div class="col-md p-5 text-light" style="background-color: #8AC2F6;">
         <div>
-          <h1>Witaj ponownie! Zaloguj się.</h1>
+          <h1>Zapomniałeś hasła?</h1>
           <form class="loginForm">
+              <div class="my-4">
+                  <h5>Aby zresetować hasło, wprowadź poniżej swój adres e-mail.</h5>
+                    <p>
+                        Jeżeli uda nam się znaleźć Twoje dane w bazie danych, zostanie wysłana wiadomość</br> na Twój
+                        adres e-mail z linkiem do zmiany hasła.
+                    </p>
+              </div>
             <div class="form-group">
-              <label for="login">Login/Email</label>
-              <input type="text" name="login" class="form-control" id="login" aria-describedby="loginHelp"
-                placeholder="Login/Email">
+              <label for="">Wyszukaj po adresie e-mail:</label>
+              <input type="text" name="emailRecovery" class="form-control" id="emailRecovery" placeholder="Email">
               <div id="loginInfo" class="form-text font-weight-normal"> </div>
-            </div>
-            <div class="form-group">
-              <label for="password">Hasło</label>
-              <input type="password" name="password" class="form-control" id="password" placeholder="Hasło">
-              <div id="passwordInfo" class="form-text font-weight-normal"> </div>
-            </div>
-            <div class="form-group form-check custom-checkbox">
-              <input type="checkbox" name="rememberMe" class="custom-control-input" id="rememberMe">
-              <label class="custom-control-label" for="rememberMe">Zapamiętaj mnie</label>
             </div>
             <div class="form-row">
               <div class="form-group col-xs-auto">
-                <button id="zaloguj" class="btn btn-primary" type="submit">Zaloguj się</button>
+                <button id="emailRecoveryButton" class="btn btn-primary" value="email"
+                                    type="button">Wyszukaj</button>
               </div>
-              <div class="form-group col-xs-auto">
-                <a href="/recovery2.php">Zapomniałeś hasła?</a>
-              </div>
-            </div>
-            <div class="form-group">
-              <label>Nie masz jeszcze konta? <a href="register.php">Zarejestruj się teraz!</a></label>
             </div>
           </form>
         </div>
