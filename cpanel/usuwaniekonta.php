@@ -65,7 +65,7 @@ session_start();
                  <div class="modal-dialog" role="document">
                      <div class="modal-content">
                         <div class="modal-header">
-                             <h5 class="modal-title" id="deleteAccountLabel">Usuwanie Samochodu</h5>
+                             <h5 class="modal-title" id="deleteAccountLabel">Usuń Konto</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -82,10 +82,9 @@ session_start();
     </div>
                 <div class="col px-4">
                     <div class="col mb-3">
-                       Usuwanie konta.
                        </div>
                        <div>
-                       <button type='button' class='deleteCarButtonValue btn btn-danger' data-toggle='modal' data-target='#deleteAccountModal'  >Usuń Samochód</button>
+                       <button type='button' class='deleteCarButtonValue btn btn-danger' data-toggle='modal' data-target='#deleteAccountModal'  >Usuń Konto</button>
                        </div>
                     
                 </div>
