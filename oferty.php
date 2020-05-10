@@ -214,12 +214,12 @@
                                                 <div class="form-group d-flex">
                                                     <div class="flex-grow-1 mr-3">
                                                         <input id="searchResult" name="searchResult"
-                                                            class="form-control" placeholder="Szukaj..."></input>
+                                                            class="form-control form-control-lg" placeholder="Szukaj..."></input>
 
                                                     </div>
                                                     <div class="">
                                                         <button name="findCarButton" id="findCarButton"
-                                                            class="btn btn-primary" type="button">Szukaj</button>
+                                                            class="btn btn-primary btn-lg" type="button">Szukaj</button>
                                                     </div>
                                                 </div>
                                             </form>
