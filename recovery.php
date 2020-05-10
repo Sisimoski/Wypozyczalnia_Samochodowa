@@ -64,9 +64,30 @@
             </div>
         </nav>
     </section>
+    <!-- Sekcja Hero -->
+    <section id="herous" class="text-light">
+        <div class="container">
+            <div class="row justify-content-between align-items-center">
+                <div class="col-lg-12 pt-lg-0 order-2 order-lg-1">
+                    <h1>Zapomniałeś hasła?</h1>
+                    <h2>Nie ma problemu! Przypomnimy Ci!</h2>
+                </div>
+            </div>
+        </div>
+    </section>
 <section>
-
-<h3 class="title">
+<div class="container">
+            <div class="row">
+                <div class="col-12 mb-4">
+                    <!-- Default Filter Card -->
+                    <div class="card">
+                        <div class="card-header">
+                            <ul class="nav nav-tabs card-header-tabs" id="id1" role="tablist">
+                               
+                            </ul>
+                        </div>
+                        <div class="card-body">
+                        <h3 class="title">
         Aby zresetować hasło, wprowadź poniżej swoją nazwę użytkownika lub adres e-mail.
         Jeżeli uda nam się znaleźć Twoje dane w bazie danych, zostanie wysłana wiadomość na Twój adres e-mail z linkiem do zmiany hasła.
     </h4>
@@ -92,6 +113,13 @@
             </div>
     </form>
 </section>
+                        </div>
+                    </div>
+                    <!-- End of Default Filter Card -->
+                    <!-- Filter Panel -->
+                   
+
+    
 
    
    
