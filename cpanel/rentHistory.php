@@ -14,11 +14,13 @@ session_start();
     <title>Historia Wypożyczeń</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <?php require_once $_SERVER['DOCUMENT_ROOT'] . '/cpanel/include/include.php';?>
+    <script src="./js/rater.min.js"></script> 
     <script src="js/collapse.js"></script>
     <script src="/cpanel/js/logout.js"></script>
     <script src="./js/carManagement.js"></script>
+    
+
 </head>
 
 <body>
@@ -125,7 +127,10 @@ session_start();
                                     </div>
                                     <div class="modal-body">
                                         <form>
-                                            TUTAJ BĘDZIE WYSTAWIANIE OPINII
+                                        Twoja ocena: 
+                                        <div id="rate"></div>
+                                        Komentarz: 
+                                        <input class="form-control" type="text" id="commentText" name="comment" />
                                         </form>
                                     </div>
                                     <div class="modal-footer">

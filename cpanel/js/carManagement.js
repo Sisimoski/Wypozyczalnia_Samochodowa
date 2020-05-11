@@ -195,6 +195,12 @@ $(document).ready(function () {
     });
 
     
+   
+    $("#rate").rate({
+        max_value: 5,
+        step_size: 1,
+    });
+    
 });
 
 
