@@ -1,8 +1,12 @@
 $(document).ready(function () {
 
     $(".alert").fadeOut();
-
-    
+    //wyświetlanie nazwy pliku
+    $('#zdjecie').change(function() {
+        var i = $(this).prev('label').clone();
+        var file = $('#zdjecie')[0].files[0].name;
+        $(this).prev('label').text(file);
+      });
 
     //dodawnaie samochodu
     $("form#addCarForm").submit(function (e) {

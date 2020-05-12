@@ -25,8 +25,12 @@ $(document).ready(function(){
             }
  
         })
+
+
+
 //Wyszukiwarka samochodu
     $("#findCarButton").click(function() {
+
         $(".alert-success").html("");
         $(".alert-error").html("");
         $(".alert").removeClass("alert-success");
@@ -44,11 +48,11 @@ $(document).ready(function(){
         });
     
         request.done(function(response) {
-            window.location.replace(response);
-
+           window.location.replace(response);
         });
     
         request.fail(function(response) {
+            console.log(response);
             $(".alert").addClass("alert-danger");
             $(".alert-success").fadeOut(3000);   
             $(".alert-danger").html(response);     

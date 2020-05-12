@@ -179,7 +179,7 @@ session_start();
                                         <label for="zdjecie">Dodaj zdjęcie</label>
                                         <div class="custom-file">
                                             <label class="custom-file-label" for="zdjecie">Wybierz plik:</label>
-                                            <input id="zdjecie" class="custom-file-input" type="file" name="zdjecie">
+                                            <input id="zdjecie" class="custom-file-input" type="file" name="zdjecie" accept="image/*">
                                             <div class="komunikat"> </div>
                                         </div>
                                     </div>

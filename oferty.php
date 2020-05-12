@@ -210,16 +210,13 @@
                                     <!-- Wyszukiwarka -->
                                     <div class="row">
                                         <div class="col">
-                                            <form class="findCarFor" id="findCarForm" method="POST">
+                                            <form class="findCarForm" id="findCarForm" method="POST" >
                                                 <div class="form-group d-flex">
                                                     <div class="flex-grow-1 mr-3">
-                                                        <input id="searchResult" name="searchResult"
-                                                            class="form-control form-control-lg" placeholder="Szukaj..."></input>
-
+                                                        <input id="searchResult" name="searchResult" type='text' class="form-control form-control-lg" placeholder="Szukaj..."></input>
                                                     </div>
-                                                    <div class="">
-                                                        <button name="findCarButton" id="findCarButton"
-                                                            class="btn btn-primary btn-lg" type="button">Szukaj</button>
+                                                    <div>
+                                                        <button name="findCarButton" id="findCarButton" class="btn btn-primary btn-lg" type="submit">Szukaj</button>
                                                     </div>
                                                 </div>
                                             </form>

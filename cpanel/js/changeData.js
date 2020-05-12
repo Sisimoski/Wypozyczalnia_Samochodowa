@@ -404,13 +404,11 @@ $("#changeMail").click(function() {
             $(".alert").addClass("alert-success");
             $(".alert-success").html(response);
             $(".alert-success").fadeOut(3000);          
-
         }
         else{
             $(".alert").addClass("alert-danger");
             $(".alert-success").fadeOut(3000);     
             $(".alert-danger").html(response);      
- 
         }
     });
 

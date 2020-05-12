@@ -36,7 +36,7 @@ $(document).ready(function() {
         else{   
             input.removeClass("valid").addClass("invalid");
             input.removeClass("border border-success").addClass("border border-danger");
-            input.next('.komunikat').text("Wprowadź kombiancje co najmniej 8 cyfr, małych liter, dużych liter i znaków (takich jak !@#$%^&*)");	
+            input.next('.komunikat').text("Wprowadź kombiancje co najmniej 8 cyfr, małych liter, dużych liter i znaków (takich jak !-@#$%^&*)");	
         }
    
     });
@@ -59,7 +59,7 @@ $(document).ready(function() {
     $('#imie').blur(function(){
         var input = $(this);  
         var imie = input.val()  
-        var onlyLetters = new RegExp("^[a-zA-Z\s]+$");  
+        var onlyLetters = new RegExp("[AaĄąBbCcĆćDdEeĘęFfGgHhIiJjKkLlŁłMmNnŃńOoÓóPpRrSsŚśTtUuWwYyZzŹźŻż]");  
         
         if(onlyLetters.test(imie)) { 
             input.removeClass("invalid").addClass("valid");
@@ -77,7 +77,7 @@ $(document).ready(function() {
     $('#nazwisko').blur(function(){
         var input = $(this);  
         var nazwisko = input.val()  
-        var onlyLetters = /^[\s\p{L}]+$/u;
+        var onlyLetters = new RegExp("[AaĄąBbCcĆćDdEeĘęFfGgHhIiJjKkLlŁłMmNnŃńOoÓóPpRrSsŚśTtUuWwYyZzŹźŻż]");  
         
         if(onlyLetters.test(nazwisko)) { 
             input.removeClass("invalid").addClass("valid"); 
