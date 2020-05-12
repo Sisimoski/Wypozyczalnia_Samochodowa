@@ -140,6 +140,15 @@
                                         </ul>
 
                                         <ul class="list-group mb-1">
+                                            <a href="/cpanel/employeeModules/employeeRateReview.php"
+                                                class="list-group-item list-group-item-action list-group-item
+                                                list-group-item">
+                                                <i class="bx bx-message-alt-detail" type="solid"></i>
+                                                Akceptacje Opinii
+                                            </a>
+                                        </ul>
+
+                                        <ul class="list-group mb-1">
                                             <a href="/cpanel/employeeModules/employeeNewsletter.php"
                                                 class="list-group-item list-group-item-action list-group-item
                                                 list-group-item">
