@@ -47,9 +47,6 @@ $(document).ready(function () {
         });
 
     });
-
-
-
     //usuwanie samochodu
     $('#deleteCarButton').click(function () {
         var value = $('#deleteCarButton').val();
@@ -96,11 +93,54 @@ $(document).ready(function () {
         })
     });
 
+    $('#sendRateButton').click(function (){
+        $(".alert-success").html("");
+        $(".alert-error").html("");
+        $(".alert").removeClass("alert-success");
+        $(".alert").removeClass("alert-danger");
+        $(".alert").html('');
+        $(".alert").fadeIn();
+
+        request = $.ajax({
+            url: "./php/makeReview.php",
+            data: {comment : $('#commentText').val(), rate : $('#rate').attr("data-rate-value"), id : $(this).val() },
+            type: "POST"
+        })
+
+        request.done(function (response) {
+            console.log(response);
+            if (response == "Przesłano Opinię") {
+                $(".alert").addClass("alert-success");
+                $(".alert-success").html(response);
+                $(".alert-success").fadeOut(3000);
+                $(".historyRentCars tr").remove();
+                zaladujHistorieWypozyczen();
+            } else {
+                $(".alert").addClass("alert-danger");            
+                $(".alert-danger").html(response);
+                $(".alert").fadeOut(3000);
+                $(".historyRentCars tr").remove();
+                zaladujHistorieWypozyczen();
+
+            }
+        });
+
+        request.fail(function (response){
+
+        });
+
+
+    });
+
     var link  = $(location).attr("href");
     if(link.includes("activeRent.php")){
         zaladujWypozyczenia();
     }
     if(link.includes("rentHistory.php")){
+        $("#rate").rate({
+            max_value: 5,
+            step_size: 1,
+        });
         zaladujHistorieWypozyczen();
     }
 
@@ -179,6 +219,7 @@ $(document).ready(function () {
 
     $(document).on("click", "button.makeReview" , function() {
         $("#addReviewModal").modal("show");
+        $('#sendRateButton').attr('value', $(this).val())
 
     });
 
@@ -194,12 +235,8 @@ $(document).ready(function () {
         
     });
 
+     
     
-   
-    $("#rate").rate({
-        max_value: 5,
-        step_size: 1,
-    });
     
 });
 

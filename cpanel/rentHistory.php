@@ -135,7 +135,7 @@ session_start();
                                     </div>
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-outline-secondary" data-dismiss="modal">Zamknij</button>
-                                        <button type="button" id="deleteCarButton" name="deleteCarButton" value=""
+                                        <button type="button" id="sendRateButton" name="sendRate" value=""
                                             class="btn btn-primary">Wystaw Opinię</button>
                                     </div>
                                 </div>
