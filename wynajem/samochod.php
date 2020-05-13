@@ -32,7 +32,7 @@ session_start();
 <html lang="pl">
 
 <head>
-    <title>Samochód</title>
+    <title>Wypożycz samochód</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -64,7 +64,7 @@ session_start();
                     <li class="nav-item">
                         <a class="nav-link" href="/index.php">Strona główna<span class="sr-only">(current)</span></a>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item active">
                         <a class="nav-link" href="/oferty.php">Oferty</a>
                     </li>
                     <li class="nav-item">

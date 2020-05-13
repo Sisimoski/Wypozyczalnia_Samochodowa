@@ -161,11 +161,6 @@ session_start();
                                             placeholder="np. 200">
                                         <div class="komunikat"> </div>
                                     </div>
-                                    <div class="alert alert-warning" role="alert">
-                                        Ze względów bezpieczeństwa oraz kwestii ubezpieczeń – prosimy o dodanie numeru
-                                        VIN oraz numeru
-                                        tablicy rejestracyjnej.
-                                    </div>
                                     <div class="form-group">
                                         <label for="">VIN</label>
                                         <input id="vin" class="form-control" type="input" name="vin">
