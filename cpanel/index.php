@@ -112,6 +112,8 @@ session_start();
         </div>
     </div>
     </div>
+    <div class="chartResponse d-none"></div>
+
 </body>
 
 </html>
