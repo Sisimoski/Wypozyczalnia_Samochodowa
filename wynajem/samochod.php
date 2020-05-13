@@ -76,16 +76,16 @@ session_start();
                 </ul>
                 <?php
             if(!isset($_SESSION['id'])){
-            echo "<button id='zaloguj' type='submit' href='/logowanie.php' class='btn btn-outline-primary'>Zaloguj się</button>";
-            echo "<button id='zarejestruj' type='submit' href='/register.php' class='btn btn-primary ml-2'>Zarejestruj się</button>" ;
+            echo "<button id='zaloguj' type='button' href='/logowanie.php' class='btn btn-outline-primary'>Zaloguj się</button>";
+            echo "<button id='zarejestruj' type='button' href='/register.php' class='btn btn-primary ml-2'>Zarejestruj się</button>" ;
             }
             else{
                 if(isset($_SESSION['rodzaj_konta'])){
                     if($_SESSION['rodzaj_konta'] == 1 || $_SESSION['rodzaj_konta'] == 2){
-                        echo "<button id='panelKlienta' href='/cpanel/index.php' type='submit' class='btn btn-primary'>Panel Klienta</button>";
+                        echo "<button id='panelKlienta' href='/cpanel/index.php' type='button' class='btn btn-primary'>Panel Klienta</button>";
                     }
                     if($_SESSION['rodzaj_konta'] == 3 || $_SESSION['rodzaj_konta'] == 4){
-                        echo "<button id='panelKlienta' href='/cpanel/index.php' type='submit' class='btn btn-primary'>Panel Pracownika</button>";
+                        echo "<button id='panelKlienta' href='/cpanel/index.php' type='button' class='btn btn-primary'>Panel Pracownika</button>";
                     }
                         
                 }
