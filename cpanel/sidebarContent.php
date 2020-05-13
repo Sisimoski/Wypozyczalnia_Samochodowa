@@ -11,11 +11,16 @@
      </div>
  </ul>
  <!-- End of default collapse -->
-
+<ul class="list-group mb-2">
+            <a href="/cpanel/index.php" class="list-group-item list-group-item-action list-group-item-primary">
+                <i class="bx bxs-dashboard"></i>
+                Dashboard
+            </a>
+        </ul>
  <ul class="list-group mb-2">
      <div>
          <a data-toggle="collapse" href="#mojprofil"
-             class="list-group-item list-group-item-action list-group-item-primary">
+             class="list-group-item list-group-item-action list-group-item-info">
              <i class='bx bxs-user-detail'></i>
              Mój profil
              <i class="bx bx-chevrons-down text-right"></i>
@@ -42,19 +47,12 @@
     <div>
         <a data-toggle="collapse" href="#clientPanel"
             class="list-group-item list-group-item-action list-group-item-info">
-            <i class='bx bxs-dashboard'></i>
+            <i class='bx bxs-book-content'></i>
             Panel Klienta
             <i class="bx bx-chevrons-down text-right"></i>
         </a>
     </div>
     <div class="collapse" id="clientPanel">
-        <ul class="list-group mt-1">
-            <a href="/cpanel/index.php" class="list-group-item list-group-item-action list-group-item
-                                                list-group-item">
-                <i class="bx bx-news"></i>
-                Dashboard
-            </a>
-        </ul>
             <!-- SAMOCHODY KLIENTA -->
             <ul class="list-group">
                 <div class="mt-1">
