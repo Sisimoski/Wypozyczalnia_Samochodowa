@@ -22,6 +22,8 @@ session_start();
 </head>
 
 <body>
+    <!-- Alert -->
+    <?php require_once $_SERVER['DOCUMENT_ROOT'] . '/include/alert.php';?>
     <!-- Nagłówek Navbar -->
     <section id="header">
         <?php
