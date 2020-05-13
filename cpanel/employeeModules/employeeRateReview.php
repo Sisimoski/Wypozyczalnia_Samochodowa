@@ -61,13 +61,35 @@ session_start();
                             <table class="table table-striped table-hover text-center align-items-center border">
                                 <thead class="thead-light">
                                     <tr>
-                                        <th scope="col">TH 1</th>
-                                        <th scope="col">TH 2</th>
-                                        <th scope="col">TH 3</th>
+                                        <th scope="col">#</th>
+                                        <th scope="col">Użytkownik</th>
+                                        <th scope="col">Ocena</th>
+                                        <th scope="col">Komentarz</th>
+                                        <th scope="col">Funkcje</th>
                                     </tr>
                                 </thead>
                                 <tbody class="" id="">
-
+                                    <tr>
+                                        <th scope='row'>1</th>
+                                        <td>Dodane</td>
+                                        <td>W HTML</td>
+                                        <td>Słabo nie polecam. Najgorszy pojazd na świecie</td>
+                                        <td><button type='button' class='btn btn-sm btn-success ml-2 flex-fill'>Zaakceptuj</button><button type='button' class='btn btn-sm btn-danger ml-2 flex-fill'>Odrzuć</button></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope='row'>2</th>
+                                        <td>Dodane</td>
+                                        <td>W HTML</td>
+                                        <td>Słabo nie polecam. Najgorszy pojazd na świecie</td>
+                                        <td><button type='button' class='btn btn-sm btn-success ml-2 flex-fill'>Zaakceptuj</button><button type='button' class='btn btn-sm btn-danger ml-2 flex-fill'>Odrzuć</button></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope='row'>3</th>
+                                        <td>Dodane</td>
+                                        <td>W HTML</td>
+                                        <td>Słabo nie polecam. Najgorszy pojazd na świecie</td>
+                                        <td><button type='button' class='btn btn-sm btn-success ml-2 flex-fill'>Zaakceptuj</button><button type='button' class='btn btn-sm btn-danger ml-2 flex-fill'>Odrzuć</button></td>
+                                    </tr>
                                 </tbody>
                             </table>
                             <div id="alert"></div>
@@ -76,45 +98,6 @@ session_start();
                     </div>
                 </div>
 
-            </div>
-        </div>
-    </div>
-
-
-    <!-- Modal Template -->
-    <div class="modal fade" id="" tabindex="-1" role="dialog" aria-labelledby="" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="">Modal Title</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    Modal body
-                    <form class="" method="POST">
-                    <div class="modal-body">
-                        <div class="form-group">
-                            <label for="">Label</label>
-                            <input id="" class="form-control" name="" placeholder="Input">
-                            <div class="komunikat"> </div>
-                        </div>
-                    </div>
-                    <div class="modal-footer">
-                        <div class="form-group">
-                            <div class="komunikat"> </div>
-                            <button type="button" class="btn btn-outline-danger" data-dismiss="modal">Anuluj</button>
-                            <button type="button" id="editCarButton" name="editCarButton" value=""
-                                class="btn btn-success">Zatwierdź zmianę</button>
-                        </div>
-                    </div>
-                </form>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-danger" data-dismiss="modal">Button</button>
-                    <button type="button" class="btn btn-primary">Button</button>
-                </div>
             </div>
         </div>
     </div>
