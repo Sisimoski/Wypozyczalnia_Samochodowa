@@ -115,21 +115,21 @@ session_start();
                         <div class="form-row">
                             <div class="form-group col-md-12">
                                 <label for="imie">Imię oraz nazwisko</label>
-                                <input data-toggle="tooltip" data-placement="top" title="Tooltip on top"
+                                <input data-toggle="tooltip" data-placement="top" 
                                     class="form-control" id="imie" placeholder="Wprowadź imie" name="imie">
                                     <small class="form-text text-muted">To pole jest wymagane.</small>
                                 <div class="komunikat"> </div>
                             </div>
                             <div class="form-group col-md-12">
                                 <label for="email">Adres e-mail</label>
-                                <input data-toggle="tooltip" data-placement="top" title="Tooltip on top"
+                                <input data-toggle="tooltip" data-placement="top" 
                                     class="form-control" id="email" placeholder="Wprowadź email" name="email">
                                     <small class="form-text text-muted">To pole jest wymagane.</small>
                                 <div class="komunikat"> </div>
                             </div>
                             <div class="form-group col-md-12">
                                 <label for="content">Treść wiadomości</label>
-                                <textarea type="textarea" rows="5" data-toggle="tooltip" data-placement="top" title="Tooltip on top"
+                                <textarea type="textarea" rows="5" data-toggle="tooltip" data-placement="top" 
                                     class="form-control" id="content" placeholder="Wprowadź treść wiadomości"
                                     name="content"></textarea>
                                     <small class="form-text text-muted">To pole jest wymagane.</small>
