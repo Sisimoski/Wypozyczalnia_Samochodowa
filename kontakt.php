@@ -90,7 +90,7 @@ session_start();
                         Opole, 11-111<br>
                         Polska <br><br>
                         <strong>Telefon:</strong> +48 123 456 789<br>
-                        <strong>Email:</strong> car4you@poczta.pl<br>
+                        <strong>Email:</strong> Car4YouCompany@gmail.com<br>
                     </p>
                 </div>
                 <div class="col">
