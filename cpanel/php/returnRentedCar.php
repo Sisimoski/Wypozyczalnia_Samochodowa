@@ -15,7 +15,7 @@
         WHERE wypozyczony_samochod.id_wypozyczenia = {$id}");
     $sth ->execute();
     $result  = $sth ->fetchAll();
-    var_dump($result);
+    
     $idSpecyfikajca = $result[0]["id_specyfikacja_samochodu"];
     $kwota = intval($result[0]['kwota']);
 
