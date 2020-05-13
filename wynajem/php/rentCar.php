@@ -6,9 +6,10 @@
     $data = date("Y-m-d");
     $dataOd = $_POST['dataOd'];
     $dataDo = $_POST['dataDo'];
+    $kwota = $_POST['kwota'];
     
 
-    $sth =$db->prepare("SELECT samochod.id_specyfikacja_samochodu FROM samochod 
+    $sth = $db->prepare("SELECT samochod.id_specyfikacja_samochodu FROM samochod 
     JOIN specyfikacja_samochodu ON samochod.id_specyfikacja_samochodu = specyfikacja_samochodu.id_specyfikacja_samochodu
     WHERE specyfikacja_samochodu.czy_posiadany = 1 AND samochod.vin = '{$vin}'");
     $sth->execute();
@@ -21,11 +22,12 @@
            WHERE id_specyfikacja_samochodu = {$idCar} ");
         $sth ->execute();
 
-        $sth = $db->prepare("INSERT INTO wypozyczenie (id_uzytkownik, data_zlozenia, czy_przyjeto, data_przyjecia, czy_oplacono, data_odbioru, data_zwrotu, czy_zrealizowano)
-         VALUES(:id,:data,:przyjecie,:data2,:oplacenie,:data3,:data4,:realizacja)");
+        $sth = $db->prepare("INSERT INTO wypozyczenie (id_uzytkownik, data_zlozenia, czy_przyjeto, data_przyjecia,kwota, czy_oplacono, data_odbioru, data_zwrotu, czy_zrealizowano)
+         VALUES(:id,:data,:przyjecie,:data2,:kwota,:oplacenie,:data3,:data4,:realizacja)");
         $sth ->bindValue(':id',$user,PDO::PARAM_INT);
         $sth ->bindValue(':data',$data,PDO::PARAM_STR);
         $sth ->bindValue(':przyjecie',1,PDO::PARAM_INT);
+        $sth ->bindValue(":kwota",$kwota,PDO::PARAM_STR);
         $sth ->bindValue(':oplacenie',0,PDO::PARAM_INT);
         $sth ->bindValue(':realizacja',0,PDO::PARAM_INT);
         $sth ->bindValue(':data2',$data,PDO::PARAM_STR);

@@ -48,9 +48,16 @@ $(document).ready(function(){
         $(".alert").removeClass("alert-warning");
         $(".alert").html('');
         $(".alert").fadeIn();
+
+        const one = 1000 * 60 * 60 * 24;
+        var date =  (new Date($('#picker2').val()) - new Date($('#picker').val()))/one;
+        var kwota = data[0]['cena_brutto'] * (date+1);
+        console.log(kwota);
+      
+
         request = $.ajax({
             url: "php/rentCar.php",
-            data: {vin : data[0]['vin'], dataOd : $('#picker').val(), dataDo : $('#picker2').val()},
+            data: {vin : data[0]['vin'], dataOd : $('#picker').val(), dataDo : $('#picker2').val(), kwota : kwota},
             type: "POST"
         });
 
