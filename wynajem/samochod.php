@@ -82,10 +82,10 @@ session_start();
             else{
                 if(isset($_SESSION['rodzaj_konta'])){
                     if($_SESSION['rodzaj_konta'] == 1 || $_SESSION['rodzaj_konta'] == 2){
-                        echo "<button id='panelKlienta' href='./cpanel/index.php' type='submit' class='btn btn-primary'>Panel Klienta</button>";
+                        echo "<button id='panelKlienta' href='/cpanel/index.php' type='submit' class='btn btn-primary'>Panel Klienta</button>";
                     }
                     if($_SESSION['rodzaj_konta'] == 3 || $_SESSION['rodzaj_konta'] == 4){
-                        echo "<button id='panelKlienta' href='./cpanel/index.php' type='submit' class='btn btn-primary'>Panel Pracownika</button>";
+                        echo "<button id='panelKlienta' href='/cpanel/index.php' type='submit' class='btn btn-primary'>Panel Pracownika</button>";
                     }
                         
                 }
