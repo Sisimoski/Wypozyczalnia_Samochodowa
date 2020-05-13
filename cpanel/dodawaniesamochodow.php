@@ -96,48 +96,48 @@ session_start();
                                         </div>
                                     </div>
                                     <div class="form-row">
-                                        <div class="form-group col-lg-2 col-md-3">
+                                        <div class="form-group col-xl-2 col-md-3">
                                             <label for="typ_silnika">Typ silnika</label>
                                             <input id="typ_silnika" class="form-control" type="input" name="typ_silnika"
                                                 placeholder="Diesel">
                                             <div class="komunikat"> </div>
                                         </div>
-                                        <div class="form-group col-lg-2 col-md-3">
+                                        <div class="form-group col-xl-2 col-md-3">
                                             <label for="moc">Moc</label>
                                             <input id="moc" class="form-control" type="input" name="moc" placeholder="150">
                                             <div class="komunikat"> </div>
                                         </div>
-                                        <div class="form-group col-lg-2 col-md-3">
+                                        <div class="form-group col-xl-2 col-md-3">
                                             <label for="pojemnosc_silnika">Pojemność silnika</label>
                                             <input id="pojemnosc_silnika" class="form-control" type="input"
                                                 name="pojemnosc_silnika" placeholder="2.0">
                                             <div class="komunikat"> </div>
                                         </div>
-                                        <div class="form-group col-lg-2 col-md-3">
+                                        <div class="form-group col-xl-2 col-md-3">
                                             <label for="skyrzynia_biegow">Skrzynia biegów</label>
                                             <input id="skyrzynia_biegow" class="form-control" type="input"
                                                 name="skrzynia_biegow" placeholder="manualna">
                                             <div class="komunikat"> </div>
                                         </div>
-                                        <div class="form-group col-lg-2 col-md-4">
+                                        <div class="form-group col-xl-2 col-md-4">
                                             <label for="srednie_spalanie">Średnie spalanie L/100km</label>
                                             <input id="srednie_spalanie" class="form-control" type="input"
                                                 name="srednie_spalanie" placeholder="6">
                                             <div class="komunikat"> </div>
                                         </div>
-                                        <div class="form-group col-lg-2 col-md-4">
+                                        <div class="form-group col-xl-2 col-md-4">
                                             <label for="zasieg">Zasięg</label>
                                             <input id="zasieg" class="form-control" type="input" name="zasieg"
                                                 placeholder="5">
                                             <div class="komunikat"> </div>
                                         </div>
-                                        <div class="form-group col-lg-2 col-md-4">
+                                        <div class="form-group col-xl-2 col-md-4">
                                             <label for="ilosc_miejsc">Ilość miejsc</label>
                                             <input id="ilosc_miejsc" class="form-control" type="input" name="ilosc_miejsc"
                                                 placeholder="5">
                                             <div class="komunikat"> </div>
                                         </div>
-                                        <div class="form-group col-lg-2 col-md-4">
+                                        <div class="form-group col-xl-2 col-md-4">
                                             <label for="pojemnosc_bagaznika">Pojemność bagażnika</label>
                                             <input id="pojemnosc_bagaznika" class="form-control" type="input"
                                                 name="pojemnosc_bagaznika" placeholder="1200l">
