@@ -280,7 +280,8 @@ function acceptCarButtonClick(self){
     $('#declineCarButton').attr("value", self.val());
     
 
-    var data = {vin: self.val()}
+    var data = {id: self.val()}
+    console.log(data);
 
         request = $.ajax({
             url: "php/zaladujAkceptacjePojazdu.php",
@@ -289,6 +290,7 @@ function acceptCarButtonClick(self){
         });
 
         request.done(function (response) {
+            console.log(response);
             var obj = JSON.parse(response);
 
            $("#acceptCarProducent").val(obj[0]["producent"]);
@@ -297,7 +299,7 @@ function acceptCarButtonClick(self){
            $("#acceptCarKolor").val(obj[0]["kolor"]);
            $("#acceptCarOpis").val(obj[0]["opis"]);
            $("#acceptCarNumerTablicy").val(obj[0]["numer_tablicy_rejestracyjnej"]);
-           $("#acceptCarVIN").val(self.val());
+           $("#acceptCarVIN").val(obj[0]["vin"]);
            $("#acceptCarPicture").attr("src", "/CarPictures/"+obj[0]["fotografia"] );
         });
 
