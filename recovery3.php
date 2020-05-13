@@ -1,7 +1,3 @@
-<?php
-session_start();
-?>
-
 <!DOCTYPE html>
 <html lang="pl">
 
@@ -13,9 +9,8 @@ session_start();
 
     <?php require_once $_SERVER['DOCUMENT_ROOT'] . '/include/include.php';?>
 
-    <script src="./js/contact.js"></script>
+    <script src="./js/recovery.js"></script>
     <script src="./js/index.js"></script>
-    <script src="./js/newsletter.js"></script>
 </head>
 
 <body>
@@ -69,39 +64,13 @@ session_start();
             </div>
         </nav>
     </section>
-
+    <!-- Sekcja Hero -->
     <section id="herous" class="text-light">
         <div class="container">
             <div class="row justify-content-between align-items-center">
                 <div class="col-lg-12 pt-lg-0 order-2 order-lg-1">
-                    <h1>Kontakt</h1>
-                    <h2>Potrzebujesz informacji? Skontaktuj się z nami.</h2>
-                </div>
-            </div>
-        </div>
-    </section>
-    <section id="highlight" class="highlight highlight-bg text-light">
-        <div class="container">
-            <div class="row justify-content-between align-items-center">
-                <div class="col-12 col-md-4">
-                    <h4>Kontakt</h4>
-                    <p>
-                        ul. Prószkowska niewiemjaka <br>
-                        Opole, 11-111<br>
-                        Polska <br><br>
-                        <strong>Telefon:</strong> +48 123 456 789<br>
-                        <strong>Email:</strong> Car4YouCompany@gmail.com<br>
-                    </p>
-                </div>
-                <div class="col">
-                    <section id="map">
-                        <div class="map-container">
-                            <iframe
-                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d80902.88709892464!2d17.836246159044936!3d50.678829943229296!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47105306456db34b%3A0x25c66487400c346e!2sOpole!5e0!3m2!1spl!2spl!4v1585259764522!5m2!1spl!2spl"
-                                frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false"
-                                tabindex="0"></iframe>
-                        </div>
-                    </section>
+                    <h1>Zapomniałeś hasła?</h1>
+                    <h2>Nie ma problemu! Przypomnimy Ci!</h2>
                 </div>
             </div>
         </div>
@@ -110,40 +79,26 @@ session_start();
         <div class="container">
             <div class="row">
                 <div class="col">
-                    <h2 class="text-center">Formularz kontaktowy</h2>
+                    <h5 class="text-center">Aby zresetować hasło, wprowadź poniżej swój adres e-mail.</h5>
+                    <p class="text-center">
+                        Jeżeli uda nam się znaleźć Twoje dane w bazie danych, zostanie wysłana wiadomość</br> na Twój
+                        adres e-mail z linkiem do zmiany hasła.
+                    </p>
                     <form class="contactForm" method="POST">
                         <div class="form-row">
                             <div class="form-group col-md-12">
-                                <label for="imie">Imię oraz nazwisko</label>
-                                <input data-toggle="tooltip" data-placement="top" 
-                                    class="form-control" id="imie" placeholder="Wprowadź imie" name="imie">
-                                    <small class="form-text text-muted">To pole jest wymagane.</small>
+                                <label for="">Wyszukaj po adresie e-mail:</label>
+                                <input type="text" name="emailRecovery" class="form-control" id="emailRecovery"
+                                    placeholder="Email">
                                 <div class="komunikat"> </div>
                             </div>
-                            <div class="form-group col-md-12">
-                                <label for="email">Adres e-mail</label>
-                                <input data-toggle="tooltip" data-placement="top" 
-                                    class="form-control" id="email" placeholder="Wprowadź email" name="email">
-                                    <small class="form-text text-muted">To pole jest wymagane.</small>
-                                <div class="komunikat"> </div>
-                            </div>
-                            <div class="form-group col-md-12">
-                                <label for="content">Treść wiadomości</label>
-                                <textarea type="textarea" rows="5" data-toggle="tooltip" data-placement="top" 
-                                    class="form-control" id="content" placeholder="Wprowadź treść wiadomości"
-                                    name="content"></textarea>
-                                    <small class="form-text text-muted">To pole jest wymagane.</small>
-                                <div class="komunikat"></div>
-                            </div>
-                            <!-- <div class="form-group col-md-12">
-                                <p class="text-danger">*pole wymagane</p>
-                            </div> -->
                             <div class="form-group col-xs-auto">
-                                <button class="btn btn-primary" id="contact" type="button">Wyślij wiadomość</button>
+                                <button id="emailRecoveryButton" class="btn btn-primary" value="email"
+                                    type="button">Wyszukaj</button>
                             </div>
                         </div>
                     </form>
-    
+
                 </div>
             </div>
         </div>
