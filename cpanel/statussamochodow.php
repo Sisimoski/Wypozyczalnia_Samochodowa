@@ -142,7 +142,7 @@ session_start();
                         </div>
                         <div class="form-group">
                             <label for="opisEdit">Opis</label>
-                            <input id="opisEdit" class="form-control" type="input" name="opisEdit">
+                            <textarea id="opisEdit" class="form-control" type="input" name="opisEdit"></textarea>
                             <div class="komunikat"> </div>
                         </div>
                         <div class="form-group">

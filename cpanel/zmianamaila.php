@@ -48,7 +48,7 @@ session_start();
                         <ol class="breadcrumb">
                             <li class="breadcrumb-item"><a href="index.php">Panel klienta</a></li>
                             <li class="breadcrumb-item active">Mój profil</li>
-                            <li class="breadcrumb-item active" aria-current="page">Zmiana hasła</li>
+                            <li class="breadcrumb-item active" aria-current="page">Zmiana maila</li>
                         </ol>
                     </nav>
                 </div>
