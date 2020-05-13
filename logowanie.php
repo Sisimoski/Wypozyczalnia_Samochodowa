@@ -73,7 +73,7 @@
                 <button id="zaloguj" class="btn btn-primary" type="submit">Zaloguj się</button>
               </div>
               <div class="form-group col-xs-auto">
-                <a href="/recovery2.php">Zapomniałeś hasła?</a>
+                <a href="/recovery.php">Zapomniałeś hasła?</a>
               </div>
             </div>
             <div class="form-group">

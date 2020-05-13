@@ -52,7 +52,7 @@
       <div class="col-md p-5 text-light" style="background-color: #8AC2F6;">
         <div>
           <h1>Zapomniałeś hasła?</h1>
-          <form class="loginForm">
+          <form class="recoveryForm" type="POST">
               <div class="my-4">
                   <h5>Aby zresetować hasło, wprowadź poniżej swój adres e-mail.</h5>
                     <p>
