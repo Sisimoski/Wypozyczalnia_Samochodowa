@@ -289,7 +289,7 @@
                                     <p class="card-text">
                                         <h6><b>Klasa: <?= $pageCars[$j]['segment'] ?></b></h6>
                                         Rok produkcji: <?= $pageCars[$j]['rok'] ?><br>
-                                        Silnik: <?= $pageCars[$j]['pojemnosc_silnika'].'L '.$pageCars[$j]['pojemnosc_silnika'].'KM '.$pageCars[$j]['typ_silnika']  ?><br>
+                                        Silnik: <?= $pageCars[$j]['pojemnosc_silnika'].'L '.$pageCars[$j]['moc'].'KM '.$pageCars[$j]['typ_silnika']  ?><br>
                                         Skrzynia biegów: <?= $pageCars[$j]['skrzynia_biegow'] ?>
                                     </p>
                                 </div>
