@@ -62,6 +62,16 @@ session_start();
                                 <input class="form-control" type="text" name="nazwisko" id="nazwiskoAdd" placeholder=""/>
                             </div>
                         </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label for="">Login:</label>
+                                <input class="form-control" type="text" name="login" id="loginAdd" placeholder=""/>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="">Hasło:</label>
+                                <input class="form-control" type="password" name="haslo" id="hasloAdd" placeholder=""/>
+                            </div>
+                        </div>
                             <div class="form-group">
                                 <label for="">Adres e-mail:</label>
                                 <input class="form-control" type="text" name="email" id="emailAdd" placeholder=""/>
