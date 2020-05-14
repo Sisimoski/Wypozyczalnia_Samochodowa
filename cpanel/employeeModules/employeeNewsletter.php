@@ -67,9 +67,7 @@ session_start();
     </section>
     <div class="container-fluid">
         <!-- Alert -->
-        <div class="fixed-top justify-content-center d-none">
-            <div class="alert ml-5 mr-5 mt-3 text-center" style="width:40%"></div>
-        </div>
+        <?php require_once $_SERVER['DOCUMENT_ROOT'] . '/include/alert.php';?>
         <div class="row" style="height: 100%;">
             <nav class="col-md-2 d-none d-lg-block bg-light sidebar position-fixed">
                 <div class="sidebar-sticky">

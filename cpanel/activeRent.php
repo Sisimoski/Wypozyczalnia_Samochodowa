@@ -22,8 +22,6 @@ session_start();
 </head>
 
 <body>
-    <!-- Alert -->
-    <?php require_once $_SERVER['DOCUMENT_ROOT'] . '/include/alert.php';?>
     <!-- Nagłówek Navbar -->
     <section id="header">
         <?php
@@ -32,9 +30,8 @@ session_start();
         </nav>
     </section>
     <div class="container-fluid">
-        <div class="position-fixed justify-content-center d-flex" style="width:100%; z-index: 9;">
-            <div class="alert mt-3 text-center" style="width:40%; display: none; "></div>
-        </div>
+        <!-- Alert -->
+        <?php require_once $_SERVER['DOCUMENT_ROOT'] . '/include/alert.php';?>
         <div class="row" style="height: 100%;">
             <nav class="col-md-2 d-none d-lg-block bg-light sidebar position-fixed">
                 <div class="sidebar-sticky">

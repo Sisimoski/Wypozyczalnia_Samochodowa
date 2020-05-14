@@ -1,4 +1,4 @@
-<link rel="shortcut icon" type="image/jpg" href="../favicon.png" />
+    <link rel="shortcut icon" type="image/jpg" href="/favicon.png" />
 
     <!-- CSS Files -->
     <link rel="stylesheet" type="text/css" href="/cpanel/css/dashboardstyles.css">
