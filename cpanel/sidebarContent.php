@@ -138,6 +138,15 @@
                                         </ul>
 
                                         <ul class="list-group mb-1">
+                                            <a href="/cpanel/employeeModules/employeeRabaty.php"
+                                                class="list-group-item list-group-item-action list-group-item
+                                                list-group-item">
+                                                <i class="bx bxs-discount" type="solid"></i>
+                                                Rabaty
+                                            </a>
+                                        </ul>
+
+                                        <ul class="list-group mb-1">
                                             <a href="/cpanel/employeeModules/employeeRateReview.php"
                                                 class="list-group-item list-group-item-action list-group-item
                                                 list-group-item">
