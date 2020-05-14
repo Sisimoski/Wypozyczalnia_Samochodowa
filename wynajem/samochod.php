@@ -39,6 +39,7 @@ session_start();
 
     <?php require_once $_SERVER['DOCUMENT_ROOT'] . '/include/include.php';?>
     <link href="css/jquery.datetimepicker.min.css" rel="stylesheet" />
+    <script src="/cpanel/js/rater.min.js"></script>
     <script src="/js/newsletter.js"></script>
     <script src="js/car.js"></script>
     <script src="js/jquery.datetimepicker.full.min.js"></script>
@@ -173,21 +174,25 @@ session_start();
                 <div class="col-lg-4">
                     <div class="card">
                         <div class="card-body">
-                            <h3 class="card-title producent-model">Ford Mondeo</h3>
-                            <h5 class="card-subtitle mb-2 text-muted koszt-dzienny">160zł/dzień</h5>
-                            <p class="card-text card-text-details segment-auta">Segment: klasa średnia</p>
-                            <p class="card-text card-text-details rok-auta">Rok produkcji: 2014</p>
-                            <p class="card-text card-text-details typ-silnika">Typ silnika: Diesel</p>
-                            <p class="card-text card-text-details moc-auta">Moc: 120 KM</p>
-                            <p class="card-text card-text-details pojemnosc-auta">Pojemność silnika: 1.5 L</p>
-                            <p class="card-text card-text-details srednie-spalanie">Średnie spalanie: 4,0 l/100km</p>
-                            <p class="card-text card-text-details skrzynia-biegow">Skrzynia biegów: Manualna 6 biegowa
+                            <h3 class="card-title text-body producent-model">Ford Mondeo</h3>
+                            <h4 class="card-subtitle mb-2 text-secondary koszt-dzienny">160zł/dzień</h4>
+                            <h6 class="card-subtitle my-2 text-muted">Właściciel: Marcin Chmurowski</h6>
+                            <div class="border-bottom mt-3 mb-3"></div>
+                            <h4 class="card-subtitle mb-2">Dane techniczne:</h4>
+                            <p class="card-text text-dark card-text-details segment-auta">Segment: klasa średnia</p>
+                            <p class="card-text text-dark card-text-details rok-auta">Rok produkcji: 2014</p>
+                            <p class="card-text text-dark card-text-details typ-silnika">Typ silnika: Diesel</p>
+                            <p class="card-text text-dark card-text-details moc-auta">Moc: 120 KM</p>
+                            <p class="card-text text-dark card-text-details pojemnosc-auta">Pojemność silnika: 1.5 L</p>
+                            <p class="card-text text-dark card-text-details srednie-spalanie">Średnie spalanie: 4,0 l/100km</p>
+                            <p class="card-text text-dark card-text-details skrzynia-biegow">Skrzynia biegów: Manualna 6 biegowa
                             </p>
-                            <p class="card-text card-text-details ilosc-miejsc">Ilość miejsc: 5</p>
-                            <p class="card-text card-text-details pojemnosc-bagaznika">Pojemność bagażnika: 383 l</p>
-                            <p class="card-text card-text-details zasieg-auta">Zasięg na pełnym baku: 1520km</p>
-                            <p class="card-text card-text-details sredni-koszt">Średni koszt wynajmu: 160zł/dzień</p>
+                            <p class="card-text text-dark card-text-details ilosc-miejsc">Ilość miejsc: 5</p>
+                            <p class="card-text text-dark card-text-details pojemnosc-bagaznika">Pojemność bagażnika: 383 l</p>
+                            <p class="card-text text-dark card-text-details zasieg-auta">Zasięg na pełnym baku: 1520km</p>
+                            <p class="card-text text-dark card-text-details sredni-koszt">Średni koszt wynajmu: 160zł/dzień</p>
 
+                            <div class="border-bottom mt-3 mb-3"></div>
                             <div class="btn-group-card mt-4">
                                 <a href="/oferty.php" class="btn btn-outline-danger btn-sm">Wróć do ofert</a>
                             </div>
@@ -196,6 +201,7 @@ session_start();
                 </div>
             </div>
 
+            <!-- Sekcja wypożyczania -->
             <div class="row mt-4 mt-lg-4">
                 <div class="col">
                     <div class="card">
@@ -249,6 +255,74 @@ session_start();
                     </div>
                 </div>
             </div>
+            <!-- Sekcja opinii -->
+            <div class="row mt-4 mt-lg-4">
+                <div class="col">
+                    <div class="card">
+                        <div class="card-body">
+                            <h4 class="card-title">Opinie:</h4>
+                            <div class="border-bottom mt-3 mb-3"></div>
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="card-title mb-1">Ocena: </h5>
+                                    <div id="rate"></div>
+                                    <blockquote class="blockquote mb-0">
+                                        <p class="mb-1">Super samochodzik, +1 byczku</p>
+                                        <footer class="blockquote-footer">
+                                            <cite>Imię i Nazwisko</cite>
+                                        </footer>
+                                    </blockquote>
+                                </div>
+                                <div class="card-footer">
+                                    <small class="text-muted">Last updated 3 mins ago</small>
+                                </div>
+                            </div>
+                            <div class="border-bottom mt-3 mb-3"></div>
+                            <div class="mt-3 d-flex flex-column">
+                                <button type="button" class="btn btn-outline-primary" data-toggle="modal"
+                                    data-target="#addReviewModal">
+                                    Wystaw Opinię
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Modal wystawiania opinii -->
+            <div class="modal fade" id="addReviewModal" tabindex="-1" role="dialog" aria-labelledby="addReviewLabel"
+                aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="deleteCarLabel">Wystawianie Opinii</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <form>
+                                <div class="form-group">
+                                    <label for="">Twoja ocena:</label>
+                                    <div id="rate"></div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="">Komentarz:</label>
+                                    <textarea type="text" class="form-control" rows="4" id="commentText" name="comment"></textarea>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-outline-secondary"
+                                data-dismiss="modal">Zamknij</button>
+                            <button type="button" id="sendRateButton" name="sendRate" value=""
+                                class="btn btn-primary">Wystaw Opinię</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            
         </div>
 
     </section>
