@@ -87,7 +87,7 @@ session_start();
         <div class="container">
             <div class="row justify-content-between text-dark">
                 <div class="col-md-5 d-flex align-items-center justify-content-center about-img">
-                    <img src="images/bg/bez tła 6.png" class="img-fluid" alt="">
+                    <img src="images/bg/beztła6.png" class="img-fluid" alt="beztła6">
                 </div>
                 <div class="col-md-6 pt-5 pt-md-0">
                     <h3>Wypożycz, wynajmij</h3>
@@ -138,7 +138,7 @@ session_start();
                             </div>
                         </div>
                         <div class="col-12 col-md-6 mt-3 mt-md-0 d-flex align-items-center justify-content-center about-img order-2 order-md-2">
-                            <img src="images/bg/bez tła 4.png" class="img-fluid" alt="">
+                            <img src="images/bg/beztła4.png" class="img-fluid" alt="beztła4">
                         </div>
                     </div>
                 </div>
@@ -157,7 +157,7 @@ session_start();
                             </div>
                         </div>
                         <div class="col-12 col-md-6 mt-3 mt-md-0 d-flex align-items-center justify-content-center about-img order-4 order-md-3">
-                            <img src="images/bg/obraz11.png" class="img-fluid" alt="">
+                            <img src="images/bg/obraz11.png" class="img-fluid" alt="obraz11">
                         </div>
                     </div>
                 </div>
@@ -177,12 +177,11 @@ session_start();
                             </div>
                         </div>
                         <div class="col-12 col-md-6 mt-3 mt-md-0 d-flex align-items-center justify-content-center about-img order-6 order-md-6">
-                            <img src="images/bg/obraz5-removebg-preview.png" class="img-fluid" alt="">
+                            <img src="images/bg/obraz5-removebg-preview.png" class="img-fluid" alt="obraz5-removebg-preview">
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
         </div>
     </section>
 

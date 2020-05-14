@@ -117,6 +117,40 @@ session_start();
                         </div>
                         <!-- End of Table Template -->
 
+                        <!-- Modal wystawiania opinii -->
+                        <div class="modal fade" id="addReviewModal" tabindex="-1" role="dialog"
+                            aria-labelledby="addReviewLabel" aria-hidden="true">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="deleteCarLabel">Wystawianie Opinii</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <form>
+                                            <div class="form-group">
+                                                <label for="">Twoja ocena:</label>
+                                                <div id="rate"></div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="">Komentarz:</label>
+                                                <textarea type="text" class="form-control" rows="4" id="commentText"
+                                                    name="comment"></textarea>
+                                            </div>
+                                        </form>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-outline-secondary"
+                                            data-dismiss="modal">Zamknij</button>
+                                        <button type="button" id="sendRateButton" name="sendRate" value=""
+                                            class="btn btn-primary">Wystaw Opinię</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
                         <div class="modal fade" id="addReviewModal" tabindex="-1" role="dialog" aria-labelledby="addReviewLabel"
                             aria-hidden="true">
                             <div class="modal-dialog" role="document">

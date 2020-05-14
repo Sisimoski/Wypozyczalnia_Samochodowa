@@ -263,7 +263,7 @@
                                                 <div class="form-group row">
                                                     <div class="col-lg-12">
                                                         <button name="filterButton" id="filterButton" type="button"
-                                                            class="btn btn-outline-primary btn-block">Filtruj</button>
+                                                            class="btn btn-outline-primary btn-block">Wybierz</button>
                                                     </div>
                                                 </div>
                                             </form>

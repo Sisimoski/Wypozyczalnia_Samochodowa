@@ -72,14 +72,14 @@
                 <label for="inputPassword1">Hasło</label>
                 <input type="password" class="form-control" aria-describedby="passwordHelpBlock" id="haslo1"
                   placeholder="Wprowadź hasło" name="haslo1">
-                  <small class="form-text text-muted">To pole jest wymagane. Wprowadź kombiancje co najmniej 8 cyfr, małych liter, dużych liter i znaków (takich jak !-@#$%^&*)</small>
+                  <small class="form-text text-muted">To pole jest wymagane. Wprowadź kombiancje co najmniej 8 cyfr, małych liter, dużych liter i znaków (takich jak !-@#$%^&*).</small>
                 <div class="komunikat"> </div>
               </div>
               <div class="form-group col-md-6">
                 <label for="inputPassword4">Powtórz hasło</label>
                 <input type="password" class="form-control" aria-describedby="passwordHelpBlock" id="haslo2"
                   name="haslo2">
-                  <small class="form-text text-muted">To pole jest wymagane.</small>
+                  <small class="form-text text-muted">To pole jest wymagane. Wprowadź kombiancje co najmniej 8 cyfr, małych liter, dużych liter i znaków (takich jak !-@#$%^&*).</small>
                 <div class="komunikat"> </div>
               </div>
             </div>

@@ -129,7 +129,7 @@ session_start();
                             </div>
                             <div class="form-group col-md-12">
                                 <label for="content">Treść wiadomości</label>
-                                <textarea type="textarea" rows="5" data-toggle="tooltip" data-placement="top" 
+                                <textarea rows="5" data-toggle="tooltip" data-placement="top" 
                                     class="form-control" id="content" placeholder="Wprowadź treść wiadomości"
                                     name="content"></textarea>
                                     <small class="form-text text-muted">To pole jest wymagane.</small>
@@ -143,7 +143,6 @@ session_start();
                             </div>
                         </div>
                     </form>
-    
                 </div>
             </div>
         </div>
