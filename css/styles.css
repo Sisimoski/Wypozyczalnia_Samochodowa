@@ -227,7 +227,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .car-catalog i {
   font-size: 48px;
-  margin-top: 15px;
+  /* margin-top: 15px; */
   color: #2b77eb;
 }
 

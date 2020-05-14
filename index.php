@@ -150,7 +150,7 @@
                             </div>
                         </div>
                         <div class="container">
-                            <div class="row">
+                            <div class="row my-3 d-flex align-items-center">
                                 <div class="col-12 text-center lead">
                                     <a class="btn btn-secondary-outline prev" href="" title="go back"><i class="fa fa-lg fa-chevron-left"></i></a>
                                     <a class="btn btn-secondary-outline next" href="" title="more"><i class="fa fa-lg fa-chevron-right"></i></a>
@@ -158,7 +158,7 @@
                             </div>
                         </div>
                     </section>
-                    <div class="row pt-3">
+                    <div class="row my-2">
                         <div class="col text-center">
                             <a href="oferty.php" class='btn btn-outline-primary'>Zobacz wszystko</a>
                         </div>

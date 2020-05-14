@@ -63,11 +63,12 @@ function loadCarousel(){
             for(i = 0;i<6;i++){
                 if(i<=2){
                     $("#carouselOne").append(
-                        "<div class='card bg-light border-primary text-center'>"+
-                            "<img src='/CarPictures/"+obj[i]['fotografia']+"' class='card-img-top' alt='Default'>"+
+                        "<div class='card bg-light border text-center'>"+
+                            "<img src='/CarPictures/"+obj[i]['fotografia']+"' class='card-img-top border-bottom rounded-sm' alt='Default'>"+
                                 "<div class='card-body card-body-flex'>"+
                                     "<h5 class='card-title'>"+obj[i]['producent']+' '+obj[i]['model']+"</h5>"+
                                     "<h6 class='card-subtitle mb-2 text-muted'>"+obj[i]['cena_brutto']+"zł/dzień</h6>"+
+                                    "<div class='border-bottom my-2'></div>" +
                                     "<div class='text-left'>"+
                                         "<p class='card-text'>"+
                                             "<h6><b>Klasa: "+obj[i]['segment']+" </b></h6>"+
@@ -89,11 +90,12 @@ function loadCarousel(){
                  }
                  if(i>=3){
                     $("#carouselTwo").append(
-                        "<div class='card bg-light border-primary text-center'>"+
-                            "<img src='/CarPictures/"+obj[i]['fotografia']+"' class='card-img-top' alt='Default'>"+
+                        "<div class='card bg-light border text-center'>"+
+                            "<img src='/CarPictures/"+obj[i]['fotografia']+"' class='card-img-top border-bottom rounded-sm' alt='Default'>"+
                                 "<div class='card-body card-body-flex'>"+
                                     "<h5 class='card-title'>"+obj[i]['producent']+' '+obj[i]['model']+"</h5>"+
                                     "<h6 class='card-subtitle mb-2 text-muted'>"+obj[i]['cena_brutto']+"zł/dzień</h6>"+
+                                    "<div class='border-bottom my-2'></div>" +
                                     "<div class='text-left'>"+
                                         "<p class='card-text'>"+
                                             "<h6><b>Klasa: "+obj[i]['segment']+" </b></h6>"+
