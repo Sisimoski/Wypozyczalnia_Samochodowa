@@ -167,7 +167,7 @@ session_start();
                 <div class="col-lg-8 d-flex align-items-stretch">                   
                         <div class="carousel-inner">
                             <div class="carousel-item active">
-                                <img class="d-block w-100" id="fotografia" src="" alt="First slide">
+                                <img class="d-block w-100" id="fotografia" src="" alt="First slide" style="object-fit: contain">
                             </div>
                         </div>           
                 </div>
