@@ -1,6 +1,5 @@
 <?php
     $hash=$_GET["hash"];
-    echo $hash;
     include "php/userChangeMailPart2.php"; 
 ?>
 
