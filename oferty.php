@@ -281,10 +281,11 @@
                 <?php for($j = 0; $j < $amountOfCarsInPage; $j++) : ?>
                     <div class="col mb-4">
                         <div class="card bg-light text-center h-100">
-                            <img src="/CarPictures/<?= $pageCars[$j]['fotografia'] ?>" class="card-img-top" alt="Default Card Image">
+                            <img src="/CarPictures/<?= $pageCars[$j]['fotografia'] ?>" class="card-img-top border-bottom rounded-lg" alt="Default Card Image">
                             <div class="card-body card-body-flex">
                                 <h5 class="card-title"><?= $pageCars[$j]['producent'].' '.$pageCars[$j]['model']  ?></h5>
                                 <h6 class="card-subtitle mb-2 text-muted"><?= $pageCars[$j]['cena_brutto'] ?>zł/dzień</h6>
+                                <div class="border-bottom my-2"></div>
                                 <div class="text-left">
                                     <p class="card-text">
                                         <h6><b>Klasa: <?= $pageCars[$j]['segment'] ?></b></h6>
