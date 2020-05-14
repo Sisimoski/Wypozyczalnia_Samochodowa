@@ -277,6 +277,19 @@ session_start();
                                     <small class="text-muted">Last updated 3 mins ago</small>
                                 </div>
                             </div>
+                            <nav class="my-3">
+                                <ul class="pagination pagination-sm justify-content-start">
+                                    <li class="page-item disabled">
+                                        <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Poprzednia strona</a>
+                                    </li>
+                                    <li class="page-item"><a class="page-link" href="#">1</a></li>
+                                    <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                    <li class="page-item">
+                                        <a class="page-link" href="#">Następna strona</a>
+                                    </li>
+                                </ul>
+                            </nav>
                             <div class="border-bottom mt-3 mb-3"></div>
                             <div class="mt-3 d-flex flex-column">
                                 <button type="button" class="btn btn-outline-primary" data-toggle="modal"
