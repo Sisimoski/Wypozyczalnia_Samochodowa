@@ -86,8 +86,8 @@ $(document).ready(function () {
             type: "POST"
         });
 
-        request.done(function () {
-            
+        request.done(function (response) {
+            console.log(response);
             $("#tabelaPracownicy tr").remove();
             zaladujPracownikow();
             $('#dodajKontoModal').modal('hide');

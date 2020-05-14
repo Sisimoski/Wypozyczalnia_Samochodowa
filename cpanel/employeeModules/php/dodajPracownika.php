@@ -31,7 +31,7 @@
             $sth->execute();
 
             $idAdres = $db->lastInsertID();
-
+            
         
 
             $sth = $db->prepare('INSERT INTO kontakty(nr_kom,nr_tel,email) 
@@ -44,7 +44,7 @@
 
             $idKontakt = $db->lastInsertID();
             $data = date('Y-m-d');
-
+            
             $sth = $db->prepare('INSERT INTO uzytkownik(id_adres,id_kontakt,login,haslo,imie,nazwisko,rodzaj_uzytkownika,data_zatrudnienia,czy_aktywowany) VALUES
             (:adres,:kontakt,:login,:haslo,:imie,:nazwisko,:rodzaj,:data,:aktywacja)');
             $sth ->bindValue(':adres',$idAdres,PDO::PARAM_INT);
@@ -57,6 +57,7 @@
             $sth ->bindValue(':data',$data,PDO::PARAM_STR);
             $sth ->bindValue(':aktywacja',$aktywacja,PDO::PARAM_INT);
             $sth->execute();
+           
         
             
             
