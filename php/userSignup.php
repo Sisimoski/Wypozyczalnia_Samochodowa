@@ -903,8 +903,7 @@
                                                         <h1 class="size-64"
                                                             style="mso-text-raise: 25px;Margin-top: 0;Margin-bottom: 20px;font-style: normal;font-weight: normal;color: #000;font-size: 44px;line-height: 50px;font-family: lato,tahoma,sans-serif;text-align: center;"
                                                             lang="x-size-64"><span class="font-lato"><strong><span
-                                                                        style="color:#ffffff">Aktywuj
-                                                                        konto</span></strong></span></h1>
+                                                                        style="color:#ffffff">Aktywacja konta</span></strong></span></h1>
                                                     </div>
                                                 </div>
 
@@ -961,7 +960,7 @@
                                                     <h3
                                                         style="Margin-top: 0;Margin-bottom: 12px;font-style: normal;font-weight: normal;color: #281557;font-size: 18px;line-height: 26px;font-family: lato,tahoma,sans-serif;text-align: center;">
                                                         <span class="font-lato"><span
-                                                                style="color:#18527c">Dzi&#281;kujemy za dokonanie
+                                                                style="color:#18527c">Dziękujemy za dokonanie
                                                                 rejestracji w
                                                                 serwisie car4you.net.pl.</span></span></h3>
                                                 </div>
@@ -972,10 +971,10 @@
                                                     style="mso-line-height-rule: exactly;mso-text-raise: 11px;vertical-align: middle;">
                                                     <p
                                                         style="Margin-top: 0;Margin-bottom: 20px;font-family: lato,tahoma,sans-serif;text-align: center;">
-                                                        <span class="font-lato"><span style="color:#8e959c">Ju&#380;
-                                                                tylko jedno klikni&#281;cie dzieli
-                                                                Ci&#281; od mo&#380;liwo&#347;ci wypo&#380;yczania oraz
-                                                                wynajmowania samochod&#243;w z
+                                                        <span class="font-lato"><span style="color:#8e959c">Już
+                                                                tylko jedno kliknięcie dzieli
+                                                                Cię od możliwości wypożyczania oraz
+                                                                wynajmowania samochodów z
                                                                 naszej firmy.</span></span></p>
                                                 </div>
                                             </div>
@@ -985,9 +984,9 @@
                                                     style="mso-line-height-rule: exactly;mso-text-raise: 11px;vertical-align: middle;">
                                                     <p
                                                         style="Margin-top: 0;Margin-bottom: 20px;font-family: lato,tahoma,sans-serif;text-align: center;">
-                                                        <span class="font-lato">Aby aktywowa&#263; konto i m&#243;c
-                                                            zalogowa&#263; si&#281; do swojego
-                                                            profilu, prosimy o klikni&#281;cie w poni&#380;szy link
+                                                        <span class="font-lato">Aby aktywować konto i móc
+                                                            zalogować się do swojego
+                                                            profilu, prosimy o kliknięcie w poniższy link
                                                             aktywacyjny:</span></p>
                                                 </div>
                                             </div>
@@ -1021,7 +1020,7 @@
 
                                                     <div style="font-size: 12px;line-height: 19px;">
                                                         <div>Pozdrawiamy<br />
-                                                            Zesp&#243;&#322; car4you.net.pl</div>
+                                                            Zespół car4you.net.pl</div>
                                                     </div>
                                                     <div style="font-size: 12px;line-height: 19px;Margin-top: 18px;">
 
