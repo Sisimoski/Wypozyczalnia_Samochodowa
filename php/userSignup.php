@@ -123,17 +123,12 @@
         $message = '
         <!DOCTYPE html
             PUBLIC "-//W3C//DTD XHTML 1.0 Transitional //EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-        <!--[if IE]><html xmlns="http://www.w3.org/1999/xhtml" class="ie"><![endif]-->
-        <!--[if !IE]><!-->
         <html style="margin: 0;padding: 0;" xmlns="http://www.w3.org/1999/xhtml">
-        <!--<![endif]-->
 
         <head>
             <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
             <title></title>
-            <!--[if !mso]><!-->
             <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-            <!--<![endif]-->
             <meta name="viewport" content="width=device-width" />
             <style type="text/css">
                 @media only screen and (min-width: 620px) {
@@ -786,13 +781,11 @@
                 }
             </style>
 
-            <!--[if !mso]><!-->
             <style type="text/css">
                 @import url(https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic);
             </style>
             <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet"
                 type="text/css" />
-            <!--<![endif]-->
             <style type="text/css">
                 body {
                     background-color: #fff
@@ -866,23 +859,19 @@
                                 <div class="preheader"
                                     style="Margin: 0 auto;max-width: 560px;min-width: 280px; width: 280px;width: calc(28000% - 167440px);">
                                     <div style="border-collapse: collapse;display: table;width: 100%;">
-                                        <!--[if (mso)|(IE)]><table align="center" class="preheader" cellpadding="0" cellspacing="0" role="presentation"><tr><td style="width: 280px" valign="top"><![endif]-->
                                         <div class="snippet"
                                             style="display: table-cell;Float: left;font-size: 12px;line-height: 19px;max-width: 280px;min-width: 140px; width: 140px;width: calc(14000% - 78120px);padding: 10px 0 5px 0;color: #adb3b9;font-family: sans-serif;">
 
                                         </div>
-                                        <!--[if (mso)|(IE)]></td><td style="width: 280px" valign="top"><![endif]-->
                                         <div class="webversion"
                                             style="display: table-cell;Float: left;font-size: 12px;line-height: 19px;max-width: 280px;min-width: 139px; width: 139px;width: calc(14100% - 78680px);padding: 10px 0 5px 0;text-align: right;color: #adb3b9;font-family: sans-serif;">
 
                                         </div>
-                                        <!--[if (mso)|(IE)]></td></tr></table><![endif]-->
                                     </div>
                                 </div>
                                 <div class="header"
                                     style="Margin: 0 auto;max-width: 600px;min-width: 320px; width: 320px;width: calc(28000% - 167400px);"
                                     id="emb-email-header-container">
-                                    <!--[if (mso)|(IE)]><table align="center" class="header" cellpadding="0" cellspacing="0" role="presentation"><tr><td style="width: 600px"><![endif]-->
                                     <div class="logo emb-logo-margin-box"
                                         style="font-size: 26px;line-height: 32px;Margin-top: 6px;Margin-bottom: 20px;color: #c3ced9;font-family: Roboto,Tahoma,sans-serif;Margin-left: 20px;Margin-right: 20px;"
                                         align="center">
@@ -891,7 +880,6 @@
                                                 src="http://car4you.net.pl/images/Car4You-line-logo.png" alt=""
                                                 width="224" /></div>
                                     </div>
-                                    <!--[if (mso)|(IE)]></td></tr></table><![endif]-->
                                 </div>
                             </div>
                             <div>
@@ -900,7 +888,6 @@
                                         style="Margin: 0 auto;max-width: 600px;min-width: 320px; width: 320px;width: calc(28000% - 167400px);overflow-wrap: break-word;word-wrap: break-word;word-break: break-word;">
                                         <div class="layout__inner"
                                             style="border-collapse: collapse;display: table;width: 100%;">
-                                            <!--[if (mso)|(IE)]><table width="100%" cellpadding="0" cellspacing="0" role="presentation"><tr class="layout-full-width" style="background-color: #9cc9fc;"><td class="layout__edges">&nbsp;</td><td style="width: 600px" class="w560"><![endif]-->
                                             <div class="column"
                                                 style="text-align: left;color: #8e959c;font-size: 14px;line-height: 21px;font-family: sans-serif;">
 
@@ -928,7 +915,6 @@
                                                 </div>
 
                                             </div>
-                                            <!--[if (mso)|(IE)]></td><td class="layout__edges">&nbsp;</td></tr></table><![endif]-->
                                         </div>
                                     </div>
                                 </div>
@@ -940,7 +926,6 @@
                                     style="Margin: 0 auto;max-width: 600px;min-width: 320px; width: 320px;width: calc(28000% - 167400px);overflow-wrap: break-word;word-wrap: break-word;word-break: break-word;">
                                     <div class="layout__inner"
                                         style="border-collapse: collapse;display: table;width: 100%;background-color: #ffffff;">
-                                        <!--[if (mso)|(IE)]><table align="center" cellpadding="0" cellspacing="0" role="presentation"><tr class="layout-fixed-width" style="background-color: #ffffff;"><td style="width: 600px" class="w560"><![endif]-->
                                         <div class="column"
                                             style="text-align: left;color: #8e959c;font-size: 14px;line-height: 21px;font-family: sans-serif;">
 
@@ -1013,12 +998,10 @@
                                                         style="border-radius: 4px;display: inline-block;font-size: 12px;font-weight: bold;line-height: 22px;padding: 10px 20px;text-align: center;text-decoration: none !important;transition: opacity 0.1s ease-in;color: #ffffff !important;background-color: #18527c;font-family: Lato, Tahoma, sans-serif;"
                                                         href="'.$activation.'">Aktywuj konto</a>
                                                     <![endif]>
-                                                    <!--[if mso]><p style="line-height:0;margin:0;">&nbsp;</p><v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" href="http://test.com" style="width:119px" arcsize="10%" fillcolor="#18527C" stroke="f"><v:textbox style="mso-fit-shape-to-text:t" inset="0px,9px,0px,9px"><center style="font-size:12px;line-height:22px;color:#FFFFFF;font-family:Lato,Tahoma,sans-serif;font-weight:bold;mso-line-height-rule:exactly;mso-text-raise:4px">Aktywuj konto</center></v:textbox></v:roundrect><![endif]-->
                                                 </div>
                                             </div>
 
                                         </div>
-                                        <!--[if (mso)|(IE)]></td></tr></table><![endif]-->
                                     </div>
                                 </div>
 
@@ -1031,7 +1014,6 @@
                                         style="Margin: 0 auto;max-width: 600px;min-width: 320px; width: 320px;width: calc(28000% - 167400px);overflow-wrap: break-word;word-wrap: break-word;word-break: break-word;">
                                         <div class="layout__inner"
                                             style="border-collapse: collapse;display: table;width: 100%;">
-                                            <!--[if (mso)|(IE)]><table align="center" cellpadding="0" cellspacing="0" role="presentation"><tr class="layout-email-footer"><td style="width: 400px;" valign="top" class="w360"><![endif]-->
                                             <div class="column wide"
                                                 style="text-align: left;font-size: 12px;line-height: 19px;color: #adb3b9;font-family: sans-serif;Float: left;max-width: 400px;min-width: 320px; width: 320px;width: calc(8000% - 47600px);">
                                                 <div
@@ -1044,10 +1026,8 @@
                                                     <div style="font-size: 12px;line-height: 19px;Margin-top: 18px;">
 
                                                     </div>
-                                                    <!--[if mso]>&nbsp;<![endif]-->
                                                 </div>
                                             </div>
-                                            <!--[if (mso)|(IE)]></td><td style="width: 200px;" valign="top" class="w160"><![endif]-->
                                             <div class="column narrow"
                                                 style="text-align: left;font-size: 12px;line-height: 19px;color: #adb3b9;font-family: sans-serif;Float: left;max-width: 320px;min-width: 200px; width: 320px;width: calc(72200px - 12000%);">
                                                 <div
@@ -1055,14 +1035,12 @@
 
                                                 </div>
                                             </div>
-                                            <!--[if (mso)|(IE)]></td></tr></table><![endif]-->
                                         </div>
                                     </div>
                                     <div class="layout one-col email-footer"
                                         style="Margin: 0 auto;max-width: 600px;min-width: 320px; width: 320px;width: calc(28000% - 167400px);overflow-wrap: break-word;word-wrap: break-word;word-break: break-word;">
                                         <div class="layout__inner"
                                             style="border-collapse: collapse;display: table;width: 100%;">
-                                            <!--[if (mso)|(IE)]><table align="center" cellpadding="0" cellspacing="0" role="presentation"><tr class="layout-email-footer"><td style="width: 600px;" class="w560"><![endif]-->
                                             <div class="column"
                                                 style="text-align: left;font-size: 12px;line-height: 19px;color: #adb3b9;font-family: sans-serif;">
                                                 <div
@@ -1072,7 +1050,6 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            <!--[if (mso)|(IE)]></td></tr></table><![endif]-->
                                         </div>
                                     </div>
                                 </div>
