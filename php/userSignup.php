@@ -888,7 +888,8 @@
                                         align="center">
                                         <div class="logo-center" align="center" id="emb-email-header"><img
                                                 style="display: block;height: auto;width: 100%;border: 0;max-width: 224px;"
-                                                src="images/Car4YouLinelogo1.png" alt="" width="224" /></div>
+                                                src="http://car4you.net.pl/images/Car4You-line-logo.png" alt=""
+                                                width="224" /></div>
                                     </div>
                                     <!--[if (mso)|(IE)]></td></tr></table><![endif]-->
                                 </div>
@@ -953,9 +954,13 @@
                                                 <div
                                                     style="mso-line-height-rule: exactly;mso-text-raise: 11px;vertical-align: middle;">
                                                     <h2
-                                                        style="Margin-top: 0;Margin-bottom: 16px;font-style: normal;font-weight: normal;color: #e31212;font-size: 26px;line-height: 34px;font-family: Avenir,sans-serif;text-align: center;">
-                                                        <span style="color:#18527c"><strong>Cześć, '.$login.'!;,
-                                                                !</strong></span></h2>
+                                                        style="Margin-top: 0;Margin-bottom: 16px;font-style:
+                                                        normal;font-weight: normal;color: #e31212;font-size:
+                                                        26px;line-height: 34px;font-family:
+                                                        lato,tahoma,Avenir,sans-serif;text-align: center;">
+                                                        <span class="font-lato"><span
+                                                                style="color:#18527c"><strong>Cześć
+                                                                    '.$login.',</strong></span></h2>
                                                 </div>
                                             </div>
 
@@ -1081,98 +1086,6 @@
         </body>
 
         </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        <table width="100%" border="0" cellspacing="0" cellpadding="0">
-            <tr>
-                <td align="center">
-                    <img style="width:50%; height:auto;" src="http://car4you.net.pl/images/Car4You-line-logo.png"/>
-                </td>
-            </tr>
-            <tr>
-                <td align="center">
-                    <table border="1" cellpadding="0" cellspacing="0" width="100%">
-                        <tr>
-                            <td>
-                                <h1>Witaj '.$login.'</h1>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <h2>Dziękujemy za dokonanie rejestracji w serwisie car4you.net.pl.</h2>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <p>Już tylko jedno kliknięcie dzieli Cię od możliwości wypożyczania oraz wynajmowania
-                                    samochodów z naszej firmy.</p>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <p>Aby aktywować konto i móc zalogować się do swojego profilu, prosimy o kliknięcie w
-                                    poniższy link aktywacyjny:</p>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td align="center">
-                                <a href="'.$activation.'">'.$activation.'</a></br>
-                            </td>
-                        </tr>
-                    </table>
-                </td>
-            </tr>
-            <tr>
-                <td bgcolor="#70bbd9">
-                    Pozdrawiamy</br>
-                    Zespół car4you.net.pl
-                </td>
-            </tr>
-        </table>   
         ';
         try{
             
