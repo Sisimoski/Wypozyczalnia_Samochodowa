@@ -1076,7 +1076,6 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div style="line-height:40px;font-size:40px;">&nbsp;</div>
                             </div>
                         </td>
                     </tr>
