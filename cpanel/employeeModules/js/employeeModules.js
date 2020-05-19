@@ -308,6 +308,58 @@ function acceptCarButtonClick(self){
         });
 }
 
+function acceptReviewButtonClick(self){
+    $(".alert").removeClass("alert-success");
+    $(".alert").removeClass("alert-danger");
+    $(".alert").removeClass("alert-warning");
+    $(".alert").html('');
+    $(".alert").fadeIn();
+    self = $(self);
+
+    request = $.ajax({
+        url: "php/zaakceptujOpinie.php",
+        data: {id: self.val()},
+        type: "POST"
+    });
+
+    request.done(function(response){
+        zaladujAkceptacjeOpinii();
+        $(".alert").addClass("alert-success");
+        $(".alert-success").html(response);
+        $(".alert").fadeOut(3000);
+    });
+
+    request.fail(function(response){
+        console.log(response);
+    })
+}
+
+function declineReviewButtonClick(self){
+    $(".alert").removeClass("alert-success");
+    $(".alert").removeClass("alert-danger");
+    $(".alert").removeClass("alert-warning");
+    $(".alert").html('');
+    $(".alert").fadeIn();
+    self = $(self);
+
+    request = $.ajax({
+        url: "php/odrzucOpinie.php",
+        data: {id: self.val()},
+        type: "POST"
+    });
+
+    request.done(function(response){
+        zaladujAkceptacjeOpinii();
+        $(".alert").addClass("alert-success");
+        $(".alert-success").html(response);
+        $(".alert").fadeOut(3000);
+    });
+
+    request.fail(function(response){
+        console.log(response);
+    })
+}
+
 function zaladujPracownikow() {
     request = $.ajax({
         url: "php/ladowaniePracownikow.php",
@@ -411,6 +463,54 @@ function zaladujAkceptacje(){
         else{
             $("#acceptStatus tr").remove();
             $("#acceptStatus").append("<tr><td colspan='7'><h6>Brak Pojazdów do Akceptacji</h6></td></tr>");
+        }
+
+    });
+
+    request.fail(function (response) {
+        
+    });
+}
+
+function zaladujAkceptacjeOpinii(){
+    $(".alert").removeClass("alert-success");
+        $(".alert").removeClass("alert-danger");
+        $(".alert").removeClass("alert-warning");
+        $(".alert").html('');
+        $(".alert").fadeIn();
+
+    request = $.ajax({
+        url: "php/zaladujAkceptacjeOpinii.php",
+    });
+
+    request.done(function (response) {
+        if(response != "Brak opinii do zaakceptowania"){
+            $(".akceptacjaOpiniiTabela tr").remove(); 
+            var obj = JSON.parse(response);
+            for (i = 0; i < obj.length; i++) {
+                string = '';
+                for(j=0;j<obj[i]['ocena'];j++)
+                    string+= "<div class='bx bxs-star' style='color: gold'></div>";
+                for(k=0;k< (5 - obj[i]['ocena']);k++)
+                    string+= "<div class='bx bx-star' style='color: gold'></div>";
+
+                $(".akceptacjaOpiniiTabela").append("<tr><th scope='row'>" + (i + 1) + "</th><td>"
+                 + obj[i]['login'] + "</td><td>"
+                 + string + "</td><td>"
+                 + obj[i]["komentarz"] + "</td><td>"
+                 + "<button type='button' class='btn btn-sm btn-success ml-2 flex-fill acceptReview' value='" 
+                 + obj[i]["id_opinia"] 
+                 + "' onclick='acceptReviewButtonClick(this)'>Zaakceptuj</button>"
+                 +"<button type='button' class='btn btn-sm btn-danger ml-2 flex-fill' value='" 
+                 + obj[i]["id_opinia"] 
+                 + "' onclick='declineReviewButtonClick(this)'>Odrzuć</button>" 
+                 + "</td></tr>"
+                );
+            }
+        }
+        else{
+            $(".akceptacjaOpiniiTabela tr").remove();
+            $(".akceptacjaOpiniiTabela").append("<tr><td colspan='5'><h6>Brak Opinii do Akceptacji</h6></td></tr>");
         }
 
     });

@@ -104,6 +104,7 @@ $(document).ready(function () {
         $(".alert").removeClass("alert-danger");
         $(".alert").html('');
         $(".alert").fadeIn();
+        $("#addReviewModal").modal("hide");
 
         request = $.ajax({
             url: "./php/makeReview.php",

@@ -3,7 +3,7 @@ session_start();
 
     if(!isset($_SESSION['id'])){
     header("Location: ../index.php");
-    }
+    } 
 
 ?>
 
@@ -67,28 +67,8 @@ session_start();
                                         <th scope="col">Funkcje</th>
                                     </tr>
                                 </thead>
-                                <tbody class="" id="">
-                                    <tr>
-                                        <th scope='row'>1</th>
-                                        <td>Dodane</td>
-                                        <td>W HTML</td>
-                                        <td>Słabo nie polecam. Najgorszy pojazd na świecie</td>
-                                        <td><button type='button' class='btn btn-sm btn-success ml-2 flex-fill'>Zaakceptuj</button><button type='button' class='btn btn-sm btn-danger ml-2 flex-fill'>Odrzuć</button></td>
-                                    </tr>
-                                    <tr>
-                                        <th scope='row'>2</th>
-                                        <td>Dodane</td>
-                                        <td>W HTML</td>
-                                        <td>Słabo nie polecam. Najgorszy pojazd na świecie</td>
-                                        <td><button type='button' class='btn btn-sm btn-success ml-2 flex-fill'>Zaakceptuj</button><button type='button' class='btn btn-sm btn-danger ml-2 flex-fill'>Odrzuć</button></td>
-                                    </tr>
-                                    <tr>
-                                        <th scope='row'>3</th>
-                                        <td>Dodane</td>
-                                        <td>W HTML</td>
-                                        <td>Słabo nie polecam. Najgorszy pojazd na świecie</td>
-                                        <td><button type='button' class='btn btn-sm btn-success ml-2 flex-fill'>Zaakceptuj</button><button type='button' class='btn btn-sm btn-danger ml-2 flex-fill'>Odrzuć</button></td>
-                                    </tr>
+                                <tbody class="akceptacjaOpiniiTabela" id="">
+                                    
                                 </tbody>
                             </table>
                             <div id="alert"></div>
@@ -100,7 +80,7 @@ session_start();
             </div>
         </div>
     </div>
-
+<script>zaladujAkceptacjeOpinii();</script>
 </body>
 
 </html>
