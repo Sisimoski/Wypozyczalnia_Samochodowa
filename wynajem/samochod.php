@@ -16,11 +16,31 @@ session_start();
             $sth ->execute();
             if($sth ->rowCount() != 0){   
                 $response = $sth->fetchAll();
+                $vin = $response[0]["vin"];
                 $data = json_encode($response);
+                
             }
             else{
                 header("Location: /wynajem/samochodTemplate.php");
+            }    
+            $sth = $db->prepare('SELECT COUNT(id_opinia) FROM opinia WHERE vin =:vin AND czy_zatwierdzona = 1;');
+            $sth ->bindValue(":vin", $vin,PDO::PARAM_STR);
+            $sth ->execute();
+            $response = $sth->fetchAll();
+            $iloscOpinii = $response[0][0];
+            
+            $sth = $db->prepare('call zaladuj_opinie(:vin);');
+            $sth ->bindValue(":vin", $vin,PDO::PARAM_STR);
+            $sth ->execute();
+            if($sth ->rowCount() != 0){  
+                $opinie = true; 
+                $response = $sth->fetchAll();
+                $opinia = $response;
+                
+            }else{
+                $opinie = false;
             }
+
             
         }
     }else{
@@ -260,79 +280,41 @@ session_start();
                 <div class="col">
                     <div class="card">
                         <div class="card-body">
-                            <h4 class="card-title">Opinie:</h4>
-                            <div class="border-bottom mt-3 mb-3"></div>
-                            <div class="card">
+                            <h4 class="card-title">Ostatnie Opinie:</h4>
+                            <div class="border-bottom mt-3"></div>
+
+                        <?php
+                        if($iloscOpinii == 0){
+                            echo "<div class='w-100 d-flex justify-content-center mt-3'><h4>Brak Opinii</h4></div>";
+                        }
+                        for($i = 0; $i<$iloscOpinii;$i++) :?>
+                            <div class="card mt-3">
                                 <div class="card-body">
-                                    <h5 class="card-title mb-1">Ocena: </h5>
-                                    <div id="rate"></div>
+                                    <h5 class="card-title mb-1">Ocena:
+                                    <?php
+                                    for($k=0;$k<$opinia[$i]["ocena"];$k++)
+                                        echo "<div class='bx bxs-star' style='color: gold'></div>";
+                                    
+                                    for($k=0;$k<(5 - $opinia[$i]["ocena"]);$k++)
+                                        echo "<div class='bx bx-star' style='color: gold'></div>";   
+                                    ?>
+                                    </h5>                                    
                                     <blockquote class="blockquote mb-0">
-                                        <p class="mb-1">Super samochodzik, +1 byczku</p>
+                                        <p class="mb-1"><?= $opinia[$i]["komentarz"] ?></p>
                                         <footer class="blockquote-footer">
-                                            <cite>Imię i Nazwisko</cite>
+                                            <cite><?=$opinia[$i]["login"] ?></cite>
                                         </footer>
-                                    </blockquote>
-                                </div>
-                                <div class="card-footer">
-                                    <small class="text-muted">Last updated 3 mins ago</small>
-                                </div>
+                                    </blockquote>                                    
+                                </div>                                 
                             </div>
-                            <nav class="my-3">
-                                <ul class="pagination pagination-sm justify-content-start">
-                                    <li class="page-item disabled">
-                                        <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Poprzednia strona</a>
-                                    </li>
-                                    <li class="page-item"><a class="page-link" href="#">1</a></li>
-                                    <li class="page-item"><a class="page-link" href="#">2</a></li>
-                                    <li class="page-item"><a class="page-link" href="#">3</a></li>
-                                    <li class="page-item">
-                                        <a class="page-link" href="#">Następna strona</a>
-                                    </li>
-                                </ul>
-                            </nav>
-                            <div class="border-bottom mt-3 mb-3"></div>
-                            <div class="mt-3 d-flex flex-column">
-                                <button type="button" class="btn btn-outline-primary" data-toggle="modal"
-                                    data-target="#addReviewModal">
-                                    Wystaw Opinię
-                                </button>
-                            </div>
+                        <?php endfor;?>
+
                         </div>
                     </div>
                 </div>
             </div>
-            <!-- Modal wystawiania opinii -->
-            <div class="modal fade" id="addReviewModal" tabindex="-1" role="dialog" aria-labelledby="addReviewLabel"
-                aria-hidden="true">
-                <div class="modal-dialog" role="document">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="deleteCarLabel">Wystawianie Opinii</h5>
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
-                        </div>
-                        <div class="modal-body">
-                            <form>
-                                <div class="form-group">
-                                    <label for="">Twoja ocena:</label>
-                                    <div id="rate"></div>
-                                </div>
-                                <div class="form-group">
-                                    <label for="">Komentarz:</label>
-                                    <textarea type="text" class="form-control" rows="4" id="commentText" name="comment"></textarea>
-                                </div>
-                            </form>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-outline-secondary"
-                                data-dismiss="modal">Zamknij</button>
-                            <button type="button" id="sendRateButton" name="sendRate" value=""
-                                class="btn btn-primary">Wystaw Opinię</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            
+            
 
 
             
@@ -341,7 +323,6 @@ session_start();
     </section>
     <?php 
         require_once $_SERVER['DOCUMENT_ROOT'] . '/include/footer.php';
-        
         echo "<script>loadCar(".$data.");</script>";
         echo "<script>const data = saveData(".$data.");</script>";
     ?>
