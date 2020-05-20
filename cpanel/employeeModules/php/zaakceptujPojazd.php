@@ -797,7 +797,7 @@
                                                         <h1 class="size-64"
                                                             style="mso-text-raise: 25px;Margin-top: 0;Margin-bottom: 20px;font-style: normal;font-weight: normal;color: #000;font-size: 44px;line-height: 50px;font-family: lato,tahoma,sans-serif;text-align: center;"
                                                             lang="x-size-64"><span class="font-lato"><strong><span
-                                                                        style="color:#ffffff">Akceptacja pojazdu</span></strong></span></h1>
+                                                                        style="color:#ffffff">Status pojazdu</span></strong></span></h1>
                                                     </div>
                                                 </div>
 
