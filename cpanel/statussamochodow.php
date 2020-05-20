@@ -46,7 +46,7 @@ session_start();
                         <ol class="breadcrumb">
                             <li class="breadcrumb-item"><a href="index.php">Panel klienta</a></li>
                             <li class="breadcrumb-item active">Samochody</li>
-                            <li class="breadcrumb-item active" aria-current="page">Status samochodów</li>
+                            <li class="breadcrumb-item active" aria-current="page">Moje samochody</li>
                         </ol>
                     </nav>
                 </div>
@@ -54,7 +54,7 @@ session_start();
                     <div class="col">
                         <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2
                             mb-3 border-bottom px-2">
-                            <h1>Status samochodów</h1>
+                            <h1>Moje samochody</h1>
                         </div>
                         <div class="LoadCarTableHead table-responsive">
                             <table class="table table-striped table-hover text-center align-items-center border">

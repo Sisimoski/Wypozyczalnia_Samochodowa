@@ -69,7 +69,7 @@
                         Dodaj samochód</a>
                     <a href="/cpanel/statussamochodow.php" class="list-group-item list-group-item-action text-secondary">
                         <i class="bx bx-dots-vertical-rounded"></i>
-                        Status samochodów</a>
+                        Moje samochody</a>
                 </div>
             </ul>
 
