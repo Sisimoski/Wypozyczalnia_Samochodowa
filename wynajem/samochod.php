@@ -17,6 +17,7 @@ session_start();
             if($sth ->rowCount() != 0){   
                 $response = $sth->fetchAll();
                 $vin = $response[0]["vin"];
+                $kwota = $response[0]["cena_brutto"];
                 $data = json_encode($response);
                 
             }
@@ -248,18 +249,18 @@ session_start();
                                 <input autocomplete="off" type="text" id="picker2" class="form-control">
                             </div>
                             <h4 class="card-title mt-3 mb-2">Podsumowanie:</h4>
-                            <form class="form-inline align-items-baseline">
+                            <form id="kodRabatowyForm" class="form-inline align-items-baseline">
                                 <div class="form-group">
                                     <label>Rabat:</label>
                                 </div>
                                 <div class="form-group d-flex flex-column">
-                                    <input type="text" class="form-control form-control-sm mx-3">
-                                    <small class="text-muted text-center">
+                                    <input type="text" id="kodRabatowy" name="kod_rabatowy" class="form-control form-control-sm mx-3">
+                                    <small class="text-muted text-center sale-response">
                                         Wprowadź kod rabatowy.
                                     </small>
                                 </div>
                                 <div class="form-group mx-1">
-                                    <button type="submit" class="btn btn-primary btn-sm mb-2">Akceptuj</button>
+                                    <button type="button" id="useSaleCodeBtn" class="btn btn-primary btn-sm mb-2">Akceptuj</button>
                                 </div>
                             </form>
                             <div class="border-bottom mt-3 mb-3"></div>
@@ -325,6 +326,8 @@ session_start();
         require_once $_SERVER['DOCUMENT_ROOT'] . '/include/footer.php';
         echo "<script>loadCar(".$data.");</script>";
         echo "<script>const data = saveData(".$data.");</script>";
+        echo "<script>var kwota = saveData(".$kwota.");</script>";
+        echo "console.log(kwota);"
     ?>
 
 </body>

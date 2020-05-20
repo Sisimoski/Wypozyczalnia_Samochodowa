@@ -47,13 +47,7 @@ $(document).ready(function(){
         $(".alert").removeClass("alert-danger");
         $(".alert").removeClass("alert-warning");
         $(".alert").html('');
-        $(".alert").fadeIn();
-
-        const one = 1000 * 60 * 60 * 24;
-        var date =  (new Date($('#picker2').val()) - new Date($('#picker').val()))/one;
-        var kwota = data[0]['cena_brutto'] * (date+1);
-        console.log(kwota);
-      
+        $(".alert").fadeIn(); 
 
         request = $.ajax({
             url: "php/rentCar.php",
@@ -74,7 +68,7 @@ $(document).ready(function(){
             else{
                 $('#rezerwacjaModal').modal('hide');
                 $('.alert').addClass("alert-warning");
-                $('.alert').html("Pojazd wypożyczony");
+                $('.alert').html(response);
                 $('.alert').fadeOut(1500);
             }
         });
@@ -82,6 +76,48 @@ $(document).ready(function(){
         request.fail(function (response) {
             console.log(response);
         });
+
+    })
+
+    $("#useSaleCodeBtn").click(function(){
+        $('.sale-response').removeClass("text-muted");
+        $('.sale-response').removeClass("text-danger");
+        $('.sale-response').removeClass("text-success");
+
+
+
+        dane = $("#kodRabatowyForm").serialize();
+        request = $.ajax({
+            url: "php/useSaleCode.php",
+            data: dane,
+            type: "POST"
+        });
+
+        request.done(function (response) {
+            if(response.match("Success")){
+                procent = response.match(/\d+/);
+                $('.sale-response').removeClass("text-muted");
+                $('.sale-response').addClass("text-success");
+                $('.sale-response').html("Kod Rabatowy -"+procent+"% został dodany")
+                $("#kodRabatowy").attr("disabled", true);
+                $("#useSaleCodeBtn").attr("disabled", true);
+                kwota = ((kwota) * (100-procent)) / 100;
+                kwota = parseFloat(kwota);
+                kwota = (isNaN(kwota)) ? '' : kwota.toFixed(2);
+                $(".total-cost").html(kwota + "zł");
+                
+            }
+            else{
+                $('.sale-response').removeClass("text-muted");
+                $('.sale-response').addClass("text-danger");
+                $('.sale-response').html(response);
+            }
+        });
+
+        request.fail(function (response) {
+            console.log(response);
+        });
+
 
     })
     
@@ -122,6 +158,7 @@ function saveData(data){
 function calculate(){
     const dzien = 1000 * 60 * 60 * 24;
    var date =  (new Date($('#picker2').val()) - new Date($('#picker').val()))/dzien
-   $(".total-cost").html(data[0]['cena_brutto'] * (date+1) + ' zł');
+   kwota = kwota * (date+1);
+   $(".total-cost").html(kwota.toFixed(2) + ' zł');
    $(".total-cost").html($(".total-cost").html() );
 }

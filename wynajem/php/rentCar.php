@@ -7,7 +7,19 @@
     $dataOd = $_POST['dataOd'];
     $dataDo = $_POST['dataDo'];
     $kwota = $_POST['kwota'];
-    
+
+    if(isset($_SESSION["czy_kod"])){
+        if($_SESSION["czy_kod"] == 1){
+            $kod = $_SESSION["kod_rabatowy"];
+
+            $sth = $db->prepare("UPDATE kody_rabatowe SET ilosc_kodow = ilosc_kodow-1 WHERE nazwa_kodu = :kod");
+            $sth ->bindValue(":kod",$kod,PDO::PARAM_STR);
+            $sth->execute();
+            unset($_SESSION["czy_kod"]);
+            unset($_SESSION["kod_rabatowy"]);
+        
+        }
+    }
 
     $sth = $db->prepare("SELECT samochod.id_specyfikacja_samochodu FROM samochod 
     JOIN specyfikacja_samochodu ON samochod.id_specyfikacja_samochodu = specyfikacja_samochodu.id_specyfikacja_samochodu
@@ -17,6 +29,7 @@
     if($sth->rowCount() == 1){
         $result = $sth->fetchAll();
         $idCar = $result[0]['id_specyfikacja_samochodu'];
+
 
         $sth = $db->prepare("UPDATE specyfikacja_samochodu SET specyfikacja_samochodu.czy_posiadany = 2
            WHERE id_specyfikacja_samochodu = {$idCar} ");

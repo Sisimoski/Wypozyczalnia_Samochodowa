@@ -1,6 +1,10 @@
 <?php
     session_start();
-     require_once("../../php/config.php");
+    require_once("../../php/config.php");
+    require_once("randomCodeGenerator.php");
+    require $_SERVER['DOCUMENT_ROOT'] . '/PHPMailer/config.php';
+    require $_SERVER['DOCUMENT_ROOT'] . '/php/config.php';
+
      $idSession = $_SESSION['id'];
      $id = $_POST["id"];
      $dataRealizacji = date("Y-m-d");
@@ -21,10 +25,48 @@
 
     $sth = $db->prepare("UPDATE specyfikacja_samochodu SET czy_posiadany = 1 WHERE id_specyfikacja_samochodu = {$idSpecyfikajca} ");
     $sth ->execute();
+    
+    $sth = $db->prepare("SELECT ilosc_punktow FROM uzytkownik WHERE id_uzytkownik = {$idSession}");
+    $sth ->execute();
+    $result = $sth->fetchAll();
+
+    $iloscPunktow1 = $result[0]["ilosc_punktow"];
+
 
     $sth = $db->prepare("UPDATE uzytkownik SET ilosc_punktow = ilosc_punktow + {$kwota} WHERE id_uzytkownik = {$idSession}");
     $sth ->execute();
 
+    $sth = $db->prepare("SELECT ilosc_punktow FROM uzytkownik WHERE id_uzytkownik = {$idSession}");
+    $sth ->execute();
+    $result = $sth->fetchAll();
+
+    $iloscPunktow2 = $result[0]["ilosc_punktow"];
+
+    if(($iloscPunktow1 <650 && $iloscPunktow2>= 650) || ($iloscPunktow1 <3000 && $iloscPunktow2>= 3000) || ($iloscPunktow1 <7000 && $iloscPunktow2>= 7000)){
+        $date = date('Y-m-d', strtotime('+1 year'));
+        $kod = struuid(false);
+        $sth = $db->prepare("INSERT INTO `kody_rabatowe`(`nazwa_kodu`, `ilosc_kodow`, `procent_rabatu`, `data_waznosci`) VALUES (:kod, 1, 10, :data )");
+        $sth ->bindValue(":kod",$kod,PDO::PARAM_STR);
+        $sth ->bindValue(":data",$date,PDO::PARAM_STR);
+        $sth ->execute();
+
+        $messages = "W nagrodę za uzyskanie nowego poziomu Konta kod rabatowy: ".$kod." na -10% do wykorzystania jednorazowo";
+
+        $sth = $db->prepare("SELECT email from uzytkownik 
+        INNER JOIN kontakty ON kontakty.id_kontakt = uzytkownik.id_kontakt
+        WHERE id_uzytkownik = {$idSession}");
+        $sth ->execute();
+        $response = $sth->fetchAll();
+
+        $email->isHTML(true); 
+        $email->Subject = 'Car4You - Newsletter';
+        $email->Body = $messages;
+        $email->AltBody = 'Test';
+        $email->addAddress($response[0][0]);
+        $email->send();
+        $email->ClearAddresses();
+    }
+    
     echo "Oddano pojazd";
 
 
