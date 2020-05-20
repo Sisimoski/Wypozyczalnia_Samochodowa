@@ -598,6 +598,7 @@ function zaladujKodyRabatowe(){
             for (i = 0; i < obj.length; i++) {
                 $("#tabelaRabaty").append("<tr><th scope='row'>" + (i + 1) + "</th><td>"
                  + obj[i]['nazwa_kodu'] + "</td><td>"
+                 + obj[i]["ilosc_kodow"] + "</td><td>"
                  + obj[i]["procent_rabatu"] + "%</td><td>"
                  + obj[i]["data_waznosci"] + "</td><td>"
                  + "<button type='button' class='usunKod btn btn-danger' value='" 
@@ -609,7 +610,7 @@ function zaladujKodyRabatowe(){
         }
         else{
             $("#tabelaRabaty tr").remove();
-            $("#tabelaRabaty").append("<tr><td colspan='5'><h6>Brak Kodów Rabatowych</h6></td></tr>");
+            $("#tabelaRabaty").append("<tr><td colspan='6'><h6>Brak Kodów Rabatowych</h6></td></tr>");
         }
 
     });

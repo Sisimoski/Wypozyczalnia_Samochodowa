@@ -82,6 +82,7 @@ session_start();
                                             <tr>
                                                 <th scope="col">#</th>
                                                 <th scope="col">Kod Rabatowy</th>
+                                                <th scope="col">Ilość Kodów</th>
                                                 <th scope="col">Procent Rabatu</th>
                                                 <th scope="col">Data Ważności</th>
                                                 <th scope="col">Funkcje</th>
@@ -109,6 +110,10 @@ session_start();
                                                     <div class="form-group">
                                                         <label for="">Kod</label>
                                                         <input id="kod_rabatowy" class="form-control" name="kod" placeholder="Kod Rabatowy">
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="">Ilość Kodów</label>
+                                                        <input id="ilosc_kodow" class="form-control" name="ilosc" placeholder="Ilość Kodów">
                                                     </div>
                                                     <div class="form-group">
                                                         <label for="">Procent Rabatu</label>

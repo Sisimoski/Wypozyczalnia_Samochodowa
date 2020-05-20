@@ -3,6 +3,7 @@
     $kod = $_POST["kod"];
     $procent = $_POST["procent"];
     $data = $_POST["data"];
+    $ilosc = $_POST["ilosc"];
     $dzisiaj = date('Y-m-d');
 
     if($dzisiaj < $data){
@@ -15,8 +16,9 @@
 
 
             try{
-            $sth = $db->prepare("INSERT INTO kody_rabatowe(nazwa_kodu, procent_rabatu, data_waznosci) VALUES (:kod, :procent, :data);");
+            $sth = $db->prepare("INSERT INTO kody_rabatowe(nazwa_kodu,ilosc_kodow, procent_rabatu, data_waznosci) VALUES (:kod,:ilosc, :procent, :data);");
             $sth -> bindValue(":kod",$kod,PDO::PARAM_STR);
+            $sth -> bindValue(":ilosc",$ilosc,PDO::PARAM_INT);
             $sth -> bindValue(":procent",$procent,PDO::PARAM_INT);
             $sth -> bindValue(":data",$data,PDO::PARAM_STR);
             $sth->execute();
