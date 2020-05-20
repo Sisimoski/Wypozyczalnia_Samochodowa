@@ -853,7 +853,7 @@
                                                     <h3
                                                         style="Margin-top: 0;Margin-bottom: 12px;font-style: normal;font-weight: normal;color: #281557;font-size: 18px;line-height: 26px;font-family: lato,tahoma,sans-serif;text-align: center;">
                                                         <span class="font-lato"><span
-                                                                style="color:#18527c">Twój samochód został zaakcpetowany i został dodany do bazy danych.</span></span></h3>
+                                                                style="color:#18527c">Twój samochód został zaakceptowany i został dodany do bazy danych.</span></span></h3>
                                                 </div>
                                             </div>
 
