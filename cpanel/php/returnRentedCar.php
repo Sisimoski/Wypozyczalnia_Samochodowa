@@ -981,7 +981,7 @@
         $response = $sth->fetchAll();
 
         $email->isHTML(true); 
-        $email->Subject = 'Car4You - Newsletter';
+        $email->Subject = 'Car4You - Nagroda';
         $email->Body = $messages;
         $email->AltBody = 'Test';
         $email->addAddress($response[0][0]);
