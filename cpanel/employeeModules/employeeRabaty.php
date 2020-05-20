@@ -68,7 +68,7 @@ session_start();
                         </div>
                         <div class="row">
                             <div class="col text-right">
-                                <button type='button' class='btn btn-success btn-block mb-3' id='dodajRabatButton'>Dodaj Rabat</button>
+                                <button type='button' class='btn btn-success btn-block mb-3' data-toggle='modal' data-target='#dodawanieRabatuModal' id='dodajRabatButton'>Dodaj Rabat</button>
 
                             </div>
                         </div>
@@ -82,7 +82,7 @@ session_start();
                                             <tr>
                                                 <th scope="col">#</th>
                                                 <th scope="col">Kod Rabatowy</th>
-                                                <th scope="col">Ilość Kodów</th>
+                                                <th scope="col">Procent Rabatu</th>
                                                 <th scope="col">Data Ważności</th>
                                                 <th scope="col">Funkcje</th>
                                             </tr>
@@ -94,6 +94,40 @@ session_start();
                                 </div>
                                 <!-- End of Table Template -->
 
+                                <div class="modal fade" id="dodawanieRabatuModal" tabindex="-1" role="dialog" aria-labelledby="Rabaty" aria-hidden="true">
+                                    <div class="modal-dialog" role="document">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title" id="">Dodawanie rabatu</h5>
+                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                    <span aria-hidden="true">&times;</span>
+                                                </button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <form class="dodawanieRabatuForm">
+                                                <div class="modal-body">
+                                                    <div class="form-group">
+                                                        <label for="">Kod</label>
+                                                        <input id="kod_rabatowy" class="form-control" name="kod" placeholder="Kod Rabatowy">
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="">Procent Rabatu</label>
+                                                        <input id="procent_rabatu" class="form-control" name="procent" placeholder="Procent Rabatu">
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="">Data Ważności</label>
+                                                        <input type="date" id="data_waznosci" class="form-control" name="data">
+                                                    </div>
+                                                </div>
+                                            </form>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-danger" data-dismiss="modal">Anuluj</button>
+                                                <button type="button" id="dodajRabatBtn" class="btn btn-primary">Dodaj Rabat</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -104,7 +138,7 @@ session_start();
     </div>
 
     <script>
-        zaladujPracownikow();
+        zaladujKodyRabatowe();
     </script>
 </body>
 

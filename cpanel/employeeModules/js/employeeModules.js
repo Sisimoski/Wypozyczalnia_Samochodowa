@@ -197,6 +197,42 @@ $(document).ready(function () {
 
 
     });
+
+    $("#dodajRabatBtn").click(function(){
+        $(".alert").removeClass("alert-success");
+        $(".alert").removeClass("alert-danger");
+        $(".alert").removeClass("alert-warning");
+        $(".alert").html('');
+        $(".alert").fadeIn();
+
+        data = $(".dodawanieRabatuForm").serialize();
+        
+        $('#dodawanieRabatuModal').modal('hide');
+        request = $.ajax({
+            url: "php/dodajRabat.php",
+            data: data,
+            type: "POST"
+        });
+
+        request.done(function (response) {
+            if(response == "Utworzono Kod Rabatowy"){
+                zaladujKodyRabatowe();
+                $(".alert").addClass("alert-success");
+                $(".alert-success").html(response);
+                $(".alert").fadeOut(3000);
+            }
+            else{
+                zaladujKodyRabatowe();
+                $(".alert").addClass("alert-warning");
+                $(".alert-warning").html(response);
+                $(".alert").fadeOut(3000);
+            }
+        });
+
+        request.fail(function (response) {
+           
+        });
+    })
     
 
     $('#dataOd').on('input', function() { 
@@ -216,6 +252,35 @@ $(document).ready(function () {
 function usunKontoButtonClick(self) {
     self = $(self);
     $('#usunKontoButton').attr("value", self.val());
+}
+
+function usunKodRabatowyBtn(self){
+    $(".alert").removeClass("alert-success");
+    $(".alert").removeClass("alert-danger");
+    $(".alert").removeClass("alert-warning");
+    $(".alert").html('');
+    $(".alert").fadeIn();
+
+    self = $(self);
+
+    request = $.ajax({
+        url: "php/usunKodRabatowy.php",
+        data: {id: self.val()},
+        type: "POST"
+    });
+
+    request.done(function(response){
+        zaladujKodyRabatowe();
+        $(".alert").addClass("alert-success");
+        $(".alert-success").html(response);
+        $(".alert").fadeOut(3000);
+
+    });
+
+    request.fail(function(response){
+        console.log(response);
+    })
+
 }
 
 function editKontoButtonClick(self){
@@ -519,3 +584,39 @@ function zaladujAkceptacjeOpinii(){
         
     });
 }
+
+function zaladujKodyRabatowe(){
+    request = $.ajax({
+        url: "php/zaladujKodyRabatowe.php",
+    });
+
+    request.done(function (response) {
+        if(response != "Brak Kodów Rabatowych"){
+            console.log(response);
+            $("#tabelaRabaty tr").remove(); 
+            var obj = JSON.parse(response);
+            for (i = 0; i < obj.length; i++) {
+                $("#tabelaRabaty").append("<tr><th scope='row'>" + (i + 1) + "</th><td>"
+                 + obj[i]['nazwa_kodu'] + "</td><td>"
+                 + obj[i]["procent_rabatu"] + "%</td><td>"
+                 + obj[i]["data_waznosci"] + "</td><td>"
+                 + "<button type='button' class='usunKod btn btn-danger' value='" 
+                 + obj[i]["id_kodu"] 
+                 + "' onclick='usunKodRabatowyBtn(this)'>Usuń Kod</button>" 
+                 + "</td></tr>"
+                );
+            }
+        }
+        else{
+            $("#tabelaRabaty tr").remove();
+            $("#tabelaRabaty").append("<tr><td colspan='5'><h6>Brak Kodów Rabatowych</h6></td></tr>");
+        }
+
+    });
+
+    request.fail(function (response) {
+        
+    });
+}
+
+
