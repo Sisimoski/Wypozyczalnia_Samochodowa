@@ -3,7 +3,7 @@
     
     $data = date('Y-m-d');
 
-    $sth = $db->prepare("DELETE FROM kody_rabatowe WHERE data_waznosci < :data");
+    $sth = $db->prepare("DELETE FROM kody_rabatowe WHERE data_waznosci < :data OR ilosc_kodow = 0");
     $sth -> bindValue(":data",$data,PDO::PARAM_STR);
     $sth->execute();
 
