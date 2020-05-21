@@ -129,6 +129,7 @@ function loadCar(data){
     console.log(data);
     $("#fotografia").attr("src","/CarPictures/"+data[0]['fotografia']);
     $(".producent-model").html(data[0]['producent']+' '+data[0]['model']);
+    $(".wlasciciel").html("Właściciel: "+data[0]['login']);
     $(".koszt-dzienny").html(data[0]['cena_brutto']+'zł/dzień');
     $(".segment-auta").html('Segment: '+data[0]['segment']);
     $(".rok-auta").html('Rok produkcji: '+data[0]['rok']);

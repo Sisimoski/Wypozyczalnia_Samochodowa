@@ -6,7 +6,7 @@ session_start();
         }
         else{
             require $_SERVER['DOCUMENT_ROOT'] . '/php/config.php'; 
-            $sth = $db->prepare("SELECT ulica, vin, samochod.id_specyfikacja_samochodu, numer_tablicy_rejestracyjnej, producent, model, rok, kolor, opis, cena_netto, procent_vat_ceny, cena_brutto, czy_posiadany, segment, typ_silnika, moc, pojemnosc_silnika, srednie_spalenie, skrzynia_biegow, ilosc_miejsc, pojemnosc_bagaznika, zasieg, fotografia
+            $sth = $db->prepare("SELECT ulica, vin, samochod.id_specyfikacja_samochodu, numer_tablicy_rejestracyjnej, producent, model, rok, kolor, opis, cena_netto, procent_vat_ceny, cena_brutto, czy_posiadany, segment, typ_silnika, moc, pojemnosc_silnika, srednie_spalenie, skrzynia_biegow, ilosc_miejsc, pojemnosc_bagaznika, zasieg, fotografia, login
             FROM specyfikacja_samochodu
             INNER JOIN samochod ON samochod.id_specyfikacja_samochodu = specyfikacja_samochodu.id_specyfikacja_samochodu
             INNER JOIN uzytkownik ON uzytkownik.id_uzytkownik = samochod.id_uzytkownik
@@ -197,7 +197,7 @@ session_start();
                         <div class="card-body">
                             <h3 class="card-title text-body producent-model">Ford Mondeo</h3>
                             <h4 class="card-subtitle mb-2 text-secondary koszt-dzienny">160zł/dzień</h4>
-                            <h6 class="card-subtitle my-2 text-muted">Właściciel: Marcin Chmurowski</h6>
+                            <h6 class="card-subtitle my-2 text-muted wlasciciel">Właściciel: Marcin Chmurowski</h6>
                             <div class="border-bottom mt-3 mb-3"></div>
                             <h4 class="card-subtitle mb-2">Dane techniczne:</h4>
                             <p class="card-text text-dark card-text-details segment-auta">Segment: klasa średnia</p>

@@ -29,8 +29,7 @@
     $sth ->bindValue(':numer_tablicy_rejestracyjnej',$numer_tablicy_rejestracyjnej,PDO::PARAM_STR);
     $sth ->bindValue(':vin',$vin,PDO::PARAM_STR);
     $sth->execute();
-    $result = $sth->fetch(PDO::FETCH_ASSOC);
-    if($result){
+    if(($sth->rowCount()) != 0 ){
       die("Podany VIN lub numer rejestracji znajduje się już w systemie");
     }
 
