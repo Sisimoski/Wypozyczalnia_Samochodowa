@@ -281,7 +281,7 @@
                 <?php for($j = 0; $j < $amountOfCarsInPage; $j++) : ?>
                     <div class="col mb-4">
                         <div class="card bg-light text-center h-100">
-                            <img src="/CarPictures/<?= $pageCars[$j]['fotografia'] ?>" href="wynajem/samochod.php?idCar=<?= $pageCars[$j]['id_specyfikacja_samochodu'] ?>" class="card-img-top border-bottom rounded-sm" alt="Default Card Image">
+                            <a href="wynajem/samochod.php?idCar=<?= $pageCars[$j]['id_specyfikacja_samochodu'] ?>" ><img src="/CarPictures/<?= $pageCars[$j]['fotografia'] ?>"  class="card-img-top border-bottom rounded-sm" alt="Default Card Image"></a>
                             <div class="card-body card-body-flex">
                                 <h5 class="card-title" href="wynajem/samochod.php?idCar=<?= $pageCars[$j]['id_specyfikacja_samochodu'] ?>"><?= $pageCars[$j]['producent'].' '.$pageCars[$j]['model']  ?></h5>
                                 <h6 class="card-subtitle mb-2 text-muted"><?= $pageCars[$j]['cena_brutto'] ?>zł/dzień</h6>
