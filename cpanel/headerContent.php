@@ -9,13 +9,14 @@
     <div class="collapse navbar-collapse flex-grow-1" id="navbarSupportedContent">
         <ul class="navbar-nav ml-auto">
             <li class="nav-item text-nowrap">
-                <input class="form-control form-control" type="text" placeholder="Szukaj" aria-label="Search">
-                
-                </li>
-            </ul>
-        <button type='button' id='wyloguj' class='btn btn-outline-danger ml-0 mt-2 ml-lg-2 mt-lg-0'>Wyloguj</button>
+
+                <button type='button' id='wyloguj'
+                    class='btn btn-outline-danger ml-0 mt-2 ml-lg-2 mt-lg-0'>Wyloguj</button>
+
+            </li>
+        </ul>
         <div class="d-lg-none mt-2">
-        <?php
+            <?php
             include("sidebarContent.php");
         ?>
         </div>
