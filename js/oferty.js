@@ -98,7 +98,7 @@ function updatePaginator(pageID, pages){
     if( pages == 0){
         $("#previousPage").addClass("d-none");
         $("#nextPage").addClass("d-none");
-        $(".card-content").html("Brak pojazdów w Bazie");
+        $(".card-content").html("<div class='d-flex text-center'><h5>Brak Pojazdów posiadających szukaną frazę</h5></div>");
     }
     else{
         if(pageID == 1){
